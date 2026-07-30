@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cheat Engine 7.7.0\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: coolvitto\n"
+"Language-Team: \n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+
+#: VC-U2CVICNEL
+msgid "Unable to check version (Invalid content, not enough lines)"
+msgstr "バージョンを確認できません (無効なコンテンツ、行数不足)"
+
+#: VC-U2CVIC
+msgid "Unable to check version (Invalid content)"
+msgstr "バージョンを確認できません (無効なコンテンツ)"
+
+#: VC-CFNV
+msgid "Check for new version"
+msgstr "新バージョンの確認"
+
+#: VC-NCA
+msgid "Cheat Engine %s is available at www.cheatengine.org. Go there now?"
+msgstr "Cheat Engine %s が www.cheatengine.org で利用可能です。今すぐアクセスしますか？"
+
+#: VC-UP2D
+msgid "You are up to date. The latest version is %s"
+msgstr "最新バージョンです。最新バージョンは %s です"
+
+#: VC-WTF
+msgid "Unable to check version (Can't connect)"
+msgstr "バージョンを確認できません (接続できません)"
+
+#: VC-UPDATETO
+msgid "Update to %s"
+msgstr "%s に更新"
+
+#: VC-UPDATETO
+msgid "In how many days should I notify you again?"
+msgstr "次回の通知は何日後にしますか？"
+
+#: VC-SETTINGS-TEXT
+msgid "Check for updates when Cheat Engine starts"
+msgstr "Cheat Engine 起動時にアップデートを確認"
+
+#: VC-INTERVAL
+msgid "Interval(days):"
+msgstr "間隔 (日) :"

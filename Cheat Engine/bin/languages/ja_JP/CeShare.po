@@ -1,0 +1,400 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cheat Engine 7.7.0\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: coolvitto\n"
+"Language-Team: \n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+
+#: frmCEShareCheatBrowser.TTrainerForm.Caption
+msgid "Cheat Browser"
+msgstr "チートブラウザ"
+
+#: frmCEShareCheatBrowser.CELabel.Caption
+msgid "Processname:"
+msgstr "プロセス名 :"
+
+#: frmCEShareCheatBrowser.Title.Caption
+msgid "Title"
+msgstr "タイトル"
+
+#: frmCEShareCheatBrowser.Author.Caption
+msgid "Author"
+msgstr "作者"
+
+#: frmCEShareCheatBrowser.Public.Caption
+msgid "Public"
+msgstr "公開"
+
+#: frmCEShareCheatBrowser.Score.Caption
+msgid "Score"
+msgstr "スコア"
+
+#: frmCEShareCheatBrowser.Version.Caption
+msgid "Version independent"
+msgstr "バージョン非依存"
+
+#: frmCEShareCheatBrowser.Match.Caption
+msgid "% Match"
+msgstr "% 一致"
+
+#: frmCEShareCheatBrowser.Signed.Caption
+msgid "Signed"
+msgstr "署名済み"
+
+#: frmCEShareCheatBrowser.btnLoadTable.Caption
+msgid "    Load    "
+msgstr "    読み込み    "
+
+#: frmCEShareCheatBrowser.btnAddViewComments.Caption
+msgid "Add/View Comments"
+msgstr "コメントの追加/表示"
+
+#: frmCEShareCheatBrowser.lblRate.Caption
+msgid "Rate:"
+msgstr "評価 :"
+
+#: frmCEShareCheatBrowser.btnViewHistory.Caption
+msgid "View History"
+msgstr "履歴を表示"
+
+#: frmCEShareCheatBrowser.lblContact.Hint
+msgid "For contacting the table owner or site admin"
+msgstr "テーブル所有者またはサイト管理者への連絡用"
+
+#: frmCEShareCheatBrowser.lblContact.Caption
+msgid "Contact"
+msgstr "連絡先"
+
+#: frmCEShareCheatBrowser.miLoad.Caption
+msgid "Load Table"
+msgstr "テーブルを読み込む"
+
+#: frmCEShareCheatBrowser.miViewComments.Caption
+msgid "View Comments"
+msgstr "コメントを表示"
+
+#: frmCEShareCheatBrowser.miLoginToSeeMoreOptions.Caption
+msgid "Login to see more options"
+msgstr "ログインして他のオプションを表示"
+
+#: frmCEShareCheatBrowser.miUpdateTable.Caption frmCEShareUpdateOrNew_1.btnChoose.Caption
+msgid "Update table"
+msgstr "テーブルを更新"
+
+#: frmCEShareCheatBrowser.miDeleteTable.Caption
+msgid "Delete table"
+msgstr "テーブルを削除"
+
+#: frmCEShareCheatBrowser.miManageAccessList.Caption
+msgid "Manage accesslist"
+msgstr "アクセスリストを管理"
+
+#: ceshare_frmComments.lblPrevious25.Caption
+msgid "Previous 25"
+msgstr "前の25件"
+
+#: ceshare_frmComments.lblNext25.Caption
+msgid "Next 25"
+msgstr "次の25件"
+
+#: ceshare_frmComments.btnSend.Caption
+msgid "   Send   "
+msgstr "    送信    "
+
+#: ceshare_initiaISetup.Caption
+msgid "CEShare Initial Setup"
+msgstr "CEShare 初期設定"
+
+#: ceshare_initiaISetup.CELabel1.Caption
+msgid "CEShare community URL:"
+msgstr "CEShare コミュニティ URL:"
+
+#: ceshare_initiaISetup.CELabel2.Caption
+msgid "By entering a CEShare URL you will be able to upload and download Cheat Tables from a ceshare server community"
+msgstr "CEShare URL を入力すると、ceshare サーバーコミュニティからチートテーブルをアップロードおよびダウンロードできるようになります"
+
+#: ceshare_initiaISetup.CELabel3.Caption
+msgid ""
+"Disclaimer: These are third-party servers. They are not owned or maintained by the Cheat Engine project, and no warranty or responsiblity regarding their content is given. \n"
+"\n"
+"Please contact the respective server owner for further inquiries."
+msgstr ""
+"免責事項: これらはサードパーティのサーバーです。これらは Cheat Engine プロジェクトが所有または管理するものではなく、その内容に関する保証や責任は一切負いません。\n"
+"\n"
+"詳細については、それぞれのサーバー所有者にお問い合わせください。"
+
+#: ceshare_initiaISetup.CELabel4.Caption
+msgid "Click cancel or leave empty if you don't wish to use this"
+msgstr "使用しない場合は、キャンセルをクリックするか、空欄のままにしてください"
+
+#: ceshare_initiaISetup.CEButton1.Caption
+msgid "OK"
+msgstr "OK"
+
+#: ceshare_initiaISetup.CEButton2.Caption
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: frmCESharePublishCheat.Caption
+msgid "Publish New Cheat"
+msgstr "新しいチートを公開"
+
+#: frmCESharePublishCheat.lblTitle.Caption
+msgid "Title:"
+msgstr "タイトル :"
+
+#: frmCESharePublishCheat.lblHeaderMD5Text.Caption
+msgid "Header MD5:"
+msgstr "ヘッダー MD5 :"
+
+#: frmCESharePublishCheat.cbNeedsFullFilrHash.Caption
+msgid "Needs full file hash"
+msgstr "完全なファイルハッシュが必要"
+
+#: frmCESharePublishCheat.lblFullHeaderMD5Text.Caption
+msgid "Full file hash:"
+msgstr "完全なファイルハッシュ :"
+
+#: frmCESharePublishCheat.cbUseSecondaryModule.Caption
+msgid "Needs secondary modulecheck"
+msgstr "セカンダリモジュールチェックが必要"
+
+#: frmCESharePublishCheat.lblModulename.Caption
+msgid "Modulename"
+msgstr "モジュール名"
+
+#: frmCESharePublishCheat.lblURL.Caption
+msgid "URL (Optional)"
+msgstr "URL (任意)"
+
+#: frmCESharePublishCheat.cbPublic.Caption
+msgid "Allow everyone to edit this table"
+msgstr "誰でもこのテーブルを編集できるようにする"
+
+#: frmCESharePublishCheat.cbPublic.Hint
+msgid ""
+"When this is enabled will let EVERYONE be able to edit/replace your table.  So be careful with enabling this and understand that once someone else has modified the table, you "
+"will not be able to delete it anymore"
+msgstr ""
+"これを有効にすると、誰でもあなたのテーブルを編集/置換できるようになります。この機能を有効にする際は注意し、他の誰かがテーブルを変更した後は、あなたはそのテーブルを削除できなく"
+"なることを理解してください"
+
+#: frmCESharePublishCheat.btnPublish.Caption
+msgid "Publish"
+msgstr "公開"
+
+#: frmCEShareUpdateOrNew_1.Caption
+msgid "Update/publish"
+msgstr "更新/公開"
+
+#: frmCEShareUpdateOrNew_1.rbPublish.Caption
+msgid "Publish new table"
+msgstr "新しいテーブルを公開"
+
+#: ceshare_permissions.Caption
+msgid "Update Permissions"
+msgstr "権限を更新"
+
+#: ceshare_permissions.lblOwnerTxt.Caption
+msgid "Owner"
+msgstr "所有者"
+
+#: ceshare_permissions.mrOK.Caption
+msgid "  OK  "
+msgstr "  OK  "
+
+#: ceshare_permissions.btnAddUser.Caption
+msgid "Add user"
+msgstr "ユーザーを追加"
+
+#: miCheckForCheats.Caption
+msgid "Check for mods/cheats for current process"
+msgstr "現在のプロセスに対するMOD/チートを確認"
+
+#: miRequestCheats.Caption
+msgid "Request and check other requests for mods/cheats for current process"
+msgstr "現在のプロセスに対するMOD/チートのリクエストと他のリクエストを確認"
+
+#: miLoginToSeeMoreOptions.Caption
+msgid "Publish/Update table"
+msgstr "テーブルを公開/更新"
+
+#: miViewAllTables.Caption
+msgid "View all available tables"
+msgstr "利用可能なすべてのテーブルを表示"
+
+#: lblCEShareLabel.Caption
+msgid "CEShare community URL"
+msgstr "CEShare コミュニティ URL"
+
+#: d.Caption
+msgid "Secondary identifier code"
+msgstr "セカンダリ識別子コード"
+
+#: btnAllow.Caption
+msgid "Allow"
+msgstr "許可"
+
+#: header.caption
+msgid ""
+"This process needs a special identifier to set it apart from others with the same name. To generate this identifier the below code is needed. Do you agree with the execution "
+"of this code to generate the identifier?"
+msgstr ""
+"このプロセスは、同じ名前の他のプロセスと区別するための特別な識別子を必要とします。この識別子を生成するには、以下のコードが必要です。識別子を生成するために、このコードの実行に"
+"同意しますか？"
+
+#: Error
+msgid "Error:"
+msgstr "エラー :"
+
+#: IRFS
+msgid "Invalid reply from server:"
+msgstr "サーバーからの無効な応答 :"
+
+#: SDNR
+msgid "Server did not respond"
+msgstr "サーバーが応答しませんでした"
+
+#: ceshare_account-f.Caption
+msgid "CEShare Login"
+msgstr "CEShare ログイン"
+
+#: ceshare_account-lblUsername.Caption
+msgid "Username"
+msgstr "ユーザー名"
+
+#: ceshare_account-lblPassword.Caption
+msgid "Password"
+msgstr "パスワード"
+
+#: ceshare_account-lblRegister.Caption
+msgid "Register"
+msgstr "登録"
+
+#: ceshare_account-cbLogoutWhenLoadingTables.Caption
+msgid "Logout when loading ceshare tables"
+msgstr "ceshare テーブル読み込み時にログアウトする"
+
+#: ceshare_account-cbLogoutWhenLoadingTables.Hint
+msgid "When checked you will get logged out when loading a ceshare table. This to prevent malicious tables from using your account"
+msgstr "チェックすると、ceshare テーブルを読み込む際にログアウトします。これは悪意のあるテーブルがあなたのアカウントを使用するのを防ぐためです"
+
+#: ceshare_permissions
+msgid "Are you sure you wish to change the owner?"
+msgstr "所有者を変更してもよろしいですか？"
+
+#: ceshare_permissions1
+msgid "Access has been updated"
+msgstr "アクセスが更新されました"
+
+#: ceshare_publish
+msgid "Are you sure you wish to delete this table?"
+msgstr "このテーブルを削除してもよろしいですか？"
+
+#: ceshare_publish
+msgid "Table successfuly deleted"
+msgstr "テーブルは正常に削除されました"
+
+#: ceshare_publish
+msgid "processname is empty"
+msgstr "プロセス名が空です"
+
+#: ceshare_publish
+msgid "title is empty"
+msgstr "タイトルが空です"
+
+#: ceshare_publish
+msgid "data is empty"
+msgstr "データが空です"
+
+#: ceshare_publish
+msgid "description is empty"
+msgstr "説明が空です"
+
+#: ceshare_publish
+msgid "Thank you, your table has been published"
+msgstr "ありがとうございます。あなたのテーブルが公開されました"
+
+#: ceshare_publish
+msgid "No id given"
+msgstr "ID が指定されていません"
+
+#: ceshare_publish
+msgid "Thank you, your table has been updated"
+msgstr "ありがとうございます。あなたのテーブルが更新されました"
+
+#: ceshare_publish
+msgid "Please select a cheattable to update"
+msgstr "更新するチートテーブルを選択してください"
+
+#: ceshare_publish
+msgid "Invalid background update query list"
+msgstr "無効なバックグラウンド更新クエリリストです"
+
+#: ceshare_publish_TLAN
+msgid "This looks like an empty table. Are you sure?"
+msgstr "これは空のテーブルのようです。よろしいですか？"
+
+#: ceshare_publish
+msgid "Are you sure you wish to let 'Everyone' overwrite your table in the ceshare system ?"
+msgstr "ceshare システムであなたのテーブルを「Everyone」に上書きさせてもよろしいですか？"
+
+#: ceshare_publish
+msgid "Do you wish to sign this table?"
+msgstr "このテーブルに署名しますか？"
+
+#: ceshare_querycheats
+msgid "Contact who?"
+msgstr "誰に連絡しますか？"
+
+#: ceshare_querycheats
+msgid "Site Admin"
+msgstr "サイト管理者"
+
+#: ceshare_querycheats
+msgid "Table Owner"
+msgstr "テーブル所有者"
+
+#: ceshare_querycheats
+msgid "Sorry, but there are currently no tables for this target. Perhaps you can be the first"
+msgstr "申し訳ありませんが、現在このターゲットに対するテーブルはありません。あなたが最初になるかもしれません"
+
+#: ceshare_requests
+msgid "Requests"
+msgstr "リクエスト"
+
+#: ceshare_requests
+msgid "Score="
+msgstr "スコア="
+
+#: ceshare_fulltablelist
+msgid "  and %d more tables..."
+msgstr " 他 %d 個のテーブル..."
+
+#: ceshare_fulltablelist
+msgid "All tables"
+msgstr "すべてのテーブル"
+
+#: ceshare_fulltablelist
+msgid "Search:"
+msgstr "検索 :"
+
+#: ceshare_fulltablelist
+msgid "Previous (25)"
+msgstr "前 (25)"
+
+#: ceshare_fulltablelist
+msgid "Next (25)"
+msgstr "次 (25)"
+
+#: ceshare_querycheats_TCTI
+msgid "The current table is trying to load obfuscated code. This often means mallicious intent as tables are supposed to be public. Do you wish to execute this lua code anyhow?"
+msgstr ""
+"現在のテーブルは難読化されたコードを読み込もうとしています。テーブルは公開されるべきものであるため、これは多くの場合、悪意のある意図を意味します。それでもこの Lua コードを実行"
+"しますか？"

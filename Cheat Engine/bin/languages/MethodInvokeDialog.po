@@ -1,0 +1,23 @@
+#: MethodInvokeDialog:1
+msgid "Invoke "
+msgstr ""
+
+#: MethodInvokeDialog:2
+msgid "Instance address"
+msgstr ""
+
+#: MethodInvokeDialog:3
+msgid "Parameters"
+msgstr ""
+
+#: MethodInvokeDialog:4
+msgid "OK"
+msgstr ""
+
+#: MethodInvokeDialog:5
+msgid "Cancel"
+msgstr ""
+
+#: MethodInvokeDialog:6
+msgid " is not a valid address"
+msgstr ""

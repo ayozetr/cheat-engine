@@ -27,7 +27,7 @@ object FormFoundCodeListExtra: TFormFoundCodeListExtra
     ClientHeight = 92
     ClientWidth = 58
     Font.CharSet = ANSI_CHARSET
-    Font.Name = 'Courier New'
+    Font.Name = 'Consolas'
     ParentFont = False
     TabOrder = 0
     object Label10: TLabel
@@ -254,7 +254,7 @@ object FormFoundCodeListExtra: TFormFoundCodeListExtra
       ClientHeight = 51
       ClientWidth = 563
       Font.CharSet = ANSI_CHARSET
-      Font.Name = 'Courier New'
+      Font.Name = 'Consolas'
       ParentFont = False
       TabOrder = 0
       object lblRAX: TLabel

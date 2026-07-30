@@ -502,7 +502,7 @@ begin
   fontdialog2.font.Color:=clwindowText;
   fontdialog2.font.Height:=-11;
   fontdialog2.font.Size:=10;
-  fontdialog2.font.Name:='Courier New';
+  fontdialog2.font.Name:='Consolas';
   fontdialog2.font.Style:=[];
 
 

@@ -206,7 +206,7 @@ object MemoryBrowser: TMemoryBrowser
         ClientHeight = 362
         ClientWidth = 213
         Font.Height = -17
-        Font.Name = 'Courier New'
+        Font.Name = 'Consolas'
         ParentFont = False
         TabOrder = 0
         object lblRegisters: TLabel
@@ -307,7 +307,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 120
             Caption = 'EAX 00000000'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             PopupMenu = pmRegisters
@@ -323,7 +323,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 120
             Caption = 'EBX 00000000'
             Font.Height = -17
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             PopupMenu = pmRegisters
@@ -339,7 +339,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 120
             Caption = 'ECX 00000000'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             PopupMenu = pmRegisters
@@ -355,7 +355,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 120
             Caption = 'EDX 00000000'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             PopupMenu = pmRegisters
@@ -371,7 +371,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 120
             Caption = 'ESI 00000000'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             PopupMenu = pmRegisters
@@ -387,7 +387,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 120
             Caption = 'EDI 00000000'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             PopupMenu = pmRegisters
@@ -403,7 +403,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 120
             Caption = 'EBP 00000000'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             PopupMenu = pmRegisters
@@ -419,7 +419,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 120
             Caption = 'ESP 00000000'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             PopupMenu = pmRegisters
@@ -435,7 +435,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 120
             Caption = 'EIP 00000000'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             PopupMenu = pmRegisters
@@ -468,7 +468,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 70
             Caption = 'CS 0000'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             OnClick = RegisterLabelDblClick
@@ -482,7 +482,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 70
             Caption = 'SS 0000'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             OnClick = RegisterLabelDblClick
@@ -496,7 +496,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 70
             Caption = 'DS 0000'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             OnClick = RegisterLabelDblClick
@@ -510,7 +510,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 70
             Caption = 'ES 0000'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             OnClick = RegisterLabelDblClick
@@ -524,7 +524,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 70
             Caption = 'FS 0000'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             OnClick = RegisterLabelDblClick
@@ -538,7 +538,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 70
             Caption = 'GS 0000'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             OnClick = RegisterLabelDblClick
@@ -569,7 +569,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 40
             Caption = 'CF 0'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             OnClick = RegisterLabelDblClick
@@ -583,7 +583,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 40
             Caption = 'PF 0'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             OnClick = RegisterLabelDblClick
@@ -598,7 +598,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 40
             Caption = 'AF 0'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             OnClick = RegisterLabelDblClick
@@ -613,7 +613,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 40
             Caption = 'ZF 0'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             OnClick = RegisterLabelDblClick
@@ -628,7 +628,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 40
             Caption = 'SF 0'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             OnClick = RegisterLabelDblClick
@@ -643,7 +643,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 40
             Caption = 'DF 0'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             OnClick = RegisterLabelDblClick
@@ -658,7 +658,7 @@ object MemoryBrowser: TMemoryBrowser
             Width = 40
             Caption = 'OF 0'
             Font.Height = -16
-            Font.Name = 'Courier New'
+            Font.Name = 'Consolas'
             ParentColor = False
             ParentFont = False
             OnClick = RegisterLabelDblClick
@@ -676,7 +676,7 @@ object MemoryBrowser: TMemoryBrowser
         Width = 22
         Anchors = [akTop, akRight]
         Caption = '>'
-        Font.Name = 'Courier New'
+        Font.Name = 'Consolas'
         OnClick = sbShowFloatsClick
         ParentFont = False
         TabOrder = 1

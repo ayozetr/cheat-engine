@@ -56,7 +56,7 @@ type
 
 implementation
 
-uses betterControls;
+uses betterControls, modernui;
 
 procedure TNewButton.ChildHandlesCreated;
 begin
@@ -95,11 +95,25 @@ begin
 
     if (c=clDefault) or (c=0) then
     begin
-      //default color
-      fFaceColorDown:=c;
-      fFaceColorHover:=clBtnHiLight;
-
-
+      if ModernMetrics.CustomDraw then
+      begin
+        //the defaults above are light-theme values that never ran; on the dark
+        //form background they render as pale buttons with a white border
+        fFaceColorUp:=ModernMetrics.ButtonFace;
+        fFaceColorHover:=ModernMetrics.ButtonFaceHover;
+        fFaceColorDown:=ModernMetrics.ButtonFaceDown;
+        fFaceColorDisabled:=ModernMetrics.ButtonFaceDisabled;
+        fBorderColor:=ModernMetrics.ButtonBorder;
+        fPenColorHover:=ModernMetrics.ButtonBorderHover;
+        fInactiveBorderColor:=ModernMetrics.ButtonBorder;
+        fInactiveFontColor:=ModernMetrics.TextDisabled;
+      end
+      else
+      begin
+        //default color
+        fFaceColorDown:=c;
+        fFaceColorHover:=clBtnHiLight;
+      end;
     end
     else
     begin
@@ -212,16 +226,27 @@ begin
     end;
 
     fcanvas.brush.style:=bsSolid;
-    fcanvas.brush.color:=facecolor;
+
+    //when rounding, the corners fall outside the button, so they have to be
+    //cleared to the container's color first or they keep the button's face
+    if (ModernMetrics.CornerRadius>0) and (parent<>nil) then
+      fcanvas.brush.color:=ColorToRGB(parent.Brush.Color)
+    else
+      fcanvas.brush.color:=facecolor;
     fcanvas.Clear;
 
+    fcanvas.brush.color:=facecolor;
     fcanvas.pen.Width:=1;
     if enabled then
       fcanvas.pen.color:=fBorderColor
     else
       fcanvas.pen.color:=fInactiveBorderColor;
 
-    fcanvas.Rectangle(0,0,clientwidth,clientheight);
+    if ModernMetrics.CornerRadius>0 then
+      fcanvas.RoundRect(0,0,clientwidth,clientheight,
+                        ModernMetrics.CornerRadius*2, ModernMetrics.CornerRadius*2)
+    else
+      fcanvas.Rectangle(0,0,clientwidth,clientheight);
 
     if enabled then
       fcanvas.font.color:=font.color

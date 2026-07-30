@@ -1,0 +1,3 @@
+#: bigendian:1
+msgid "Extra Custom Types"
+msgstr ""

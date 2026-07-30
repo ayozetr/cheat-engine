@@ -36,7 +36,7 @@ type
 
 implementation
 
-uses forms, win32proc, betterControls;
+uses forms, win32proc, betterControls, modernui;
 
 procedure TNewCheckBox.GetPreferredSize(var PreferredWidth, PreferredHeight: integer; Raw: boolean=false; WithThemeSpace: boolean=true);
 var r: trect;
@@ -183,11 +183,21 @@ begin
 
     r:=rect(trunc(dpiscale)-1,trunc(3*dpiscale),(trunc(dpiscale)-1)*2+clientheight-trunc((3*dpiscale)*2),(trunc(dpiscale)-1)+clientheight-trunc((3*dpiscale)));
 
+    //a ticked box filled with the accent reads at a glance; the original
+    //draws an empty square with a mark inside it
+    if enabled and (state=cbChecked) and ModernMetrics.CustomDraw then
+    begin
+      fcanvas.brush.color:=ModernMetrics.Accent;
+      fcanvas.pen.color:=ModernMetrics.Accent;
+    end;
+
     fcanvas.Rectangle(r);
 
     case state of
       cbChecked:
       begin
+        if enabled and ModernMetrics.CustomDraw then
+          fcanvas.pen.color:=ModernMetrics.AccentText;
         fCanvas.Pen.Width:=2;
        // fcanvas.pen.EndCap:=pecFlat;
         fCanvas.PenPos:=point(r.left+trunc(1.5*dpiscale),r.top+(r.Height div 2)-(trunc(dpiscale)-1));

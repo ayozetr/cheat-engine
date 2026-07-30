@@ -3239,7 +3239,7 @@ begin
   if loadCEFreeTypeFonts then
   begin
     FTFont:=TFreeTypeFont.Create;
-    FTFont.Name:='Courier New';
+    FTFont.Name:='Consolas';
     //FTFont.Hinted:=false; //only for bold
     //FTFont.SizeInPoints:=12;
     //FTFont.Style:=[ftsBold];
@@ -3287,7 +3287,7 @@ begin
   if fHexFont.Height>-13 then
     fHexFont.Height:=-13;
 
-  fHexFont.Name:='Courier New';
+  fHexFont.Name:='Consolas';
   fHexFont.Style:=[];
 
   statusbar:=TStatusBar.Create(self);

@@ -1,0 +1,7 @@
+#: emurpm:1
+msgid "Emulator Memory"
+msgstr ""
+
+#: emurpm:2
+msgid "Set Base Address"
+msgstr ""

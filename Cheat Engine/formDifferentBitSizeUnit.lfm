@@ -23,7 +23,7 @@ object formDifferentBitSize: TformDifferentBitSize
     BorderSpacing.Top = 10
     Caption = 'LabelOld'
     Font.Height = -16
-    Font.Name = 'Courier New'
+    Font.Name = 'Consolas'
     ParentColor = False
     ParentFont = False
   end
@@ -37,7 +37,7 @@ object formDifferentBitSize: TformDifferentBitSize
     BorderSpacing.Top = 2
     Caption = 'LabelNew'
     Font.Height = -16
-    Font.Name = 'Courier New'
+    Font.Name = 'Consolas'
     ParentColor = False
     ParentFont = False
   end

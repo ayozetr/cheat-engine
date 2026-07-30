@@ -1,6 +1,7 @@
 Cheat Engine/lib
 Cheat Engine/backup
-Cheat Engine/bin
+Cheat Engine/bin/*
+!Cheat Engine/bin/languages/
 Cheat Engine/test
 Cheat Engine/Tutorial/backup
 Cheat Engine/Tutorial/unitbin

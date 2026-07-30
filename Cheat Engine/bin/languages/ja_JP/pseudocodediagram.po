@@ -1,0 +1,196 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cheat Engine 7.7.0\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: coolvitto\n"
+"Language-Team: \n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+
+#: pseudocodediagram-file
+msgid "File"
+msgstr "ファイル"
+
+#: pseudocodediagram-lff
+msgid "Load from file"
+msgstr "ファイルから読み込み"
+
+#: pseudocodediagram-stfywto
+msgid "Select the file you wish to open"
+msgstr "開くファイルを選択してください"
+
+#: pseudocodediagram-dfcc
+msgid "Diagram files (*.CEDIAG )|*.CEDIAG"
+msgstr "ダイアグラムファイル (*.CEDIAG)|*.CEDIAG"
+
+#: pseudocodediagram-stf
+msgid "Save to file"
+msgstr "ファイルに保存"
+
+#: pseudocodediagram-fitfywtstda
+msgid "Fill in the filename you wish to save this diagram as"
+msgstr "このダイアグラムを保存するファイル名を入力してください"
+
+#: pseudocodediagram-sdti
+msgid "Save diagram to image"
+msgstr "ダイアグラムを画像に保存"
+
+#: pseudocodediagram-fitfywtstdi
+msgid "Fill in the filename you wish to save this diagram image"
+msgstr "このダイアグラム画像を保存するファイル名を入力してください"
+
+#: pseudocodediagram-pfpp
+msgid "PNG files (*.PNG )|*.PNG"
+msgstr "PNGファイル (*.PNG)|*.PNG"
+
+#: pseudocodediagram-close
+msgid "Close"
+msgstr "閉じる"
+
+#: pseudocodediagram-display
+msgid "Display"
+msgstr "表示"
+
+#: pseudocodediagram-spfu2oc
+msgid "Show path from Ultimap1/2 or Codefilter"
+msgstr "Ultimap1/2 またはコードフィルタからのパスを表示"
+
+#: pseudocodediagram-spftw
+msgid "Show path from tracer window"
+msgstr "トレーサウィンドウからのパスを表示"
+
+#: pseudocodediagram-tsa
+msgid "Tracer starting at %8x (%s)"
+msgstr "トレーサ開始位置：%8x (%s)"
+
+#: pseudocodediagram-tp
+msgid "Tracer paths"
+msgstr "トレーサパス"
+
+#: pseudocodediagram-wtwsbu
+msgid "Which tracer window shall be used?"
+msgstr "どのトレーサウィンドウを使用しますか？"
+
+#: pseudocodediagram-ntwrv
+msgid "No tracerform with results visible"
+msgstr "結果が表示されているトレーサーフォームがありません"
+
+#: pseudocodediagram-v
+msgid "View"
+msgstr "表示"
+
+#: pseudocodediagram-z
+msgid "Zoom"
+msgstr "ズーム"
+
+#: pseudocodediagram-zi
+msgid "Zoom in"
+msgstr "拡大"
+
+#: pseudocodediagram-zo
+msgid "Zoom out"
+msgstr "縮小"
+
+#: pseudocodediagram-e
+msgid "Edit"
+msgstr "編集"
+
+#: pseudocodediagram-nh
+msgid "new header"
+msgstr "新しいヘッダー"
+
+#: pseudocodediagram-nbbc
+msgid "new block background color (0xBBGGRR)"
+msgstr "新しいブロック背景色 (0xBBGGRR)"
+
+#: pseudocodediagram-sl
+msgid "Sources list"
+msgstr "ソースリスト"
+
+#: pseudocodediagram-dl
+msgid "Destinations list"
+msgstr "宛先リスト"
+
+#: pseudocodediagram-be
+msgid "Block editor"
+msgstr "ブロックエディタ"
+
+#: pseudocodediagram-ok
+msgid "OK"
+msgstr "OK"
+
+#: pseudocodediagram-cancel
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: pseudocodediagram-gts
+msgid "Go to source"
+msgstr "ソースへ移動"
+
+#: pseudocodediagram-gtd
+msgid "Go to destination"
+msgstr "宛先へ移動"
+
+#: pseudocodediagram-rap
+msgid "Remove all points"
+msgstr "すべてのポイントを削除"
+
+#: pseudocodediagram-ebh
+msgid "Edit block header"
+msgstr "ブロックヘッダー編集"
+
+#: pseudocodediagram-ebc
+msgid "Edit block color"
+msgstr "ブロック色編集"
+
+#: pseudocodediagram-ls
+msgid "List sources"
+msgstr "ソース一覧"
+
+#: pseudocodediagram-ld
+msgid "List destinations"
+msgstr "宛先一覧"
+
+#: pseudocodediagram-eac
+msgid "Edit annotation color"
+msgstr "注釈色編集"
+
+#: pseudocodediagram-da
+msgid "Delete annotation"
+msgstr "注釈削除"
+
+#: pseudocodediagram-ca
+msgid "Create annotation"
+msgstr "注釈作成"
+
+#: pseudocodediagram-mdi
+msgid "[Diagram info]"
+msgstr "[ダイアグラム情報]"
+
+#: pseudocodediagram-fstart
+msgid " Function start: 0x%X"
+msgstr " 関数開始：0x%X"
+
+#: pseudocodediagram-fstop
+msgid " Function stop: 0x%X"
+msgstr " 関数終了：0x%X"
+
+#: pseudocodediagram-dbc
+msgid " Diagram blocks count: %d"
+msgstr " ダイアグラムブロック数：%d"
+
+#: pseudocodediagram-dlc
+msgid " Diagram links count: %d"
+msgstr " ダイアグラムリンク数：%d"
+
+#: pseudocodediagram-diagram
+msgid "Diagram"
+msgstr "ダイアグラム"
+
+#: pseudocodediagram-sd
+msgid "Spawn diagram"
+msgstr "ダイアグラム生成"

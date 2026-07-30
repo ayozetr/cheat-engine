@@ -1665,7 +1665,7 @@ object MainForm: TMainForm
         end>
       Constraints.MinWidth = 1
       DragMode = dmAutomatic
-      Font.Name = 'Courier New'
+      Font.Name = 'Consolas'
       HideSelection = False
       MultiSelect = True
       OwnerData = True

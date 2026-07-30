@@ -111,7 +111,7 @@ object frmLuaScriptQuestion: TfrmLuaScriptQuestion
     Anchors = [akTop, akLeft, akRight, akBottom]
     Constraints.MinWidth = 300
     Font.Height = -13
-    Font.Name = 'Courier New'
+    Font.Name = 'Consolas'
     Font.Pitch = fpFixed
     Font.Quality = fqNonAntialiased
     ParentColor = False

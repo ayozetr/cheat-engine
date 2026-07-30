@@ -1,0 +1,39 @@
+#: andtools:1
+msgid "Android (Pulling APK)"
+msgstr "Android (descargando el APK)"
+
+#: andtools:2
+msgid "Android (Decoding APK)"
+msgstr "Android (decodificando el APK)"
+
+#: andtools:3
+msgid "Android (Rebuilding APK)"
+msgstr "Android (reconstruyendo el APK)"
+
+#: andtools:4
+msgid "Android (Creating signature)"
+msgstr "Android (creando la firma)"
+
+#: andtools:5
+msgid "Android (Signing new APK)"
+msgstr "Android (firmando el nuevo APK)"
+
+#: andtools:6
+msgid "Android (ZipAlign new APK)"
+msgstr "Android (aplicando ZipAlign al nuevo APK)"
+
+#: andtools:7
+msgid "Android (Replacing APK)"
+msgstr "Android (reemplazando el APK)"
+
+#: andtools:8
+msgid "Patch APK to debuggable"
+msgstr "Parchear el APK para poder depurarlo"
+
+#: andtools:9
+msgid "APK patch successful"
+msgstr "APK parcheado correctamente"
+
+#: andtools:10
+msgid "There is no android device available"
+msgstr "No hay ningún dispositivo Android disponible"

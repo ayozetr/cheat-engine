@@ -106,7 +106,7 @@ var
 implementation
 
 {$ifdef windows}
-uses forms, controls, Registry, Win32Proc{$ifndef skip_mainunit2}, mainunit2{$endif};
+uses forms, controls, Registry, Win32Proc, modernui{$ifndef skip_mainunit2}, mainunit2{$endif};
 
 {$ifdef skip_mainunit2}
 const strCheatEngine='Cheat Engine';
@@ -329,6 +329,14 @@ initialization
         begin
           ColorSet.CheckboxFillColor:=$e8e8e8;
           ColorSet.InactiveCheckboxFillColor:=$999999;
+          if ModernMetrics.CustomDraw then
+          begin
+            //newcheckbox uses the fill for the box and the mark color for both
+            //its border and the tick, so a near-white fill reads as a bright
+            //square on the dark form
+            ColorSet.CheckboxFillColor:=ModernMetrics.CheckboxFill;
+            ColorSet.InactiveCheckboxFillColor:=ModernMetrics.CheckboxFillDisabled;
+          end;
           clBtnFace:=inccolor(ColorSet.TextBackground,8);
           clBtnText:=ColorSet.FontColor;
 
@@ -338,6 +346,11 @@ initialization
 
           ColorSet.CheckboxCheckMarkColor:=InvertColor(ColorSet.CheckboxFillColor);
           ColorSet.InactiveCheckboxCheckMarkColor:=InvertColor(ColorSet.CheckboxCheckMarkColor);
+          if ModernMetrics.CustomDraw then
+          begin
+            ColorSet.CheckboxCheckMarkColor:=ModernMetrics.CheckboxMark;
+            ColorSet.InactiveCheckboxCheckMarkColor:=ModernMetrics.TextDisabled;
+          end;
 
           darkmodestring:=' dark';
         end;

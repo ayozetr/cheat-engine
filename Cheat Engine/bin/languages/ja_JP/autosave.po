@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cheat Engine 7.7.0\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: coolvitto\n"
+"Language-Team: \n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+
+#: autosave-AioC
+msgid "Another instance of Cheat Engine has crashed and it created an autosave.  Autosave disabled until you go to settings and click ok"
+msgstr "別の Cheat Engine インスタンスがクラッシュし、自動保存が作成されました。設定に移動して OK をクリックするまで、自動保存は無効になります"
+
+#: autosave-Ftoa
+msgid "Failure to obtain a location to save the autosave data"
+msgstr "自動保存データを保存する場所の取得に失敗しました"
+
+#: autosave-UR
+msgid "Unknown Reason"
+msgstr "原因不明"
+
+#: autosave-Ftat
+msgid "Failure to autosave table : "
+msgstr "テーブルの自動保存に失敗しました : "
+
+#: autosave-Ftas
+msgid "Failure to autosave state : "
+msgstr "状態の自動保存に失敗しました : "
+
+#: autosave-Ftla
+msgid "Failure to load autosave at %s  . Error: %s"
+msgstr "%s での自動保存の読み込みに失敗しました。エラー : %s"
+
+#: autosave-Tssb
+msgid "The saved state belongs to a different autosave version that is not currently implemented"
+msgstr "保存された状態は、現在実装されていない異なるバージョンの自動保存に属しています"
+
+#: autosave-ASI
+msgid "Auto Save Interval (In seconds. 0 is disabled)"
+msgstr "自動保存間隔 (秒単位。0 は無効)"
+
+#: autosave-AS
+msgid "Auto Save"
+msgstr "自動保存"
+
+#: autosave-CEdn
+msgid "Cheat Engine did not properly close last time. Do you wish to restore your work?"
+msgstr "前回、Cheat Engine が正しく終了しませんでした。作業を復元しますか？"

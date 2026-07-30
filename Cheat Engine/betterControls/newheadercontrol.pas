@@ -22,7 +22,7 @@ type
 
 implementation
 
-uses betterControls, Graphics;
+uses betterControls, Graphics, modernui, math;
 
 procedure TNewHeaderControl.Paint;
 var r: trect;
@@ -39,8 +39,17 @@ begin
 
     if r.left>clientwidth-1 then r.left:=clientwidth-1;   //for the last border
 
-    canvas.brush.color:=colorset.TextBackground;
-    canvas.pen.color:=colorset.ButtonBorderColor;
+    if ModernMetrics.CustomDraw then
+    begin
+      canvas.brush.color:=ModernMetrics.ButtonFaceDown;
+      canvas.pen.color:=ModernMetrics.ButtonBorder;
+    end
+    else
+    begin
+      canvas.brush.color:=colorset.TextBackground;
+      canvas.pen.color:=IfThen(ModernMetrics.CustomDraw,
+                        ModernMetrics.ButtonBorder, colorset.ButtonBorderColor);
+    end;
     canvas.FillRect(r);
     canvas.Rectangle(r);
   end;
@@ -68,9 +77,13 @@ begin
     arect.Right:=section.Right;
 
     case section.State of
-      hsNormal: canvas.brush.color:=colorset.TextBackground;
-      hsHot: canvas.brush.color:=incColor(colorset.TextBackground,16);
-      hsPressed: canvas.brush.color:=incColor(colorset.TextBackground,32);
+      //the header sits above the list, so it takes the darker face
+      hsNormal: canvas.brush.color:=IfThen(ModernMetrics.CustomDraw,
+                  ModernMetrics.ButtonFaceDown, colorset.TextBackground);
+      hsHot: canvas.brush.color:=IfThen(ModernMetrics.CustomDraw,
+               ModernMetrics.ButtonFace, incColor(colorset.TextBackground,16));
+      hsPressed: canvas.brush.color:=IfThen(ModernMetrics.CustomDraw,
+                   ModernMetrics.ButtonFaceHover, incColor(colorset.TextBackground,32));
     end;
 
     canvas.pen.color:=colorset.ButtonBorderColor;

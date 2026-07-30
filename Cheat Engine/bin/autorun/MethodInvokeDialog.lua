@@ -1,3 +1,4 @@
+pcall(loadPOFile, getTranslationFolder()..'MethodInvokeDialog.po')
 --[[
 Just a generic form for filling in fields. The caller is responsible for the callbacks
 Can be other types besides .NET  so no .net/mono specific code here  (just generic OOP things)

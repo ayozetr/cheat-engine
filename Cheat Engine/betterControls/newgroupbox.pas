@@ -30,7 +30,7 @@ var
 
 implementation
 
-uses betterControls, WSLCLClasses, WSStdCtrls, Win32Proc, Win32Int;
+uses betterControls, modernui, WSLCLClasses, WSStdCtrls, Win32Proc, Win32Int;
 
 type
   TCustomGroupBoxHelper = class helper for TCustomGroupBox
@@ -84,13 +84,22 @@ begin
         else
           c.brush.color:=gb.color;
 
-        c.Pen.color:=clWindowFrame;
+        //clWindowFrame is a hard white line: the classic 2005 group box.
+        //A muted border reads as a grouping instead of a boxed-in frame.
+        if ModernMetrics.CustomDraw then
+          c.Pen.color:=ModernMetrics.GroupBoxBorder
+        else
+          c.Pen.color:=clWindowFrame;
         c.FillRect(ps.rcPaint);
 
 
         r:=rect(0,c.TextHeight('Q') div 2,gb.width,gb.height);
         c.brush.Style:=bsClear;
-        c.Rectangle(r);
+        if ModernMetrics.CornerRadius>0 then
+          c.RoundRect(r.Left, r.Top, r.Right, r.Bottom,
+                      ModernMetrics.CornerRadius*2, ModernMetrics.CornerRadius*2)
+        else
+          c.Rectangle(r);
 
         c.font.color:=gb.font.color;
         c.brush.Style:=bsSolid;

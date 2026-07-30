@@ -1,3 +1,4 @@
+pcall(loadPOFile, getTranslationFolder()..'emurpm.po')
 emurpm = {}
 
 local function fileExists(filename)
@@ -284,12 +285,12 @@ end
 
 local mf=getMainForm()
 local mi=createMenuItem(mf.Menu)
-mi.Caption="Emulator Memory"
+mi.Caption=translate("Emulator Memory")
 mf.Menu.Items.insert(mf.Menu.Items.Count-1, mi) --add it before the last entry (help)
 
 
 local mi2=createMenuItem(mf.Menu)
-mi2.Caption="Set Base Address"
+mi2.Caption=translate("Set Base Address")
 mi2.OnClick=function(self)
   if frmEmuMemory.showModal()==mrOK then
     emurpm.settings.Value["baseaddress"]=frmEmuMemory.edtAddress.Text

@@ -1,0 +1,992 @@
+# Translators:
+# ks k <kmshts@gmail.com>, 2016
+msgid ""
+msgstr ""
+"Last-Translator: ks k <kmshts@gmail.com>, 2016\n"
+"Language-Team: Korean (https://www.transifex.com/kmshts/teams/11093/ko/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: tform1.btnok.caption
+msgctxt "tform1.btnok.caption"
+msgid "OK"
+msgstr "확인"
+
+#: tform1.button1.caption
+msgctxt "tform1.button1.caption"
+msgid "Next"
+msgstr "다음"
+
+#: tform1.caption
+msgid "Cheat Engine Tutorial v3.3"
+msgstr "치트 엔진 자습서 v3.3"
+
+#: tform1.edtpassword.hint
+msgid "Use this to go imeadiatly to the step you want to try"
+msgstr "시도 하고 싶은 단계로 바로 이동할때 사용하십시오"
+
+#: tform1.edtpassword.text
+msgid "090453"
+msgstr "090453"
+
+#: tform1.label1.caption
+msgid "Password"
+msgstr "암호"
+
+#: tform10.button3.caption
+msgid "Restart game"
+msgstr "다시 게임하기"
+
+#: tform10.button4.caption
+msgctxt "tform10.button4.caption"
+msgid "Attack"
+msgstr "공격"
+
+#: tform10.button5.caption
+msgctxt "TFORM10.BUTTON5.CAPTION"
+msgid "Attack"
+msgstr "공격"
+
+#: tform10.button6.caption
+msgctxt "tform10.button6.caption"
+msgid "Restart game and autoplay"
+msgstr "게임을 다시 시작하고 자동 실행하기"
+
+#: tform10.button7.caption
+msgctxt "TFORM10.BUTTON7.CAPTION"
+msgid "Attack"
+msgstr "공격"
+
+#: tform10.button8.caption
+msgctxt "TFORM10.BUTTON8.CAPTION"
+msgid "Attack"
+msgstr "공격"
+
+#: tform10.caption
+msgid "Step 9"
+msgstr "9 단계"
+
+#: tform10.label1.caption
+msgctxt "tform10.label1.caption"
+msgid "100"
+msgstr "100"
+
+#: tform10.label10.caption
+msgctxt "TFORM10.LABEL10.CAPTION"
+msgid "Health: 500"
+msgstr "체력: 500"
+
+#: tform10.label2.caption
+msgctxt "tform10.label2.caption"
+msgid "Health:"
+msgstr "체력:"
+
+#: tform10.label3.caption
+msgid "Player 1: Dave"
+msgstr "플레이어 1: 데이브"
+
+#: tform10.label4.caption
+msgctxt "tform10.label4.caption"
+msgid "Health: 100"
+msgstr "체력: 100"
+
+#: tform10.label5.caption
+msgid "Player 2: Eric"
+msgstr "플레이어 2: 에릭"
+
+#: tform10.label6.caption
+msgctxt "TFORM10.LABEL6.CAPTION"
+msgid "Health: 100"
+msgstr "체력: 100"
+
+#: tform10.label7.caption
+msgid "C. Player 3: HAL"
+msgstr "C. 플레이어 3: 홀"
+
+#: tform10.label8.caption
+msgctxt "tform10.label8.caption"
+msgid "Health: 500"
+msgstr "체력: 500"
+
+#: tform10.label9.caption
+msgid "C. Player 4: KITT"
+msgstr "C. 플레이어 4: 키트"
+
+#: tform2.button1.caption
+msgctxt "TFORM2.BUTTON1.CAPTION"
+msgid "Next"
+msgstr "다음"
+
+#: tform2.button2.caption
+msgctxt "tform2.button2.caption"
+msgid "Hit me"
+msgstr "나를 치세요"
+
+#: tform2.caption
+msgid "Step 2"
+msgstr "2 단계"
+
+#: tform2.label1.caption
+msgctxt "TFORM2.LABEL1.CAPTION"
+msgid "100"
+msgstr "100"
+
+#: tform2.label2.caption
+msgctxt "TFORM2.LABEL2.CAPTION"
+msgid "Health:"
+msgstr "체력:"
+
+#: tform2.speedbutton1.caption
+msgctxt "tform2.speedbutton1.caption"
+msgid "Skip"
+msgstr "넘어가기"
+
+#: tform3.button1.caption
+msgctxt "TFORM3.BUTTON1.CAPTION"
+msgid "Next"
+msgstr "다음"
+
+#: tform3.button2.caption
+msgctxt "TFORM3.BUTTON2.CAPTION"
+msgid "Hit me"
+msgstr "나를 치세요"
+
+#: tform3.caption
+msgid "Step 3"
+msgstr "3 단계"
+
+#: tform3.label1.caption
+msgid " "
+msgstr " "
+
+#: tform3.speedbutton1.caption
+msgctxt "TFORM3.SPEEDBUTTON1.CAPTION"
+msgid "Skip"
+msgstr "넘어가기"
+
+#: tform4.button1.caption
+msgctxt "TFORM4.BUTTON1.CAPTION"
+msgid "OK"
+msgstr "확인"
+
+#: tform4.caption
+msgid "Tutorial End"
+msgstr "자습서 끝"
+
+#: tform4.label1.caption
+msgid "Well done, you've completed the tutorial of Cheat Engine."
+msgstr "잘했습니다, 치트 엔진의 자습서를 완료하셨습니다."
+
+#: tform4.label2.caption
+msgid ""
+"Just play around with the tutorial and learn how the other scanmethods work."
+msgstr "그냥 자습서를 풀어보시고, 다른 검색 방식의 작동방법에 대해 배워보십시오."
+
+#: tform4.label3.caption
+msgid ""
+"And you can always check out the Cheat Engine Forum for useful information "
+"and ask for help"
+msgstr "그리고 항상 유용한 정보를 치트 엔진 게시판을 확인하고 도움을 요청할 수 있습니다."
+
+#: tform4.label4.caption
+msgid "Cheat Engine Forum"
+msgstr "치트 엔진 게시판"
+
+#: tform5.button1.caption
+msgid "Fire"
+msgstr "발사"
+
+#: tform5.button2.caption
+msgctxt "TFORM5.BUTTON2.CAPTION"
+msgid "Next"
+msgstr "다음"
+
+#: tform5.button3.caption
+msgctxt "TFORM5.BUTTON3.CAPTION"
+msgid "Hit me"
+msgstr "나를 치세요"
+
+#: tform5.caption
+msgid "Step 4"
+msgstr "4 단계"
+
+#: tform5.label1.caption
+msgctxt "TFORM5.LABEL1.CAPTION"
+msgid "100"
+msgstr "100"
+
+#: tform5.label2.caption
+msgid "Ammo"
+msgstr "총알"
+
+#: tform5.label3.caption
+msgctxt "TFORM5.LABEL3.CAPTION"
+msgid "Health:"
+msgstr "체력:"
+
+#: tform5.label4.caption
+msgctxt "TFORM5.LABEL4.CAPTION"
+msgid "100"
+msgstr "100"
+
+#: tform5.label5.caption
+msgid "(float)"
+msgstr "(플로트)"
+
+#: tform5.label6.caption
+msgid "(double)"
+msgstr "(더블)"
+
+#: tform5.speedbutton1.caption
+msgctxt "TFORM5.SPEEDBUTTON1.CAPTION"
+msgid "Skip"
+msgstr "넘어가기"
+
+#: tform6.button1.caption
+msgctxt "tform6.button1.caption"
+msgid "Change value"
+msgstr "값을 바꾸기"
+
+#: tform6.button2.caption
+msgctxt "TFORM6.BUTTON2.CAPTION"
+msgid "Next"
+msgstr "다음"
+
+#: tform6.caption
+msgid "Step 5"
+msgstr "5 단계"
+
+#: tform6.label1.caption
+msgctxt "TFORM6.LABEL1.CAPTION"
+msgid "100"
+msgstr "100"
+
+#: tform6.speedbutton1.caption
+msgctxt "TFORM6.SPEEDBUTTON1.CAPTION"
+msgid "Skip"
+msgstr "넘어가기"
+
+#: tform7.button1.caption
+msgctxt "TFORM7.BUTTON1.CAPTION"
+msgid "Change value"
+msgstr "값을 바꾸기"
+
+#: tform7.button2.caption
+msgctxt "TFORM7.BUTTON2.CAPTION"
+msgid "Next"
+msgstr "다음"
+
+#: tform7.button3.caption
+msgctxt "tform7.button3.caption"
+msgid "Change pointer"
+msgstr "포인터를 바꾸기"
+
+#: tform7.caption
+msgid "Step 6"
+msgstr "6 단계"
+
+#: tform7.label1.caption
+msgctxt "TFORM7.LABEL1.CAPTION"
+msgid "100"
+msgstr "100"
+
+#: tform7.label2.caption
+msgctxt "tform7.label2.caption"
+msgid "3"
+msgstr "3"
+
+#: tform7.speedbutton1.caption
+msgctxt "TFORM7.SPEEDBUTTON1.CAPTION"
+msgid "Skip"
+msgstr "넘어가기"
+
+#: tform8.button1.caption
+msgctxt "TFORM8.BUTTON1.CAPTION"
+msgid "Hit me"
+msgstr "나를 치세요"
+
+#: tform8.button2.caption
+msgctxt "TFORM8.BUTTON2.CAPTION"
+msgid "Next"
+msgstr "다음"
+
+#: tform8.caption
+msgid "Step 7"
+msgstr "7 단계"
+
+#: tform8.label1.caption
+msgctxt "TFORM8.LABEL1.CAPTION"
+msgid "Health: 100"
+msgstr "체력: 100"
+
+#: tform8.speedbutton1.caption
+msgctxt "TFORM8.SPEEDBUTTON1.CAPTION"
+msgid "Skip"
+msgstr "넘어가기"
+
+#: tform9.button1.caption
+msgctxt "TFORM9.BUTTON1.CAPTION"
+msgid "Change value"
+msgstr "값을 바꾸기"
+
+#: tform9.button2.caption
+msgctxt "TFORM9.BUTTON2.CAPTION"
+msgid "Next"
+msgstr "다음"
+
+#: tform9.button3.caption
+msgctxt "TFORM9.BUTTON3.CAPTION"
+msgid "Change pointer"
+msgstr "포인터를 바꾸기"
+
+#: tform9.caption
+msgid "Step 8"
+msgstr "8 단계"
+
+#: tform9.label1.caption
+msgctxt "TFORM9.LABEL1.CAPTION"
+msgid "100"
+msgstr "100"
+
+#: tform9.label2.caption
+msgctxt "TFORM9.LABEL2.CAPTION"
+msgid "3"
+msgstr "3"
+
+#: tform9.speedbutton1.caption
+msgctxt "TFORM9.SPEEDBUTTON1.CAPTION"
+msgid "Skip"
+msgstr "넘어가기"
+
+#: unit1.rsfirststeptoohardbettergiveupnow
+msgid "First step too hard? Better give up now!"
+msgstr "1 단계가 너무 어렵습니까? 이제 포기하는게 더 좋겠군요!"
+
+#: unit1.rstutorial1
+msgid ""
+"Welcome to the Cheat Engine Tutorial. (v3.3)\n"
+"\n"
+"This tutorial will try to explain the basics of cheating on games, and getting you more familiar with Cheat Engine.\n"
+"\n"
+"First open Cheat Engine if it hasn't been opened yet.\n"
+"Then click on the 'open process' icon. (top left icon, with the computer on it)\n"
+"\n"
+"When the process window is open find this tutorial. The process name is probably 'tutorial.exe' unless you renamed it.\n"
+"Select it, and click \"Open\". Just ignore all the other buttons right now, but experiment with them later if you feel like it.\n"
+"\n"
+"When everything went right, the process window should be gone now and at the top of CE the process name is shown.\n"
+"\n"
+"Now, click NEXT to continue to the next step. (Or fill in the password to proceed to that particular step you want)\n"
+msgstr ""
+"치트 엔진 자습서에 오신것을 환영합니다. (v3.3)\n"
+"\n"
+"이 자습서는 게임에서 쓸 수 있는 치트의 기본에대해 설명하고 치트 엔진에 더 익숙해지게 만들어 줄것입니다.\n"
+"\n"
+"먼저, 아직 치트엔진을 실행하지 않았다면, 치트 엔진을 실행 하십시오.\n"
+"그런 다음 \"열기\" 아이콘을 클릭하십시오.(상단 왼쪽 컴퓨터 정면에 있음)\n"
+"\n"
+"프로세스 윈도우가 열리면, 다시 자습서를 찾으십시오. 이름을 바꾸지 않았다면, 프로세스 이름은 'tutorial.exe' 일 겁니다.\n"
+"그것을 선택하고, 확인을 클릭하십시오. 이제는 다른 모든 버튼들은 무시하십시오. 그것들이 좋아보인다면 나중에 실험하십시오.\n"
+"\n"
+"모든것이 제대로 진행되었다면, 이제 프로세스 창이 지금 사라질것이고, CE 상단에 프로세스 이름이 보일 것입니다.\n"
+"\n"
+"이제 다음 단계를 계속하려면 다음을 클릭하십시오. (또는 원하는 단계로 진행하기 위해서는 암호를 입력하십시오)\n"
+
+#: unit10.rsdead
+msgid "DEAD"
+msgstr "사망"
+
+#: unit10.rsfailureyourteamdied
+msgid "Failure. Your team died"
+msgstr "실패했습니다. 팀이 전멸 했습니다"
+
+#: unit10.rshealth
+msgid "Health: %s"
+msgstr "체력: %s"
+
+#: unit10.rsrestartgameandautoplay
+msgctxt "unit10.rsrestartgameandautoplay"
+msgid "Restart game and autoplay"
+msgstr "게임을 다시 시작하고 자동 실행하기"
+
+#: unit10.rsstep9sharedcodepw
+msgid "Step 9: Shared code: (PW=%s)"
+msgstr "9 단계: 공유된 코드: (PW=%s)"
+
+#: unit10.rsstop
+msgid "Stop"
+msgstr "중지"
+
+#: unit10.rsthisplayerisalreadydeadrestartthegame
+msgid "This player is already dead. Restart the game"
+msgstr "이 플레이어는 이미 사망 했습니다. 게임을 다시 시작하십시오."
+
+#: unit10.rstryagain10
+msgid ""
+"Can't figure out how to do this? Don't worry. Try asking in the forum at "
+"cheatengine.org or perhaps someone already explained it better there. Are "
+"you sure you want to quit?"
+msgstr ""
+"이 단계를 풀어가는 방법을 모릅니까? 걱정마십시오. cheatengine.org 게시판에 질문하거나 누군가가 이미 더나은 설명을 "
+"해놨을것입니다. 종료하시겠습니까?"
+
+#: unit10.rstutorialstep9
+msgid ""
+"This step will explain how to deal with code that is used for other object of the same type\n"
+"\n"
+"Often when you've found health of a unit or your own player, you will find that if you remove the code, it affects enemies as well.\n"
+"In these cases you must find out how to distinguish between your and the enemies objects.\n"
+"Sometimes this is as easy as checking the first 4 bytes (Function pointer table) which often point to a unique location for the player, and sometimes it's a team number, or a pointer to a pointer to a pointer to a pointer to a pointer to a playername. It all depends on the complexity of the game, and your luck\n"
+"\n"
+"The easiest method is finding what addresses the code you found writes to and then use the dissect data feature to compare against two structures. (Your unit(s)/player and the enemies) And then see if you can find out a way to distinguish between them.\n"
+"When you have found out how to distinguish between you and the computer you can inject an assembler script that checks for the condition and then either do not execute the code or do something else. (One hit kills for example)\n"
+"Alternatively, you can also use this to build a so called \"Array of byte\" string which you can use to search which will result in a list of all your or the enemies players\n"
+"In this tutorial I have implemented the most amazing game you will ever play.\n"
+"It has 4 players. 2 Players belong to your team, and 2 Players belong to the computer. \n"
+"Your task is to find the code that writes the health and make it so you win the game WITHOUT freezing your health\n"
+"To continue, press \"Restart game and autoplay\" to test that your code is correct\n"
+"\n"
+"\n"
+"Tip: Health is a float\n"
+"Tip2: There are multiple solutions\n"
+msgstr ""
+"이 단계에서는 코드가 같은 타입의 다른 대상에 어떻게  처리하는지 설명합니다.\n"
+"\n"
+"여러분의 플레이어나 유닛의 체력을 찾았을 때 여러분은 코드를 제거하면 그것이 적에게도 적용된다는 것을 알게 될 것입니다.\n"
+"이러한 경우에서 여러분은 어떻게 적과 자신을 구분 할 수 있을 지 알아야 합니다.\n"
+"가끔씩은 포인터로 플레이어의 특정 지역을 가리키는 곳의 처음 4바이트(함수 포인터 테이블)를 체크하는 것이 쉬운 방법이 될 수 있으며, 그것은 팀 번호가 될 수도 있고 이름을 가리키는 포인터의 포인터의 포인터의 포인터의 포인터일 수도 있습니다. 이것은 전적으로 게임의 복잡성에 따라 다릅니다. 행운을 빕니다.\n"
+"\n"
+"가장 쉬운 방법은 당신이 찾은 곳에 쓰기를 하는 코드의 주소를 찾고 두 구조(당신의 유닛/플레이어 그리고 적)을 비교하기 위해 데이터의 특징을 분해하는 것 입니다. 그리고 그 두개 사이에서 구별할 수 있는 방법을 찾아낼 수 있는지 살펴보십시오.\n"
+"여러분과 컴퓨터를 어떻게 구분할 수 있는지 찾았다면 어셈블러 스크립트를 주입해서 상태를 체크헤사 코드를 실행하지 못하게하거나 다른 무언가를 하게 할 수 있습니다.(예를 들면 1방 즉사)\n"
+"그렇지 않으면 \"Array of byte\" 문자열 이라고 불리는 것을 만드는 방법 또한 사용할수 있습니다. 그것을 이용해서 검색하면 적 플레이어들의 리스트를 얻을 수 있습니다.\n"
+"이 튜토리얼에서 저는 여러분이 이때까지 해보지 못한 가장 놀라운 게임을 구현했습니다.\n"
+"4명의 플레이어가 있습니다. 2명의 플레이어는 당신팀에 속합니다. 그리고 2명의 플레이어는 컴퓨터팀에 속합니다.\n"
+"당신의 일은 체력값을 쓰는 코드를 찾아내서 여러분이 게임에서 이기게 만드는 것입니다.(여러분 체력을 얼려놓지 않고.)\n"
+"계속하기 위해서 \"다시게임하고 자동 시작\"를 누르시면 여러분의 코드가 맞는지 테스트해 볼 것입니다.\n"
+"\n"
+"팁: 체력은 float이다.\n"
+"팁2:해답은 여러개 존재한다.\n"
+
+#: unit10.rsu10thiswasthelasttutorial
+msgid "This was the last tutorial and you skipped it. You lose"
+msgstr "이것은 생략하신 마지막 자습서입니다. 귀하는 졌습니다. XXX"
+
+#: unit2.rsawyouredeathletmereviveyou
+msgctxt "unit2.rsawyouredeathletmereviveyou"
+msgid "Aw, you're dead! Let me revive you"
+msgstr "아오, 당신은 죽었어요! 제가 부활 시켜드리죠"
+
+#: unit2.rsloser
+msgctxt "unit2.rsloser"
+msgid "BOO"
+msgstr "우~"
+
+#: unit2.rsquittingonstep2thisistheeasieststepthereisfindheal
+msgid ""
+"Quitting on step2? This is the easiest step there is. Find health, change "
+"health, done.... Sure you want to quit?"
+msgstr "2단계를 그만둡니까? 이것은 가장 쉬운 단게입니다. 체력을 찾으시고, 체력을 바꾸시면 끝납니다. 정말로 끝내기를 원하십니까?"
+
+#: unit2.rsstep2exactvaluescanningpw
+msgid "Step 2: Exact Value scanning (PW="
+msgstr "2 단계: 정확한 값을 검색하기 (PW="
+
+#: unit2.rstutorialstep2
+msgid ""
+"Now that you have opened the tutorial with Cheat Engine let's get on with the next step.\n"
+"\n"
+"You can see at the bottom of this window is the text Health: xxx\n"
+"Each time you click 'Hit me'  your health gets decreased.\n"
+"\n"
+"To get to the next step you have to find this value and change it to 1000\n"
+"\n"
+"To find the value there are different ways, but I'll tell you about the easiest, 'Exact Value':\n"
+"First make sure value type is set to at least 2-bytes or 4-bytes. 1-byte will also work, but you'll run into an easy to fix problem when you've found the address and want to change it. The 8-byte may perhaps works if the bytes after the address are 0, but I wouldn't take the bet.\n"
+"Single, double, and the other scans just don't work, because they store the value in a different way.\n"
+"\n"
+"When the value type is set correctly, make sure the scantype is set to 'Exact Value'\n"
+"Then fill in the number your health is in the value box. And click 'First Scan'\n"
+"After a while (if you have a extremely slow pc) the scan is done and the results are shown in the list on the left\n"
+"\n"
+"If you find more than 1 address and you don't know for sure which address it is, click 'Hit me', fill in the new health value into the value box, and click 'Next Scan'\n"
+"repeat this until you're sure you've found it. (that includes that there's only 1 address in the list.....)\n"
+"\n"
+"Now double click the address in the list on the left. This makes the address pop-up in the list at the bottom, showing you the current value.\n"
+"Double click the value, (or select it and press enter), and change the value to 1000.\n"
+"\n"
+"If everything went ok the next button should become enabled, and you're ready for the next step.\n"
+"\n"
+"\n"
+"Note:\n"
+"If you did anything wrong while scanning, click \"New Scan\" and repeat the scanning again.\n"
+"Also, try playing around with the value and click 'hit me'\n"
+msgstr ""
+"이제 치트 엔진을 가진 자습서가 열렸으므로 다음 단계로 진행합시다.\n"
+"\n"
+"이 창 아래에 체력: xxx 이라고 써진 글자를 볼 수 있습니다.\n"
+"'나를 치세요'를 클릭할때 마다 체력이 감소됩니다.\n"
+"\n"
+"다음 단계로 넘어가기 위해서는 이 값을 찾고 1000으로 바꿔야합니다.\n"
+"\n"
+"그것에는 여러가지가 있는데, 가장 쉬운 방법에 대해 말하자면, '정확한 값'을 찾는 방법은 다음과 같습니다:\n"
+"먼저 값 유형이 최소 2바이트 또는 4바이트로 설정되어있는지를 확인하십시오. 물론 1바이트도 작동합니다, 하지만 값을 찾고 바꾸려할 때, 문제를 해결하는데 쉽게 만날수 있습니다. \n"
+"주소 뒤의 바이트가 0이면 8 바이트로 작동할것입니다. 하지만 나는 베팅하지 않을것 입니다.\n"
+"단일, 이중, 다른 검색은 작동하지 않습니다, 왜냐면 그것들은 서로다른 방식으로 값을 저장하기 때문입니다.\n"
+"\n"
+"값 유형이 올바르게 설정되면, 검색 유형이 '정확한 값'으로 설정되었는지 확인하십시오\n"
+"그런 다음 값 상자에 있는 체력 숫자를 입력하고 '처음 검색'을 클릭하십시오.\n"
+"(매우 느린 PC를 사용하는 경우) 검색이 수행되고, 잠시 후에 결과는 왼쪽에있는 목록에 나타납니다.\n"
+"\n"
+"한 개 이상의 주소를 찾았는데, 어떤주소가 확실한것인지 모른다면, '나를 치세요'를 클릭하고, 값 상자에 새로운 체력 값을 입력하고 '다음 검색'을 클릭하십시오.\n"
+"찾은것이 확인될때까지 이 작업을 반복 하십시오. (즉, 목록에는 오직 한개의 주소만 있는것을 포함합니다.....)\n"
+"\n"
+"이제 왼쪽에있는 목록의 주소를 더블 클릭 하십시오. 이렇게 하면, 하단의 목록에 불쑥 주소를 만들고, 현재 값을 표시합니다.\n"
+"값을 더블 클릭 하고, (또는 선택하고 엔터를 누르십시오), 값을 1000으로 바꾸십시오.\n"
+"\n"
+"모든것이 확인되면 다음 버튼이 활성화 되고 다음 단계가 준비 되었습니다.\n"
+"\n"
+"\n"
+"참고:\n"
+"검색하는 동안 아무런 잘못이 없다면, \"새로운 검색\" 을 클릭하고 다시 한번 검색을 반복하십시오.\n"
+"또한, 값을 가지고 놀어보고 '나를 치세요'를 클릭하십시오.\n"
+
+#: unit3.rsdead
+msgid ""
+"Seems you've done it again! Let me get a replacement! (And restart your "
+"scan!)"
+msgstr "또 저지르셨군요! 제가 체력을 교체하도록 하겠습니다! (그리고 다시 검색하세요!)"
+
+#: unit3.rsloser
+msgctxt "unit3.rsloser"
+msgid "BOO"
+msgstr "우~"
+
+#: unit3.rsstep3unknowninitialvaluepw
+msgid "Step 3: Unknown initial value (PW="
+msgstr "3 단계: 알수 없는 초기 값 (PW="
+
+#: unit3.rstryagain3
+msgid ""
+"Step 3 isn't really that hard. Just do a new scan, unkown initial value and "
+"then decreased value till you find it. Almost everyone gets past this one. "
+"Sure you want to quit?"
+msgstr ""
+"3단계는 그다지 어렵지 않습니다. 그냥 새로 스캔을 하시고, 알수 없는 초기값 그리고 감소된 값을 찾을 때 까지 하세요. 대부분의 "
+"사람들이 통과했습니다. 정말로 그만두시겠습니까?"
+
+#: unit3.rstutorialstep3
+msgid ""
+"Ok, seeing that you've figured out how to find a value using exact value let's move on to the next step.\n"
+"\n"
+"First things first though. Since you are doing a new scan, you have to click on New Scan first, to start a new scan. (You may think this is straighforward, but you'd be surprised how many people get stuck on that step) I won't be explaining this step again, so keep this in mind\n"
+"Now that you've started a new scan, let's continue\n"
+"\n"
+"In the previous test we knew the initial value so we could do a exact value, but now we have a status bar where we don't know the starting value.\n"
+"We only know that the value is between 0 and 500. And each time you click 'hit me' you lose some health. The amount you lose each time is shown above the status bar.\n"
+"\n"
+"Again there are several different ways to find the value. (like doing a decreased value by... scan), but I'll only explain the easiest. \"Unknown initial value\", and decreased value.\n"
+"Because you don't know the value it is right now, a exact value wont do any good, so choose as scantype 'Unknown initial value', again, the value type is 4-bytes. (most windows apps use 4-bytes)click first scan and wait till it's done.\n"
+"\n"
+"When it is done click 'hit me'. You'll lose some of your health. (the amount you lost shows for a few seconds and then disappears, but you don't need that)\n"
+"Now go to Cheat Engine, and choose 'Decreased Value' and click 'Next Scan'\n"
+"When that scan is done, click hit me again, and repeat the above till you only find a few. \n"
+"\n"
+"We know the value is between 0 and 500, so pick the one that is most likely the address we need, and add it to the list.\n"
+"Now change the health to 5000, to proceed to the next step.\n"
+msgstr ""
+"좋습니다. 귀하가 정확한 값을 어떻게 알아내는지는 아는것 같으니, 다음 단계로 이동합시다.\n"
+"\n"
+"제일 중요한것은 먼저해야합니다만. \n"
+"새로운 검색을 하고 있기 때문에, 새로운 검색을 시작하려면 먼저 새로운 검색을 클릭합니다. (당신이 간단하다 생각할 수 있지만, 이 단계에서 얼마나 많은 사람들이 막힌지 안다면 깜짝 놀랄것입니다.저는 이단계를 다시 설명하지 않습니다. 그러므로 꼭 기억하십시오.\n"
+"이제 새로운 검색을 시작 했으므로 계속 진행합시다.\n"
+"\n"
+"이전 실험에서 우리는 정확한 값을 알기위해 초기값을 알았지만, 이제는 우리가 시작 값을 알 수 없는 상태 막대가 있습니다.\n"
+"우리는 이 값이 0~ 500사이의 값이라는 것만 알고 있습니다. 그리고 매번 '나를 치세요'를 클릭할때마다 체력을 조금씩 소모합니다. 매번 잃은 양이 상태 막대에 표시 됩니다.\n"
+"\n"
+"값을 찾기 위해 몇 가지 다른 방법이 있습니다. (잠깐 표시된 값을 '...로 감소된 값'으로 검색하기 같은), 하지만 저는 아주 쉽게 설명하겠습니다. 그건 \"알수 없는 초기값\"과 감소된 값입니다.\n"
+"지금은 맞는 값인지를 모르기 때문에, 정확한 값은 소용이 없습니다. 그러므로 검색 유형을 \"알수 없는 초기값\" 으로 선택하고, 다시??, 값 유형은 4 바이트로 선택해주세요.(대부분 윈도우 응용프로그램들은 4 바이트를 이용합니다.) 처음 검색을 클릭하고, 끝날때까지 기다리십시오.\n"
+"\n"
+"'나를 치세요'를 클릭하면, 체력이 조금 소모됩니다. (잃어버린 값은 몇 초 동안 표시 되고 없어집니다, 하지만 필요없는 것입니다)\n"
+"이제 치트 엔진으로 가서, '감소된 값' 선택하고, '다음 검색'을 클릭하세요.\n"
+"검색이 끝나면, '나를 치세요' 를 다시 클릭 하고, 몇개만 남을때까지 위 내용을 반복 하십시오.\n"
+"\n"
+"우리는 이 값이 0~500사이인 것을 알고 있습니다, 그러므로 우리에게 필요한 주소중 가장 그럴듯한 한개를 목록에 추가하십시오.\n"
+"이제 체력을 5000으로 바꾸고, 다음 단계로 넘어 가십시오.\n"
+
+#: unit5.rsconfirmclose5
+msgid ""
+"Come on. This step is simple. For health do a float scan, and for ammo a "
+"double type. (don't forget to disable fastscan for double in this case) Just"
+" ignore the fact that it looks different because it has a \".\" in the "
+"value. You sure you want to quit?"
+msgstr ""
+"이 단계는 간단합니다. 체력에는 float 스캔을 하시고, 총알에는  double타입으로 하세요. (double의 경우에는 빠른스캔을 "
+"비활성화 하는것을 잊지 마세요) 값에 \".\"이 있어서 다르게 보인다는 사실은 그냥 무시하세요. 정말로 그만두시겠습니까?"
+
+#: unit5.rsdead
+msgid "I think you're dead!%sPress ok to become a brain eating zombie"
+msgstr "내생각엔 당신은 죽은것같아!%s뇌를 먹는 좀비가 될 수 있으므로 확인을 누르십시오"
+
+#: unit5.rsloser
+msgctxt "unit5.rsloser"
+msgid "BOO"
+msgstr "우~"
+
+#: unit5.rsoutofammo
+msgid "Out of ammo!%sPress ok to stock up on some ammo"
+msgstr "총알이  부족합니다 !%s 약간의 총알을 비축해두려면 확인을 누르십시오"
+
+#: unit5.rsstep4floatingpointspw
+msgid "Step 4: Floating points (PW="
+msgstr "4 단계: 부동 소수점 (PW="
+
+#: unit5.rstutorialstep4
+msgid ""
+"In the previous tutorial we used bytes to scan, but some games store information in so called 'floating point' notations. \n"
+"(probably to prevent simple memory scanners from finding it the easy way)\n"
+"a floating point is a value with some digits behind the point. (like 5.12 or 11321.1)\n"
+"\n"
+"Below you see your health and ammo. Both are stored as Floating point notations, but health is stored as a float and ammo is stored as a double.\n"
+"Click on hit me to lose some health, and on shoot to decrease your ammo with 0.5\n"
+" \n"
+"You have to set BOTH values to 5000 or higher to proceed.\n"
+"\n"
+"Exact value scan will work fine here, but you may want to experiment with other types too.\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"Hint: It is recommended to disable \"Fast Scan\" for type double\n"
+msgstr ""
+"이전 자습서에서 우리는 검색하는데 바이트를 사용하였으나, 일부 게임들은 '부동 소수점'으로 불리는 표기법으로 정보를 저장합니다. \n"
+"(아마도 단순한 메모리 검색기가 값을 쉽게 발견할 수 없도록 하기 위해서 인듯 합니다)\n"
+"부동 소수점이란 소수점 뒤로 숫자가 몇 개 있는 수를 말합니다. (5.12 나 11321.1 와 같은)\n"
+"\n"
+"아래에 체력과 총알을 볼 수 있습니다. 둘다 부동소수점 표기로 저장되어있습니다, 하지만 체력은 플로트로 총알은 더블로 저장되어 있습니다.\n"
+"'나를 치세요'를 클릭하면 조금씩 체력이 떨어지고, '쏘기'를 클릭하면 총알이 0.5씩 감소됩니다.\n"
+" \n"
+"이 단계를 완료하려면, 둘다 5000이상씩 으로 설정 해야합니다.\n"
+"\n"
+"정확한 값 검색이 여기에서는 작업하기 좋겠지만, 다른 유형들도 실험해보고 싶어할겁니다.\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"힌트: 더블 유형을 위해 \"빠른 검색\"은 사용하지 않는것을 권장합니다.\n"
+
+#: unit6.rsloser
+msgctxt "unit6.rsloser"
+msgid "BOO"
+msgstr "우~"
+
+#: unit6.rsstep5codefinderpw
+msgid "Step 5: Code finder (PW=%s)"
+msgstr "5 단계: 코드 찾기 도구 (PW=%s)"
+
+#: unit6.rstryagain6
+msgid ""
+"This may look difficult. but it's basicly. Find health, rigthclick health, "
+"find what writes, change health, click replace, change health, done.  But "
+"don't feel down if you don't get it. at least you know the basicas of memory"
+" scanning...  Are you sure you want to quit?"
+msgstr ""
+"어려워 보일수있습니다. 하지만 기본적인것입니다.\n"
+"체력을 찾고, 체력을 오른쪽 클릭하고,무엇을 쓸것인지 찾고, 체력을 바꾸고, '바꾸기' 를 클릭하고, 체력을 바꾸면, 끝~!.\n"
+"하지만 그것을 얻지 못했다고 울적해하지 마십시오.\n"
+"최소한 귀하는 메모리 검색하기의 기본정도는 알고 있습니다...\n"
+"끝내시겠습니까?"
+
+#: unit6.rstutorialstep5
+msgid ""
+"Sometimes the location something is stored at changes when you restart the game, or even while you're playing.. In that case you can use 2 things to still make a table that works.\n"
+"In this step I'll try to describe how to use the Code Finder function.\n"
+"\n"
+"The value down here will be at a different location each time you start the tutorial, so a normal entry in the address list wouldn't work.\n"
+"First try to find the address. (you've got to this point so I assume you know how to)\n"
+"When you've found the address, right-click the address in Cheat Engine and choose \"Find out what writes to this address\". A window will pop up with an empty list.\n"
+"Then click on the Change value button in this tutorial, and go back to Cheat Engine. If everything went right there should be an address with assembler code there now.\n"
+"Click it and choose the replace option to replace it with code that does nothing. That will also add the code address to the code list in the advanced options window. (Which gets saved if you save your table)\n"
+"\n"
+"Click on stop, so the game will start running normal again, and close to close the window.\n"
+"Now, click on Change value, and if everything went right the Next button should become enabled.\n"
+"\n"
+"Note: When you're freezing the address with a high enough speed it may happen that next becomes visible anyhow\n"
+msgstr ""
+"때로는 게임을 다시 시작하거나 심지어는 플레이하는 도중에도 어떤위치가 변경사항??에 저장됩니다. 이런 경우, 제대로 작동하는 표를 만들기 위해, 2가지를 사용할 수 있습니다.\n"
+"이 단계에서, 저는 코드 찾기 도구 기능을 사용하는 방법을 설명하겠습니다.\n"
+"\n"
+"여기 아래의 값은 자습서를 시작할때마다 다른 위치에 있어서, 주소 목록에 있는 일반 항목은 작동하지 않습니다.\n"
+"먼저 주소를 찾아보십시오. (이점에 있어서 저는 당신이 방법을 알고 있을거라 가정하겠습니다.)\n"
+"주소를 찾게되면, 치트 엔진에서 그 주소를 오른쪽 클릭하고, \"이 주소에 무엇이 써있는지 알아보기\"를 선택하면, 목록의 창이 나타납니다.\n"
+"그리고나서 이 자습서에 '값을 바꾸기' 버튼을 클릭하고, 치트 엔진으로 돌아가십시오. 모든것이 제대로 가고 있다면, 지금 거기에는 주소와 어셈블러 코드가 있어야 합니다.\n"
+"그것을 클릭하고, 아무 작동도 하지 않는 코드로 교체하기 위해 '교체하기'를 클릭합니다. 그것은 고급 옵션 창의 코드 목록에도 코드 주소가 추가됩니다. (표를 저장하면, 코드 목록도 저장됩니다.)\n"
+"\n"
+"'중지'를 클릭하고, 게임은 다시 정상 실행을 시작하고, 가까운 창을 닫습니다.\n"
+"이제 '값을 바꾸기'를 클릭하고, 모든 것이 제대로 되었다면, '다음' 버튼이 활성화 되어야합니다.\n"
+"\n"
+"알아두기 : 주소를 충분히 빠른 속도로 고정했다면, 어쨌든 '다음'이 보일것 입니다\n"
+
+#: unit6.rswelldoneyouscrewedupthetutorial
+msgctxt "unit6.rswelldoneyouscrewedupthetutorial"
+msgid "Well done, you screwed up the tutorial!!!!"
+msgstr "참 잘했어요, 당신이 자습서를 완전히 망쳐놨네요!!!!"
+
+#: unit7.rsloser
+msgctxt "unit7.rsloser"
+msgid "BOO"
+msgstr "우~"
+
+#: unit7.rsstep6pointerspw
+msgid "Step 6: Pointers: (PW=%s)"
+msgstr "6 단계: 포인터: (PW=%s)"
+
+#: unit7.rstryagain7
+msgid ""
+"So, pointers are too difficult eh? Don't worry, try again later. For most "
+"beginners this is difficult to grasp. But I have to tell you it's a "
+"powerfull feature if you learn to use it. Are you sure you want to quit?"
+msgstr ""
+"그래서, 포인터는 정말 어렵죠 네? 걱정하지 마시고 다음에 다시 시도하세요. 대부분의 초보자들에게 포인터는 이해하기 어렵습니다. 하지만 "
+"이것은 배워두시면 정말 강력한 기능이라고 말해드리고 싶군요. 정말로 끝내기 원하십니까?"
+
+#: unit7.rstutorialstep6
+msgid ""
+"In the previous step I explained how to use the Code finder to handle changing locations. But that method alone makes it difficult to find the address to set the values you want.\n"
+"That's why there are pointers:\n"
+"\n"
+"At the bottom you'll find 2 buttons. One will change the value, and the other changes the value AND the location of the value.\n"
+"For this step you don't really need to know assembler, but it helps a lot if you do.\n"
+"\n"
+"First find the address of the value. When you've found it use the function to find out what accesses this address.\n"
+"Change the value again, and a item will show in the list. Double click that item. (or select and click on more info) and a new window will open with detailed information on what happened when the instruction ran.\n"
+"If the assembler instruction doesn't have anything between a '[' and ']' then use another item in the list.\n"
+"If it does it will say what it think will be the value of the pointer you need.\n"
+"Go back to the main cheat engine window (you can keep this extra info window open if you want, but if you close it, remember what is between the [ and ] ) and do a 4 byte scan in hexadecimal for the value the extra info told you.\n"
+"When done scanning it may return 1 or a few hundred addresses. Most of the time the address you need will be the smallest one. Now click on manually add and select the pointer checkbox.\n"
+"\n"
+"The window will change and allow you to type in the address of a pointer and a offset.\n"
+"Fill in as address the address you just found.\n"
+"If the assembler instruction has a calculation (e.g: [esi+12]) at the end then type the value in that's at the end. else leave it 0. If it was a more complicated instruction look at the calculation.\n"
+"\n"
+"example of a more complicated instruction:\n"
+"[EAX*2+EDX+00000310] eax=4C and edx=00801234.\n"
+"In this case EDX would be the value the pointer has, and EAX*2+00000310 the offset, so the offset you'd fill in would be 2*4C+00000310=3A8.  (this is all in hex, use calc.exe from windows in scientific mode to calculate)\n"
+"\n"
+"Back to the tutorial, click OK and the address will be added, If all went right the address will show P->xxxxxxx, with xxxxxxx being the address of the value you found. If thats not right, you've done something wrong.\n"
+"Now, change the value using the pointer you added in 5000 and freeze it. Then click Change pointer, and if all went \n"
+"right the next button will become visible.\n"
+"\n"
+"\n"
+"extra:\n"
+"And you could also use the pointer scanner to find the pointer to this address\n"
+msgstr ""
+"이전 단계에서 저는 바뀌는 위치를 처리하기 위해 코드 찾기 도구를 사용하는 방법을 설명하였습니다. 하지만 그 방법만으로는 원하는 값으로 설정할 수 있는 주소를 찾기엔 어려울것 입니다.\n"
+"그것은 포인터가 있기 때문입니다:\n"
+"\n"
+"맨 아래에 두개의 버튼을 찾을 수 있습니다. 하나는 값을 바꾸고, 다른 하나는 값과 값의 위치(주소)를 바꿉니다.\n"
+"이 단계를 위해 어셈블러를 알 필요는 없지만, 알고 있다면 많은 도움이 될것입니다.\n"
+"\n"
+"먼저 값의 주소를 찾으십시오. 찾으면, '이 주소가 무엇을 접근하는지 알아보기' 기능을 사용하십시오.\n"
+"(역자주: '이 주소에 무엇이 써있는지 알아보기' 로 해야 결과가 나오는것 같습니다.)\n"
+"\n"
+"값을 다시 바꾸면, 목록에 항목이 표시됩니다. 그 항목을 더블클릭 하십시오. (또는 선택하고 '더 많은 정보'를 클릭 하십시오) 그러면 명령어가 실행 될때 일어난 일에 대한 상세 정보 창이 열립니다.\n"
+"어셈블러 명령어의 '[' 와 ']' 사이에 아무것도 없으면, 목록에 다른 항목을 사용하세요.\n"
+"만약 그렇다면, 그것이 귀하가 필요로 하는 포인터의 값이 라는것을 말할것입니다.??\n"
+"치트 엔진 기본 창으로 돌아가고 (원한다면 추가 정보 창을 그대로 둘 수 있지만, 닫을거라면 [ 와 ] 사이에 무엇이 있었는지 기억하십시오.), '기타 정보'가 알려준 값을 16진수로 4 바이트 검색을 하십시오.\n"
+"검색이 완료되면 1개 또는 몇 백개의 주소가 반환될겁니다. 대부분의 경우 필요한 주소는 가장 작은것 일것입니다. 이제 '수동으로 추가하기' 를 클릭하고, 포인터 체크박스에 체크하십시오.\n"
+"\n"
+"창이 바뀌고 포인터의 주소와 오프셋을 입력할 수 있게 될것입니다.\n"
+"방금 찾은 주소를 그곳에 입력하십시오.\n"
+"어셈블러 명령어 끝부분에 계산을 포함하고 있다면 (예: [esi+12]) 끝의 값을 입력해주세요. 그외에는 0으로 남겨두십시오. 더 복잡한 명령어라면 아래의 계산을 참고하십시오.\n"
+"\n"
+"좀 더 복잡한 명령어의 예제:\n"
+"[EAX*2+EDX+00000310] eax=4C and edx=00801234.\n"
+"이런 경우, EDX는 포인터가 가진 값이되고, EAX*2+00000310 은 오프셋이므로, 입력해야할 오프셋은 2*4C+00000310=3A8 이 됩니다.  (여기 모든것은 16진수 값이고, 계산을 위해 윈도우즈에 있는 cal.exe의 공학용 모드를 이용하십시오.)\n"
+"\n"
+"자습서로 돌아가서, '확인' 을 클릭하면 주소가 추가되고, 모든게 잘 되었다면, 주소는 P->xxxxxxx 로 표시 될것이고, xxxxxxx 는 찾은 값의 주소 일것입니다. 이렇게 나오지 않으면, 뭔가를 잘못한것 입니다.\n"
+"이제, 추가한 포인터의 값을 5000으로 바꾸고, 고정(역자주: '활성화')하십시오. 그리고 '포인터 바꾸기'를 클릭하고, 모두 잘되었을때 \n"
+"'다음' 버튼이 보일 것입니다.\n"
+"\n"
+"\n"
+"추가 :\n"
+"그리고 이 주소에 대한 포인터를 찾기 위해 포인터 검색기도 사용할 수 있습니다\n"
+
+#: unit7.rswelldoneyouscrewedupthetutorial
+msgctxt "unit7.rswelldoneyouscrewedupthetutorial"
+msgid "Well done, you screwed up the tutorial!!!!"
+msgstr "참 잘했어요, 당신이 자습서를 완전히 망쳐놨네요!!!!"
+
+#: unit7.rsyouvegotsecondslefttochangethevalueto5000
+msgid "You have %s second%s left to change the value to 5000"
+msgstr "값을 5000 으로 바꾸는데 %s 초 중 %s 남았습니다--XXX"
+
+#: unit8.rsawyouredeathletmereviveyou
+msgctxt "unit8.rsawyouredeathletmereviveyou"
+msgid "Aw, you're dead! Let me revive you"
+msgstr "아오, 당신은 죽었어요! 제가 부활 시켜드리죠"
+
+#: unit8.rshealth
+msgid "Health"
+msgstr "체력"
+
+#: unit8.rsloser
+msgctxt "unit8.rsloser"
+msgid "BOO"
+msgstr "우~"
+
+#: unit8.rsstep7codeinjectionpw
+msgid "Step 7: Code Injection: (PW=%s)"
+msgstr "7 단계: 코드 주입: (PW=%s)"
+
+#: unit8.rstryagain8
+msgid ""
+"Code injections too tough? No problem, memory scanning and basic pointers "
+"should be enough to get you experienced enough and you can always try the "
+"tutorial later. Are you sure you want to quit?"
+msgstr ""
+"코드 주입이 너무 힘듭니까?문제없습니다, 메모리 검사하기와 기본 포인터는 경험을 충분히 얻었습니다.그리고 나중에 언제든지 자습서를 다시 "
+"시도할 수 있습니다.종료하시겠습니까?"
+
+#: unit8.rstutorialstep7
+msgid ""
+"Code injection is a technique where one injects a piece of code into the target process, and then reroute the execution of code to go through your own written code\n"
+"\n"
+"In this tutorial you'll have a health value and a button that will decrease your health with 1 each time you click it.\n"
+"Your task is to use code injection to increase the value of your health with 2 every time it is clicked\n"
+"\n"
+"Start with finding the address and then find what writes to it.\n"
+"then when you've found the code that decreases it browse to that address in the disassembler, and open the auto assembler window (ctrl+a)\n"
+"There click on template and then code injection, and give it the address that decreases health (If it isn't already filled in correctly)\n"
+"That will generate a basic auto assembler injection framework you can use for your code.\n"
+"\n"
+"Notice the alloc, that will allocate a block of memory for your code cave, in the past, in the pre windows 2000 systems, people had to find code caves in the memory(regions of memory unused by the game), but that's luckily a thing of the past since windows 2000, and will these days cause errors when trying to be used, due to SP2 of XP and the NX bit of new CPU's\n"
+"\n"
+"Also notice the line newmem: and originalcode: and the text \"Place your code here\"\n"
+"As you guessed it, write your code here that will increase the  health with 2.\n"
+"An usefull assembler instruction in this case is the \"ADD instruction\"\n"
+"here are a few examples:\n"
+"\"ADD [00901234],9\" to increase the address at 00901234 with 9\n"
+"\"ADD [ESP+4],9\" to increase the address pointed to by ESP+4 with 9\n"
+"In this case, you'll have to use the same thing between the brackets as the original code has that decreases your health\n"
+"\n"
+"Notice:\n"
+"It is recommended to delete the line that decreases your health from the original code section, else you'll have to increase your health with 3 (you increase with 3, the original code decreases with 1, so the end result is increase with 2), which might become confusing. But it's all up to you and your programming.\n"
+"\n"
+"Notice 2:\n"
+"In some games the original code can exist out of multiple instructions, and sometimes, not always, it might happen that a code at another place jumps into your jump instruction end will then cause unknown behavior. If that happens, you should usually look near that instruction and see the jumps and fix it, or perhaps even choose to use a different address to do the code injection from. As long as you're able to figure out the address to change from inside your injected code.\n"
+msgstr ""
+"코드 주입은 대상 프로세스에 몇몇 코드 조각을 주입는 기술이고, 코드 실행시 당신이 작성한 코드를 거쳐가도록 우회합니다.\n"
+"\n"
+"이 자습서에서 귀하는 체력 값과 클릭할때 마다 체력을 1씩 감소시키는 버튼을 가질것입니다.\n"
+"귀하의 목적은 이 버튼을 클릭할때마다 2씩 상승시키는 코드 주입을 사용하는 것입니다.\n"
+"\n"
+"주소를 찾기를 시작하고, 무엇이 그것에 써지는지 찾으십시오.\n"
+"그리고 감소시키는 코드를 찾게되면, 디셈블러에서 그 주소를 둘러보고, 자동 어셈블러 창을 여십시오(ctrl+a)\n"
+"그곳의 서식을 클릭하고 코드 주입을 클릭하고, 체력을 감소시키는 주소를 입력해주세요 (제대로 입력되지 않을때만)\n"
+"그것은 귀하의 코드를 이용할수 있도록 기본 자동 어셈블러 주입 뼈대를 생성합니다.\n"
+"\n"
+"alloc을 주목하세요, 그것은 당신의 Code cave를 위한 메모리 블록을 할당합니다, 과거에는, 초기 윈도우 2000 시스템에서, 사람들은 메모리 안의 code caves(게임에 의해 사용되고 있지 않는 영역)를 찾아야했습니다,\n"
+"하지만 운이 좋게도 윈도우즈 2000 이전의 과거의 일이고, 요즘은 그렇게 사용될때, XP SP2와 새로운 CPU의 NX 비트에 의해 오류가 발생됩니다.\n"
+"\n"
+"또한 newmem: 줄과 originalcode: 줄과 \"Place your code here\"이라는 문구를 참고하십시오.\n"
+"당신이 추측한대로, 여기에 체력을 2씩 증가시키는 코드를 작성하십시오.\n"
+"이런 경우에 유용한 어셈블러 명령어는 \"ADD 명령어\" 입니다\n"
+"여기 몇개의 예제가 있습니다:\n"
+"\"ADD [00901234],9\" to increase the address at 00901234 with 9\n"
+"\"ADD [ESP+4],9\" to increase the address pointed to by ESP+4 with 9\n"
+"이런 경우에, 괄호 안에 있는것과 같은것을 체력을 감소시키는 원본 코드로써 사용해야 합니다.\n"
+"\n"
+"알림:\n"
+"원본의 코드 부분에서 체력을 감소시키는 줄을 삭제하는것을 추천합니다, 그렇지 않다면, 혼란스러워 질수도 있지만 체력을 3씩 상승시켜야 합니다. (당신이 3씩 증가시키면, 원본의 코드는 1씩 감소시킬것이고, 그러므로 결과는 2씩 증가시킵니다), 하지만 이 모든것은 귀하와 귀하의 프로그래밍에 달려있습니다.\n"
+"\n"
+"알림 2:\n"
+"몇몇 게임에서는 원본 코드가 여러 명령어들의 밖에 있을 수 있고, 가끔은, 항상은 아니지만, 다른장소에 있는 코드가 귀하의 JUMP 명령어로 들어와 알수 없는 행동을 발생시킬 수 있습니다. 그런일이 발생하면, 귀하는 명령어 근처를 살펴보고, JUMP 들을 보고 고치거나, 또한 다른 주소에서 코드 주입을 하도록 할 수 도있습니다. 당신이 주입한 코드안에서 바뀌는 주소를 이해할 수 있다면 말이죠.\n"
+
+#: unit9.rsloser
+msgctxt "unit9.rsloser"
+msgid "BOO"
+msgstr "우~"
+
+#: unit9.rsstep8multilevelpointerspw
+msgid "Step 8: Multilevel pointers: (PW=%s)"
+msgstr "8 단계: 다중 포인터: (PW=%s)"
+
+#: unit9.rstryagain9
+msgid ""
+"Aw, you've almost reached the end. But don't worry, multilevel pointers can "
+"be a real pain when dealing with. If you get more experienced someday you "
+"can try it again. Are you sure you want to quit?"
+msgstr ""
+"헐, 거의 끝에 다다랐습니다. 하지만 걱정마세요. 다중포인터는 국복하기에는 정말로 고동스러울 수 있습니다. 나중에 경험을 더 얻은 후  "
+"언젠가라면 다시 도전할 수 도 있겠지요. 정말로 끝내기를 원하십니까?"
+
+#: unit9.rstutorialstep8
+msgid ""
+"This step will explain how to use multi-level pointers.\n"
+"In step 6 you had a simple level-1 pointer, with the first address found already being the real base address.\n"
+"This step however is a level-4 pointer. It has a pointer to a pointer to a pointer to a pointer to a pointer to the health.\n"
+"\n"
+"You basicly do the same as in step 6. Find out what accesses the value, look at the instruction and what probably is the base pointer value, and what is the offset, and already fill that in or write it down. But in this case the address you'll find will also be a pointer. You just have to find out the pointer to that pointer exactly the same way as you did with the value. Find out what accesses that address you found, look at the assembler instruction, note the probable instruction and offset, and use that.\n"
+"and continue till you can't get any further (usually when the base address is a static address, shown up as green)\n"
+"\n"
+"Click Change Value to let the tutorial access the health.\n"
+"If you think you've found the pointer path click Change Register. The pointers and value will then change and you'll have 3 seconds to freeze the address to 5000\n"
+"\n"
+"Extra: This problem can also be solved using a auto assembler script, or using the pointer scanner\n"
+"Extra2: In some situations it is recommended to change ce's codefinder settings to Access violations when \n"
+"Encountering instructions like mov eax,[eax] since debugregisters show it AFTER it was changed, making it hard to find out the the value of the pointer\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"Extra3: If you're still reading. You might notice that when looking at the assembler instructions that the pointer is being read and filled out in the same codeblock (same routine, if you know assembler, look up till the start of the routine). This doesn't always happen, but can be really useful in finding a pointer when debugging is troublesome\n"
+msgstr ""
+"이 단계는 다중-포인터를 사용하는 방법을 설명하겠습니다.\n"
+"6단계에서, 실제 기준 주소가 되는 첫번째 주소를 이미 찾은 상태로 단순한 단일 포인터를 가졌습니다.\n"
+"하지만 이번 단계는 4중-포인터입니다. 포인터가 포인터의 포인터의 포인터의 포인터의 체력을 가지고 있습니다.\n"
+"\n"
+"기본적으로 단계 6 처럼 해야합니다. 어떤 주소가 값에 접근하는지 알아보고, 명령어를 보고 무엇이 기준 포인터값이고, 무엇이 오프셋이고, 이미 그곳에 채워져있거나 또는 그곳에 적는 두십시오. 하지만 이러한경우에, 찾은 주소는 다시 포인터가 됩니다. 이전에 값에 그렇게 했던것 처럼 같은 방법으로 그 포인터에 대한 포인터를 알 수 있어야 합니다. 무엇이 당신이 찾은주소에 접근하는지 찾고, 어셈블러 명령어를 보고, 그럴듯한 명령어와 오프셋에 주목??하고, 그것을 사용합니다.\n"
+"그리고 당신이 더 이상 할 수 없을때까지 계속합니다.(주로 기준 주소가 정적인 주소이면, 녹색으로 표시됩니다)\n"
+"\n"
+"자습서가 체력에 접근할 수 있도록 '값을 바꾸기'를 클릭합니다.\n"
+"만약 포인터의 경로를 찾았다고 생각한다면 '레지스터를 바꾸기' 를 클릭하세요. 포인터와 값이 바뀔것이며, 주소를 5000으로 고정하기 위해 3초가 주어집니다.\n"
+"\n"
+"추가: 이 문제는 자동 어셈블러 스크립트나 또는 포인터 검색기를 사용해서 해결할 수도 있습니다.\n"
+"추가2: 어떤 상황에서는, mov eax,[eax] 같은 명령어를 만날경우, 디버그 레지스터는 명령어가 변경된후에 그것을 보여주므로,\n"
+"포인터의 값을 알아내는것을 어렵게 합니다. 치트엔진의 코드 찾기 도구의 설정을 접근 위반으로 바꾸는것을 추천합니다.\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"추가3: 아직도 읽고 있을 경우, 당신은 아마도 어셈블러 명령어들을 보며 포인터가 같은 코드블럭(같은 명령이고, 만약 어셈블러를 알고 있다면, 명령의 시작부분을 찾아보세요)에 쓰여지며 채워지고 있다는것에 주목할 수도 있습니다. 이런일이 항상 발생하지 않지만, 디버깅이 골칫거리일때 포인터를 찾는데 유용할 수 있습니다.\n"
+
+#: unit9.rsunrandomizerdetected
+msgid "Unrandomizer detected"
+msgstr "비임의추출기가 감지됨"
+
+#: unit9.rsyouvegotsecondslefttochangethevalueto5000
+msgid "You've got %s seconds left to change the value to 5000"
+msgstr "값을 5000 으로 바꾸는데 %s 초 남았습니다"
