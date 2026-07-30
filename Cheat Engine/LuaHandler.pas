@@ -685,6 +685,21 @@ begin
     result:='nil';
 end;
 
+{
+  A broken autorun script should not stop Cheat Engine from starting. On
+  Windows a modal dialog is merely annoying; here several of the shipped
+  scripts pull in libraries that only exist as Windows DLLs, so one modal box
+  per script would block startup outright. Report and carry on instead.
+}
+procedure reportAutorunError(const msg: string);
+begin
+  {$if defined(windows) or defined(darwin)}
+  showmessage(msg);
+  {$else}
+  apiTrace('autorun: '+msg);
+  {$endif}
+end;
+
 procedure LoadLuaScriptsFromPath(path: string; var mainformwasset: boolean; var addresslistwasset: boolean);
 var
   DirInfo: TSearchRec;
@@ -716,11 +731,11 @@ begin
           begin
             pc:=lua_tolstring(luavm, -1,nil);
             if pc<>nil then
-              showmessage(DirInfo.name+rsError2+pc)
+              reportAutorunError(DirInfo.name+rsError2+pc)
             else
-              showmessage(DirInfo.name+rsError3);
+              reportAutorunError(DirInfo.name+rsError3);
           end
-          else showmessage(DirInfo.name+rsError3);
+          else reportAutorunError(DirInfo.name+rsError3);
         end;
 
         //reset stack

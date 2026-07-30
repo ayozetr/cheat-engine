@@ -2,7 +2,14 @@ if getTranslationFolder()~='' then
   loadPOFile(getTranslationFolder()..'Java.po')
 end
 
-require([[autorun\javaClassEditor]])
+-- the module separator has to follow the platform: a backslash is just a
+-- character in a path on Linux, so the require fails and its error dialog
+-- blocks startup
+if package.config:sub(1,1) == '\\' then
+  require([[autorun\javaClassEditor]])
+else
+  require('autorun/javaClassEditor')
+end
 
 --parser for .class files and java bytecode
 --http://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html

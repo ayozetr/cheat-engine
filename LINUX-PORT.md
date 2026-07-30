@@ -227,18 +227,32 @@ reaching for early — it is what found the recursion described below in one go.
 
 ## Known broken
 
-- **Switching tabs in the process list empties it.** The `TabHeader` change
-  handler never fires under gtk2, so `getprocesslist` is not called again and
-  the list is left cleared. The list is correct when the dialog first opens;
-  only tab switching breaks it. This is an LCL event problem, not a memory
-  layer one — the trace shows no snapshot is even requested.
+- **Several shipped autorun scripts fail**, because they pull in libraries that
+  only exist as Windows DLLs — `lfs` (LuaFileSystem) is the obvious one. Each
+  failure used to raise a modal dialog, and a modal dialog per broken script
+  blocks startup outright, so on Linux the error is now reported through
+  `CE_APILOG` and the loader carries on. `javaclass.lua` was a different case:
+  it wrote `require([[autorun\javaClassEditor]])`, and a backslash is just a
+  character in a path here, so that one is fixed properly.
 - Kernel thread names show up mangled (`kworker/R-rcu_gp` as `R-rcu_gp`).
   That is `ExtractFilename` in `processlist.pas` treating the `/` as a path
   separator. Cosmetic, and only affects processes that cannot be opened anyway.
+- The debugger does nothing. `SuspendThread`, `GetThreadContext` and the
+  `VirtualProtectEx` family all report failure, because they need a
+  ptrace-stopped tracee and none of that is written. Scanning and editing do
+  not go through them.
+
+### Not confirmed
+
+I earlier wrote that switching tabs in the process list empties it and blamed
+the gtk2 `OnChange`. I could not reproduce that once a window manager was
+running, and the original evidence came from clicks made without one, which I
+later found land unpredictably. Treat it as unverified rather than as a known
+bug: check it by hand before spending time on it.
 
 ## What is left
 
-- The tab handler above.
+- Confirm or dismiss the tab behaviour described above.
 - `SuspendThread`, `GetThreadContext` and the `VirtualProtectEx` family report
   failure rather than working. They need a ptrace-stopped tracee, so the
   debugger will not do anything useful until that is written. Scanning and
