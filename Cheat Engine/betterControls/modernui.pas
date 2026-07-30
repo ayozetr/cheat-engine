@@ -99,6 +99,15 @@ type
   end;
 
 procedure SwapMonoFonts(parent: TWinControl); forward;
+function EsOscuro(c: TColor): boolean;
+var
+  r,g,b: byte;
+begin
+  RedGreenBlue(c, r, g, b);
+  //rough perceived brightness; the form sits at $242424
+  result:=(r*30 + g*59 + b*11) div 100 < 110;
+end;
+
 procedure SwapTextColors(parent: TWinControl); forward;
 procedure StyleListHeaders(parent: TWinControl; f: TFont); forward;
 
@@ -183,8 +192,11 @@ begin
   begin
     c:=parent.Controls[i];
 
-    if (c.Font.Color=clDefault) or (c.Font.Color=clWindowText) or
-       (c.Font.Color=clBlack) or (c.Font.Color=clBtnText) then
+    //comparing against clWindowText is no good: betterControls reassigns it,
+    //so the control still holds the old value. Judge by brightness instead —
+    //anything too dark to read on this background gets the palette colour,
+    //and deliberate bright or coloured captions are left alone.
+    if (c.Font.Color=clDefault) or EsOscuro(ColorToRGB(c.Font.Color)) then
       c.Font.Color:=ModernMetrics.Text;
 
     if c is TWinControl then

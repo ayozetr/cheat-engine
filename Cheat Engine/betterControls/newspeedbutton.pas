@@ -26,6 +26,11 @@ procedure TNewSpeedButton.PaintBackground(var PaintRect: TRect);
 begin
   if ShouldAppsUseDarkMode and darkmode then
   begin
+    //the caption colour has to be reasserted here: the .lfm can set it after
+    //SetParent ran, and parentfont does not reach this control
+    if font.color<>ColorSet.FontColor then
+      font.color:=ColorSet.FontColor;
+
     case FState of
       bsUp: Canvas.Brush.Color := Color;
       bsDisabled: Canvas.brush.Color:= Color xor $aaaaaa;
