@@ -13,8 +13,8 @@ interface
 
 {$ifdef jni} //not yet implemented, but the interface is available
 uses
-  Classes, SysUtils, math,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, LCLIntf{$endif};
+  Classes, SysUtils, math
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi, LCLIntf{$endif};
 
 type PLua_state=pointer;
 {$else}

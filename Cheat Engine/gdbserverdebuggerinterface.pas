@@ -11,8 +11,8 @@ uses
   Classes, SysUtils, DebuggerInterface, contexthandler, ctypes, forms, resolve,
   XMLRead, XMLwrite, DOM {$ifdef windows}, windows, WinSock2, Clipbrd{$endif}
   {$ifdef darwin} , macport,macportdefines,BaseUnix,Unix{$endif}
-  ,math, syncobjs, StringHashList, Maps, sockets,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, BaseUnix, Unix{$endif};
+  ,math, syncobjs, StringHashList, Maps, sockets
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi, BaseUnix, Unix{$endif};
 
 type
   TGDBServerContextHandler=class(TContextInfo)
