@@ -5,8 +5,8 @@ unit extcont;
 interface
 
 uses
-  Classes, SysUtils, jwawindows, windows,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, jwawindows, windows
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
   //credits to jedi code library for filling in the "extended registers"
 const CONTEXT_EXTENDED=$20;

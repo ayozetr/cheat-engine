@@ -5,8 +5,8 @@ unit ScrollBoxEx;
 interface
 
 uses
-  Classes, SysUtils, lmessages, forms, messages, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, lmessages, forms, messages, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
   TScrollBox=class({$ifdef windows}betterControls.{$else}Forms.{$endif}TScrollbox)

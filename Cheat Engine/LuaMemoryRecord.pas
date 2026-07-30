@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, MemoryRecordUnit, plugin, pluginexports, lua, lualib,
-  lauxlib, LuaHandler, LuaCaller, CEFuncProc, ComCtrls, Graphics, commonTypeDefs,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  lauxlib, LuaHandler, LuaCaller, CEFuncProc, ComCtrls, Graphics, commonTypeDefs
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaMemoryRecord;
 

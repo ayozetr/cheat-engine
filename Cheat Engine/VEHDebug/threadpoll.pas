@@ -8,8 +8,8 @@ Keeps a list of all the threads and notifies the debugger when a change has happ
 interface
 
 uses
-  jwawindows,windows,Classes, SysUtils,init, extcont, simpleThread, VEHDebugSharedMem,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  jwawindows,windows,Classes, SysUtils,init, extcont, simpleThread, VEHDebugSharedMem
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 
 type TThreadPoller=class(TSimpleThread)

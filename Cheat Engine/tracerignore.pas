@@ -5,8 +5,8 @@ unit tracerIgnore;
 interface
 
 uses
-  Classes, SysUtils, symbolhandler, symbolhandlerstructs, cefuncproc, globals,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, symbolhandler, symbolhandlerstructs, cefuncproc, globals
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
   TTracerIgnore=class

@@ -5,8 +5,8 @@ unit memrecDataStructures;
 interface
 
 uses
-  Classes, SysUtils, autoassembler,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, autoassembler
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
   TMemrecStringData=record

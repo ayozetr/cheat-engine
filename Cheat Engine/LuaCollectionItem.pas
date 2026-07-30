@@ -7,8 +7,8 @@ unit LuaCollectionItem;
 interface
 
 uses
-  Classes, SysUtils, lua, lauxlib, lualib,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, lua, lauxlib, lualib
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure collectionItem_addMetaData(L: PLua_state; metatable: integer; userdata: integer );
 

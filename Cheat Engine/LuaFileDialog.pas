@@ -5,8 +5,8 @@ unit LuaFileDialog;
 interface
 
 uses
-  Classes, SysUtils, dialogs, lua, lauxlib, lualib,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, dialogs, lua, lauxlib, lualib
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 implementation
 

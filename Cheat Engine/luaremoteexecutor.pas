@@ -21,8 +21,8 @@ uses
   macport,
   {$endif}
 
-  Classes, SysUtils, math,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};    //todo: port to mac
+  Classes, SysUtils, math
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};    //todo: port to mac
 
 type
   TStubdata=record

@@ -5,8 +5,8 @@ unit LuaButton;
 interface
 
 uses
-  Classes, SysUtils, lua, lualib, lauxlib, forms, controls, StdCtrls, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, lua, lualib, lauxlib, forms, controls, StdCtrls, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure InitializeLuaButton;
 procedure button_addMetaData(L: PLua_state; metatable: integer; userdata: integer );

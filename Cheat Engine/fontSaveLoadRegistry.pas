@@ -8,8 +8,8 @@ unit fontSaveLoadRegistry;
 interface
 
 uses
-  Classes, SysUtils, registry, Graphics, LazUTF8,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, registry, Graphics, LazUTF8
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure SaveFontToRegistry(f: TFont; reg: TRegistry);
 procedure LoadFontFromRegistry(f: TFont; reg: TRegistry);

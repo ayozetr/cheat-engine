@@ -221,8 +221,8 @@ macport,  lcltype,
   assemblerunit,
   LuaSyntax,
   SynHighlighterCpp,
-  SynHighlighterPas,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  SynHighlighterPas
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
   TtkTokenKind = (tkAsm, tkComment, tkIdentifier, tkOpcode, tkKey, tkNull, tkNumber,

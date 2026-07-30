@@ -16,8 +16,8 @@ uses
   disassembler, symbolhandler, symbolhandlerstructs, SynEdit, SynHighlighterCpp,
   SynHighlighterAA, LuaSyntax, SynPluginMultiCaret, SynEditSearch, tablist,
   SynGutterBase, SynEditMarks, math, SynEditMiscClasses, SynEditTextBase,
-  SynEditTextBuffer, LazSynEditText, SynEditLines, SynEditKeyCmds, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  SynEditTextBuffer, LazSynEditText, SynEditLines, SynEditKeyCmds, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 
 type

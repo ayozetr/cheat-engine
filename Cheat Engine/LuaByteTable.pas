@@ -9,8 +9,8 @@ unit LuaByteTable;
 interface
 
 uses
-  Classes, SysUtils, lua,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, lua
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaByteTable;
 procedure readBytesFromTable(L: PLua_State; tableindex: integer; p: PByteArray; maxsize: integer; tablestartindex:integer=1);

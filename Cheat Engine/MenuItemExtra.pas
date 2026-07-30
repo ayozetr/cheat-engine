@@ -10,8 +10,8 @@ or other objects useful for an onclick handler
 
 interface
 
-uses menus, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+uses menus, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type TMenuItemExtra=class(TMenuItem)
   public

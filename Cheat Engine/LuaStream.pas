@@ -5,8 +5,8 @@ unit LuaStream;
 interface
 
 uses
-  Classes, SysUtils, lua, lauxlib, lualib, math,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, lua, lauxlib, lualib, math
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure stream_addMetaData(L: PLua_state; metatable: integer; userdata: integer );
 

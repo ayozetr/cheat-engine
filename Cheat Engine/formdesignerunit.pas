@@ -12,8 +12,8 @@ uses
   maps, ExtDlgs, PopupNotifier, IDEDialogs, ceguicomponents, LMessages, luacaller,
   luahandler, cefuncproc, ListViewPropEdit, TreeViewPropEdit,
   LCLType, GraphicPropEdit, GraphPropEdits, registry, math, LCLVersion,
-  frmAnchorEditor, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  frmAnchorEditor, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 
 

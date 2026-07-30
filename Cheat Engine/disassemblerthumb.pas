@@ -12,8 +12,8 @@ And yes, this can require a bit of refactoring
 interface
 
 uses
-  Classes, SysUtils, LastDisassembleData, strutils,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, LastDisassembleData, strutils
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
   TThumbDisassembler=object

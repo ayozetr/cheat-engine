@@ -5,8 +5,8 @@ unit LuaCustomImageList;
 interface
 
 uses
-  Classes, SysUtils, Controls, lua, lualib, lauxlib, ImgList, GraphType,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, Controls, lua, lualib, lauxlib, ImgList, GraphType
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaCustomImageList;
 

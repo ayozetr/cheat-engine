@@ -14,8 +14,8 @@ uses
   , fphttpclient,opensslsockets,openssl, StringHashList
 
   {$endif}
-  ,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 {$ifndef standalone}
 procedure initializeLuaInternet;

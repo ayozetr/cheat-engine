@@ -6,8 +6,8 @@ interface
 
 uses
   LCLProc, Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
-  StdCtrls, ExtCtrls, Menus, symbolhandler, Clipbrd, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  StdCtrls, ExtCtrls, Menus, symbolhandler, Clipbrd, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
 

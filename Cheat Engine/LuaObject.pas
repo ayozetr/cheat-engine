@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils,lua, lualib, lauxlib, math, typinfo, Controls,
-  ComCtrls, StdCtrls, Forms,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  ComCtrls, StdCtrls, Forms
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure InitializeLuaObject;
 procedure object_addMetaData(L: PLua_state; metatable: integer; userdata: integer );

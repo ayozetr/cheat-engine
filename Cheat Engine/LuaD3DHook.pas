@@ -5,8 +5,8 @@ unit LuaD3DHook;
 interface
 
 uses
-  Classes, SysUtils, lua, Graphics,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, lua, Graphics
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaD3dHook;
 

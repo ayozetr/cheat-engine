@@ -5,8 +5,8 @@ unit luafile;
 interface
 
 uses
-  Classes, SysUtils, DOM, zstream, math, custombase85, fgl, xmlutils,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, DOM, zstream, math, custombase85, fgl, xmlutils
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
   EDoNotFreeManually=class(Exception);

@@ -5,8 +5,8 @@ unit LuaTreeview;
 interface
 
 uses
-  Classes, SysUtils, ComCtrls, lua, luaclass, Controls, LuaWinControl, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, ComCtrls, lua, luaclass, Controls, LuaWinControl, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaTreeview;
 

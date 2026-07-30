@@ -7,8 +7,8 @@ Extends the TRegion class by adding the AddPolygon method
 interface
 
 uses
-  LCLIntf, StdCtrls, Classes, controls, SysUtils, dialogs, Graphics, LCLType,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  LCLIntf, StdCtrls, Classes, controls, SysUtils, dialogs, Graphics, LCLType
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
  TRegionEx = class(TRegion)

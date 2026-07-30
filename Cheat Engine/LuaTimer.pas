@@ -5,8 +5,8 @@ unit LuaTimer;
 interface
 
 uses
-  Classes, SysUtils, ExtCtrls, lua, lualib, lauxlib, CustomTimer,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, ExtCtrls, lua, lualib, lauxlib, CustomTimer
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaTimer;
 

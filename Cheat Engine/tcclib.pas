@@ -8,8 +8,8 @@ interface
 uses
   {$ifdef windows}windows,{$endif}
   {$ifdef darwin}macport, dl,macportdefines, {$endif}
-  Classes, SysUtils, syncobjs, maps, math, Generics.Collections,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, syncobjs, maps, math, Generics.Collections
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 
 type

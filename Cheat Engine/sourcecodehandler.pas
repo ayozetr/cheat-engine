@@ -5,8 +5,8 @@ unit sourcecodehandler;
 interface
 
 uses
-  Classes, SysUtils, tcclib, AvgLvlTree,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, tcclib, AvgLvlTree
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
   TSourceCodeInfoCollection=class //contains all the registered TSourceCodeInfo objects. (This 'should' keep up the speed when there are tons of C scripts compiled with source)

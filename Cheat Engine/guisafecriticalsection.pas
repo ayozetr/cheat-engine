@@ -13,8 +13,8 @@ don't acquire a lock themselves.
 interface
 
 uses
-  Classes, SysUtils, syncobjs,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, syncobjs
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
   TGuiSafeCriticalSection = class

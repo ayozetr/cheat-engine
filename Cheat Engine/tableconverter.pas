@@ -8,8 +8,8 @@ Converts Cheat engine 5.6 tables to xmlformat tables
 interface
 
 uses
-  Classes, SysUtils, dom, xmlread, xmlwrite, cefuncproc, commonTypeDefs,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, dom, xmlread, xmlwrite, cefuncproc, commonTypeDefs
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 
 function ConvertCheatTableToXML(filename: string): TXMLDocument;

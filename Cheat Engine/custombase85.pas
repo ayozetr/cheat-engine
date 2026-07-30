@@ -12,8 +12,8 @@ unit CustomBase85;
 interface
 
 uses
-  Classes,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure BinToBase85(BinValue, outputStringBase85: PChar; BinBufSize: integer);
 //

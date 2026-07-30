@@ -9,8 +9,8 @@ This unit will hold some global variables (previously cefuncproc.pas)
 interface
 
 uses
-  Classes, SysUtils, commonTypeDefs, syncobjs, Graphics, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, commonTypeDefs, syncobjs, Graphics, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 //type TUnexpectedExceptionAction=(ueaIgnore, ueaBreak, ueaBreakIfInRegion);
 

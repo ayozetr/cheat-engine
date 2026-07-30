@@ -5,8 +5,8 @@ unit LuaBrush;
 interface
 
 uses
-  Classes, SysUtils, Graphics,lua, lualib, lauxlib, LuaHandler,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, Graphics,lua, lualib, lauxlib, LuaHandler
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaBrush;
 

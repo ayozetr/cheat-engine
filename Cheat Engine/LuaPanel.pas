@@ -5,8 +5,8 @@ unit LuaPanel;
 interface
 
 uses
-  Classes, SysUtils, lua, lualib, lauxlib, ExtCtrls, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, lua, lualib, lauxlib, ExtCtrls, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaPanel;
 procedure panel_addMetaData(L: PLua_state; metatable: integer; userdata: integer );

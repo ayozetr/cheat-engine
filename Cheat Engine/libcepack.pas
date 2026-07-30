@@ -7,8 +7,8 @@ unit libcepack;
 interface
 
 uses
-  Classes, SysUtils,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure cepackfile(source, destination: string);
 procedure ceunpackfile(source, destination: string; askpermission: boolean);

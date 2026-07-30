@@ -10,8 +10,8 @@ uses
   Classes, SysUtils, LResources, Forms, Controls, Graphics, Dialogs, ComCtrls,
   ExtCtrls, Menus, SynEdit, SynEditMarks, SynHighlighterCpp, disassembler,
   MemoryBrowserFormUnit, tcclib, betterControls, SynGutterBase, debugeventhandler,
-  BreakpointTypeDef,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  BreakpointTypeDef
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
 

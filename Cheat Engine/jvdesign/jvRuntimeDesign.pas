@@ -8,8 +8,8 @@ interface
 
 uses
     tp_register, JvDesignSurface, JvConsts, JvDesignClip, JvDesignUtils, 
-  JvResources, JvDesignImp, LazarusPackageIntf,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  JvResources, JvDesignImp, LazarusPackageIntf
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 implementation
 

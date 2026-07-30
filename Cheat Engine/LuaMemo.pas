@@ -5,8 +5,8 @@ unit LuaMemo;
 interface
 
 uses
-  Classes, SysUtils, Lua, Lualib, lauxlib, StdCtrls, controls, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, Lua, Lualib, lauxlib, StdCtrls, controls, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaMemo;
 

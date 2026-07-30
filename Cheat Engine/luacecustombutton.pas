@@ -5,8 +5,8 @@ unit LuaCECustomButton;
 interface
 
 uses
-  Classes, SysUtils, lua, lualib, lauxlib,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, lua, lualib, lauxlib
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaCECustomButton;
 

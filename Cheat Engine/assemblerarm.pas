@@ -7,8 +7,8 @@ interface
 
 
 {$ifdef jni}
-uses classes, SysUtils, StrUtils, assemblerunit, symbolhandler,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+uses classes, SysUtils, StrUtils, assemblerunit, symbolhandler
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 {$else}
 uses
   Classes, SysUtils, strutils{$ifndef ARMDEV}, assemblerunit{$endif}, dialogs,

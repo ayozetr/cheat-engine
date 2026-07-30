@@ -8,8 +8,8 @@ interface
 
 uses
   {$ifdef darwin}macport,{$endif}
-  Classes, SysUtils,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 function getRTTIClassName(StructureBaseAddress: ptruint; var classname: string): boolean;
 

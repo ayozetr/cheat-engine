@@ -5,8 +5,8 @@ unit LuaEdit;
 interface
 
 uses
-  Classes, SysUtils, Controls, StdCtrls, Lua, Lualib, lauxlib, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, Controls, StdCtrls, Lua, Lualib, lauxlib, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure edit_addMetaData(L: PLua_state; metatable: integer; userdata: integer );
 procedure initializeLuaEdit;

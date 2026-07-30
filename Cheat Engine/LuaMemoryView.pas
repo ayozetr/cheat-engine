@@ -5,8 +5,8 @@ unit LuaMemoryView;
 interface
 
 uses
-  forms, Classes, SysUtils, lua,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  forms, Classes, SysUtils, lua
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaMemoryview;
 

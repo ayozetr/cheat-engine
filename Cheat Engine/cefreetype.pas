@@ -5,8 +5,8 @@ unit cefreetype;
 interface
 
 uses
-  Classes, SysUtils,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 {$ifdef USELAZFREETYPE}
 function loadCEFreeTypeFonts: boolean;

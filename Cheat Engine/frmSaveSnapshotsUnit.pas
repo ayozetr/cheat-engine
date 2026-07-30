@@ -11,8 +11,8 @@ uses
   {$if defined(laztrunk) or not (defined(windows) or defined(darwin))}
   , LazFileUtils
   {$endif}
-  , betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  , betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 resourcestring
   rsSSAreYouSureYouWishToThrowAwayTheseSnapshots = 'Are you sure you wish to throw away these snapshots?';

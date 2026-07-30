@@ -11,8 +11,8 @@ uses
   {$ifdef darwin}
   macport, dynlibs, mactypes,
   {$endif}
-  Classes, SysUtils,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 const
   pt_asid_no_cr3  = QWORD($ffffffffffffffff);

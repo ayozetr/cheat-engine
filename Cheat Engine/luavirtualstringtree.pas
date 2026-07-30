@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, ComCtrls, lua, luaclass, Controls, LuaWinControl,
-  laz.VirtualTrees, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  laz.VirtualTrees, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 
 procedure initializeLuaVirtualStringTree;

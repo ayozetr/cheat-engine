@@ -5,8 +5,8 @@ unit diagramtypes;
 interface
 
 uses
-  Classes, SysUtils, Graphics, Controls{$ifdef windows}, GL{$endif}, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, Graphics, Controls{$ifdef windows}, GL{$endif}, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
   TDiagramBlockSide=(dbsTop, dbsLeft, dbsRight, dbsBottom, dbsTopLeft, dbsTopRight, dbsBottomLeft, dbsBottomRight);

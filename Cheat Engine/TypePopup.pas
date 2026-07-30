@@ -8,8 +8,8 @@ interface
 
 uses
   LCLIntf, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ExtCtrls, LResources, MemoryRecordUnit, CEFuncProc, CustomTypeHandler, commonTypeDefs, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  StdCtrls, ExtCtrls, LResources, MemoryRecordUnit, CEFuncProc, CustomTypeHandler, commonTypeDefs, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
 

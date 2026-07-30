@@ -4,8 +4,8 @@ interface
 
 {$mode DELPHI}
 
-uses controls,StdCtrls,classes,Graphics,ExtCtrls, sysutils, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+uses controls,StdCtrls,classes,Graphics,ExtCtrls, sysutils, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type TLabel2 = class (TLabel)
   public

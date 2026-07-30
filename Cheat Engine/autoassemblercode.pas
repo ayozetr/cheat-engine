@@ -20,8 +20,8 @@ unit autoassemblercode;
 interface
 
 uses
-  Classes, SysUtils, SymbolListHandler,tcclib,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, SymbolListHandler,tcclib
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
   TAutoAssemblerCodePass2Data=record

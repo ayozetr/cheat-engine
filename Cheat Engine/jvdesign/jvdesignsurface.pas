@@ -49,8 +49,8 @@ uses
   win32proc,
   messages,
   {$endif}
-  ExtCtrls, Contnrs,LMessages, Menus, strutils,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  ExtCtrls, Contnrs,LMessages, Menus, strutils
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
   TJvDesignSurface = class;

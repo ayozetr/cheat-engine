@@ -5,8 +5,8 @@ unit LuaListItem;
 interface
 
 uses
-  Classes, SysUtils, ComCtrls, lua, lualib, lauxlib, typinfo,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, ComCtrls, lua, lualib, lauxlib, typinfo
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaListItem;
 

@@ -5,8 +5,8 @@ unit addressedit;
 interface
 
 uses
-  Classes, SysUtils, StdCtrls, Graphics, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, StdCtrls, Graphics, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 
 type

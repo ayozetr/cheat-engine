@@ -8,8 +8,8 @@ unit LuaClass;
 interface
 
 uses
-  Classes, SysUtils, controls, lua, lauxlib, lualib, math, AvgLvlTree, syncobjs,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, controls, lua, lauxlib, lualib, math, AvgLvlTree, syncobjs
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type TAddMetaDataFunction=procedure(L: PLua_state; metatable: integer; userdata: integer );
 

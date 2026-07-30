@@ -67,8 +67,8 @@ end;   }
 interface
 
 {$ifdef darwin}
-uses macport, LCLIntf,classes,sysutils,syncobjs, CEFuncProc, CustomTypeHandler, commonTypeDefs,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+uses macport, LCLIntf,classes,sysutils,syncobjs, CEFuncProc, CustomTypeHandler, commonTypeDefs
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 {$endif}
 
 {$if not defined(windows) and not defined(darwin) and not defined(jni)}

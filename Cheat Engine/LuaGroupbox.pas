@@ -5,8 +5,8 @@ unit LuaGroupbox;
 interface
 
 uses
-  Classes, SysUtils, lua, lualib, lauxlib, stdctrls, controls, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, lua, lualib, lauxlib, stdctrls, controls, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
   procedure initializeLuaGroupbox;
   procedure groupbox_addMetaData(L: PLua_state; metatable: integer; userdata: integer );

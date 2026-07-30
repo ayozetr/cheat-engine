@@ -5,8 +5,8 @@ unit LuaXMPlayer;
 interface
 
 uses
-  Classes, SysUtils, xmplayer_defines, xmplayer_server, lua, lauxlib, lualib, luafile, LuaHandler,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, xmplayer_defines, xmplayer_server, lua, lauxlib, lualib, luafile, LuaHandler
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaXMPlayer;
 

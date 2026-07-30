@@ -5,8 +5,8 @@ unit LuaSymbolListHandler;
 interface
 
 uses
-  Classes, SysUtils, lua, lualib, LuaClass, SymbolListHandler,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, lua, lualib, LuaClass, SymbolListHandler
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaSymbolListHandler;
 

@@ -5,8 +5,8 @@ unit LuaGraphicControl;
 interface
 
 uses
-  Classes, SysUtils, Controls, lua, lualib, lauxlib,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, Controls, lua, lualib, lauxlib
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure graphiccontrol_addMetaData(L: PLua_state; metatable: integer; userdata: integer );
 procedure initializeGraphicControl;

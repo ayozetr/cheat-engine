@@ -5,8 +5,8 @@ unit LuaFindDialog;
 interface
 
 uses
-  Classes, SysUtils, dialogs, luaclass, lua, lauxlib, luahandler, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, dialogs, luaclass, lua, lauxlib, luahandler, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaFindDialog;
 

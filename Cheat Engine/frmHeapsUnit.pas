@@ -6,8 +6,8 @@ interface
 
 uses
   LCLIntf, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, ComCtrls,{tlhelp32,}CEFuncProc, frmMemoryAllocHandlerUnit, LResources, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Dialogs, StdCtrls, ExtCtrls, ComCtrls,{tlhelp32,}CEFuncProc, frmMemoryAllocHandlerUnit, LResources, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type TFillHeapList=class(tthread)
   private

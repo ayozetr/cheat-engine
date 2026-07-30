@@ -15,8 +15,8 @@ Also, this first implementation will make use of the default available maps obje
 interface
 
 uses
-  Classes, SysUtils, maps, ComCtrls, bigmemallochandler, CEFuncProc,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, maps, ComCtrls, bigmemallochandler, CEFuncProc
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 resourcestring
   rsPALInvalidScandataFile = 'Invalid scandata file';

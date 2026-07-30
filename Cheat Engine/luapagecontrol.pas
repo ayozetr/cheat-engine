@@ -5,8 +5,8 @@ unit LuaPageControl;
 interface
 
 uses
-  Classes, SysUtils, controls, comctrls, lua, lualib, lauxlib, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, controls, comctrls, lua, lualib, lauxlib, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaPageControl;
 

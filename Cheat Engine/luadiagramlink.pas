@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, lua, lualib, lauxlib,LuaHandler, diagram, diagramblock,
-  diagramlink, diagramtypes, typinfo,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  diagramlink, diagramtypes, typinfo
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 implementation
 

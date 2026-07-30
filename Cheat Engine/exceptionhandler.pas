@@ -6,8 +6,8 @@ interface
 
 uses
   jwawindows, //I use jwawindows only for the purpose of the structure declaration of PVECTORED_EXCEPTION_HANDLER, I declare and assign AddVectoredExceptionHandler myself
-  windows, Classes, SysUtils,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  windows, Classes, SysUtils
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 var
   exceptrsp,exceptrbp, tryBegin, tryExcept: ptrUint; //globally accessible, set each time when a thread is about to raise an exception that needs to be handled

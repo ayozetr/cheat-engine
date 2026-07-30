@@ -12,8 +12,8 @@ uses
   {$ifdef darwin}
   macPort,
   {$endif}
-  Classes, SysUtils, registry,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, registry
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
   TCEReg=class

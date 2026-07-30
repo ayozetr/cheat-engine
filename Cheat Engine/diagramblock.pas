@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, Controls, types, DiagramTypes, Graphics, textrender,
-  ComCtrls{$ifdef windows}, gl, glext{$endif}, betterControls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  ComCtrls{$ifdef windows}, gl, glext{$endif}, betterControls
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 type
 

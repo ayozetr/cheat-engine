@@ -5,8 +5,8 @@ unit LuaBinary;
 interface
 
 uses
-  Classes, SysUtils, lua,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils, lua
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 procedure initializeLuaBinary;
 

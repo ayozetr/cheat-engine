@@ -5,8 +5,8 @@ unit pointerparser;
 interface
 
 uses
-  Classes, SysUtils,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 function getPointerAddress(address: ptruint; const offsets: array of integer; var hasError: boolean): ptruint;
 

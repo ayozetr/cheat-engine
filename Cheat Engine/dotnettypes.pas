@@ -5,8 +5,8 @@ unit DotNetTypes;
 interface
 
 uses
-  Classes, SysUtils,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  Classes, SysUtils
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}, linuxmemoryapi{$endif};
 
 resourcestring
   rsDNTEnd = 'END';
