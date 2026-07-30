@@ -47,6 +47,30 @@ uses
   FrmMemoryRecordDropdownSettingsUnit, xmlutils, zstream, zstreamext, commonTypeDefs,
   VirtualQueryExCache, LazLogger, LazUTF8, LCLVersion, fgl, betterControls;
   {$endif}
+
+  {$if not defined(windows) and not defined(darwin)}
+  //Linux: same list minus the units that only exist on Windows
+  LCLIntf, LCLProc, SysUtils, Classes, SyncObjs, SyncObjs2, Graphics, 
+  Controls, Forms, ComCtrls, StdCtrls, Menus, Buttons, ExtCtrls, Dialogs, 
+  Clipbrd, CEDebugger, assemblerunit, hotkeyhandler, registry, Math, 
+  ImgList, NewKernelHandler, unrandomizer, symbolhandler, ActnList, 
+  LResources, hypermode, memscan, autoassembler, plugin, savefirstscan, 
+  menuitemExtra, speedhack2, foundlisthelper, disassembler, peinfounit, 
+  PEInfoFunctions, simpleaobscanner, pointervaluelist, debughelper, 
+  frmRegistersunit, ctypes, addresslist, addresslisthandlerunit, 
+  memoryrecordunit, tablist, DebuggerInterface, tableconverter, 
+  customtypehandler, lua, luahandler, lauxlib, lualib, 
+  frmSelectionlistunit, {defaulttranslator, } fileaccess, formdesignerunit, 
+  ceguicomponents, frmautoinjectunit, cesupport, trainergenerator, 
+  genericHotkey, luafile, sharedMemory, FileUtil, networkInterfaceApi, 
+  networkconfig, PNGcomn, FPimage, byteinterpreter, 
+  frmgroupscanalgoritmgeneratorunit, vartypestrings, 
+  groupscancommandparser, GraphType, IntfGraphics, RemoteMemoryManager, 
+  savedscanhandler, debuggertypedefinitions, networkInterface, 
+  FrmMemoryRecordDropdownSettingsUnit, xmlutils, zstream, zstreamext, 
+  commonTypeDefs, VirtualQueryExCache, LazLogger, LazUTF8, LCLVersion, fgl, 
+  betterControls;
+  {$endif}
 //the following are just for compatibility
 
 

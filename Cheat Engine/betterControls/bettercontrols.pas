@@ -96,7 +96,9 @@ var
   procedure registerDarkModeFormAddHandler;
   {$endif}
 
-  {$ifdef darwin}
+  //BOOL comes from the windows unit; darwin declared its own but Linux was
+  //left without one, so the declaration below had nothing to resolve against
+  {$ifndef windows}
   type BOOL=boolean;
   {$endif}
   function ShouldAppsUseDarkMode:BOOL;
