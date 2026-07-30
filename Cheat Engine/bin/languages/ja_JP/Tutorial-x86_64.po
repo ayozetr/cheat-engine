@@ -1,0 +1,1031 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cheat Engine 7.7.0\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: coolvitto\n"
+"Language-Team: \n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+
+#: tform1.btnok.caption
+msgctxt "tform1.btnok.caption"
+msgid "OK"
+msgstr "OK"
+
+#: tform1.button1.caption
+msgctxt "tform1.button1.caption"
+msgid "Next Ⓟⓔⓝⓘⓢ"
+msgstr "次へ Ⓟⓔⓝⓘⓢ"
+
+#: tform1.button1.hint
+msgid "Click this to continue!!!"
+msgstr "クリックして次に進みます！！！"
+
+#: tform1.button2.caption
+msgid "Button2"
+msgstr "ボタン2"
+
+#: tform1.caption
+msgid "Cheat Engine Tutorial v7.7.0 Ⓟⓔⓝⓘⓢ"
+msgstr "Cheat Engine チュートリアル v7.7.0 Ⓟⓔⓝⓘⓢ"
+
+#: tform1.edtpassword.hint
+msgid "Use this to go imeadiatly to the step you want to try"
+msgstr "試したいステップに直接移動するにはここに入力"
+
+#: tform1.edtpassword.text
+msgid "090453"
+msgstr "090453"
+
+#: tform1.label1.caption
+msgid "Password"
+msgstr "パスワード"
+
+#: tform10.button3.caption
+msgid "Restart game"
+msgstr "ゲーム再開"
+
+#: tform10.button4.caption
+msgctxt "tform10.button4.caption"
+msgid "Attack"
+msgstr "攻撃"
+
+#: tform10.button5.caption
+msgctxt "tform10.button5.caption"
+msgid "Attack"
+msgstr "攻撃"
+
+#: tform10.button6.caption
+msgctxt "tform10.button6.caption"
+msgid "Restart game and autoplay"
+msgstr "ゲーム再開して自動プレイ"
+
+#: tform10.button7.caption
+msgctxt "tform10.button7.caption"
+msgid "Attack"
+msgstr "攻撃"
+
+#: tform10.button8.caption
+msgctxt "tform10.button8.caption"
+msgid "Attack"
+msgstr "攻撃"
+
+#: tform10.caption
+msgid "Step 9"
+msgstr "ステップ9"
+
+#: tform10.label1.caption
+msgctxt "tform10.label1.caption"
+msgid "100"
+msgstr "100"
+
+#: tform10.label10.caption
+msgctxt "tform10.label10.caption"
+msgid "Health: 500"
+msgstr "ヘルス：500"
+
+#: tform10.label2.caption
+msgctxt "tform10.label2.caption"
+msgid "Health:"
+msgstr "ヘルス："
+
+#: tform10.label3.caption
+msgid "Player 1: Dave"
+msgstr "プレイヤー1：デイブ"
+
+#: tform10.label4.caption
+msgctxt "tform10.label4.caption"
+msgid "Health: 100"
+msgstr "ヘルス：100"
+
+#: tform10.label5.caption
+msgid "Player 2: Eric"
+msgstr "プレイヤー2：エリック"
+
+#: tform10.label6.caption
+msgctxt "tform10.label6.caption"
+msgid "Health: 100"
+msgstr "ヘルス：100"
+
+#: tform10.label7.caption
+msgid "C. Player 3: HAL"
+msgstr "C. プレイヤー3：HAL"
+
+#: tform10.label8.caption
+msgctxt "tform10.label8.caption"
+msgid "Health: 500"
+msgstr "ヘルス：500"
+
+#: tform10.label9.caption
+msgid "C. Player 4: KITT"
+msgstr "C. プレイヤー4：KITT"
+
+#: tform2.button1.caption
+msgctxt "tform2.button1.caption"
+msgid "Next"
+msgstr "次へ"
+
+#: tform2.button2.caption
+msgctxt "tform2.button2.caption"
+msgid "Hit me"
+msgstr "攻撃"
+
+#: tform2.caption
+msgid "Step 2"
+msgstr "ステップ2"
+
+#: tform2.label1.caption
+msgctxt "tform2.label1.caption"
+msgid "100"
+msgstr "100"
+
+#: tform2.label2.caption
+msgctxt "tform2.label2.caption"
+msgid "Health:"
+msgstr "ヘルス："
+
+#: tform2.speedbutton1.caption
+msgctxt "tform2.speedbutton1.caption"
+msgid "Skip"
+msgstr "スキップ"
+
+#: tform3.button1.caption
+msgctxt "tform3.button1.caption"
+msgid "Next"
+msgstr "次へ"
+
+#: tform3.button2.caption
+msgctxt "tform3.button2.caption"
+msgid "Hit me"
+msgstr "攻撃"
+
+#: tform3.caption
+msgid "Step 3"
+msgstr "ステップ3"
+
+#: tform3.label1.caption
+msgid " "
+msgstr " "
+
+#: tform3.speedbutton1.caption
+msgctxt "tform3.speedbutton1.caption"
+msgid "Skip"
+msgstr "スキップ"
+
+#: tform4.button1.caption
+msgctxt "tform4.button1.caption"
+msgid "OK"
+msgstr "OK"
+
+#: tform4.caption
+msgid "Tutorial End"
+msgstr "チュートリアル終了"
+
+#: tform4.label1.caption
+msgid "Well done, you've completed the tutorial of Cheat Engine."
+msgstr "おめでとうございます。Cheat Engine のチュートリアルを完了しました。"
+
+#: tform4.label2.caption
+msgid "Just play around with the tutorial and learn how the other scanmethods work."
+msgstr "このチュートリアルで遊びながら、他のスキャン方法の動作を学んでください。"
+
+#: tform4.label3.caption
+msgid "And you can always check out the Cheat Engine Forum for useful information and ask for help"
+msgstr "また、役立つ情報や助けを求めるには、いつでもCheat Engine フォーラムをチェックしてください"
+
+#: tform4.label4.caption
+msgid "Cheat Engine Forum"
+msgstr "Cheat Engine フォーラム"
+
+#: tform5.button1.caption
+msgid "Fire"
+msgstr "発射"
+
+#: tform5.button2.caption
+msgctxt "tform5.button2.caption"
+msgid "Next"
+msgstr "次へ"
+
+#: tform5.button3.caption
+msgctxt "tform5.button3.caption"
+msgid "Hit me"
+msgstr "攻撃"
+
+#: tform5.caption
+msgid "Step 4"
+msgstr "ステップ4"
+
+#: tform5.label1.caption
+msgctxt "tform5.label1.caption"
+msgid "100"
+msgstr "100"
+
+#: tform5.label2.caption
+msgid "Ammo"
+msgstr "弾薬"
+
+#: tform5.label3.caption
+msgctxt "tform5.label3.caption"
+msgid "Health:"
+msgstr "ヘルス："
+
+#: tform5.label4.caption
+msgctxt "tform5.label4.caption"
+msgid "100"
+msgstr "100"
+
+#: tform5.label5.caption
+msgid "(float)"
+msgstr "(float)"
+
+#: tform5.label6.caption
+msgid "(double)"
+msgstr "(double)"
+
+#: tform5.speedbutton1.caption
+msgctxt "tform5.speedbutton1.caption"
+msgid "Skip"
+msgstr "スキップ"
+
+#: tform6.button1.caption
+msgctxt "tform6.button1.caption"
+msgid "Change value"
+msgstr "値変更"
+
+#: tform6.button2.caption
+msgctxt "tform6.button2.caption"
+msgid "Next"
+msgstr "次へ"
+
+#: tform6.caption
+msgid "Step 5"
+msgstr "ステップ5"
+
+#: tform6.label1.caption
+msgctxt "tform6.label1.caption"
+msgid "100"
+msgstr "100"
+
+#: tform6.speedbutton1.caption
+msgctxt "tform6.speedbutton1.caption"
+msgid "Skip"
+msgstr "スキップ"
+
+#: tform7.button1.caption
+msgctxt "tform7.button1.caption"
+msgid "Change value"
+msgstr "値変更"
+
+#: tform7.button2.caption
+msgctxt "tform7.button2.caption"
+msgid "Next"
+msgstr "次へ"
+
+#: tform7.button3.caption
+msgctxt "tform7.button3.caption"
+msgid "Change pointer"
+msgstr "ポインタ変更"
+
+#: tform7.caption
+msgid "Step 6"
+msgstr "ステップ6"
+
+#: tform7.label1.caption
+msgctxt "tform7.label1.caption"
+msgid "100"
+msgstr "100"
+
+#: tform7.label2.caption
+msgctxt "tform7.label2.caption"
+msgid "3"
+msgstr "3"
+
+#: tform7.speedbutton1.caption
+msgctxt "tform7.speedbutton1.caption"
+msgid "Skip"
+msgstr "スキップ"
+
+#: tform8.button1.caption
+msgctxt "tform8.button1.caption"
+msgid "Hit me"
+msgstr "攻撃"
+
+#: tform8.button2.caption
+msgctxt "tform8.button2.caption"
+msgid "Next"
+msgstr "次へ"
+
+#: tform8.caption
+msgid "Step 7"
+msgstr "ステップ7"
+
+#: tform8.label1.caption
+msgctxt "tform8.label1.caption"
+msgid "Health: 100"
+msgstr "ヘルス：100"
+
+#: tform8.speedbutton1.caption
+msgctxt "tform8.speedbutton1.caption"
+msgid "Skip"
+msgstr "スキップ"
+
+#: tform9.button1.caption
+msgctxt "tform9.button1.caption"
+msgid "Change value"
+msgstr "値変更"
+
+#: tform9.button2.caption
+msgctxt "tform9.button2.caption"
+msgid "Next"
+msgstr "次へ"
+
+#: tform9.button3.caption
+msgctxt "tform9.button3.caption"
+msgid "Change pointer"
+msgstr "ポインタ変更"
+
+#: tform9.caption
+msgid "Step 8"
+msgstr "ステップ8"
+
+#: tform9.label1.caption
+msgctxt "tform9.label1.caption"
+msgid "100"
+msgstr "100"
+
+#: tform9.label2.caption
+msgctxt "tform9.label2.caption"
+msgid "3"
+msgstr "3"
+
+#: tform9.speedbutton1.caption
+msgctxt "tform9.speedbutton1.caption"
+msgid "Skip"
+msgstr "スキップ"
+
+#: tfrmhelp.caption
+msgid "Help"
+msgstr "ヘルプ"
+
+#: tfrmhelp.image1.hint
+msgid "More information like videos for this step and written tutorials"
+msgstr "このステップのビデオや文書チュートリアルなどの詳細情報"
+
+#: unit1.rsfirststeptoohardbettergiveupnow
+msgid "First step too hard? Go to forum.cheatengine.org, then click on \"Tutorials\" for helpful guides!"
+msgstr "最初のステップが難しすぎますか？forum.cheatengine.org にアクセスして、「Tutorials」をクリックすると役立つガイドが見つかります！"
+
+#: unit1.rstutorial1
+msgid ""
+"Welcome to the Cheat Engine Tutorial (v3.6)\n"
+"\n"
+"This tutorial will teach you the basics of cheating in video games. It will also show you foundational aspects of using Cheat Engine (or CE for short). Follow the steps below to get started.\n"
+"\n"
+"1: Open Cheat Engine if it currently isn't running.\n"
+"2: Click on the \"Open Process\" icon (it's the top-left icon with the computer on it, below \"File\".).\n"
+"3: With the Process List window now open, look for this tutorial's process in the list. It will look something like \"00001F98-Tutorial-x86_64.exe\" or \"0000047C-Tutorial-i386.exe\". (The first 8 numbers/letters will probably be different.)\n"
+"4: Once you've found the process, click on it to select it, then click the \"Open\" button. (Don't worry about all the other buttons right now. You can learn about them later if you're interested.)\n"
+"\n"
+"Congratulations! If you did everything correctly, the process window should be gone with Cheat Engine now attached to the tutorial (you will see the process name towards the top-center of CE).\n"
+"\n"
+"Click the \"Next\" button below to continue, or fill in the password and click the \"OK\" button to proceed to that step.)\n"
+"\n"
+"If you're having problems, simply head over to forum.cheatengine.org, then click on \"Tutorials\" to view beginner-friendly guides!"
+msgstr ""
+"Cheat Engine チュートリアル（v3.6）へようこそ\n"
+"\n"
+"このチュートリアルでは、ビデオゲームでのチートの基本を学びます。また、Cheat Engine（略してCE）の使用の基礎も説明します。開始するには以下の手順に従ってください。\n"
+"\n"
+"1：Cheat Engine がまだ実行されていない場合は起動します。\n"
+"2：「Open Process」アイコンをクリックします（「File」の下にある、コンピューターの絵が描かれた左上のアイコンです）。\n"
+"3：プロセスリストウィンドウが開いたら、リストからこのチュートリアルのプロセスを探します。「00001F98-Tutorial-x86_64.exe」や「0000047C-Tutorial-i386.exe」のような名前です（最初の8桁の数字/文字は異なる可能性があります）。\n"
+"4：プロセスを見つけたら、クリックして選択し、「Open」ボタンをクリックします（今は他のボタンについては気にしないでください。興味があれば後で学べます）。\n"
+"\n"
+"おめでとうございます！正しく実行できれば、プロセスウィンドウは消え、Cheat Engine がチュートリアルにアタッチされます（CEの上部中央付近にプロセス名が表示されます）。\n"
+"\n"
+"続けるには下の「Next」ボタンをクリックするか、パスワードを入力して「OK」ボタンをクリックするとそのステップに進みます。\n"
+"\n"
+"問題がある場合は、forum.cheatengine.org にアクセスし、「Tutorials」をクリックして初心者向けのガイドをご覧ください！"
+
+#: unit10.rsdead
+msgid "DEAD"
+msgstr "死亡"
+
+#: unit10.rsfailureyourteamdied
+msgid "Failure. Your team died"
+msgstr "失敗。あなたのチームは全滅しました"
+
+#: unit10.rshealth
+#, object-pascal-format
+msgid "Health: %s"
+msgstr "ヘルス：%s"
+
+#: unit10.rsrestartgameandautoplay
+msgctxt "unit10.rsrestartgameandautoplay"
+msgid "Restart game and autoplay"
+msgstr "ゲーム再開して自動プレイ"
+
+#: unit10.rsstep9sharedcodepw
+#, object-pascal-format
+msgid "Step 9: Shared code: (PW=%s)"
+msgstr "ステップ9：共有コード：（PW=%s）"
+
+#: unit10.rsstop
+msgid "Stop"
+msgstr "停止"
+
+#: unit10.rsthisplayerisalreadydeadrestartthegame
+msgid "This player is already dead. Restart the game"
+msgstr "このプレイヤーは既に死亡しています。ゲームを再開してください"
+
+#: unit10.rstryagain10
+msgid "Can't figure out how to do this? Don't worry. Try asking in the forum at cheatengine.org or perhaps someone already explained it better there. Are you sure you want to quit?"
+msgstr "方法がわかりませんか？心配しないでください。cheatengine.orgのフォーラムで質問するか、誰かがより良い説明をしているかもしれません。本当に終了しますか？"
+
+#: unit10.rstutorialstep9
+msgid ""
+"This step will explain how to deal with code that is used for other object of the same type\n"
+"\n"
+"Often when you've found health of a unit or your own player, you will find that if you remove the code, it affects enemies as well.\n"
+"In these cases you must find out how to distinguish between your and the enemies objects.\n"
+"Sometimes this is as easy as checking the first 4 bytes (Function pointer table) which often point to a unique location for the player, and sometimes it's a team number, or a pointer to a pointer to a pointer to a pointer to a pointer to a playername. It all depends on the complexity of the game, and your luck\n"
+"\n"
+"The easiest method is finding what addresses the code you found writes to and then use the dissect data feature to compare against two structures. (Your unit(s)/player and the enemies) And then see if you can find out a way to distinguish between them.\n"
+"When you have found out how to distinguish between you and the computer you can inject an assembler script that checks for the condition and then either do not execute the code or do something else. (One hit kills for example)\n"
+"Alternatively, you can also use this to build a so called \"Array of byte\" string which you can use to search which will result in a list of all your or the enemies players\n"
+"In this tutorial I have implemented the most amazing game you will ever play.\n"
+"It has 4 players. 2 Players belong to your team, and 2 Players belong to the computer. \n"
+"Your task is to find the code that writes the health and make it so you win the game WITHOUT freezing your health\n"
+"To continue, press \"Restart game and autoplay\" to test that your code is correct\n"
+"\n"
+"\n"
+"Tip: Health is a float\n"
+"Tip2: There are multiple solutions"
+msgstr ""
+"このステップでは、同じタイプの他のオブジェクトにも使用されるコードの扱い方を説明します。\n"
+"\n"
+"多くの場合、ユニットや自分のプレイヤーのヘルスを見つけたとき、そのコードを無効にすると敵にも影響することがわかります。\n"
+"このような場合、自分のオブジェクトと敵のオブジェクトを区別する方法を見つけなければなりません。\n"
+"時には、最初の4バイト（関数ポインタテーブル）をチェックするだけで簡単に区別できることもあります。これは多くの場合、プレイヤー固有の場所を指しています。また、チーム番号だったり、プレイヤー名への複数のポインタの連鎖だったりします。ゲームの複雑さとあなたの運次第です。\n"
+"\n"
+"最も簡単な方法は、見つけたコードが書き込むアドレスを特定し、データ解析機能を使用して2つの構造体（自分のユニット/プレイヤーと敵）を比較することです。そして、それらを区別する方法を見つけられるかどうかを確認します。\n"
+"自分とコンピューターを区別する方法を見つけたら、条件をチェックするアセンブラスクリプトを注入し、コードを実行しないか、別のことを行うようにします（例えば、一撃で倒すなど）。\n"
+"別の方法として、これを使用して「バイト配列」文字列を構築し、検索に使用することで、自分または敵のプレイヤーのすべてのリストを得ることもできます。\n"
+"このチュートリアルでは、あなたが今までプレイした中で最も素晴らしいゲームを実装しました。\n"
+"4人のプレイヤーがいます。2人はあなたのチームに属し、2人はコンピューターに属します。\n"
+"あなたの課題は、ヘルスに書き込むコードを見つけ、自分のヘルスを固定せずにゲームに勝つようにすることです。\n"
+"続けるには、「ゲーム再開して自動プレイ」を押して、あなたのコードが正しいかテストしてください。\n"
+"\n"
+"\n"
+"ヒント：ヘルスはfloatです。\n"
+"ヒント2：複数の解決方法があります"
+
+#: unit10.rsu10thiswasthelasttutorial
+msgid "This was the last tutorial and you skipped it. You lose"
+msgstr "これが最後のチュートリアルでしたが、スキップしました。あなたの負けです"
+
+#: unit2.rsawyouredeathletmereviveyou
+msgctxt "unit2.rsawyouredeathletmereviveyou"
+msgid "Aw, you're dead! Let me revive you"
+msgstr "あら、あなたは死にました！復活させてあげます"
+
+#: unit2.rsloser
+msgctxt "unit2.rsloser"
+msgid "BOO"
+msgstr "ブー"
+
+#: unit2.rsquittingonstep2thisistheeasieststepthereisfindheal
+msgid "Quitting on step2? This is the easiest step there is. Find health, change health, done.... Sure you want to quit?"
+msgstr "ステップ2で終了しますか？これが最も簡単なステップです。ヘルスを見つけて、変更して、完了...本当に終了しますか？"
+
+#: unit2.rsstep2exactvaluescanningpw
+msgid "Step 2: Exact Value scanning (PW="
+msgstr "ステップ2：完全一致値スキャン（PW="
+
+#: unit2.rstutorialstep2
+msgid ""
+"Now that you have opened the tutorial with Cheat Engine let's get on with the next step.\n"
+"\n"
+"You can see at the bottom of this window is the text Health: xxx\n"
+"Each time you click 'Hit me'  your health gets decreased.\n"
+"\n"
+"To get to the next step you have to find this value and change it to 1000\n"
+"\n"
+"To find the value there are different ways, but I'll tell you about the easiest, 'Exact Value':\n"
+"First make sure value type is set to at least 2-bytes or 4-bytes. 1-byte will also work, but you'll run into an easy to fix problem when you've found the address and want to change it. The 8-byte may perhaps works if the bytes after the address are 0, but I wouldn't take the bet.\n"
+"Single, double, and the other scans just don't work, because they store the value in a different way.\n"
+"\n"
+"When the value type is set correctly, make sure the scantype is set to 'Exact Value'\n"
+"Then fill in the number your health is in the value box. And click 'First Scan'\n"
+"After a while (if you have an extremely slow pc) the scan is done and the results are shown in the list on the left.\n"
+"\n"
+"If you find more than 1 address and you don't know for sure which address it is, click 'Hit me', fill in the new health value into the value box, and click 'Next Scan'\n"
+"repeat this until you're sure you've found it. (that includes that there's only 1 address in the list.....)\n"
+"\n"
+"Now double click the address in the list on the left. This makes the address pop-up in the list at the bottom, showing you the current value.\n"
+"Double click the value, (or select it and press enter), and change the value to 1000.\n"
+"\n"
+"If everything went ok the Next button should become enabled, and you're ready for the next step.\n"
+"\n"
+"\n"
+"Note:\n"
+"If you did anything wrong while scanning, click \"New Scan\" and repeat the scanning again.\n"
+"Also, try playing around with the value and click 'Hit me'."
+msgstr ""
+"Cheat Engineでチュートリアルを開いたので、次のステップに進みましょう。\n"
+"\n"
+"このウィンドウの下部に「Health: xxx」というテキストがあります。\n"
+"「Hit me」をクリックするたびに、ヘルスが減少します。\n"
+"\n"
+"次のステップに進むには、この値を見つけて1000に変更する必要があります。\n"
+"\n"
+"値を見つける方法はいくつかありますが、最も簡単な「完全一致値」について説明します：\n"
+"まず、値のタイプを少なくとも2バイトまたは4バイトに設定します。1バイトでも動作しますが、アドレスを見つけて変更しようとするときに簡単に修正できる問題に遭遇します。8バイトは、アドレス後のバイトが0の場合に機能するかもしれませんが、賭けには出ないほうがいいでしょう。\n"
+"単精度、倍精度、その他のスキャンは、値を異なる方法で保存するため機能しません。\n"
+"\n"
+"値のタイプが正しく設定されたら、スキャンタイプを「完全一致値」に設定します。\n"
+"次に、現在のヘルスの値を値ボックスに入力し、「最初のスキャン」をクリックします。\n"
+"しばらくすると（非常に遅いPCの場合）、スキャンが完了し、結果が左側のリストに表示されます。\n"
+"\n"
+"1つ以上のアドレスが見つかり、どれが正しいかわからない場合は、「Hit me」をクリックし、新しいヘルス値を値ボックスに入力して、「次のスキャン」をクリックします。\n"
+"確実に見つかるまでこれを繰り返します（リストに1つだけアドレスが残るまで）。\n"
+"\n"
+"次に、左側のリストのアドレスをダブルクリックします。これにより、アドレスが下部のリストにポップアップ表示され、現在の値が表示されます。\n"
+"値をダブルクリック（または選択してEnterを押す）し、値を1000に変更します。\n"
+"\n"
+"すべてがうまくいけば、「次へ」ボタンが有効になり、次のステップに進む準備ができます。\n"
+"\n"
+"\n"
+"注意：\n"
+"スキャン中に何か間違えた場合は、「新規スキャン」をクリックしてスキャンをやり直してください。\n"
+"また、値をいろいろと変更して「Hit me」をクリックしてみてください。"
+
+#: unit3.rsdead
+msgid "Seems you've done it again! Let me get a replacement! (And restart your scan!)"
+msgstr "またやっちゃったようですね！代わりを用意します！（そしてスキャンを再開してください！）"
+
+#: unit3.rsloser
+msgctxt "unit3.rsloser"
+msgid "BOO"
+msgstr "ブー"
+
+#: unit3.rsstep3unknowninitialvaluepw
+msgid "Step 3: Unknown initial value (PW="
+msgstr "ステップ3：不明な初期値（PW="
+
+#: unit3.rstryagain3
+msgid "Step 3 isn't really that hard. Just do a new scan, unkown initial value and then decreased value till you find it. Almost everyone gets past this one. Sure you want to quit?"
+msgstr "ステップ3はそれほど難しくありません。新規スキャン、不明な初期値、そして減少値で見つかるまで続けるだけです。ほとんど全員がこれをクリアしています。本当に終了しますか？"
+
+#: unit3.rstutorialstep3
+msgid ""
+"Ok, seeing that you've figured out how to find a value using exact value let's move on to the next step.\n"
+"\n"
+"First things first though. Since you are doing a new scan, you have to click on New Scan first, to start a new scan. (You may think this is straighforward, but you'd be surprised how many people get stuck on that step) I won't be explaining this step again, so keep this in mind.\n"
+"Now that you've started a new scan, let's continue.\n"
+"\n"
+"In the previous test we knew the initial value so we could do an exact value search, but now we have a status bar where we don't know the starting value.\n"
+"We only know that the value is between 0 and 500. And each time you click 'Hit me' you lose some health. The amount you lose each time is shown above the status bar.\n"
+"\n"
+"Again there are several different ways to find the value. (like doing a decreased value by... scan), but I'll only explain the easiest. \"Unknown initial value\", and decreased value.\n"
+"Because you don't know the value it is right now, exact value wont do any good, so choose as scantype 'Unknown initial value', again, the value type is 4-bytes. (Most windows apps use 4-bytes.) Click First scan and wait till it's done.\n"
+"\n"
+"When it is done click 'Hit me'. You'll lose some of your health. (the amount you lost shows for a few seconds and then disappears, but you don't need that)\n"
+"Now go to Cheat Engine, and choose 'Decreased Value' and click 'Next Scan'\n"
+"When that scan is done, click 'Hit me' again, and repeat the above till you only find a few. \n"
+"\n"
+"We know the value is between 0 and 500, so pick the one that is most likely the address we need, and add it to the list.\n"
+"Now change the health to 5000, to proceed to the next step."
+msgstr ""
+"では、完全一致値で値を見つける方法がわかったようなので、次のステップに進みましょう。\n"
+"\n"
+"まず最初に、新規スキャンを実行するので、「新規スキャン」をクリックして新しいスキャンを開始する必要があります（これは単純に思えるかもしれませんが、このステップでつまずく人がどれだけ多いか驚くでしょう）。このステップは繰り返し説明しないので、覚えておいてください。\n"
+"新しいスキャンを開始したので、続けましょう。\n"
+"\n"
+"前回のテストでは初期値がわかっていたので完全一致値検索ができましたが、今回は開始値がわからないステータスバーがあります。\n"
+"値が0から500の間であることだけがわかっています。「Hit me」をクリックするたびにヘルスが減少します。毎回減少する量はステータスバーの上に表示されます。\n"
+"\n"
+"ここでも値を見つける方法はいくつかありますが（「減少値...」スキャンなど）、最も簡単な方法「不明な初期値」と減少値について説明します。\n"
+"現在の値がわからないため、完全一致値は役に立ちません。そこでスキャンタイプに「不明な初期値」を選択します。値のタイプは4バイトです（ほとんどのWindowsアプリは4バイトを使用します）。「最初のスキャン」をクリックし、完了するまで待ちます。\n"
+"\n"
+"完了したら「Hit me」をクリックします。ヘルスが減少します（減少した量は数秒間表示されて消えますが、それには注意を払う必要はありません）。\n"
+"次にCheat Engineに戻り、「減少値」を選択して「次のスキャン」をクリックします。\n"
+"そのスキャンが完了したら、再び「Hit me」をクリックし、数個だけになるまで上記を繰り返します。\n"
+"\n"
+"値は0から500の間であることがわかっているので、最も可能性の高いアドレスを選んでリストに追加します。\n"
+"次にヘルスを5000に変更して、次のステップに進みます。"
+
+#: unit5.rsconfirmclose5
+msgid "Come on. This step is simple. For health do a float scan, and for ammo a double type. (don't forget to disable fastscan for double in this case) Just ignore the fact that it looks different because it has a \".\" in the value. You sure you want to quit?"
+msgstr "さあ、このステップは簡単です。ヘルスは float スキャン、弾薬は double タイプでスキャンしてください（この場合、double の高速スキャンは忘れずに無効にしてください）。値に「.」が付いていて見た目が違うことは気にしないでください。本当に終了しますか？"
+
+#: unit5.rsdead
+#, object-pascal-format
+msgid "I think you're dead!%sPress ok to become a brain eating zombie"
+msgstr "あなたは死んだようです！%s OKを押すと脳を食べるゾンビになります"
+
+#: unit5.rsloser
+msgctxt "unit5.rsloser"
+msgid "BOO"
+msgstr "ブー"
+
+#: unit5.rsoutofammo
+#, object-pascal-format
+msgid "Out of ammo!%sPress ok to stock up on some ammo"
+msgstr "弾薬切れ！%s OKを押して弾薬を補充"
+
+#: unit5.rsstep4floatingpointspw
+msgid "Step 4: Floating points (PW="
+msgstr "ステップ4：浮動小数点数（PW="
+
+#: unit5.rstutorialstep4
+msgid ""
+"In the previous tutorial we used bytes to scan, but some games store information in so called 'floating point' notations. \n"
+"(probably to prevent simple memory scanners from finding it the easy way)\n"
+"a floating point is a value with some digits behind the point. (like 5.12 or 11321.1)\n"
+"\n"
+"Below you see your health and ammo. Both are stored as Floating point notations, but health is stored as a float and ammo is stored as a double.\n"
+"Click on hit me to lose some health, and on shoot to decrease your ammo with 0.5\n"
+" \n"
+"You have to set BOTH values to 5000 or higher to proceed.\n"
+"\n"
+"Exact value scan will work fine here, but you may want to experiment with other types too.\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"Hint: It is recommended to disable \"Fast Scan\" for type double"
+msgstr ""
+"前回のチュートリアルではバイトを使用してスキャンしましたが、一部のゲームは「浮動小数点」表記で情報を保存します。\n"
+"（おそらく、単純なメモリスキャナが簡単に見つけられないようにするためです）\n"
+"浮動小数点数は、小数点以下の桁がある値です（例：5.12や11321.1）。\n"
+"\n"
+"下にあなたのヘルスと弾薬があります。両方とも浮動小数点表記で保存されていますが、ヘルスはfloatとして保存され、弾薬はdoubleとして保存されています。\n"
+"「hit me」をクリックするとヘルスが減少し、「shoot」をクリックすると弾薬が0.5減少します。\n"
+" \n"
+"続行するには、両方の値を5000以上に設定する必要があります。\n"
+"\n"
+"完全一致値スキャンはここで正常に機能しますが、他のタイプも試してみるとよいでしょう。\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"ヒント：doubleタイプでは「高速スキャン」を無効にすることをお勧めします"
+
+#: unit6.rsloser
+msgctxt "unit6.rsloser"
+msgid "BOO"
+msgstr "ブー"
+
+#: unit6.rsstep5codefinderpw
+#, object-pascal-format
+msgid "Step 5: Code finder (PW=%s)"
+msgstr "ステップ5：コードファインダー（PW=%s）"
+
+#: unit6.rstryagain6
+msgid "This may look difficult, but it shouldn't be. Basically find health, right click health, find what overwrites it, change health, click replace, change health, done.  But don't feel down if you don't get it. At least you know the basics of memory scanning...  Are you sure you want to quit?"
+msgstr "難しそうに見えるかもしれませんが、そうでもありません。基本的には、ヘルスを見つけ、右クリックして、それに上書きするものを探し、ヘルスを変更し、置換をクリックし、ヘルスを変更して、完了です。理解できなくても落ち込まないでください。少なくともメモリスキャンの基本はわかりました...本当に終了しますか？"
+
+#: unit6.rstutorialstep5
+msgid ""
+"Sometimes the location of a value is stored at changes, when you restart the game, or even while you're playing. In that case you can use 2 things to still make a table that works.\n"
+"In this step I'll try to describe how to use the Code Finder function.\n"
+"\n"
+"The value down here will be at a different location each time you start the tutorial, so a normal entry in the address list wouldn't work.\n"
+"First try to find the address. (You've got to this point so I assume you know how to do that.)\n"
+"When you've found the address, right-click the address in Cheat Engine and choose \"Find out what writes to this address\". A window will pop up with an empty list.\n"
+"Then click on the Change value button in this tutorial, and go back to Cheat Engine. If everything went right, there should be an address with assembler code there now.\n"
+"Click it and choose the Replace option to replace it with code that does nothing. That will also add the code address to the code list in the Advanced Options window. (Which gets saved if you save your table.)\n"
+"\n"
+"Click on Stop, so the game will start running normal again, and click on Close to close the window.\n"
+"Now, click on Change value, and if everything went right the Next button should become enabled.\n"
+"\n"
+"Note: When you're freezing the address with a high enough speed it may happen that Next becomes visible anyhow."
+msgstr ""
+"時々、値の保存場所が変更されることがあります。ゲームを再起動したときや、プレイ中にさえ変わることがあります。そのような場合でも、機能するテーブルを作成するために2つの方法があります。\\n\n"
+"このステップでは、コードファインダー機能の使い方を説明します。\\n\n"
+"\\n\n"
+"ここの値は、チュートリアルを起動するたびに異なる場所に配置されます。そのため、アドレスリストに通常のエントリを追加しても機能しません。\\n\n"
+"まず、アドレスを見つけてみてください（ここまで来たので、その方法は知っていると思います）。\\n\n"
+"アドレスを見つけたら、Cheat Engineでそのアドレスを右クリックし、「このアドレスに書き込むものを特定」を選択します。空のリストがあるウィンドウがポップアップします。\\n\n"
+"次に、このチュートリアルの「値変更」ボタンをクリックし、Cheat Engineに戻ります。すべてがうまくいけば、そこにアセンブラコードのあるアドレスが表示されているはずです。\\n\n"
+"それをクリックし、「置換」オプションを選択して、何もしないコードに置き換えます。これにより、コードアドレスが「詳細オプション」ウィンドウのコードリストにも追加されます（テーブルを保存すると保存されます）。\\n\n"
+"\\n\n"
+"「停止」をクリックしてゲームを通常通り実行し、「閉じる」をクリックしてウィンドウを閉じます。\\n\n"
+"次に、「値変更」をクリックします。すべてがうまくいけば、「次へ」ボタンが有効になるはずです。\\n\"\n"
+"\\n\n"
+"注意：アドレスを十分に速い速度で固定していると、「次へ」が表示されることがあります。"
+
+#: unit6.rswelldoneyouscrewedupthetutorial
+msgctxt "unit6.rswelldoneyouscrewedupthetutorial"
+msgid "Well done, you screwed up the tutorial!!!!"
+msgstr "よくやった、チュートリアルを台無しにしました！！！！"
+
+#: unit7.rsdontfuckingfreezethepointer
+msgid "I'm sorry, but freezing the pointer is not really a functional solution"
+msgstr "申し訳ありませんが、ポインタを固定するのは実際の解決策ではありません"
+
+#: unit7.rsloser
+msgctxt "unit7.rsloser"
+msgid "BOO"
+msgstr "ブー"
+
+#: unit7.rsstep6pointerspw
+#, object-pascal-format
+msgid "Step 6: Pointers: (PW=%s)"
+msgstr "ステップ6：ポインタ：（PW=%s）"
+
+#: unit7.rstryagain7
+msgid "So, pointers are too difficult eh? Don't worry, try again later. For most beginners this is difficult to grasp. But I have to tell you it's a powerful feature if you learn to use it. Are you sure you want to quit?"
+msgstr "ポインタは難しすぎましたか？心配しないで、後でもう一度試してください。ほとんどの初心者にとって、これは理解するのが難しい概念です。しかし、使い方を学べば非常に強力な機能だと言わざるを得ません。本当に終了しますか？"
+
+#: unit7.rstutorialstep6
+msgid ""
+"Step 6: Pointers (PW = 098712)\n"
+"In earlier steps you found values by scanning memory directly. This works only as long as the value stays at the same address. Many programs and games store values at different memory locations while running or each time they start. When that happens, normal scans no longer work. Pointers are used to solve this problem.\n"
+"\n"
+"A pointer is an address that contains another address. Even if the final value moves, the pointer usually stays the same, which allows you to always find the value again.\n"
+"\n"
+"At the bottom of the tutorial program there are two buttons. One button changes only the value. The other button changes both the value and the memory location. This step teaches you how to find a pointer that still works even when the location changes.\n"
+"\n"
+"You do not need to know assembly language for this step, but basic understanding will help.\n"
+"\n"
+"First, find the address of the value the same way you did in previous steps. Once you have the correct address, right-click it and choose “Find out what accesses this address.” A new window will open.\n"
+"\n"
+"Now click the button in the tutorial that changes the value. One or more instructions will appear in the list. It is normal to see multiple results. Some instructions write to the address, and others only read from it.\n"
+"\n"
+"You can double-click any instruction or select it and click “More Info” to see detailed information. Do not worry if you are unsure which instruction to use at first.\n"
+"\n"
+"When looking at the instructions, focus on how the memory address inside the square brackets is calculated. If an instruction does not have anything between a [ and ], ignore it and try another one.\n"
+"\n"
+"Both read and write instructions can be useful. Even if an instruction only reads the value, it still shows how the address was calculated. Some read instructions may also modify the register they use. This is not a problem.\n"
+"\n"
+"Remember that you started by telling Cheat Engine to find what accesses this specific address. That means the expression inside the square brackets must evaluate to the address of the value you found.\n"
+"\n"
+"For example, you might see an instruction like:\n"
+"mov eax,[eax]\n"
+"\n"
+"This may look confusing at first. You can think of it as:\n"
+"mov eax,[eax+0]\n"
+"\n"
+"Since you know that [eax+0] was the address you told Cheat Engine to watch, this means that the value in the EAX register before the instruction ran must have been the address of the value itself. In this case, EAX is the pointer and the offset is 0.\n"
+"\n"
+"The same logic applies to other instructions. Even if the instruction changes a register, you can still use the calculation inside the square brackets to determine which register holds the base pointer and what offset is used.\n"
+"\n"
+"If Cheat Engine’s extra information window shows what it believes the pointer value is, remember that value.\n"
+"\n"
+"Next, go back to the main Cheat Engine window and scan for the pointer value. Use an exact value scan in hexadecimal. If the target program is 32-bit, use a 4 byte scan. If the target program is 64-bit, pointers are usually 8 bytes, so use an 8 byte scan instead.\n"
+"\n"
+"After scanning, you may get one address or many addresses. In most cases, the correct pointer is the smallest address in the list.\n"
+"\n"
+"Now click “Add Address Manually” and enable the pointer checkbox. The window will change and allow you to enter a pointer address and an offset.\n"
+"\n"
+"Enter the pointer address you found. You can enter it relative to the process, for example “Tutorial-i386.exe + xxxxxx,” or you can double-click the address in the scan results to add it to the address list and then use the absolute address shown there.\n"
+"\n"
+"Now enter the offset. If the instruction looked like [esi+12], then the offset is 12 in hexadecimal. If it looked like [esi], then the offset is 0.\n"
+"\n"
+"If the instruction was more complicated, such as:\n"
+"[EAX*2 + EDX + 00000310]\n"
+"\n"
+"Then EDX is the pointer, and everything else is part of the offset. For example, if eax was 4C, the offset would be calculated as 2 times 4C plus 310, which equals 3A8 in hexadecimal. You can use Windows Calculator in Programmer mode to do hexadecimal calculations.\n"
+"\n"
+"Click OK to add the pointer. If everything was done correctly, the address in the list will show something like P->xxxxxxx, where xxxxxxx is the actual address of the value. If it does not, then something went wrong in an earlier step.\n"
+"\n"
+"Finally, use the pointer you added to change the value to 5000 and check the Active box to freeze it. Then click the Change Pointer button in the tutorial. If the pointer works correctly, the Next button will appear.\n"
+"\n"
+"\n"
+"\n"
+"As an extra option, you can also use Cheat Engine’s pointer scanner to automatically search for pointers. This is especially useful in real games, but it is slower and more advanced."
+msgstr ""
+"ステップ6：ポインタ（PW = 098712）\n"
+"以前のステップでは、メモリを直接スキャンして値を見つけました。これは、値が同じアドレスに留まっている限り機能します。多くのプログラムやゲームは、実行中または起動するたびに異なるメモリ位置に値を保存します。これが起こると、通常のスキャンはもはや機能しません。ポインタはこの問題を解決するために使用されます。\n"
+"\n"
+"ポインタは、別のアドレスを含むアドレスです。最終的な値が移動しても、ポインタは通常同じままなので、常に値を見つけることができます。\n"
+"\n"
+"チュートリアルプログラムの下部には2つのボタンがあります。1つのボタンは値のみを変更します。もう1つのボタンは値とメモリ位置の両方を変更します。このステップでは、位置が変更されても機能するポインタを見つける方法を学びます。\n"
+"\n"
+"このステップではアセンブリ言語を知っている必要はありませんが、基本的な理解があれば役立ちます。\n"
+"\n"
+"まず、前のステップと同じ方法で値のアドレスを見つけます。正しいアドレスを見つけたら、それを右クリックして「このアドレスにアクセスするものを特定」を選択します。新しいウィンドウが開きます。\n"
+"\n"
+"次に、チュートリアルの値を変更するボタンをクリックします。リストに1つ以上の命令が表示されます。複数の結果が表示されるのは正常です。一部の命令はアドレスに書き込み、他の命令はアドレスからのみ読み取ります。\n"
+"\n"
+"任意の命令をダブルクリックするか、選択して「詳細情報」をクリックすると、詳細情報が表示されます。最初はどの命令を使用すればよいかわからなくても心配しないでください。\n"
+"\n"
+"命令を見るときは、角括弧内のメモリアドレスがどのように計算されるかに注目してください。命令に [ と ] の間に何もない場合は、それを無視して別のものを試してください。\n"
+"\n"
+"読み取り命令と書き込み命令の両方が役立つことがあります。命令が値の読み取りのみを行う場合でも、アドレスがどのように計算されたかが表示されます。一部の読み取り命令は、使用するレジスタを変更する場合もあります。これは問題ではありません。\n"
+"\n"
+"あなたはCheat Engineに特定のアドレスにアクセスするものを見つけるように指示して開始したことを忘れないでください。つまり、角括弧内の式は、あなたが見つけた値のアドレスに評価されなければなりません。\n"
+"\n"
+"例えば、次のような命令が見られるかもしれません：\n"
+"mov eax,[eax]\n"
+"\n"
+"これは最初は混乱するかもしれません。次のように考えることができます：\n"
+"mov eax,[eax+0]\n"
+"\n"
+"[eax+0] がCheat Engineに監視するように指示したアドレスだったことがわかっているので、これは命令が実行される前のEAXレジスタの値が値自体のアドレスであったことを意味します。この場合、EAXがポインタで、オフセットは0です。\n"
+"\n"
+"同じ論理が他の命令にも適用されます。命令がレジスタを変更する場合でも、角括弧内の計算を使用して、どのレジスタがベースポインタを保持し、どのオフセットが使用されているかを判断できます。\n"
+"\n"
+"Cheat Engineの詳細情報ウィンドウがポインタ値と思われるものを表示する場合は、その値を覚えておいてください。\n"
+"\n"
+"次に、メインのCheat Engineウィンドウに戻り、ポインタ値をスキャンします。16進数の完全一致値スキャンを使用します。対象プログラムが32ビットの場合は、4バイトスキャンを使用します。対象プログラムが64ビットの場合は、ポインタは通常8バイトなので、代わりに8バイトスキャンを使用します。\n"
+"\n"
+"スキャン後、1つまたは多くのアドレスが得られる場合があります。ほとんどの場合、正しいポインタはリスト内の最小のアドレスです。\n"
+"\n"
+"次に、「手動でアドレス追加」をクリックし、ポインタチェックボックスを有効にします。ウィンドウが変わり、ポインタアドレスとオフセットを入力できるようになります。\n"
+"\n"
+"見つけたポインタアドレスを入力します。プロセスを基準にして、例えば「Tutorial-i386.exe + xxxxxx」と入力するか、スキャン結果のアドレスをダブルクリックしてアドレスリストに追加し、そこに表示される絶対アドレスを使用することもできます。\n"
+"\n"
+"次にオフセットを入力します。命令が [esi+12] のようだった場合、オフセットは16進数の12です。[esi] のようだった場合、オフセットは0です。\n"
+"\n"
+"命令が次のように複雑だった場合：\n"
+"[EAX*2 + EDX + 00000310]\n"
+"\n"
+"その場合、EDXがポインタで、残りのすべてがオフセットの一部です。例えば、eaxが4Cだった場合、オフセットは2×4C + 310と計算され、16進数で3A8になります。Windowsの電卓をプログラマーモードで使用して16進数の計算を行うことができます。\n"
+"\n"
+"「OK」をクリックしてポインタを追加します。すべてが正しく行われた場合、リスト内のアドレスは P->xxxxxxx のように表示されます。ここで xxxxxxx は値の実際のアドレスです。そうでない場合は、以前のステップのどこかで問題が発生しています。\n"
+"\n"
+"最後に、追加したポインタを使用して値を5000に変更し、「有効」ボックスをチェックして固定します。次に、チュートリアルの「ポインタ変更」ボタンをクリックします。ポインタが正しく機能する場合、「次へ」ボタンが表示されます。\n"
+"\n"
+"\n"
+"\n"
+"追加オプションとして、Cheat Engineのポインタスキャナを使用して自動的にポインタを検索することもできます。これは実際のゲームで特に役立ちますが、より低速で高度な機能です。"
+
+#: unit7.rswelldoneyouscrewedupthetutorial
+msgctxt "unit7.rswelldoneyouscrewedupthetutorial"
+msgid "Well done, you screwed up the tutorial!!!!"
+msgstr "よくやった、チュートリアルを台無しにしました！！！！"
+
+#: unit7.rsyouvegotsecondslefttochangethevalueto5000
+#, object-pascal-format
+msgid "You have %s second%s left to change the value to 5000"
+msgstr "値を5000に変更するまであと %s 秒 %s です"
+
+#: unit8.rsawyouredeathletmereviveyou
+msgctxt "unit8.rsawyouredeathletmereviveyou"
+msgid "Aw, you're dead! Let me revive you"
+msgstr "あら、あなたは死にました！復活させてあげます"
+
+#: unit8.rshealth
+msgid "Health"
+msgstr "ヘルス"
+
+#: unit8.rsloser
+msgctxt "unit8.rsloser"
+msgid "BOO"
+msgstr "ブー"
+
+#: unit8.rsstep7codeinjectionpw
+#, object-pascal-format
+msgid "Step 7: Code Injection: (PW=%s)"
+msgstr "ステップ7：コード注入：（PW=%s）"
+
+#: unit8.rstryagain8
+msgid "Code injections too tough? No problem, memory scanning and basic pointers should be enough to get you experienced enough and you can always try the tutorial later. Are you sure you want to quit?"
+msgstr "コード注入は難しすぎますか？問題ありません。メモリスキャンと基本的なポインタで十分な経験が積めますし、後でいつでもチュートリアルを試すことができます。本当に終了しますか？"
+
+#: unit8.rstutorialstep7
+msgid ""
+"Code injection is a technique where you inject a piece of code into the target process, and then reroute the execution of code to go through your own written code.\n"
+"\n"
+"In this tutorial you'll have a health value and a button that will decrease your health by 1 each time you click it.\n"
+"Your task is to use code injection to make the button increase your health by 2 each time it is clicked.\n"
+"\n"
+"Start with finding the address and then find what writes to it.\n"
+"Then when you've found the code that decreases it browse to that address in the disassembler, and open the auto assembler window (Ctrl+A).\n"
+"There click on template and then code injection, and give it the address that decreases health (if it isn't already filled in correctly).\n"
+"That will generate a basic auto assembler injection framework you can use for your code.\n"
+"\n"
+"Notice the alloc, that will allocate a block of memory for your code cave, in the past, in the pre windows 2000 systems, people had to find code caves in the memory (regions of memory unused by the game), but that's luckily a thing of the past since windows 2000, and will these days cause errors when trying to be used, due to SP2 of XP and the NX bit of new CPUs.\n"
+"\n"
+"Also notice the line newmem: and originalcode: and the text \"Place your code here\".\n"
+"As you guessed it, write your code here that will increase the health with 2.\n"
+"A useful assembler instruction in this case is the \"ADD instruction\".\n"
+"\n"
+"Here are a few examples:\n"
+"\"ADD [00901234],9\" to increase the address at 00901234 with 9\n"
+"\"ADD [ESP+4],9\" to increase the address pointed to by ESP+4 with 9\n"
+"In this case, you'll have to use the same thing between the brackets as the original code has that decreases your health.\n"
+"\n"
+"Notice:\n"
+"It is recommended to delete the line that decreases your health from the original code section, else you'll have to increase your health with 3 (you increase with 3, the original code decreases with 1, so the end result is increase with 2), which might become confusing. But it's all up to you and your programming.\n"
+"\n"
+"Notice 2:\n"
+"In some games the original code can exist out of multiple instructions, and sometimes, not always, it might happen that a code at another place jumps into your jump instruction end will then cause unknown behavior. If that happens, you should usually look near that instruction and see the jumps and fix it, or perhaps even choose to use a different address to do the code injection from. As long as you're able to figure out the address to change from inside your injected code."
+msgstr ""
+"コード注入は、対象プロセスにコードの断片を注入し、コードの実行を自分が書いたコードを通るように再ルーティングする技術です。\n"
+"\n"
+"このチュートリアルでは、ヘルス値と、クリックするたびにヘルスを1ずつ減少させるボタンがあります。\n"
+"あなたの課題は、コード注入を使用して、ボタンがクリックされるたびにヘルスを2ずつ増加させるようにすることです。\n"
+"\n"
+"まずアドレスを見つけ、次にそれに書き込むものを見つけます。\n"
+"次に、それを減少させるコードを見つけたら、逆アセンブラでそのアドレスに移動し、自動アセンブラウィンドウ（Ctrl+A）を開きます。\n"
+"そこでテンプレートをクリックし、次にコード注入をクリックし、ヘルスを減少させるアドレスを指定します（まだ正しく入力されていない場合）。\n"
+"これにより、コードに使用できる基本的な自動アセンブラ注入フレームワークが生成されます。\n"
+"\n"
+"allocに注目してください。これはコードケーブ用のメモリブロックを割り当てます。昔、Windows 2000以前のシステムでは、人々はメモリ内のコードケーブ（ゲームによって使用されていないメモリ領域）を見つける必要がありましたが、幸いWindows 2000以降は過去のものとなり、XPのSP2と新しいCPUのNXビットのために、今日では使用しようとするとエラーが発生します。\n"
+"\n"
+"また、newmem：とoriginalcode：という行と「ここにコードを記述」というテキストにも注目してください。\n"
+"お察しの通り、ここにヘルスを2増加させるコードを書きます。\n"
+"この場合に役立つアセンブラ命令は「ADD命令」です。\n"
+"\n"
+"以下にいくつかの例を示します：\n"
+"「ADD [00901234],9」はアドレス00901234を9増加させます\n"
+"「ADD [ESP+4],9」はESP+4が指すアドレスを9増加させます\n"
+"この場合、ヘルスを減少させる元のコードと同じ角括弧内のものを使用する必要があります。\n"
+"\n"
+"注意：\n"
+"元のコードセクションからヘルスを減少させる行を削除することをお勧めします。そうしないと、ヘルスを3増加させる必要があります（3増加させ、元のコードが1減少させるため、最終結果は2増加になります）。これは混乱を招く可能性があります。しかし、それはすべてあなた次第です。\n"
+"\n"
+"注意2：\n"
+"一部のゲームでは、元のコードが複数の命令で構成されていることがあり、時には別の場所のコードがジャンプ命令の終わりにジャンプして未知の動作を引き起こすことがあります。それが発生した場合は、通常その命令の近くを見てジャンプを確認し修正するか、あるいはコード注入を行う別のアドレスを使用することを選択するかもしれません。注入したコード内から変更するアドレスを特定できる限り、問題ありません。"
+
+#: unit9.rsloser
+msgctxt "unit9.rsloser"
+msgid "BOO"
+msgstr "ブー"
+
+#: unit9.rsstep8multilevelpointerspw
+#, object-pascal-format
+msgid "Step 8: Multilevel pointers: (PW=%s)"
+msgstr "ステップ8：マルチレベルポインタ：（PW=%s）"
+
+#: unit9.rstryagain9
+msgid "Aw, you've almost reached the end. But don't worry, multilevel pointers can be a real pain when dealing with. If you get more experienced someday you can try it again. Are you sure you want to quit?"
+msgstr "ああ、もうすぐ終わりです。でも心配しないで、マルチレベルポインタは扱いが本当に面倒なことがあります。いつかもっと経験を積んだら、もう一度試してみてください。本当に終了しますか？"
+
+#: unit9.rstutorialstep8
+msgid ""
+"This step will explain how to use multi-level pointers.\n"
+"In step 6 you had a simple level-1 pointer, with the first address found already being the real base address.\n"
+"This step however is a level-4 pointer. It has a pointer to a pointer to a pointer to a pointer to a pointer to the health.\n"
+"\n"
+"You basicly do the same as in step 6. Find out what accesses the value, look at the instruction and what probably is the base pointer value, and what is the offset, and already fill that in or write it down. But in this case the address you'll find will also be a pointer. You just have to find out the pointer to that pointer exactly the same way as you did with the value. Find out what accesses that address you found, look at the assembler instruction, note the probable instruction and offset, and use that.\n"
+"And continue till you can't get any further (usually when the base address is a static address, shown up as green.)\n"
+"\n"
+"Click Change Value to let the tutorial access the health.\n"
+"If you think you've found the pointer path click Change Register. The pointers and value will then change and you'll have 3 seconds to freeze the address to 5000.\n"
+"\n"
+"Extra: This problem can also be solved using an auto assembler script, or using the pointer scanner.\n"
+"Extra2: In some situations it is recommended to change CE's Codefinder settings to Access violations when \n"
+"encountering instructions like mov eax,[eax] since debug registers show it AFTER it was changed, making it hard to find out the value of the pointer.\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"Extra3: If you're still reading. You might notice that when looking at the assembler instructions that the pointer is being read and filled out in the same codeblock (same routine, if you know assembler, look up till the start of the routine). This doesn't always happen, but can be really useful in finding a pointer when debugging is troublesome."
+msgstr ""
+"このステップでは、マルチレベルポインタの使い方を説明します。\n"
+"ステップ6では、単純なレベル1ポインタがあり、最初に見つけたアドレスが既に実際のベースアドレスでした。\n"
+"しかし、このステップはレベル4ポインタです。ヘルスへのポインタへのポインタへのポインタへのポインタへのポインタがあります。\n"
+"\n"
+"基本的にはステップ6と同じことを行います。値にアクセスするものを特定し、命令とおそらくベースポインタ値とオフセットを調べ、それを入力するか書き留めます。しかしこの場合、見つけたアドレスもポインタになります。そのポインタへのポインタを値と同じ方法で見つける必要があります。見つけたアドレスにアクセスするものを特定し、アセンブラ命令を見て、おそらくベースポインタとオフセットをメモし、それを使用します。\n"
+"そして、それ以上進めなくなるまで続けます（通常、ベースアドレスが静的アドレスで緑色で表示されるとき）。\n"
+"\n"
+"「値変更」をクリックして、チュートリアルにヘルスにアクセスさせます。\n"
+"ポインタパスを見つけたと思ったら、「ポインタ変更」をクリックします。ポインタと値が変更され、アドレスを5000に固定するまで3秒間あります。\n"
+"\n"
+"追加情報：この問題は、自動アセンブラスクリプトまたはポインタスキャナを使用して解決することもできます。\n"
+"追加情報2：状況によっては、mov eax,[eax]のような命令に遭遇した場合、デバッグレジスタは変更後に表示されるため、ポインタの値を見つけるのが難しくなります。その場合は、CEのコードファインダー設定をアクセス違反に変更することをお勧めします。\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"追加情報3：まだ読んでいるなら。アセンブラ命令を見ると、ポインタが同じコードブロック内で読み取られて入力されていることに気付くかもしれません（同じルーチン内で、アセンブラがわかるなら、ルーチンの開始まで調べてみてください）。これは常に起こるわけではありませんが、デバッグが面倒なときにポインタを見つけるのに非常に役立ちます。"
+
+#: unit9.rsunrandomizerdetected
+msgid "Unrandomizer detected"
+msgstr "アンランダマイザが検出されました"
+
+#: unit9.rsyouvegotsecondslefttochangethevalueto5000
+#, object-pascal-format
+msgid "You've got %s seconds left to change the value to 5000"
+msgstr "値を5000に変更するまであと %s 秒です"

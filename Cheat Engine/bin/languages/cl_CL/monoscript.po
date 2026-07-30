@@ -1,0 +1,148 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Manuel Ibacache M. de Chile 2018 <devilmaycry4.2010@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.6\n"
+
+#: monoscript-FITM
+msgid "Failure injecting the MonoDatacollector dll"
+msgstr "Error al inyectar el dvd MonoDatacollector"
+
+#: monoscript-DYWTL
+msgid "Do you wish to let the mono extention figure out the name and start address? If it's not a proper object this may crash the target."
+msgstr "Desea que la extension mono descubra el nombre y la direccion de inicio? Si no es un objeto adecuado, puede colisionar con el objetivo."
+
+#: monoscript-IO
+msgid "Instances of "
+msgstr "Instancias de"
+
+#: monoscript-WTAJG
+msgid "Warning: These are just guesses. Validate them yourself"
+msgstr "Advertencia: estas son solo conjeturas. Validalos usted mismo"
+
+#: monoscript-AN
+msgid "address==nil"
+msgstr "direccion==nil"
+
+#: monoscript-Invoke
+msgid "Invoke "
+msgstr "Invocar"
+
+#: monoscript-IA
+msgid "Instance address"
+msgstr "Direccion de instancia"
+
+#: monoscript-PW
+msgid "<Please wait...>"
+msgstr "<Por favor espere ...>"
+
+#: monoscript-Parameters
+msgid "Parameters"
+msgstr "Parametros"
+
+#: monoscript-OK
+msgid "OK"
+msgstr "Aceptar"
+
+#: monoscript-Cancel
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: monoscript-Parameter
+msgid "parameter "
+msgstr "Parametro"
+
+#: monoscript-INAVA
+msgid " is not a valid address"
+msgstr "no es una direccion valida"
+
+#: monoscript-INAVV
+msgid "is not a valid value"
+msgstr "no es un valor valido"
+
+#: monoscript-IFT
+msgid "ILCode from %x to %x"
+msgstr "ILCode desde %x to %x"
+
+#: monoscript-OX
+msgid "Offset %x"
+msgstr "Offset %x"
+
+#: monoscript-Resolve
+msgid "Resolve "
+msgstr "Resolver"
+
+#: monoscript-XSTS
+msgid "%x : %s (type: %s)"
+msgstr "%x : %s (tipo: %s)"
+
+#: monoscript-AYSYWTE
+msgid "Are you sure you wish to expand the whole tree? This can take a while and Cheat Engine may look like it has crashed (It has not)"
+msgstr "Estas seguro de que deseas expandir todo el arbol? Esto puede demorar un poco y puede parecer que Cheat Engine se ha bloqueado (no lo ha hecho)"
+
+#: monoscript-FTL
+msgid "Failure to launch"
+msgstr "Falla en el lanzamiento"
+
+#: monoscript-Mono
+msgid "Mono"
+msgstr "Mono"
+
+#: monoscript-AMF
+msgid "Activate mono features"
+msgstr "Activar funciones mono"
+
+#: monoscript-DM
+msgid "Dissect mono"
+msgstr "Diseccionar mono"
+
+#: monoscript-TMHFTI
+msgid "The mono handler failed to initialize"
+msgstr "El controlador de mono no se pudo inicializar"
+
+#: monoscript-IPMN
+msgid "Invalid parameters (Methodname could not be determined)"
+msgstr "Parametros invalidos (Methodname no se pudo determinar)"
+
+#: monoscript-IPCN
+msgid "Invalid parameters (Classname could not be determined)"
+msgstr "Parametros no validos (no se pudo determinar el nombre de la clase)"
+
+#: monoscript-IPN
+msgid "Invalid parameters (name could not be determined)"
+msgstr "Parametros invalidos (no se pudo determinar el nombre)"
+
+#: monoscript-CNBF
+msgid " could not be found"
+msgstr "no pudo ser encontrado"
+
+#: monoscript-CNBJ
+msgid " could not be jitted"
+msgstr "no podria ser jodido"
+
+#: monoscript-STFDNWY
+msgid "Sorry this feature does not work yet.  getStructureCount needs patching first."
+msgstr "Lo siento, esta caracteristica no funciona todavia. getStructureCount necesita parchear primero"
+
+#: monoscript-Removing
+msgid "Removing "
+msgstr "Borrando"
+
+#: monoscript-RS
+msgid "Reloading Structure "
+msgstr "Estructura de recarga"
+
+#: monoscript-TC
+msgid "The class "
+msgstr "La clase"
+
+#: monoscript-HNF
+msgid " has no fields"
+msgstr "no tiene campos"

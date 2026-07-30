@@ -1,0 +1,184 @@
+#: pseudocodediagram-file
+msgid "File"
+msgstr "Archivo"
+
+#: pseudocodediagram-lff
+msgid "Load from file"
+msgstr "Cargar desde archivo"
+
+#: pseudocodediagram-stfywto
+msgid "Select the file you wish to open"
+msgstr "Selecciona el archivo que quieres abrir"
+
+#: pseudocodediagram-dfcc
+msgid "Diagram files (*.CEDIAG )|*.CEDIAG"
+msgstr "Archivos de diagrama (*.CEDIAG )|*.CEDIAG"
+
+#: pseudocodediagram-stf
+msgid "Save to file"
+msgstr "Guardar en un archivo"
+
+#: pseudocodediagram-fitfywtstda
+msgid "Fill in the filename you wish to save this diagram as"
+msgstr "Indica con qué nombre quieres guardar este diagrama"
+
+#: pseudocodediagram-sdti
+msgid "Save diagram to image"
+msgstr "Guardar el diagrama como imagen"
+
+#: pseudocodediagram-fitfywtstdi
+msgid "Fill in the filename you wish to save this diagram image"
+msgstr "Indica con qué nombre quieres guardar la imagen del diagrama"
+
+#: pseudocodediagram-pfpp
+msgid "PNG files (*.PNG )|*.PNG"
+msgstr "Archivos PNG (*.PNG )|*.PNG"
+
+#: pseudocodediagram-close
+msgid "Close"
+msgstr "Cerrar"
+
+#: pseudocodediagram-display
+msgid "Display"
+msgstr "Ver"
+
+#: pseudocodediagram-spfu2oc
+msgid "Show path from Ultimap1/2 or Codefilter"
+msgstr "Mostrar la ruta desde Ultimap1/2 o el filtro de código"
+
+#: pseudocodediagram-spftw
+msgid "Show path from tracer window"
+msgstr "Mostrar la ruta desde la ventana de traza"
+
+#: pseudocodediagram-tsa
+msgid "Tracer starting at %8x (%s)"
+msgstr "Traza que empieza en %8x (%s)"
+
+#: pseudocodediagram-tp
+msgid "Tracer paths"
+msgstr "Rutas de traza"
+
+#: pseudocodediagram-wtwsbu
+msgid "Which tracer window shall be used?"
+msgstr "¿Qué ventana de traza quieres usar?"
+
+#: pseudocodediagram-ntwrv
+msgid "No tracerform with results visible"
+msgstr "No hay ninguna ventana de traza con resultados"
+
+#: pseudocodediagram-v
+msgid "View"
+msgstr "Vista"
+
+#: pseudocodediagram-z
+msgid "Zoom"
+msgstr "Zoom"
+
+#: pseudocodediagram-zi
+msgid "Zoom in"
+msgstr "Acercar"
+
+#: pseudocodediagram-zo
+msgid "Zoom out"
+msgstr "Alejar"
+
+#: pseudocodediagram-e
+msgid "Edit"
+msgstr "Editar"
+
+#: pseudocodediagram-nh
+msgid "new header"
+msgstr "nueva cabecera"
+
+#: pseudocodediagram-nbbc
+msgid "new block background color (0xBBGGRR)"
+msgstr "nuevo color de fondo del bloque (0xBBGGRR)"
+
+#: pseudocodediagram-sl
+msgid "Sources list"
+msgstr "Lista de orígenes"
+
+#: pseudocodediagram-dl
+msgid "Destinations list"
+msgstr "Lista de destinos"
+
+#: pseudocodediagram-be
+msgid "Block editor"
+msgstr "Editor de bloques"
+
+#: pseudocodediagram-ok
+msgid "OK"
+msgstr "Aceptar"
+
+#: pseudocodediagram-cancel
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: pseudocodediagram-gts
+msgid "Go to source"
+msgstr "Ir al origen"
+
+#: pseudocodediagram-gtd
+msgid "Go to destination"
+msgstr "Ir al destino"
+
+#: pseudocodediagram-rap
+msgid "Remove all points"
+msgstr "Quitar todos los puntos"
+
+#: pseudocodediagram-ebh
+msgid "Edit block header"
+msgstr "Editar la cabecera del bloque"
+
+#: pseudocodediagram-ebc
+msgid "Edit block color"
+msgstr "Editar el color del bloque"
+
+#: pseudocodediagram-ls
+msgid "List sources"
+msgstr "Listar los orígenes"
+
+#: pseudocodediagram-ld
+msgid "List destinations"
+msgstr "Listar los destinos"
+
+#: pseudocodediagram-eac
+msgid "Edit annotation color"
+msgstr "Editar el color de la anotación"
+
+#: pseudocodediagram-da
+msgid "Delete annotation"
+msgstr "Eliminar la anotación"
+
+#: pseudocodediagram-ca
+msgid "Create annotation"
+msgstr "Crear una anotación"
+
+#: pseudocodediagram-mdi
+msgid "[Diagram info]"
+msgstr "[Información del diagrama]"
+
+#: pseudocodediagram-fstart
+msgid " Function start: 0x%X"
+msgstr " Inicio de la función: 0x%X"
+
+#: pseudocodediagram-fstop
+msgid " Function stop: 0x%X"
+msgstr " Fin de la función: 0x%X"
+
+#: pseudocodediagram-dbc
+msgid " Diagram blocks count: %d"
+msgstr " Número de bloques del diagrama: %d"
+
+#: pseudocodediagram-dlc
+msgid " Diagram links count: %d"
+msgstr ""
+
+#: pseudocodediagram-diagram
+msgid "Diagram"
+msgstr ""
+
+#: pseudocodediagram-sd
+msgid "Spawn diagram"
+msgstr ""
+

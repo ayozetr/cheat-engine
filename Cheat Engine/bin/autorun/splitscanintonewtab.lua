@@ -1,3 +1,4 @@
+pcall(loadPOFile, getTranslationFolder()..'splitscanintonewtab.po')
 --saves the current scan
 --creates a new tab
 --loads the scan into this tab

@@ -1,0 +1,7 @@
+#: JavaSearch:1
+msgid "Find Field"
+msgstr "Buscar campo"
+
+#: JavaSearch:2
+msgid "Find Method"
+msgstr "Buscar método"

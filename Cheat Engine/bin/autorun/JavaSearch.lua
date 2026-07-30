@@ -1,3 +1,4 @@
+pcall(loadPOFile, getTranslationFolder()..'JavaSearch.po')
 --javaSearch
 
 function spawnJavaSearchDialog(frmJavaInfo, searchtype)  

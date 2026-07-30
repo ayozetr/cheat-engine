@@ -1,3 +1,4 @@
+pcall(loadPOFile, getTranslationFolder()..'bigendian.po')
 local scripts={}
 
 local function registerBigEndianInt16()

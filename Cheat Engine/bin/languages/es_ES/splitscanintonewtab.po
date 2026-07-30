@@ -1,0 +1,3 @@
+#: splitscanintonewtab:1
+msgid "Split scan into new tab"
+msgstr "Dividir el escaneo en una pestaña nueva"

@@ -1,3 +1,4 @@
+pcall(loadPOFile, getTranslationFolder()..'andtools.po')
 require("lfs")
 andtools={}
 
@@ -51,7 +52,7 @@ function andtools.patchAPK(packagename)
   local localpath=andtools.workpath..extractFileName(packagepath)
 
   synchronize(function()
-    miAndroid.Caption='Android (Pulling APK)'
+    miAndroid.Caption=translate('Android (Pulling APK)')
   end)
 
   local r,c=runCommand(andtools.path..'adb.exe', {andtools.deviceidselectioncommand, 'pull', packagepath, localpath})
@@ -60,7 +61,7 @@ function andtools.patchAPK(packagename)
   if fileExists(localpath) and r:find("pulled") then
     --got it
     synchronize(function()
-      miAndroid.Caption='Android (Decoding APK)'
+      miAndroid.Caption=translate('Android (Decoding APK)')
     end)
 
     local extractedPath=extractFileNameWithoutExt(localpath)
@@ -70,7 +71,7 @@ function andtools.patchAPK(packagename)
 
     if (c==0) and fileExists(extractedPath..[[\AndroidManifest.xml]]) then
       synchronize(function()
-        miAndroid.Caption='Android (Rebuilding APK)'
+        miAndroid.Caption=translate('Android (Rebuilding APK)')
       end)
 
 
@@ -79,7 +80,7 @@ function andtools.patchAPK(packagename)
       if fileExists(extractedPath..'_patched.apk') then
         if not fileExists(andtools.workpath..'cekey.store') then
           synchronize(function()
-            miAndroid.Caption='Android (Creating signature)'
+            miAndroid.Caption=translate('Android (Creating signature)')
           end)
 
           r,c=runCommand(andtools.path..[[jre\bin\keytool.exe]], {'-genkey', '-noprompt', '-v', '-alias', 'cheater', '-dname', 'L=MotherFuckingCheater','-keyalg', 'RSA','-keysize','2048','-validity','10000','-storepass','password123', '-keystore', andtools.workpath..[[ce.keystore]],'-keypass', 'password123'})
@@ -94,7 +95,7 @@ function andtools.patchAPK(packagename)
         end
 
         synchronize(function()
-          miAndroid.Caption='Android (Signing new APK)'
+          miAndroid.Caption=translate('Android (Signing new APK)')
         end)
         r,c=runCommand(andtools.path..[[jre\bin\jarsigner.exe]], [[-sigalg SHA1withRSA -digestalg SHA1 -keystore "]]..andtools.workpath..[[ce.keystore" -storepass password123 "]]..extractedPath..[[_patched.apk" cheater]])
 
@@ -107,7 +108,7 @@ function andtools.patchAPK(packagename)
 
         --zipalign -p -f -v 4 package.apk package-za.apk
         synchronize(function()
-          miAndroid.Caption='Android (ZipAlign new APK)'
+          miAndroid.Caption=translate('Android (ZipAlign new APK)')
         end)
 
         local zaparam=[[-p -f -v 4 "%s" "%s"]]
@@ -122,7 +123,7 @@ function andtools.patchAPK(packagename)
 
 
         synchronize(function()
-          miAndroid.Caption='Android (Replacing APK)'
+          miAndroid.Caption=translate('Android (Replacing APK)')
         end)
 
 
@@ -144,7 +145,7 @@ continue installing the new package?]],mtWarning, mbYes, mbNo)
           end)
         end
 
-        messageDialog("APK patch successful",mtInformation)
+        messageDialog(translate("APK patch successful"),mtInformation)
 
 
 
@@ -184,7 +185,7 @@ miAndroid.Caption='Android'
 MainForm.Menu.Items.insert(MainForm.miHelp.MenuIndex, miAndroid)
 
 miPatchAPK=createMenuItem(miAndroid)
-miPatchAPK.Caption='Patch APK to debuggable'
+miPatchAPK.Caption=translate('Patch APK to debuggable')
 miAndroid.add(miPatchAPK)
 
 --miLaunchCEServer=createMenuItem(miAndroid)
@@ -202,7 +203,7 @@ miPatchAPK.OnClick=function(s)
 
   local devicelist=andtools.getDeviceList()
   if #devicelist==0 then
-    messageDialog('There is no android device available', mtError, mbOK)
+    messageDialog(translate('There is no android device available'), mtError, mbOK)
     return
   end
 
