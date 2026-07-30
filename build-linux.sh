@@ -5,8 +5,10 @@
 #   ./build-linux.sh linuxmemoryapi.pas MainUnit.pas
 #
 # Same environment variables as sync-linux.sh.
-CE_VM="${CE_VM:-ayoze@BUILD_HOST}"
-CE_VM_PATH="${CE_VM_PATH:-/home/ayoze/ce-port}"
+if [ -z "$CE_VM" ] || [ -z "$CE_VM_PATH" ]; then
+  echo "set CE_VM=user@host and CE_VM_PATH=/path/to/checkout first" >&2
+  exit 2
+fi
 SRC="$(cd "$(dirname "$0")" && pwd)/Cheat Engine"
 DST="$CE_VM_PATH/Cheat Engine"
 

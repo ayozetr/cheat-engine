@@ -2,11 +2,13 @@
 # Push the source tree to the build machine and rebuild the Linux target.
 #
 # Point it at your own box:
-#   export CE_VM=user@host          (default below)
-#   export CE_VM_PASS=...           only if you want sshpass; otherwise use keys
-#   export CE_VM_PATH=/path/to/checkout
-CE_VM="${CE_VM:-ayoze@BUILD_HOST}"
-CE_VM_PATH="${CE_VM_PATH:-/home/ayoze/ce-port}"
+#   export CE_VM=user@host
+#   export CE_VM_PATH=/path/to/checkout   # the directory holding "Cheat Engine/"
+#   export CE_VM_PASS=...                 # only if not using ssh keys
+if [ -z "$CE_VM" ] || [ -z "$CE_VM_PATH" ]; then
+  echo "set CE_VM=user@host and CE_VM_PATH=/path/to/checkout first" >&2
+  exit 2
+fi
 SRC="$(cd "$(dirname "$0")" && pwd)/Cheat Engine/"
 DST="$CE_VM_PATH/Cheat Engine/"
 
