@@ -41,7 +41,7 @@ sync goes through `rsync` and the single-file helper moves through `/tmp`.
 
 ## The loop
 
-Edit locally under `/home/ayoze/dev/cheat-engine/Cheat Engine`, then:
+Edit locally in your checkout, then:
 
 ```
 ./sync-linux.sh          # rsync every source file, then rebuild, print errors
