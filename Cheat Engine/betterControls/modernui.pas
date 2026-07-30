@@ -54,6 +54,7 @@ type
     ButtonFaceDisabled: TColor;
     ButtonBorder: TColor;
     ButtonBorderHover: TColor;
+    Text: TColor;
     TextDisabled: TColor;
     GroupBoxBorder: TColor;
     CheckboxFill: TColor;
@@ -98,6 +99,7 @@ type
   end;
 
 procedure SwapMonoFonts(parent: TWinControl); forward;
+procedure SwapTextColors(parent: TWinControl); forward;
 procedure StyleListHeaders(parent: TWinControl; f: TFont); forward;
 
 procedure TShowHook.Show(Sender: TObject);
@@ -106,6 +108,9 @@ begin
   if Sender is TWinControl then
   begin
     SwapMonoFonts(TWinControl(Sender));
+    //controls created after the form was built get their turn here
+    if ModernMetrics.CustomDraw then
+      SwapTextColors(TWinControl(Sender));
     if Sender is TCustomForm then
       StyleListHeaders(TWinControl(Sender), TCustomForm(Sender).Font);
   end;
@@ -162,6 +167,30 @@ begin
   end;
 end;
 
+
+{
+  The dark palette only covers backgrounds. Every control that names a colour
+  in its .lfm — and most name clWindowText — keeps painting its caption black,
+  which on a dark form is invisible. Walk the tree and give them the palette's
+  foreground, leaving alone anything deliberately coloured.
+}
+procedure SwapTextColors(parent: TWinControl);
+var
+  i: integer;
+  c: TControl;
+begin
+  for i:=0 to parent.ControlCount-1 do
+  begin
+    c:=parent.Controls[i];
+
+    if (c.Font.Color=clDefault) or (c.Font.Color=clWindowText) or
+       (c.Font.Color=clBlack) or (c.Font.Color=clBtnText) then
+      c.Font.Color:=ModernMetrics.Text;
+
+    if c is TWinControl then
+      SwapTextColors(TWinControl(c));
+  end;
+end;
 
 function TextHeightFor(f: TFont): integer;
 var
@@ -288,6 +317,12 @@ begin
 
   WalkControls(form);
 
+  if ModernMetrics.CustomDraw then
+  begin
+    form.Font.Color:=ModernMetrics.Text;
+    SwapTextColors(form);
+  end;
+
   hook:=TShowHook.Create;
   hook.original:=form.OnShow;
   form.OnShow:=@hook.Show;
@@ -322,6 +357,10 @@ begin
   ModernMetrics.ButtonFaceDisabled:=$2B2B2B;
   ModernMetrics.ButtonBorder:=$4D4D4D;
   ModernMetrics.ButtonBorderHover:=$6E6E6E;
+  //the palette has to carry its own foreground: ColorSet.FontColor comes from
+  //the Windows visual theme, and anywhere that theme is light (Wine, or a
+  //machine in light mode) the text ends up black on a dark form
+  ModernMetrics.Text:=$E0E0E0;
   ModernMetrics.TextDisabled:=$6E6E6E;
   ModernMetrics.GroupBoxBorder:=$4D4D4D;
 

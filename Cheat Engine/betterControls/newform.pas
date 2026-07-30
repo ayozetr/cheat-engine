@@ -46,7 +46,9 @@ begin
 
 
     color:=$242424;
-    if font.color=clDefault then
+    //most .lfm files name a colour here, usually clWindowText, so testing for
+    //clDefault first left the form black on black
+    if ModernMetrics.CustomDraw or (font.color=clDefault) then
       font.color:=colorset.FontColor;
 
 

@@ -339,6 +339,16 @@ initialization
             ColorSet.CheckboxFillColor:=ModernMetrics.CheckboxFill;
             ColorSet.InactiveCheckboxFillColor:=ModernMetrics.CheckboxFillDisabled;
           end;
+          if ModernMetrics.CustomDraw then
+          begin
+            //GetThemeColor above answered from the system visual theme, which
+            //under Wine is the light one, so the foreground has to be taken
+            //from the palette instead of trusted
+            ColorSet.FontColor:=ModernMetrics.Text;
+            ColorSet.InactiveFontColor:=ModernMetrics.TextDisabled;
+            clWindowText:=ColorSet.FontColor;
+          end;
+
           clBtnFace:=inccolor(ColorSet.TextBackground,8);
           clBtnText:=ColorSet.FontColor;
 
