@@ -243,7 +243,7 @@ procedure lua_createtable(L: Plua_State; narr, nrec: Integer); cdecl;
 function lua_newuserdata(L: Plua_State; sz: size_t): Pointer; cdecl; overload;
 procedure lua_newuserdata(L: Plua_State; p: pointer); cdecl; overload;
 function lua_getmetatable(L: Plua_State; objindex: Integer): Integer; cdecl;
-procedure lua_getfenv(L: Plua_State; idx: Integer); cdecl;
+procedure lua_getfenv(L: Plua_State; idx: Integer);
 
 (*
 ** set functions (stack -> Lua)
@@ -253,7 +253,7 @@ procedure lua_setfield(L: Plua_State; idx: Integer; k: PChar); cdecl;
 procedure lua_rawset(L: Plua_State; idx: Integer); cdecl;
 procedure lua_rawseti(L: Plua_State; idx: integer; n: lua_Integer); cdecl;
 function lua_setmetatable(L: Plua_State; objindex: Integer): Integer; cdecl;
-function lua_setfenv(L: Plua_State; idx: Integer): Integer; cdecl;
+function lua_setfenv(L: Plua_State; idx: Integer): Integer;
 
 (*
 ** `load' and `call' functions (load and run Lua code)
@@ -522,14 +522,21 @@ function lua_rawgeti(L: Plua_State; idx: integer; n: lua_Integer):integer; cdecl
 procedure lua_createtable(L: Plua_State; narr, nrec: Integer); cdecl; external LUA_NAME;
 function lua_newuserdata(L: Plua_State; sz: size_t): Pointer; cdecl; external LUA_NAME;
 function lua_getmetatable(L: Plua_State; objindex: Integer): Integer; cdecl; external LUA_NAME;
-procedure lua_getfenv(L: Plua_State; idx: Integer); cdecl; external LUA_NAME;
+//paired with lua_setfenv, and gone from 5.2 the same way
+procedure lua_getfenv(L: Plua_State; idx: Integer);
+begin
+end;
 
 procedure lua_settable(L: Plua_State; idx: Integer); cdecl; external LUA_NAME;
 procedure lua_setfield(L: Plua_State; idx: Integer; k: PChar); cdecl; external LUA_NAME;
 procedure lua_rawset(L: Plua_State; idx: Integer); cdecl; external LUA_NAME;
 procedure lua_rawseti(L: Plua_State; idx: integer; n: lua_Integer); cdecl; external LUA_NAME;
 function lua_setmetatable(L: Plua_State; objindex: Integer): Integer; cdecl; external LUA_NAME;
-function lua_setfenv(L: Plua_State; idx: Integer): Integer; cdecl; external LUA_NAME;
+//dropped in Lua 5.2, so no build of the library has it; nothing calls it
+function lua_setfenv(L: Plua_State; idx: Integer): Integer;
+begin
+  result:=0;
+end;
 
 
 

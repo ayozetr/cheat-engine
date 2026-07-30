@@ -2568,7 +2568,38 @@ initialization
   CreateRemoteThread:=@macport.CreateRemoteThread;
 
   GetRegionInfo:=@macport.GetRegionInfo;
+  {$endif}
 
+  {
+    Linux. Without this block every one of these stays nil and the first call
+    through them is an access violation before the main form is even up, which
+    is exactly what happened the first time the binary ran.
+  }
+  {$if not defined(windows) and not defined(darwin)}
+  ReadProcessMemoryActual:=@linuxmemoryapi.ReadProcessMemory;
+  WriteProcessMemoryActual:=@linuxmemoryapi.WriteProcessMemory;
+  VirtualQueryExActual:=@linuxmemoryapi.VirtualQueryEx;
+  OpenProcess:=@linuxmemoryapi.OpenProcess;
+  closeHandle:=@linuxmemoryapi.CloseHandle;
+
+  CreateToolhelp32Snapshot:=@linuxmemoryapi.CreateToolhelp32Snapshot;
+  Process32First:=@linuxmemoryapi.Process32First;
+  Process32Next:=@linuxmemoryapi.Process32Next;
+  Thread32First:=@linuxmemoryapi.Thread32First;
+  Thread32Next:=@linuxmemoryapi.Thread32Next;
+  Module32First:=@linuxmemoryapi.Module32First;
+  Module32Next:=@linuxmemoryapi.Module32Next;
+
+  //these report failure, but they have to be callable
+  VirtualProtectEx:=@linuxmemoryapi.VirtualProtectEx;
+  VirtualAllocEx:=@linuxmemoryapi.VirtualAllocEx;
+  VirtualFreeEx:=@linuxmemoryapi.VirtualFreeEx;
+  CreateRemoteThread:=@linuxmemoryapi.CreateRemoteThreadEx;
+  GetThreadContext:=@linuxmemoryapi.GetThreadContext;
+  SetThreadContext:=@linuxmemoryapi.SetThreadContext;
+  {$endif}
+
+  {$ifdef darwin}
   {$else}
 {
   OutputDebugString('TARM64CONTEXT:');

@@ -106,68 +106,83 @@ references, not aliases. Cost me three build cycles.
 **`{$elseif}` only follows `{$if}`.** After `{$ifdef}` it has to be
 `{$if defined(...)}`.
 
-## Where it stopped
+## Where it stands
 
-**Every unit compiles**, `cheatengine.lpr` included. The build reaches the
-linker. What is left is a linking problem, not a porting one.
+**It builds, links and runs.** `bin/cheatengine-x86_64` is a 21 MB native ELF,
+419 000 lines compiled. Started under X it stays up with no exceptions at all,
+and the window manager reports the window as `WM_CLASS = "cheatengine-x86_64"`
+with a dialog open.
 
-Two of them were just missing packages, now installed on the VM:
+### Getting there from a clean checkout
 
-```
-sudo apt-get install liblua5.3-dev libsqlite3-dev
-```
-
-The one that remains is real. `lua/lua.pas` and `lua/lauxlib.pas` declare four
-Lua 5.1 era entry points against `liblua5.3.so`:
+Two system packages:
 
 ```
-lua_setfenv   luaL_openlib   luaL_findtable   luaL_prepbuffer
+sudo apt-get install libsqlite3-dev
 ```
 
-Stock Lua 5.3 does not export them. On Windows this never surfaced because
-Cheat Engine ships its own `lua53-64.dll`; here FPC's `external <soname>`
-becomes a hard undefined reference and `ld` refuses.
+Do **not** install `liblua5.3-dev`. Its `liblua5.3.so` sits in a search
+directory that comes before ours, and it lacks the compatibility entry points
+below. If it is already installed, remove it.
 
-The fix is to build the copy already in the repository —
-`Cheat Engine/lua53/lua53/src`, which has `luaL_openlib` and `luaL_findtable`
-patched back in — as `liblua5.3.so`, with `LUA_COMPAT_MODULE` defined, and put
-it where the linker looks. `lua_setfenv` is absent even there and was removed
-outright in 5.3, so it needs either a stub or the call sites conditioned out.
-Check what the Windows DLL actually exports before deciding which.
-
-### One build trap
-
-An incremental build dies with an internal compiler error:
+Build the Lua that ships in this repository, which is the same one the Windows
+and mac builds use:
 
 ```
-An unhandled exception occurred at $00000000004C7C5E: EAccessViolation
-MainUnit.pas(4133,68) Error: (1026) Compilation raised exception internally
+cd 'Cheat Engine/lua53/lua53/src'
+gcc -O2 -fPIC -DLUA_USE_LINUX -DLUA_COMPAT_5_1 -c $(ls *.c | grep -vE '^(lua|luac|wmain)\.c$')
+gcc -shared -Wl,-soname,liblua5.3.so -o liblua5.3.so *.o -lm -ldl
+cp liblua5.3.so '<repo>/Cheat Engine/liblinux/'
 ```
 
-A clean build gets past the same line without complaint, so it is stale
-incremental state, not the source. When it appears, rebuild:
+`LUA_COMPAT_5_1` is what brings back `luaL_openlib`. `wmain.c` is Windows only.
+The build mode points at `liblinux` with `-Flliblinux` and records
+`-k-rpath='$ORIGIN/../liblinux'`, so the executable finds its own Lua at run
+time without anything being installed system wide — which is what the AppImage
+will need anyway.
 
-```
-lazbuild -B --build-mode='Linux 64-Bit' cheatengine.lpi
-```
+Three of the Lua entry points could not be supplied by any build. `lua_setfenv`
+and `lua_getfenv` were removed in 5.2, `luaL_findtable` is static in the
+bundled `lauxlib.c`, and none of the three is called from Cheat Engine, so they
+became ordinary Pascal stubs. `luaL_prepbuffer` and `luaL_loadbuffer` are
+macros in 5.3 and now call `luaL_prepbuffsize` and `luaL_loadbufferx`. The
+Windows `.def` exports neither of the originals either, so these were latent
+bugs on every platform.
+
+### Two things that cost real time
+
+**Always build with `-B`.** An incremental build produces nonsense errors in
+`MainUnit` about `TMemoryRecord` versus `TMemoryRecordHotkey`, and sometimes an
+outright compiler crash. A clean build passes the same lines without a word. It
+is stale `.ppu` state; when in doubt, `rm -rf lib/x86_64-linux` as well.
+
+**`cthreads` has to be the first unit in the program.** The `UseCThreads`
+guard in `cheatengine.lpr` never fires in this build mode, so without an
+explicit Linux branch the binary dies immediately with runtime error 211.
+
+### The last real bug
+
+The first run crashed with an access violation before the main form appeared.
+`NewKernelHandler` fills its function pointers from `GetProcAddress` on Windows
+and from `macport` on darwin — there was no third branch, so on Linux every one
+of them stayed nil and the first call through one went straight through a null
+pointer. The Linux branch now wires them to `linuxmemoryapi`. Compiling was
+never going to be enough on its own.
 
 ## What is left
 
-- Sort out the Lua library, above. That is the only thing between here and an
-  ELF binary.
-- `modernfonts` and `modernabout` are still Windows only (`AddFontResourceEx`,
-  `ShellExecute`). They need conditioning before the redesign shows up on
-  Linux. Until then the Linux build gets the stock LCL look: `betterControls`
-  is almost entirely inside `{$ifdef windows}`, so outside Windows the LCL
-  supplies `TButton` and `TForm` and nothing breaks — it just is not styled.
-- The DBVM entry points (`ReadPhysicalMemory`, `GetCR3`, the whole `dbk32`
-  tree) have no Linux equivalent and should stay behind `{$ifdef windows}`.
-  Same for `VEHDebugger`, `WindowsDebugger`, `xinput`, `windows7taskbar`,
-  `betterdllsearchpath`, `luaJit`, and the rest of the 24 units that have no
-  Linux-visible `uses` — they are Windows-only by nature and simply must not be
-  reached from the Linux build.
-- Once it links: run it, see how far the UI gets, then decide about the
-  AppImage.
+- The `Confirmation` dialog on startup has not been looked at; the VM's screen
+  was locked and could not be driven. Worth seeing what it asks.
+- Exercise the real work: attach to a process, scan, edit. The memory layer was
+  verified against live processes on its own, but not through the UI.
+- `SuspendThread`, `GetThreadContext` and the `VirtualProtectEx` family report
+  failure rather than working. They need a ptrace-stopped tracee. The debugger
+  will not do anything useful until then.
+- `modernfonts` and `modernabout` are still Windows only, so the Linux build
+  gets the stock LCL look rather than the redesign.
+- `-gl` is still in the build mode for readable stack traces. Take it out for a
+  release build.
+- Then: AppImage.
 
 ## Branch
 

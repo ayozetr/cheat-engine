@@ -575,29 +575,29 @@ const
   ERROR_PARTIAL_COPY = 299;
 
 function OpenProcess(dwDesiredAccess: DWORD; bInheritHandle: boolean;
-  dwProcessId: DWORD): THandle;
-function CloseHandle(hObject: THandle): boolean;
+  dwProcessId: DWORD): THandle; stdcall;
+function CloseHandle(hObject: THandle): boolean; stdcall;
 //DBK32functions declares this for Windows; here the handle is a pid, so the
 //question is simply whether that process is still around
 function IsValidHandle(hProcess: THandle): boolean;
 
 function ReadProcessMemory(hProcess: THandle; lpBaseAddress, lpBuffer: Pointer;
-  nSize: PtrUInt; var lpNumberOfBytesRead: PtrUInt): boolean;
+  nSize: PtrUInt; var lpNumberOfBytesRead: PtrUInt): boolean; stdcall;
 function WriteProcessMemory(hProcess: THandle; const lpBaseAddress: Pointer;
-  lpBuffer: Pointer; nSize: PtrUInt; var lpNumberOfBytesWritten: PtrUInt): boolean;
+  lpBuffer: Pointer; nSize: PtrUInt; var lpNumberOfBytesWritten: PtrUInt): boolean; stdcall;
 
 function VirtualQueryEx(hProcess: THandle; lpAddress: Pointer;
-  var lpBuffer: TMemoryBasicInformation; dwLength: DWORD): DWORD;
+  var lpBuffer: TMemoryBasicInformation; dwLength: DWORD): DWORD; stdcall;
 
 //Windows takes a snapshot and then walks it. /proc has no such notion, so the
 //snapshot is taken literally: the listing is read once and iterated after.
-function CreateToolhelp32Snapshot(dwFlags, th32ProcessID: DWORD): THandle;
-function Process32First(hSnapshot: THandle; var lppe: TProcessEntry): boolean;
-function Process32Next(hSnapshot: THandle; var lppe: TProcessEntry): boolean;
-function Thread32First(hSnapshot: THandle; var lpte: TThreadEntry): boolean;
-function Thread32Next(hSnapshot: THandle; var lpte: TThreadEntry): boolean;
-function Module32First(hSnapshot: THandle; var lpme: TModuleEntry): boolean;
-function Module32Next(hSnapshot: THandle; var lpme: TModuleEntry): boolean;
+function CreateToolhelp32Snapshot(dwFlags, th32ProcessID: DWORD): THandle; stdcall;
+function Process32First(hSnapshot: THandle; var lppe: TProcessEntry): boolean; stdcall;
+function Process32Next(hSnapshot: THandle; var lppe: TProcessEntry): boolean; stdcall;
+function Thread32First(hSnapshot: THandle; var lpte: TThreadEntry): boolean; stdcall;
+function Thread32Next(hSnapshot: THandle; var lpte: TThreadEntry): boolean; stdcall;
+function Module32First(hSnapshot: THandle; var lpme: TModuleEntry): boolean; stdcall;
+function Module32Next(hSnapshot: THandle; var lpme: TModuleEntry): boolean; stdcall;
 function CloseSnapshot(hSnapshot: THandle): boolean;
 
 function GetCurrentProcessId: DWORD;
@@ -607,6 +607,24 @@ function GetAsyncKeyState(vKey: longint): smallint;
 
 function OpenThread(dwDesiredAccess: DWORD; bInheritHandle: boolean;
   dwThreadId: DWORD): THandle;
+{
+  The Ex family works on another process's address space. Doing that from
+  outside needs the target stopped under ptrace, which is not in place, so
+  these report failure rather than corrupt anything. NewKernelHandler still
+  needs the entry points: it calls them through pointers that must not be nil.
+}
+function VirtualProtectEx(hProcess: THandle; lpAddress: Pointer;
+  dwSize, flNewProtect: DWORD; var OldProtect: DWORD): boolean; stdcall;
+function VirtualAllocEx(hProcess: THandle; lpAddress: Pointer;
+  dwSize, flAllocationType: DWORD; flProtect: DWORD): Pointer; stdcall;
+function VirtualFreeEx(hProcess: THandle; lpAddress: Pointer;
+  dwSize: PtrUInt; dwFreeType: DWORD): boolean; stdcall;
+function CreateRemoteThreadEx(hProcess: THandle; lpThreadAttributes: Pointer;
+  dwStackSize: DWORD; lpStartAddress: TFNThreadStartRoutine; lpParameter: Pointer;
+  dwCreationFlags: DWORD; var lpThreadId: DWORD): THandle; stdcall;
+function GetThreadContext(hThread: THandle; var lpContext: TContext): boolean; stdcall;
+function SetThreadContext(hThread: THandle; const lpContext: TContext): boolean; stdcall;
+
 function TerminateProcess(hProcess: THandle; uExitCode: DWORD): boolean;
 
 //Windows reaches these through ntdll; here SIGSTOP and SIGCONT do the same job
@@ -707,7 +725,7 @@ function process_vm_writev(pid: TPid; local_iov: PIOVec; liovcnt: culong;
 
 
 function OpenProcess(dwDesiredAccess: DWORD; bInheritHandle: boolean;
-  dwProcessId: DWORD): THandle;
+  dwProcessId: DWORD): THandle; stdcall;
 begin
   //no kernel object to open: the pid is the handle. Checking that the process
   //exists keeps the failure at the same point Windows would report it.
@@ -723,14 +741,14 @@ begin
           (FpKill(TPid(hProcess), 0)=0);
 end;
 
-function CloseHandle(hObject: THandle): boolean;
+function CloseHandle(hObject: THandle): boolean; stdcall;
 begin
   //nothing was opened, so nothing to close
   result:=true;
 end;
 
 function ReadProcessMemory(hProcess: THandle; lpBaseAddress, lpBuffer: Pointer;
-  nSize: PtrUInt; var lpNumberOfBytesRead: PtrUInt): boolean;
+  nSize: PtrUInt; var lpNumberOfBytesRead: PtrUInt): boolean; stdcall;
 var
   local, remote: TIOVec;
   r: ssize_t;
@@ -751,7 +769,7 @@ begin
 end;
 
 function WriteProcessMemory(hProcess: THandle; const lpBaseAddress: Pointer;
-  lpBuffer: Pointer; nSize: PtrUInt; var lpNumberOfBytesWritten: PtrUInt): boolean;
+  lpBuffer: Pointer; nSize: PtrUInt; var lpNumberOfBytesWritten: PtrUInt): boolean; stdcall;
 var
   local, remote: TIOVec;
   r: ssize_t;
@@ -789,7 +807,7 @@ begin
 end;
 
 function VirtualQueryEx(hProcess: THandle; lpAddress: Pointer;
-  var lpBuffer: TMemoryBasicInformation; dwLength: DWORD): DWORD;
+  var lpBuffer: TMemoryBasicInformation; dwLength: DWORD): DWORD; stdcall;
 var
   maps: TextFile;
   linea, rango, flags: string;
@@ -934,7 +952,7 @@ begin
   end;
 end;
 
-function CreateToolhelp32Snapshot(dwFlags, th32ProcessID: DWORD): THandle;
+function CreateToolhelp32Snapshot(dwFlags, th32ProcessID: DWORD): THandle; stdcall;
 var
   snap: TSnapshot;
   info: TSearchRec;
@@ -1045,7 +1063,7 @@ begin
   result:=true;
 end;
 
-function Process32First(hSnapshot: THandle; var lppe: TProcessEntry): boolean;
+function Process32First(hSnapshot: THandle; var lppe: TProcessEntry): boolean; stdcall;
 var
   snap: TSnapshot;
 begin
@@ -1055,7 +1073,7 @@ begin
   result:=SiguienteProceso(snap, lppe);
 end;
 
-function Process32Next(hSnapshot: THandle; var lppe: TProcessEntry): boolean;
+function Process32Next(hSnapshot: THandle; var lppe: TProcessEntry): boolean; stdcall;
 var
   snap: TSnapshot;
 begin
@@ -1080,7 +1098,7 @@ begin
   result:=true;
 end;
 
-function Thread32First(hSnapshot: THandle; var lpte: TThreadEntry): boolean;
+function Thread32First(hSnapshot: THandle; var lpte: TThreadEntry): boolean; stdcall;
 var
   snap: TSnapshot;
 begin
@@ -1090,7 +1108,7 @@ begin
   result:=SiguienteHilo(snap, lpte);
 end;
 
-function Thread32Next(hSnapshot: THandle; var lpte: TThreadEntry): boolean;
+function Thread32Next(hSnapshot: THandle; var lpte: TThreadEntry): boolean; stdcall;
 var
   snap: TSnapshot;
 begin
@@ -1121,7 +1139,7 @@ begin
   result:=true;
 end;
 
-function Module32First(hSnapshot: THandle; var lpme: TModuleEntry): boolean;
+function Module32First(hSnapshot: THandle; var lpme: TModuleEntry): boolean; stdcall;
 var
   snap: TSnapshot;
 begin
@@ -1131,7 +1149,7 @@ begin
   result:=SiguienteModulo(snap, lpme);
 end;
 
-function Module32Next(hSnapshot: THandle; var lpme: TModuleEntry): boolean;
+function Module32Next(hSnapshot: THandle; var lpme: TModuleEntry): boolean; stdcall;
 var
   snap: TSnapshot;
 begin
@@ -1208,6 +1226,45 @@ function WaitForSingleObject(hHandle: THandle; dwMilliseconds: DWORD): DWORD;
 begin
   //nothing here hands out waitable kernel objects, so there is nothing to wait on
   result:=WAIT_FAILED;
+end;
+
+function VirtualProtectEx(hProcess: THandle; lpAddress: Pointer;
+  dwSize, flNewProtect: DWORD; var OldProtect: DWORD): boolean; stdcall;
+begin
+  OldProtect:=PAGE_EXECUTE_READWRITE;
+  result:=false;
+end;
+
+function VirtualAllocEx(hProcess: THandle; lpAddress: Pointer;
+  dwSize, flAllocationType: DWORD; flProtect: DWORD): Pointer; stdcall;
+begin
+  result:=nil;
+end;
+
+function VirtualFreeEx(hProcess: THandle; lpAddress: Pointer;
+  dwSize: PtrUInt; dwFreeType: DWORD): boolean; stdcall;
+begin
+  result:=false;
+end;
+
+function CreateRemoteThreadEx(hProcess: THandle; lpThreadAttributes: Pointer;
+  dwStackSize: DWORD; lpStartAddress: TFNThreadStartRoutine; lpParameter: Pointer;
+  dwCreationFlags: DWORD; var lpThreadId: DWORD): THandle; stdcall;
+begin
+  lpThreadId:=0;
+  result:=0;
+end;
+
+function GetThreadContext(hThread: THandle; var lpContext: TContext): boolean; stdcall;
+begin
+  //PTRACE_GETREGS would fill this in, but only for a tracee we already stopped
+  FillChar(lpContext, sizeof(lpContext), 0);
+  result:=false;
+end;
+
+function SetThreadContext(hThread: THandle; const lpContext: TContext): boolean; stdcall;
+begin
+  result:=false;
 end;
 
 function TerminateProcess(hProcess: THandle; uExitCode: DWORD): boolean;

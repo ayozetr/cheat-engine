@@ -5,7 +5,9 @@ PW='***REMOVED***'
 SRC="/home/ayoze/dev/cheat-engine/Cheat Engine/"
 DST="/home/ayoze/ce-port/Cheat Engine/"
 
-sshpass -p "$PW" rsync -a --delete-excluded \
+# no --delete: liblinux/ holds the Lua build made on the VM and has no
+# counterpart here, and --delete-excluded would take it out on every sync
+sshpass -p "$PW" rsync -a \
   --include='*/' --include='*.pas' --include='*.lfm' --include='*.lpi' --include='*.inc' --include='*.lpr' \
   --include='*.res' --include='*.rc' --include='*.lrs' --include='*.o' --include='*.a' \
   --exclude='*' \
