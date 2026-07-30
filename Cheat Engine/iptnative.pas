@@ -33,7 +33,7 @@ interface
 
 uses
   Classes, SysUtils{$ifdef darwin},ctypes, macport{$endif}{$ifdef windows}, Windows{$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif};
+  {$if not defined(windows) and not defined(darwin)},linuxmemoryapi{$endif};
 
 
   const

@@ -11,7 +11,7 @@ uses
   {$ifdef windows}
   jwawindows, windows,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, LCLIntf,{$endif}
   classes, dialogs, sysutils;
 
 const

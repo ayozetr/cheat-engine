@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, ComCtrls, betterControls;
+  StdCtrls, ComCtrls, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
 

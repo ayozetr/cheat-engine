@@ -6,7 +6,8 @@ interface
 
 uses
   LCLIntf, Messages, SysUtils, classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ComCtrls, LResources, ExtCtrls,symbolhandler, math, betterControls;
+  Dialogs, StdCtrls, ComCtrls, LResources, ExtCtrls,symbolhandler, math, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
 

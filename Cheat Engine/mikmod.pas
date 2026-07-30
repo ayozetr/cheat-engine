@@ -592,7 +592,7 @@ begin
 
   if result=false then
   begin
-    libmikmod:=loadlibrary('libmikmod'+{$ifdef cpu32}'32'{$else}'64'{$endif}+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dynlib'{$endif});
+    libmikmod:=loadlibrary('libmikmod'+{$ifdef cpu32}'32'{$else}'64'{$endif}+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dynlib'{$endif}{$if not defined(windows) and not defined(darwin)}'.so'{$endif});
 
     if libmikmod<>0 then
     begin

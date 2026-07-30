@@ -11,13 +11,13 @@ process will set it to the different tab's process
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   {$ifdef darwin}
   macport,
   {$endif}
   {$ifdef windows}
   windows,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   {$ifndef jni}LCLIntf, {$endif}
   newkernelhandler, classes, sysutils;
 

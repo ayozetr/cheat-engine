@@ -14,7 +14,12 @@ implementation
 {$ifdef windows}
 uses windows;
 {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+
+{$if not defined(windows) and not defined(darwin) and not defined(jni)}
+//same list as the Windows branch, minus what only exists there
+uses
+  linuxmemoryapi;
+{$endif}
 
 {$ifdef DARWIN}
 uses macport,CocoaAll;

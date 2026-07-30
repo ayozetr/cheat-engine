@@ -12,11 +12,17 @@ interface
 {$ifdef windows}
 uses windows, LCLIntf, classes, sysutils, symbolhandler, math, cefuncproc,newkernelhandler, commonTypeDefs;
 {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+
+{$if not defined(windows) and not defined(darwin) and not defined(jni)}
+//same list as the Windows branch, minus what only exists there
+uses
+  LCLIntf, classes, sysutils, symbolhandler, math, cefuncproc, newkernelhandler, commonTypeDefs, linuxmemoryapi;
+{$endif}
 
 {$ifdef darwin}
 uses macport, LCLIntf, classes, sysutils, symbolhandler, math, cefuncproc,newkernelhandler, commonTypeDefs;
 {$endif}
+
 
 type TValueFinder=class
   private

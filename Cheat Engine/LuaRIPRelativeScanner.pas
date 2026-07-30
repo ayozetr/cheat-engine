@@ -5,7 +5,8 @@ unit LuaRIPRelativeScanner;
 interface
 
 uses
-  Classes, SysUtils, RipRelativeScanner;
+  Classes, SysUtils, RipRelativeScanner,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaRipRelativeScanner;
 

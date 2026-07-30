@@ -5,7 +5,8 @@ unit FindDialogFix;
 interface
 
 uses
-  Classes, SysUtils, forms, Dialogs;
+  Classes, SysUtils, forms, Dialogs,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   TFindDialog=class(Dialogs.TFindDialog)

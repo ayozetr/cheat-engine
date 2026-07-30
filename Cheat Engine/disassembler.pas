@@ -16,7 +16,12 @@ uses windows, classes, imagehlp,sysutils,LCLIntf,byteinterpreter, symbolhandler,
   CEFuncProc, NewKernelHandler, ProcessHandlerUnit, LastDisassembleData, disassemblerarm,
   commonTypeDefs, maps, math,vextypedef, betterControls, syncobjs;
 {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+
+{$if not defined(windows) and not defined(darwin) and not defined(jni)}
+//same list as the Windows branch, minus what only exists there
+uses
+  classes, sysutils, LCLIntf, byteinterpreter, symbolhandler, symbolhandlerstructs, CEFuncProc, NewKernelHandler, ProcessHandlerUnit, LastDisassembleData, disassemblerarm, commonTypeDefs, maps, math, vextypedef, betterControls, syncobjs, linuxmemoryapi;
+{$endif}
 
 {$ifdef darwin}
 uses LCLIntf, LCLType, macport, macportdefines, classes,sysutils,byteinterpreter, symbolhandler, symbolhandlerstructs,
@@ -270,6 +275,12 @@ uses Assemblerunit,CEDebugger, debughelper, StrUtils, debuggertypedefinitions,
 uses Assemblerunit,CEDebugger, debughelper, StrUtils, debuggertypedefinitions,
   Parsers, memoryQuery, (*binutils,*) LuaCaller, (*vmxfunctions, frmcodefilterunit, *)
   BreakpointTypeDef, frmEditHistoryUnit, dialogs;
+{$endif}
+
+{$if not defined(windows) and not defined(darwin) and not defined(jni)}
+//same set the darwin branch settled on: no binutils, no vmxfunctions
+uses Assemblerunit, CEDebugger, debughelper, StrUtils, debuggertypedefinitions,
+  Parsers, memoryQuery, LuaCaller, BreakpointTypeDef, frmEditHistoryUnit, dialogs;
 {$endif}
 
 

@@ -11,7 +11,7 @@ uses
   {$ifdef windows}
   windows,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, LCLIntf,{$endif}
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics,
   Dialogs, StdCtrls, Menus, ExtCtrls, SynMemo, SynCompletion, SynEdit, lua,
   lauxlib, lualib, LuaSyntax, luahandler, CEFuncProc, sqldb, strutils,

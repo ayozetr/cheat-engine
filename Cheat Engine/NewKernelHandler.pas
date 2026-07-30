@@ -716,12 +716,12 @@ function loaddbvmifneeded(reason:string=''): BOOL; stdcall;
 function isRunningDBVM: boolean;
 function isDBVMCapable: boolean;
 function hasEPTSupport: boolean;
-{$ifdef windows}
 
+//plain CPUID, and the implementation below was never Windows only; the
+//declaration just happened to sit inside the guard
 function isIntel: boolean;
 function isAMD: boolean;
 
-{$endif}
 function Is64bitOS: boolean;
 function Is64BitProcess(processhandle: THandle): boolean;
 

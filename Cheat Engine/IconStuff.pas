@@ -11,7 +11,7 @@ uses
   {$ifdef windows}
   windows, CommCtrl,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, math,{$endif}
   Classes, SysUtils,controls, dialogs, Graphics, forms, ExtCtrls, StdCtrls;
 
 resourcestring

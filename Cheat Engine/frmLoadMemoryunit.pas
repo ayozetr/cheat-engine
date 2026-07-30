@@ -5,6 +5,7 @@ unit frmLoadMemoryunit;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   LCLIntf, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, CEFuncProc, StdCtrls, NewKernelHandler, LResources, ExtCtrls, betterControls;
 

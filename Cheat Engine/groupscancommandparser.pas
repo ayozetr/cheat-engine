@@ -12,7 +12,8 @@ interface
 
 
 {$ifdef jni}
-uses Classes, SysUtils, strutils, CustomTypeHandler, commonTypeDefs;
+uses Classes, SysUtils, strutils, CustomTypeHandler, commonTypeDefs,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 {$else}
 uses Classes, SysUtils, cefuncproc, CustomTypeHandler, strutils, commonTypeDefs;
 {$endif}

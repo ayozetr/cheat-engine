@@ -11,7 +11,8 @@ One requirement is that the memorystream object does not get written to while th
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   TMemoryStreamReader=class(TCustomMemoryStream)

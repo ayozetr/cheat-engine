@@ -10,7 +10,7 @@ uses
   {$endif}
   {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   LCLIntf, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, LResources, ComCtrls, CEFuncProc, betterControls;
+  Dialogs, StdCtrls, ExtCtrls, LResources, ComCtrls, CEFuncProc, betterControls, LMessages;
 
 type
 
@@ -33,7 +33,7 @@ type
   private
     { Private declarations }
     {$ifdef windows}
-    procedure WMGetMinMaxInfo(var Message: TMessage); message WM_GETMINMAXINFO;
+    procedure WMGetMinMaxInfo(var Message: TLMessage); message WM_GETMINMAXINFO;
     {$endif}
   public
     { Public declarations }
@@ -47,7 +47,7 @@ implementation
 uses LuaHandler, MainUnit;
 
 {$ifdef windows}
-procedure TComments.WMGetMinMaxInfo(var Message: TMessage);
+procedure TComments.WMGetMinMaxInfo(var Message: TLMessage);
 var MMInfo: ^MINMAXINFO;
 begin //the constraint function of the form behaves weird when draging from the top or left side, so I have to do this myself.
   MMInfo:=pointer(message.LParam);

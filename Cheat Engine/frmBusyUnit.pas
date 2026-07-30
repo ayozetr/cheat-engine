@@ -8,12 +8,12 @@ uses
   {$ifdef windows}
   windows,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   {$ifdef darwin}
   macport,
   {$endif}
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ExtCtrls, memscan, syncobjs, betterControls,SyncObjs2;
+  ExtCtrls, memscan, syncobjs, betterControls,SyncObjs2,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
 

@@ -208,7 +208,8 @@ uses
 {$ELSE}
 {$ifdef darwin}
 macport,  lcltype,
-{$else}
+{$endif}
+  {$ifdef windows}
   Windows,
 {$endif}
   Graphics,
@@ -220,7 +221,8 @@ macport,  lcltype,
   assemblerunit,
   LuaSyntax,
   SynHighlighterCpp,
-  SynHighlighterPas;
+  SynHighlighterPas,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   TtkTokenKind = (tkAsm, tkComment, tkIdentifier, tkOpcode, tkKey, tkNull, tkNumber,
@@ -399,7 +401,9 @@ type
     procedure SetRange(Value: Pointer); override;
     property IdentChars;
 
-    function LoadFromRegistry(RootKey: HKEY; Key: string): boolean; override;
+    //the LCL ancestor only declares this on Windows, so there is nothing to
+    //override elsewhere
+    function LoadFromRegistry(RootKey: HKEY; Key: string): boolean; {$ifdef windows}override;{$endif}
   published
     property AsmAttri: TSynHighlighterAttributes read fAsmAttri write fAsmAttri;
     property CommentAttri: TSynHighlighterAttributes read fCommentAttri

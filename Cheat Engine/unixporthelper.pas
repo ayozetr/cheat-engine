@@ -7,7 +7,8 @@ unit unixporthelper;
 interface
 
 uses
-  Classes, SysUtils{$ifdef android},log{$endif}, BaseUnix;
+  Classes, SysUtils{$ifdef android},log{$endif}, BaseUnix,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 //just fill in some basic info. Most of it won't be used for jni. It's mostly for some structures and function declaration/pointers
 type

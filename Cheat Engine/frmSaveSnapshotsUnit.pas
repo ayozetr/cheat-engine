@@ -10,7 +10,8 @@ uses
   {$ifdef laztrunk}
   , LazFileUtils
   {$endif}
-  , betterControls;
+  , betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 resourcestring
   rsSSAreYouSureYouWishToThrowAwayTheseSnapshots = 'Are you sure you wish to throw away these snapshots?';

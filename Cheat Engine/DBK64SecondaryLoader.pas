@@ -6,8 +6,8 @@ interface
 
 {$IFDEF windows}
 uses
-  jwawindows, windows, Classes, SysUtils, cefuncproc, NewKernelHandler, dialogs,
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
+  jwawindows, windows, Classes, SysUtils, cefuncproc, NewKernelHandler, dialogs;
 
 function SecondaryDriverLoad: THandle;
 function SecondaryDeviceIoControl(dwIoControlCode: DWORD; lpInBuffer: Pointer; nInBufferSize: DWORD; lpOutBuffer: Pointer; nOutBufferSize: DWORD; var lpBytesReturned: DWORD; lpOverlapped: POverlapped): BOOL; stdcall;

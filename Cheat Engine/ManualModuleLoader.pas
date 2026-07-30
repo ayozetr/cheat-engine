@@ -10,10 +10,10 @@ interface
 
 {$ifdef windows}
 
-uses windows, LCLIntf, classes, sysutils, imagehlp, dialogs, PEInfoFunctions,CEFuncProc,
+uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif} windows, LCLIntf, classes, sysutils, imagehlp, dialogs, PEInfoFunctions,CEFuncProc,
      NewKernelHandler, symbolhandler, dbk32functions, vmxfunctions, commonTypeDefs,
-     SymbolListHandler, symbolhandlerstructs, StringHashList,
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
+     SymbolListHandler, symbolhandlerstructs, StringHashList;
 
 resourcestring
   rsMMLNotAValidFile = 'not a valid file';

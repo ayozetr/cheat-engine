@@ -5,7 +5,8 @@ unit LuaRadioGroup;
 interface
 
 uses
-  Classes, Controls, ExtCtrls, SysUtils;
+  Classes, Controls, ExtCtrls, SysUtils,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaRadioGroup;
 

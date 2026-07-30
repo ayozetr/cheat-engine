@@ -5,7 +5,8 @@ unit pointerparser;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 function getPointerAddress(address: ptruint; const offsets: array of integer; var hasError: boolean): ptruint;
 
@@ -17,6 +18,11 @@ uses newkernelhandler, ProcessHandlerUnit;
 
 {$ifdef darwin}
 uses macport,newkernelhandler, ProcessHandlerUnit;
+{$endif}
+
+{$if not defined(windows) and not defined(darwin) and not defined(jni)}
+//mirrors the darwin branch; the mac only units drop out
+uses newkernelhandler, ProcessHandlerUnit;
 {$endif}
 
 {$ifdef jni}

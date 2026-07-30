@@ -5,7 +5,8 @@ unit init;
 interface
 
 uses
-  jwaWindows, Windows, Classes, SysUtils, VEHDebugSharedMem;
+  jwaWindows, Windows, Classes, SysUtils, VEHDebugSharedMem,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 
 var

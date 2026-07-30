@@ -16,13 +16,13 @@ uses
   {$ifdef windows}
   windows,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
 
   {$ifdef darwin}
   macport,
   {$endif}
 
-  Classes, SysUtils, math;    //todo: port to mac
+  Classes, SysUtils, math,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};    //todo: port to mac
 
 type
   TStubdata=record

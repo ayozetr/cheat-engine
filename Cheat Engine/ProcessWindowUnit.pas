@@ -1286,8 +1286,14 @@ begin
       begin
         {$ifdef windows}
         getwindowlist2(processlist.Items);
-        {$else}
+        {$endif}
+        {$ifdef darwin}
         getapplicationlist(processlist.items);
+        {$endif}
+        {$if not defined(windows) and not defined(darwin)}
+        //no window list to walk here: X11 and Wayland have nothing that maps
+        //onto EnumWindows, so the process list is what this tab shows
+        getprocesslist(processlist.items);
         {$endif}
       end;
 

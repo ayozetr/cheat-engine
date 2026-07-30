@@ -11,9 +11,9 @@ interface
 {$ifdef windows}
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   Classes, SysUtils, DebuggerInterface, windows, cefuncproc,newkernelhandler,
-  symbolhandler, dialogs,
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
+  symbolhandler, dialogs;
 
 type
   TWindowsDebuggerInterface=class(TDebuggerInterface)

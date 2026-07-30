@@ -11,7 +11,7 @@ uses
   {$ifdef windows}
   win32proc, jwawindows, windows,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, math,{$endif}
   LCLIntf, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Buttons, ExtCtrls, StdCtrls, frmFloatingPointPanelUnit, NewKernelHandler,
   cefuncproc, LResources,Clipbrd, Menus, frmStackViewunit, betterControls, strutils, contexthandler;

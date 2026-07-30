@@ -11,10 +11,10 @@ interface
 
 uses
   {$ifdef windows}windows, {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   {$ifdef darwin}macport, {$endif}
   Classes, SysUtils, AvgLvlTree, {$ifdef laztrunk}AVL_Tree,{$else}laz_avl_Tree,{$endif} math, fgl, cvconst,
-  syncobjs, symbolhandlerstructs, DOM;
+  syncobjs, symbolhandlerstructs, DOM,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   PSYMBOL_INFO = ^TSYMBOL_INFO;

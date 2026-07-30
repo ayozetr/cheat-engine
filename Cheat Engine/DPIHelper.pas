@@ -11,7 +11,7 @@ uses
   {$ifdef windows}
   Windows,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}Classes, controls, comctrls, SysUtils, Buttons, Graphics, forms, StdCtrls, betterControls;
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, math,{$endif}Classes, controls, comctrls, SysUtils, Buttons, Graphics, forms, StdCtrls, betterControls;
 
 procedure AdjustSpeedButtonSize(sb: TCustomSpeedButton);
 procedure AdjustToolbar(tb: TToolbar);

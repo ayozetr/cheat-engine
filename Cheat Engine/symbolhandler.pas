@@ -17,7 +17,7 @@ uses
   {$ifdef windows}
   jwawindows, windows,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, lcltype,{$endif}
   classes,LCLIntf{$ifdef windows},imagehlp{$endif},sysutils, CEFuncProc,
   NewKernelHandler,syncobjs, SymbolListHandler, fgl, typinfo, cvconst, PEInfoFunctions,
   DotNetPipe, DotNetTypes, commonTypeDefs, math, LazUTF8, contnrs, LazFileUtils,

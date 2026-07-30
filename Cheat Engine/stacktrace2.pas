@@ -4,7 +4,8 @@ unit stacktrace2;
 
 interface
 
-uses LCLIntf, sysutils, classes, symbolhandler, CEFuncProc, NewKernelHandler,
+uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif} LCLIntf, sysutils, classes, symbolhandler, CEFuncProc, NewKernelHandler,
   byteinterpreter, commonTypeDefs;
 
 procedure seperatestacktraceline(s: string; var address: string; var bytes: string; var details: string);

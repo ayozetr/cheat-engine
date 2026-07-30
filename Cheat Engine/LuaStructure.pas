@@ -5,6 +5,7 @@ unit LuaStructure;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   Classes, SysUtils, lua, lualib, lauxlib, LuaHandler, LuaCaller, symbolhandler,
   cefuncproc, newkernelhandler, Dialogs, LuaClass, LuaClassArray, commonTypeDefs;
 

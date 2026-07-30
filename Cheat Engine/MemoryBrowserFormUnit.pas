@@ -11,7 +11,7 @@ uses
   {$ifdef windows}
   jwawindows, windows,imagehlp,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, lcltype,{$endif}
   LCLProc, LCLIntf, Messages, SysUtils, Classes, Graphics,
   Controls, Forms, Dialogs, frmMemoryAllocHandlerUnit, math, StdCtrls, Spin,
   ExtCtrls,CEFuncProc,symbolhandler,Clipbrd, Menus,plugin,CEDebugger,KernelDebugger,
@@ -4999,7 +4999,8 @@ begin
           d:=peinfo_getdatabase(header, headersize);
           if d=0 then
           begin
-            {$ifndef darwin}
+            //peinfo_getSectionList lives inside PEInfoFunctions' windows guard
+            {$ifdef windows}
             sectionlist:=TStringList.Create;
             if peinfo_getSectionList(base,sectionList) then
             begin

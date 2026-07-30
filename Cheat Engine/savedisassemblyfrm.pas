@@ -7,7 +7,8 @@ interface
 uses
   LCLIntf, LResources, Messages, LMessages, SysUtils, Variants, Classes, Graphics,
   Controls, Forms, Dialogs, symbolhandler, symbolhandlerstructs, disassembler,
-  StdCtrls, ComCtrls, ActnList, Clipbrd, ExtCtrls, strutils, Parsers, betterControls;
+  StdCtrls, ComCtrls, ActnList, Clipbrd, ExtCtrls, strutils, Parsers, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   TfrmSavedisassembly = class;

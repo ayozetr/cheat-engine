@@ -11,7 +11,7 @@ uses
   {$ifdef windows}
   jwawindows, Windows, win32proc,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, LCLIntf,{$endif}
   Classes, SysUtils, syncobjs, GuiSafeCriticalSection,
   disassembler, CEFuncProc, newkernelhandler,debuggertypedefinitions, frmTracerUnit,
   DebuggerInterfaceAPIWrapper, lua, lauxlib, lualib,

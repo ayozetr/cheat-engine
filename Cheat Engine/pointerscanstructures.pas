@@ -12,6 +12,9 @@ uses
   {$ifdef windows}
   windows, Classes, SysUtils, winsock, CELazySocket, commonTypeDefs;
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}
+  linuxmemoryapi, Classes, SysUtils, Sockets, CELazySocket, commonTypeDefs;
+  {$endif}
 
 const
   MAXQUEUESIZE=64;

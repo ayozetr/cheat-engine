@@ -14,7 +14,7 @@ uses
   {$ifdef windows}
   windows, betterControls
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif};
+  {$if not defined(windows) and not defined(darwin)}math, linuxmemoryapi{$endif};
 
 type
 

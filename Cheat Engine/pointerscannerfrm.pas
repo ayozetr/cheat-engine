@@ -17,7 +17,9 @@ uses
   PointerscanNetworkCommands, resolve, pointeraddresslist, pointerscanworker,
   PointerscanStructures, PointerscanController, sqlite3conn, sqldb,
   frmSelectionlistunit, baseunix, commonTypeDefs;
-{$else}
+{$endif}
+
+{$ifdef windows}
 uses
   windows, LCLIntf, LResources, Messages, SysUtils, Variants, Classes, Graphics,
   Controls, Forms, Dialogs, StdCtrls, ExtCtrls, ComCtrls, syncobjs, syncobjs2,
@@ -28,7 +30,20 @@ uses
   PointerscanNetworkCommands, resolve, pointeraddresslist, pointerscanworker,
   PointerscanStructures, PointerscanController, sqlite3conn, sqldb,
   frmSelectionlistunit, commonTypeDefs, betterControls;
+{$endif}
 
+//the darwin list, which is already the platform neutral one, plus betterControls
+{$if not defined(windows) and not defined(darwin)}
+uses
+  linuxmemoryapi, LCLIntf, lmessages, LResources, Messages, SysUtils, Variants,
+  Classes, Graphics, Controls, Forms, Dialogs, StdCtrls, ExtCtrls, ComCtrls,
+  syncobjs, syncobjs2, Menus, math, frmRescanPointerUnit, pointervaluelist,
+  rescanhelper, VirtualMemory, symbolhandler, MainUnit, disassembler,
+  CEFuncProc, NewKernelHandler, ValueFinder, PointerscanresultReader, maps,
+  zstream, Sockets, registry, PageMap, CELazySocket,
+  PointerscanNetworkCommands, resolve, pointeraddresslist, pointerscanworker,
+  PointerscanStructures, PointerscanController, sqlite3conn, sqldb,
+  frmSelectionlistunit, baseunix, commonTypeDefs, betterControls;
 {$endif}
 
 

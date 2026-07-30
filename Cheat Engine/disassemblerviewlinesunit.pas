@@ -9,7 +9,8 @@ uses math,LCLIntf,sysutils, classes,ComCtrls, graphics, CEFuncProc, disassembler
      disassemblerComments, SymbolListHandler, ProcessHandlerUnit, tcclib,SynHighlighterCpp
      {$ifdef USELAZFREETYPE}
      ,LazFreeTypeIntfDrawer, EasyLazFreeType
-     {$endif}, betterControls;
+     {$endif}, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   TDisassemblerViewColorsState=(csUndefined=-1, csNormal=0, csHighlighted=1, csSecondaryHighlighted=2, csBreakpoint=3, csHighlightedbreakpoint=4, csSecondaryHighlightedbreakpoint=5, csUltimap=6, csHighlightedUltimap=7, csSecondaryHighlightedUltimap=8);

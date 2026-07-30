@@ -8,7 +8,8 @@ Will search for an array of bytes and returns as soon as it finds it
 
 interface
 
-uses LCLIntf, memscan, sysutils, CEFuncProc, classes, foundlisthelper, commonTypeDefs;
+uses LCLIntf, memscan, sysutils, CEFuncProc, classes, foundlisthelper, commonTypeDefs,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 
 function findaobInModule(modulename: string; aobstring: string; protectionflags: string=''; alignmenttype: TFastScanMethod=fsmNotAligned; alignmentparam: string=''; isUnique: boolean=false): ptruint;

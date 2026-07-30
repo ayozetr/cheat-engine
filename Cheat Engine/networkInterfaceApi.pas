@@ -19,6 +19,10 @@ uses
   {$ifdef windows}
   ,dialogs;
   {$endif}
+  //no branch here closed the clause, so on Linux it ran straight into the const
+  {$if not defined(windows) and not defined(darwin)}
+  ,dialogs;
+  {$endif}
 
   {$endif}
 

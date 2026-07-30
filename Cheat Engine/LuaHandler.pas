@@ -21,7 +21,7 @@ uses
   {$ifdef windows}
   jwawindows, windows, ShellApi,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, lcltype,{$endif}
   vmxfunctions, Classes, dialogs, SysUtils, lua, lualib,
   lauxlib, syncobjs, syncobjs2, CEFuncProc, NewKernelHandler, Graphics,
   controls, LuaCaller, forms, ExtCtrls, StdCtrls, comctrls, ceguicomponents,

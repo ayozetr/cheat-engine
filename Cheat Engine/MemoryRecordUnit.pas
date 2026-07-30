@@ -11,7 +11,12 @@ uses
   dom, XMLRead,XMLWrite, customtypehandler, fileutil, LCLProc, commonTypeDefs,
   pointerparser, LazUTF8, LuaClass, math, betterControls, memrecDataStructures;
 {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+
+{$if not defined(windows) and not defined(darwin) and not defined(jni)}
+//same list as the Windows branch, minus what only exists there
+uses
+  forms, graphics, Classes, SysUtils, controls, stdctrls, comctrls, symbolhandler, SymbolListHandler, cefuncproc, newkernelhandler, hotkeyhandler, dom, XMLRead, XMLWrite, customtypehandler, fileutil, LCLProc, commonTypeDefs, pointerparser, LazUTF8, LuaClass, math, betterControls, memrecDataStructures, linuxmemoryapi;
+{$endif}
 
 {$ifdef darwin}
 uses
@@ -20,6 +25,7 @@ uses
   dom, XMLRead,XMLWrite, CustomTypeHandler, fileutil, LCLProc, commonTypeDefs,
   pointerparser, LazUTF8, LuaClass, math,memrecDataStructures;
 {$endif}
+
 
 {$ifdef jni}
 //only used as a class to store entries and freeze/setvalue. It won't have a link with the addresslist and does not decide it's position

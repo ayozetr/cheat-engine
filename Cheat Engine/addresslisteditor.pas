@@ -33,7 +33,7 @@ uses
   {$ifdef windows}
   windows,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, LCLIntf,{$endif}
   Classes, SysUtils, ComCtrls, Controls, StdCtrls,  MemoryRecordUnit,
   Graphics, LCLType, betterControls;
 

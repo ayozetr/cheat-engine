@@ -4,7 +4,8 @@ unit olddebugger;
 
 interface
 
-uses windows, Classes,LCLIntf,sysutils,CEFuncProc,Messages,forms,SyncObjs,
+uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, lcltype,{$endif} windows, Classes,LCLIntf,sysutils,CEFuncProc,Messages,forms,SyncObjs,
      dialogs,controls,Graphics,NewKernelHandler,symbolhandler,StrUtils,
      ComCtrls ,Assemblerunit,addressparser, debughelper;
 

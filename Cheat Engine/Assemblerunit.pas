@@ -12,7 +12,8 @@ unit Assemblerunit;
 interface
 
 {$ifdef jni}
-uses  sysutils, ProcessHandlerUnit;
+uses  sysutils, ProcessHandlerUnit,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, LCLIntf{$endif};
 {$else}
 uses
   dialogs,LCLIntf,sysutils{$ifdef windows},imagehlp{$endif}, ProcessHandlerUnit,vextypedef;

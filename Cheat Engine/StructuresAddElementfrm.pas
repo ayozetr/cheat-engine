@@ -6,7 +6,8 @@ interface
 
 uses
   LCLIntf, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, LResources, betterControls;
+  Dialogs, StdCtrls, LResources, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 resourcestring
   rsSAE4Bytes = '4 Bytes';

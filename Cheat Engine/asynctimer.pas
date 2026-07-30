@@ -8,7 +8,8 @@ Timer like thread that will call a specific notifyevent routiner every specified
 interface
 
 uses
-  Classes, SysUtils, syncobjs;
+  Classes, SysUtils, syncobjs,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   TAsyncTimer=class(tthread)

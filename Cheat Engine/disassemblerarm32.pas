@@ -8,7 +8,8 @@ interface
 //last update at :a7
 
 uses
-  Classes, SysUtils, LastDisassembleData;
+  Classes, SysUtils, LastDisassembleData,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 
 

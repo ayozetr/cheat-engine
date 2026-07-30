@@ -13,7 +13,7 @@ uses
   {$ifdef windows}
   windows, win32proc,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, lcltype,{$endif}
   LCLIntf, LResources, LMessages, Messages, SysUtils, Variants,
   Classes, Graphics, Controls, Forms, Dialogs, StdCtrls, ExtCtrls, ComCtrls,
   Buttons, Arrow, Spin, Menus, CEFuncProc, NewKernelHandler, symbolhandler,
@@ -241,7 +241,7 @@ type
     procedure AdjustHeight;
     procedure PointerInfoResize(sender: TObject);
 
-    procedure DisablePointerExternal(var m: TMessage); message WM_disablePointer;
+    procedure DisablePointerExternal(var m: TLMessage); message WM_disablePointer;
     procedure setVarType(vt: TVariableType);
     function getVartype: TVariableType;
     procedure sLength(l: integer);
@@ -1522,7 +1522,7 @@ begin
   AdjustHeight;
 end;
 
-procedure TformAddressChange.DisablePointerExternal(var m: TMessage);
+procedure TformAddressChange.DisablePointerExternal(var m: TLMessage);
 begin
   cbPointer.Checked:=false;
 end;

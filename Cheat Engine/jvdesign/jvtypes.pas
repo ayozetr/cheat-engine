@@ -12,7 +12,8 @@ uses
   LCLType, LCLIntf, Graphics, ExtCtrls,
   SysUtils, Classes,  //Consts,
   LMessages, Controls, Forms,
-  JvConsts, JvResources;
+  JvConsts, JvResources,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 const
   MaxPixelCount = 32767;
@@ -720,4 +721,4 @@ finalization
 {$ENDIF UNITVERSIONING}
 
 end.
-
+

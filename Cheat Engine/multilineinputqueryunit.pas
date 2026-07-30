@@ -11,7 +11,7 @@ uses
   {$ifdef windows}
   win32proc, windows,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, LCLIntf,{$endif}
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
   LCLType, math, betterControls;
 

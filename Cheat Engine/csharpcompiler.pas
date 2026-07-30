@@ -8,6 +8,7 @@ unit CSharpCompiler;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   {$ifdef windows}
   jwawindows, windows, Classes, SysUtils, dotnethost{$ifndef standalonetest}, newkernelhandler{$endif};
   {$else}

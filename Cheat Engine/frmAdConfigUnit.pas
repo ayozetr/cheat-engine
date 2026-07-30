@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, ExtCtrls, ComCtrls, cesupport, betterControls;
+  StdCtrls, ExtCtrls, ComCtrls, cesupport, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 resourcestring
   rsPercentageShown = 'Percentage shown';

@@ -11,6 +11,7 @@ things up considerably
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   {$ifdef JNI}
   Classes, SysUtils, ctypes,syncobjs, newkernelhandler, unixporthelper;
   {$else}
@@ -19,8 +20,7 @@ uses
   {$endif}
   {$ifdef windows}
   jwawindows, windows,
-  {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif} Classes, SysUtils, newkernelhandler, math;
+  {$endif} Classes, SysUtils, newkernelhandler, math;
   {$endif}
 
 type

@@ -8,7 +8,8 @@ This unit will be used to register TCanvas class methods to lua
 interface
 
 uses
-  Classes, SysUtils, Graphics, GraphType, lua, lualib, lauxlib, LuaHandler, fpcanvas, LCLType, LCLIntf;
+  Classes, SysUtils, Graphics, GraphType, lua, lualib, lauxlib, LuaHandler, fpcanvas, LCLType, LCLIntf,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaCanvas(L: Plua_State);
 procedure drawWithMask(DestCanvas:TCanvas; Dx,Dy,Dw,Dh:integer; graph:TRasterImage; Sx,Sy,Sw,Sh:integer);

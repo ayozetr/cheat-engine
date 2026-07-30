@@ -13,7 +13,7 @@ uses
   {$ifdef windows}
   Windows,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, lcltype,{$endif}
   LCLIntf, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls,CEFuncProc, Menus, LResources, betterControls;
 

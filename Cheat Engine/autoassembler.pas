@@ -21,7 +21,7 @@ uses
    {$ifdef windows}
    jwawindows, windows,
    {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, math,{$endif}
    Assemblerunit, classes, LCLIntf,symbolhandler, symbolhandlerstructs,
    sysutils,dialogs,controls, CEFuncProc, NewKernelHandler ,plugin,
    ProcessHandlerUnit, lua, lualib, lauxlib, LuaClass, commonTypeDefs, OpenSave,

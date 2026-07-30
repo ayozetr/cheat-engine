@@ -7,7 +7,8 @@ interface
 uses
   {$ifdef darwin}
   macport, LCLProc,
-  {$else}
+  {$endif}
+  {$ifdef windows}
   windows,
   {$endif}
   LCLIntf, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
@@ -15,7 +16,8 @@ uses
   disassembler, symbolhandler, symbolhandlerstructs, SynEdit, SynHighlighterCpp,
   SynHighlighterAA, LuaSyntax, SynPluginMultiCaret, SynEditSearch, tablist,
   SynGutterBase, SynEditMarks, math, SynEditMiscClasses, SynEditTextBase,
-  SynEditTextBuffer, LazSynEditText, SynEditLines, SynEditKeyCmds, betterControls;
+  SynEditTextBuffer, LazSynEditText, SynEditLines, SynEditKeyCmds, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 
 type

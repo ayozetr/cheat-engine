@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ExtCtrls, CEFuncProc, Parsers, symbolhandler, ProcessHandlerUnit, betterControls;
+  ExtCtrls, CEFuncProc, Parsers, symbolhandler, ProcessHandlerUnit, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
 

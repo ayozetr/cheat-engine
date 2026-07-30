@@ -5,7 +5,8 @@ unit LuaListColumns;
 interface
 
 uses
-  Classes, SysUtils, lua, lualib, lauxlib, comctrls;
+  Classes, SysUtils, lua, lualib, lauxlib, comctrls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaListColumns;
 

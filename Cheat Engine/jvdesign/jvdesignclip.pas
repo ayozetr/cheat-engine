@@ -8,7 +8,8 @@ uses
   {$IFDEF UNITVERSIONING}
   JclUnitVersioning,
   {$ENDIF UNITVERSIONING}
-  LCLProc, LCLType, LResources, LCLIntf, LMessages, Classes;
+  LCLProc, LCLType, LResources, LCLIntf, LMessages, Classes,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   TJvDesignComponentClipboard = class(TObject)

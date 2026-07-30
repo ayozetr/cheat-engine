@@ -5,7 +5,8 @@ unit tp_register;
 interface
 
 uses
-  Classes, SysUtils; 
+  Classes, SysUtils,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif}; 
 
 procedure register;
 

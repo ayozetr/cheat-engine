@@ -6,10 +6,16 @@ interface
 
 {$ifdef darwin}
 
-uses macport, LCLIntf, classes, symbolhandler, CEFuncProc,NewKernelHandler, maps,
+uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif} macport, LCLIntf, classes, symbolhandler, CEFuncProc,NewKernelHandler, maps,
   sysutils, syncobjs, pagemap, Sockets, (*CELazySocket, PointerscanNetworkCommands, *)
-  zstream, commonTypeDefs,
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
+  zstream, commonTypeDefs;
+{$endif}
+
+{$if not defined(windows) and not defined(darwin) and not defined(jni)}
+//mirrors the darwin branch; the mac only units drop out
+uses linuxmemoryapi, LCLIntf, classes, symbolhandler, CEFuncProc, NewKernelHandler, maps, sysutils, syncobjs, pagemap, Sockets, PointerscanNetworkCommands,
+  zstream, commonTypeDefs;
 {$endif}
 
 {$ifdef windows}

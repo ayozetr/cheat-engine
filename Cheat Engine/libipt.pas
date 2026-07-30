@@ -8,11 +8,11 @@ uses
   {$ifdef windows}
   Windows,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   {$ifdef darwin}
   macport, dynlibs, mactypes,
   {$endif}
-  Classes, SysUtils;
+  Classes, SysUtils,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 const
   pt_asid_no_cr3  = QWORD($ffffffffffffffff);

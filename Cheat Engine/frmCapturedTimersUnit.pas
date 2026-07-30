@@ -10,7 +10,7 @@ uses
   {$endif}
   {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   LCLIntf, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ComCtrls, LResources, ExtCtrls, betterControls;
+  Dialogs, StdCtrls, ComCtrls, LResources, ExtCtrls, betterControls, LMessages;
 
 type TTimerMessage = record
   handle: Thandle;
@@ -40,7 +40,7 @@ type
     { Public declarations }
     {$ifdef windows}
     windowhandle:thandle;
-    procedure receivedtimermessage(var Message: TMessage); message WM_USER+1;
+    procedure receivedtimermessage(var Message: TLMessage); message WM_USER+1;
     {$endif}
   end;
 
@@ -53,7 +53,7 @@ uses frmDissectwindowUnit;
 
 {$ifdef windows}
 
-procedure TfrmCapturedTimers.receivedtimermessage(var Message: TMessage);
+procedure TfrmCapturedTimers.receivedtimermessage(var Message: TLMessage);
 var i,j: integer;
     handle: Thandle;
     TimerID: dword;

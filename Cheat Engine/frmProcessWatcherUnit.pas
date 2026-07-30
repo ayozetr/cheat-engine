@@ -5,6 +5,7 @@ unit frmProcessWatcherUnit;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   {$ifdef darwin}
   macport,
   {$endif}
@@ -12,7 +13,6 @@ uses
   {$ifdef windows}
   jwawindows, windows, kerneldebugger, CEDebugger, CEFuncProc, symbolhandler, debugHelper, NewKernelHandler, syncobjs,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   LCLIntf, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, ExtCtrls, ComCtrls, StdCtrls, Menus, LResources, betterControls;
 

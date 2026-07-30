@@ -22,11 +22,11 @@ unit symbolsync;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   Classes, SysUtils,
   {$ifdef windows}
   jwawindows, windows,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   {$ifdef darwin}
   macport,macportdefines,
   {$endif}

@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils,lua, lualib, lauxlib, LuaHandler, LuaCaller,
-  ExtCtrls, StdCtrls, ExtraTrainerComponents;
+  ExtCtrls, StdCtrls, ExtraTrainerComponents,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaCheatComponent;
 

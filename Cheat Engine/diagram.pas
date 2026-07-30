@@ -11,7 +11,7 @@ uses
   {$ifdef windows}
   windows,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, math,{$endif}
   Classes, SysUtils, controls,Types, graphics, diagramblock, diagramlink, diagramtypes,
   LMessages, GL, glu, GLext, dialogs, StdCtrls, ExtCtrls, betterControls;
 

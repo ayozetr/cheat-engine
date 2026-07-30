@@ -8,9 +8,14 @@ interface
 
 {$ifdef darwin}
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   macport, Classes, SysUtils, syncobjs, PointerscanStructures, ProcessHandlerUnit, pointervaluelist,
-  pointeraddresslist, NewKernelHandler, zstream, zstreamext, macportdefines, SyncObjs2, math,
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
+  pointeraddresslist, NewKernelHandler, zstream, zstreamext, macportdefines, SyncObjs2, math;
+{$endif}
+
+{$if not defined(windows) and not defined(darwin) and not defined(jni)}
+//mirrors the darwin branch; the mac only units drop out
+uses linuxmemoryapi, Classes, SysUtils, syncobjs, PointerscanStructures, ProcessHandlerUnit, pointervaluelist, pointeraddresslist, NewKernelHandler, zstream, zstreamext, SyncObjs2, math;
 {$endif}
 
 {$ifdef windows}

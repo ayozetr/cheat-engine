@@ -13,12 +13,18 @@ uses
 uses
   Classes, SysUtils, windows, CEFuncProc, NewKernelHandler;
 {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
+
+{$if not defined(windows) and not defined(darwin) and not defined(jni)}
+//same list as the Windows branch, minus what only exists there
+uses
+  Classes, SysUtils, CEFuncProc, NewKernelHandler, linuxmemoryapi;
+{$endif}
 
 {$ifdef darwin}
 uses
   Classes, SysUtils, macport, CEFuncProc, NewKernelHandler;
 {$endif}
+
 
 function FindFreeBlockForRegion(base: ptrUint; size: dword): pointer;
 function isAddress(address: ptrUint):boolean;

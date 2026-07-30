@@ -6,7 +6,8 @@ interface
 
 uses
   LCLIntf, Messages, SysUtils, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, LResources, betterControls;
+  Dialogs, StdCtrls, ExtCtrls, LResources, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   Ttlg = class(TForm)

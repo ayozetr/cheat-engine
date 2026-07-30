@@ -5,6 +5,7 @@ unit frmsnapshothandlerUnit;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
   StdCtrls, Menus, math, NewKernelHandler, FPImage, FPCanvas, FPImgCanv, FPReadPNG, FPWritePNG, betterControls  ;
 
