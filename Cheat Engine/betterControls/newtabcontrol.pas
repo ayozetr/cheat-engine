@@ -34,7 +34,7 @@ type
 
 implementation
 
-uses Graphics, betterControls;
+uses Graphics, betterControls, modernui;
 
 procedure TNewNoteBookStringsTabControl.DrawItem(var msg: TMessage);
 var
@@ -89,7 +89,10 @@ begin
   begin
     c:=tcanvas.create;
     c.handle:=dc;
-    c.brush.color:=ColorSet.TextBackground;
+    if ModernMetrics.CustomDraw then
+      c.brush.color:=ModernMetrics.ButtonFaceDown
+    else
+      c.brush.color:=ColorSet.TextBackground;
     c.FillRect(c.ClipRect);
 
     //c.pen.color:=clBlue;

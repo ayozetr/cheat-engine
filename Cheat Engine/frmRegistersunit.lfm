@@ -70,7 +70,7 @@ object Registers: TRegisters
       ChildSizing.ControlsPerLine = 1
       ClientHeight = 153
       ClientWidth = 140
-      Font.Name = 'Courier New'
+      Font.Name = 'Consolas'
       ParentFont = False
       TabOrder = 0
       object EAXLabel: TLabel
@@ -243,7 +243,7 @@ object Registers: TRegisters
       ChildSizing.ControlsPerLine = 1
       ClientHeight = 119
       ClientWidth = 28
-      Font.Name = 'Courier New'
+      Font.Name = 'Consolas'
       ParentFont = False
       TabOrder = 1
       object lblCF: TLabel

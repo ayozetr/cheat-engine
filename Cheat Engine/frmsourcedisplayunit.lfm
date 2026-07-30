@@ -18,7 +18,7 @@ object frmSourceDisplay: TfrmSourceDisplay
     Width = 715
     Align = alClient
     Font.Height = -13
-    Font.Name = 'Courier New'
+    Font.Name = 'Consolas'
     Font.Pitch = fpFixed
     Font.Quality = fqNonAntialiased
     ParentColor = False

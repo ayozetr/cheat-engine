@@ -603,7 +603,7 @@ begin
   loadedFormPosition:=LoadFormPosition(self);
   sbdata.font.color:=clWindowtext;
 
-  mdata.font.Name:='Courier New';
+  mdata.font.Name:='Consolas';
 //  mdata.font.size:=;
 end;
 

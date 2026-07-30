@@ -32,7 +32,7 @@ object frmTracer: TfrmTracer
     ClientHeight = 515
     ClientWidth = 223
     Constraints.MinWidth = 20
-    Font.Name = 'Courier New'
+    Font.Name = 'Consolas'
     ParentFont = False
     TabOrder = 0
     OnClick = Panel1Click
@@ -73,7 +73,7 @@ object frmTracer: TfrmTracer
       ClientHeight = 210
       ClientWidth = 120
       Font.Height = -16
-      Font.Name = 'Courier New'
+      Font.Name = 'Consolas'
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
@@ -203,7 +203,7 @@ object frmTracer: TfrmTracer
       ChildSizing.ControlsPerLine = 1
       ClientHeight = 120
       ClientWidth = 49
-      Font.Name = 'Courier New'
+      Font.Name = 'Consolas'
       ParentFont = False
       TabOrder = 2
       object CSLabel: TLabel
@@ -286,7 +286,7 @@ object frmTracer: TfrmTracer
       ChildSizing.ControlsPerLine = 1
       ClientHeight = 141
       ClientWidth = 28
-      Font.Name = 'Courier New'
+      Font.Name = 'Consolas'
       ParentFont = False
       TabOrder = 3
       object cflabel: TLabel
@@ -360,7 +360,7 @@ object frmTracer: TfrmTracer
       BevelOuter = bvNone
       ClientHeight = 38
       ClientWidth = 32
-      Font.Name = 'Courier New'
+      Font.Name = 'Consolas'
       ParentFont = False
       TabOrder = 4
       object sbShowFloats: TSpeedButton

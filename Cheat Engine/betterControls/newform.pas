@@ -22,12 +22,23 @@ type
 
 implementation
 
-uses graphics, Menus, Win32WSMenus, betterControls, DwmApi;
+uses graphics, Menus, Win32WSMenus, betterControls, DwmApi, modernui, modernicons, modernabout;
 
 constructor TNewForm.Create(TheOwner: TComponent);
 var ldark: dword;
 begin
   inherited create(TheOwner);
+
+  //betterControls declares globalCustomDraw but never assigns it, and
+  //fCustomDraw defaults to false, so csCustomPaint is never set and
+  //DefaultCustomPaint never runs: Windows paints the controls itself.
+  //Turning it on is what lets us control how they look.
+  globalCustomDraw:=ModernMetrics.CustomDraw;
+
+  //the .lfm has been streamed in by now, so the child controls exist
+  ApplyModernUI(self);
+  ApplyModernIcons(self);
+  ApplyModernAbout(self);
 
   if ShouldAppsUseDarkMode() then
   begin

@@ -2822,7 +2822,7 @@ begin
 
 
   scrollbox1.Font:=mainform.font;
-  scrollbox1.Font.name:='Courier New';
+  scrollbox1.Font.name:='Consolas';
   scrollbox1.Font.Size:=13;
 
 

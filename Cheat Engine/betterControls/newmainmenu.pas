@@ -32,7 +32,7 @@ type
 
 implementation
 
-uses betterControls, forms, LCLType;
+uses betterControls, forms, LCLType, modernui;
 
 procedure TNewMainMenu.firstshow(sender: TObject);
 var m: Hmenu;
@@ -55,7 +55,7 @@ begin
     mi.fMask := MIM_BACKGROUND or MIM_APPLYTOSUBMENUS;
 
     b:=TBrush.Create;
-    b.color:=$2b2b2b;
+    b.color:=ModernMetrics.MenuBackground;
 
 
     b.Style:=bsSolid;
@@ -103,7 +103,7 @@ begin
 
     if result then
     begin
-      acanvas.Brush.color:=$313131;
+      acanvas.Brush.color:=ModernMetrics.MenuBarBackground;
 
       lastvisible:=-1;
       for i:=parent.count-1 downto 0 do
@@ -139,12 +139,13 @@ begin
 
     if (not result) and (caption='-') then
     begin
-      acanvas.Brush.color:=$2b2b2b;
+      acanvas.Brush.color:=ModernMetrics.MenuBackground;
       acanvas.FillRect(arect);
       ts:=acanvas.TextStyle;
       ts.ShowPrefix:=true;
       acanvas.Brush.Style:=bsSolid;
-      acanvas.pen.color:=clGray;
+      //clGray is far lighter than the menu it divides
+      acanvas.pen.color:=ModernMetrics.MenuSeparator;
       acanvas.pen.Width:=1;
       acanvas.Line(arect.left+acanvas.TextWidth(' '), arect.CenterPoint.Y,arect.right-acanvas.TextWidth(' '), arect.CenterPoint.Y);
       acanvas.Brush.color:=oldc;

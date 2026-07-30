@@ -1363,11 +1363,11 @@ begin
   if loadCEFreeTypeFonts then
   begin
     FTFont:=TFreeTypeFont.Create;
-    FTFont.Name:='Courier New';
+    FTFont.Name:='Consolas';
 
 
     FTFontb:=TFreeTypeFont.Create;
-    FTFontb.Name:='Courier New';
+    FTFontb.Name:='Consolas';
     FTFontb.Style:=[ftsBold];
     FTFontb.Hinted:=false;
 
@@ -1435,7 +1435,7 @@ begin
     ParentFont:=false;
     Font.Charset:=DEFAULT_CHARSET;
     Font.Color:=clBtnText;
-    Font.Name:='Courier New';
+    Font.Name:='Consolas';
     Font.Style:=[];
 
     parent:=self;

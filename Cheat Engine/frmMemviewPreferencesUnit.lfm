@@ -808,7 +808,7 @@ object frmMemviewPreferences: TfrmMemviewPreferences
   object FontDialog2: TFontDialog
     Font.CharSet = ANSI_CHARSET
     Font.Height = -13
-    Font.Name = 'Courier New'
+    Font.Name = 'Consolas'
     Font.Pitch = fpFixed
     Font.Quality = fqDraft
     MinFontSize = 0

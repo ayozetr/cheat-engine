@@ -30,7 +30,7 @@ object frmEnumerateDLLs: TfrmEnumerateDLLs
     Width = 369
     Align = alClient
     Font.CharSet = ANSI_CHARSET
-    Font.Name = 'Courier New'
+    Font.Name = 'Consolas'
     HideSelection = False
     Indent = 19
     ParentFont = False
