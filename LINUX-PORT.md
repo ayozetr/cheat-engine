@@ -48,19 +48,26 @@ Build mode: `Linux 64-Bit` (item 12 in `cheatengine.lpi`, `TargetOS=linux`,
 
 ## What compiles today
 
-The build now reaches deep into the form units. Everything below has been
-through the compiler on Linux:
-
-`linuxmemoryapi`, `networkInterface`, `networkInterfaceApi`, `plugin`,
-`symbolhandler`, `disassembler`, `disassemblerarm`, `disassemblerviewunit`,
-`pointerparser`, `PointerscanresultReader`, `pointerscannerfrm`,
+Essentially the whole tree. The heavyweights are through: `MainUnit` (11 500
+lines), `LuaHandler` (17 400), `MemoryBrowserFormUnit`, `disassembler`,
+`pointerscannerfrm`, `debughelper`, `autoassembler`, `tcclib`, and both
+ultimap forms. Also `linuxmemoryapi`, `networkInterface`, `networkInterfaceApi`,
+`plugin`, `pluginexports`, `symbolhandler`, `disassemblerarm`,
+`disassemblerviewunit`, `pointerparser`, `PointerscanresultReader`,
 `pointervaluelist`, `pointerscanworker`, `rescanhelper`, `savedscanhandler`,
-`MemoryRecordUnit`, `memoryquery`, `memscan`, `MemoryBrowserFormUnit`,
-`MainUnit`, `ProcessWindowUnit`, `processlist`, `PEInfounit`, `LuaHandler`,
-`CEFuncProc`, `gdbserverdebuggerinterface`, `networkdebuggerinterface`,
-`bigmemallochandler`, `mikmod`, `pagemap`, `celazysocket`,
-`multilineinputqueryunit`, `SynHighlighterAA`, `DPIHelper`, and the ~50 units
-whose `uses` order was corrected.
+`MemoryRecordUnit`, `memoryquery`, `memscan`, `ProcessWindowUnit`,
+`processlist`, `PEInfounit`, `CEFuncProc`, `gdbserverdebuggerinterface`,
+`networkdebuggerinterface`, `bigmemallochandler`, `mikmod`, `pagemap`,
+`celazysocket`, `multilineinputqueryunit`, `SynHighlighterAA`, `DPIHelper`,
+`LuaInternet`, `luaremotethread`, `luavirtualstringtree`, `StructuresFrm2`,
+`frmThreadlistunit`, `frmMemoryViewExUnit`, `frmluaengineunit`, and the ~50
+units whose `uses` order was corrected.
+
+Build mode options ended up as `-dLCLgtk2 -dNESTEDSTRUCTURES`. `-dlaztrunk`
+looked tempting — Lazarus 3's bundled VirtualTrees only exports
+`TCustomVirtualStringTree` — but it also flips `AVL_Tree` for `laz_avl_Tree`,
+which is backwards here. The VirtualTrees case is handled at the one call site
+instead.
 
 ## Recurring problems, and how they were settled
 
@@ -99,11 +106,33 @@ references, not aliases. Cost me three build cycles.
 **`{$elseif}` only follows `{$if}`.** After `{$ifdef}` it has to be
 `{$if defined(...)}`.
 
+## Where it stopped
+
+Every unit compiles, including `cheatengine.lpr` itself. The last run got past
+the whole tree and then died inside the compiler:
+
+```
+An unhandled exception occurred at $00000000004C7C5E:
+EAccessViolation
+MainUnit.pas(4133,68) Error: (1026) Compilation raised exception internally
+```
+
+That is `ppcx64` crashing, not the source being wrong — the same internal
+compiler error that kept appearing during the Windows work, and there the cure
+was always a clean rebuild:
+
+```
+lazbuild -B --build-mode='Linux 64-Bit' cheatengine.lpi
+```
+
+A clean build was launched and had not finished when the session ended. Start
+there.
+
 ## What is left
 
-- Keep running `sync-linux.sh` and fixing what it reports. Each iteration has
-  been getting further; the errors are shallow now — a missing constant, a
-  missing unit in a `uses` clause.
+- Finish the clean rebuild and see whether the link succeeds. If the same ICE
+  comes back on a clean tree, it is a genuine FPC 3.2.2 bug on that line and
+  the surrounding code needs simplifying until it goes away.
 - `modernfonts` and `modernabout` are still Windows only (`AddFontResourceEx`,
   `ShellExecute`). They need conditioning before the redesign shows up on
   Linux. Until then the Linux build gets the stock LCL look: `betterControls`

@@ -12,6 +12,7 @@ uses
   windows,
   {$else}
   cthreads, unix, unixtype, pthreads, baseunix,
+  {$ifndef darwin}linux,{$endif}   //clock_gettime and CLOCK_REALTIME live here
   {$endif}SyncObjs, classes, sysutils, LCLIntf;
 
 type TSemaphore=class
@@ -246,18 +247,26 @@ begin
   if time>0 then
   begin
     {$ifndef darwin}
-    if clock_gettime(CLOCK_REALTIME, tspec)=0 then
+    //this branch had never been compiled: it read tv_nsec without its record,
+    //waited on an abstime nobody filled in, and was missing a semicolon
+    if clock_gettime(CLOCK_REALTIME, @tspec)=0 then
     begin
       //1000000000=1 second
       //100000000=100 milliseconds
       //1000000=1 millisecond
       inc(tspec.tv_nsec, time*1000000);
-      while (tv_nsec>=1000000000) do
+      while (tspec.tv_nsec>=1000000000) do
       begin
         inc(tspec.tv_sec);
         dec(tspec.tv_nsec,1000000000);
-      end
-      result:=sem_timedwait(h,abstime)=0;
+      end;
+
+      abstime:=tspec;
+      if sem_timedwait(h,@abstime)=0 then
+      begin
+        InterlockedDecrement(semaphorecount);
+        result:=true;
+      end;
     end
     else sleep(50);
     {$else}
@@ -282,7 +291,7 @@ end;
 
 function TSemaphore.Release(count: integer=1): integer;
 var
-  previouscount: LONG;
+  previouscount: longint;   //LONG only exists where the windows unit is in scope
   e: integer;
 begin
   {$ifdef windows}

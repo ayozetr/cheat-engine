@@ -13,7 +13,7 @@ uses
   SysUtils, Classes,  //Consts,
   LMessages, Controls, Forms,
   JvConsts, JvResources,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, Messages{$endif};
 
 const
   MaxPixelCount = 32767;

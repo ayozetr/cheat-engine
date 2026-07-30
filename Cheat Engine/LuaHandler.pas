@@ -21,7 +21,7 @@ uses
   {$ifdef windows}
   jwawindows, windows, ShellApi,
   {$endif}
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, lcltype,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, lcltype, LCLIntf, LazFileUtils, Messages,{$endif}
   vmxfunctions, Classes, dialogs, SysUtils, lua, lualib,
   lauxlib, syncobjs, syncobjs2, CEFuncProc, NewKernelHandler, Graphics,
   controls, LuaCaller, forms, ExtCtrls, StdCtrls, comctrls, ceguicomponents,
@@ -17157,11 +17157,11 @@ begin
 
 
 {$ifdef cpu64}
-      s.add('package.cpath = package.cpath .. [[;'+getcedir+'clibs64'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}+']]');
-      s.add('package.cpath = package.cpath .. [[;.'+pathdelim+'clibs64'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}+']]');
+      s.add('package.cpath = package.cpath .. [[;'+getcedir+'clibs64'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}{$if not defined(windows) and not defined(darwin)}'.so'{$endif}+']]');
+      s.add('package.cpath = package.cpath .. [[;.'+pathdelim+'clibs64'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}{$if not defined(windows) and not defined(darwin)}'.so'{$endif}+']]');
 {$else}
-      s.add('package.cpath = package.cpath .. [[;'+getcedir+'clibs32'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}+']]');
-      s.add('package.cpath = package.cpath .. [[;.'+pathdelim+'clibs32'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}+']]');
+      s.add('package.cpath = package.cpath .. [[;'+getcedir+'clibs32'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}{$if not defined(windows) and not defined(darwin)}'.so'{$endif}+']]');
+      s.add('package.cpath = package.cpath .. [[;.'+pathdelim+'clibs32'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}{$if not defined(windows) and not defined(darwin)}'.so'{$endif}+']]');
 {$endif}
       s.add('stringlist_getCount=strings_getCount');
       s.add('stringlist_getString=strings_getString');

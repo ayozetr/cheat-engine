@@ -9,6 +9,7 @@ uses
 
   {$endif}
   first,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}

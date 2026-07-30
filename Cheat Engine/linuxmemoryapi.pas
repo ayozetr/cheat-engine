@@ -340,6 +340,8 @@ type
   PDebugEvent = ^TDebugEvent;
   DEBUG_EVENT = TDebugEvent;
   LPDEBUG_EVENT = ^TDebugEvent;
+  _DEBUG_EVENT = TDebugEvent;
+  PDEBUG_EVENT = ^TDebugEvent;
 
   PBOOL = ^BOOL;
   PWINBOOL = ^WINBOOL;
@@ -382,6 +384,8 @@ const
   TH32CS_SNAPPROCESS = $00000002;
   TH32CS_SNAPTHREAD  = $00000004;
   TH32CS_SNAPMODULE  = $00000008;
+  TH32CS_SNAPMODULE32 = $00000010;
+  TH32CS_SNAPALL = $0000000F;
 
   //the subset of the Windows constants the callers actually compare against
   MEM_COMMIT = $1000;
@@ -411,6 +415,10 @@ const
   //winsock spells the failed-socket sentinel this way; on Unix it is just -1
   INVALID_SOCKET = -1;
   SOCKET_ERROR = -1;
+  INADDR_ANY = 0;
+  INADDR_BROADCAST = DWORD($FFFFFFFF);
+  INADDR_LOOPBACK = $7F000001;
+  INADDR_NONE = DWORD($FFFFFFFF);
 
   //debug event codes, as WaitForDebugEvent reports them
   EXCEPTION_DEBUG_EVENT = 1;
@@ -505,6 +513,34 @@ const
   HELP_QUIT = 2;
   HELP_CONTENTS = 3;
 
+  //MessageBox flags and results. LCLType declares these too and the values
+  //agree, so whichever unit comes last in a uses clause is equally correct.
+  MB_OK = 0;
+  MB_OKCANCEL = 1;
+  MB_ABORTRETRYIGNORE = 2;
+  MB_YESNOCANCEL = 3;
+  MB_YESNO = 4;
+  MB_RETRYCANCEL = 5;
+  MB_ICONHAND = $10;
+  MB_ICONERROR = $10;
+  MB_ICONQUESTION = $20;
+  MB_ICONEXCLAMATION = $30;
+  MB_ICONWARNING = $30;
+  MB_ICONASTERISK = $40;
+  MB_ICONINFORMATION = $40;
+  MB_DEFBUTTON1 = 0;
+  MB_DEFBUTTON2 = $100;
+  MB_SYSTEMMODAL = $1000;
+  MB_TOPMOST = $40000;
+
+  IDOK = 1;
+  IDCANCEL = 2;
+  IDABORT = 3;
+  IDRETRY = 4;
+  IDIGNORE = 5;
+  IDYES = 6;
+  IDNO = 7;
+
   //thread and process access rights; nothing checks them on Linux
   THREAD_ALL_ACCESS = $1FFFFF;
   THREAD_TERMINATE = $0001;
@@ -541,6 +577,9 @@ const
 function OpenProcess(dwDesiredAccess: DWORD; bInheritHandle: boolean;
   dwProcessId: DWORD): THandle;
 function CloseHandle(hObject: THandle): boolean;
+//DBK32functions declares this for Windows; here the handle is a pid, so the
+//question is simply whether that process is still around
+function IsValidHandle(hProcess: THandle): boolean;
 
 function ReadProcessMemory(hProcess: THandle; lpBaseAddress, lpBuffer: Pointer;
   nSize: PtrUInt; var lpNumberOfBytesRead: PtrUInt): boolean;
@@ -563,6 +602,8 @@ function CloseSnapshot(hSnapshot: THandle): boolean;
 
 function GetCurrentProcessId: DWORD;
 function GetCurrentProcess: THandle;
+//no global keyboard state outside a display server connection
+function GetAsyncKeyState(vKey: longint): smallint;
 
 function OpenThread(dwDesiredAccess: DWORD; bInheritHandle: boolean;
   dwThreadId: DWORD): THandle;
@@ -639,6 +680,8 @@ function VirtualProtect(lpAddress: Pointer; dwSize: PtrUInt;
   flNewProtect: DWORD; var lpflOldProtect: DWORD): boolean;
 //huge page size, straight out of /proc/meminfo
 function GetLargePageMinimum: PtrUInt;
+//macport exports this too, and the auto assembler aligns allocations with it
+function getPageSize: PtrUInt;
 
 implementation
 
@@ -651,6 +694,10 @@ type
 
 //process_vm_readv and process_vm_writev are not wrapped by the FPC RTL, so
 //they go through syscall directly, the same way ceserver reaches them
+//the RTL does not wrap sysconf either
+const _SC_PAGESIZE = 30;
+function sysconf(name: cint): clong; cdecl; external 'c' name 'sysconf';
+
 function process_vm_readv(pid: TPid; local_iov: PIOVec; liovcnt: culong;
   remote_iov: PIOVec; riovcnt: culong; flags: culong): ssize_t; cdecl;
   external 'c' name 'process_vm_readv';
@@ -668,6 +715,12 @@ begin
     result:=THandle(dwProcessId)
   else
     result:=0;
+end;
+
+function IsValidHandle(hProcess: THandle): boolean;
+begin
+  result:=(hProcess<>0) and (hProcess<>INVALID_HANDLE_VALUE) and
+          (FpKill(TPid(hProcess), 0)=0);
 end;
 
 function CloseHandle(hObject: THandle): boolean;
@@ -1088,6 +1141,11 @@ begin
   result:=SiguienteModulo(snap, lpme);
 end;
 
+function GetAsyncKeyState(vKey: longint): smallint;
+begin
+  result:=0;
+end;
+
 function GetCurrentProcessId: DWORD;
 begin
   result:=DWORD(FpGetpid);
@@ -1401,6 +1459,12 @@ begin
   //mprotect gives no way to read the old value back, and no caller checks it
   lpflOldProtect:=PAGE_EXECUTE_READWRITE;
   result:=FpMProtect(lpAddress, dwSize, ProtToMmap(flNewProtect))=0;
+end;
+
+function getPageSize: PtrUInt;
+begin
+  result:=PtrUInt(sysconf(_SC_PAGESIZE));
+  if result<=0 then result:=4096;
 end;
 
 function GetLargePageMinimum: PtrUInt;

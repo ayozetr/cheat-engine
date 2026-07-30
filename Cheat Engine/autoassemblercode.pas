@@ -69,7 +69,7 @@ procedure AutoAssemblerCodePass2(var dataForPass2: TAutoAssemblerCodePass2Data; 
 
 implementation
 
-uses {$ifdef windows}windows,{$endif}{$ifdef darwin}macport,macportdefines,math,{$endif}
+uses {$ifdef windows}windows,{$endif}{$ifdef darwin}macport,macportdefines,math,{$endif}{$if not defined(windows) and not defined(darwin)}math,{$endif}
   ProcessHandlerUnit, symbolhandler, luahandler, lua, lauxlib, lualib, StrUtils,
   Clipbrd, dialogs, lua_server, Assemblerunit, NewKernelHandler, DBK32functions,
   StringHashList, globals, networkInterfaceApi, DebuggerInterfaceAPIWrapper,

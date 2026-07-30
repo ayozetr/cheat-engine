@@ -10,7 +10,7 @@ interface
 
 {$ifdef windows}
 uses windows,classes, Controls,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, lcltype{$endif};
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, lcltype, Messages{$endif};
 
   {**************************************************************************
   *                                                                          *

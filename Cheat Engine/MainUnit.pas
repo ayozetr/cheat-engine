@@ -6,7 +6,7 @@ unit MainUnit;
 interface
 
 uses
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, lcltype,{$endif}
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, lcltype, Messages,{$endif}
   {$ifdef darwin}
   LResources, LCLIntf, LCLProc, MacOSAll,MacOSXPosix, Classes, Forms, Controls, Messages,
   ComCtrls, stdctrls,sysutils,    graphics,menus, dialogs, extctrls, math, buttons,

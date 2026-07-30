@@ -811,6 +811,16 @@ begin
   end;
 end;
 
+{$if not defined(windows) and not defined(darwin)}
+//injecting a library into another process needs either LD_PRELOAD at launch
+//time or a ptrace driven stub; neither is in place, so this reports rather
+//than pretends
+Procedure InjectDll(dllname: string; functiontocall: string='');
+begin
+  raise exception.create('Injecting a library is not implemented on Linux yet');
+end;
+{$endif}
+
 {$ifdef darwin}
 Procedure InjectDll(dllname: string; functiontocall: string='');
 var s: tstringlist;

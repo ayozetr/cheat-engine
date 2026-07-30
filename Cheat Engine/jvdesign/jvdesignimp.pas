@@ -16,7 +16,7 @@ uses
   LCLProc, LCLType, LResources, LCLIntf, LMessages, SysUtils, Classes, Controls, Graphics,
   Forms, ExtCtrls, Contnrs, JvDesignUtils,
   JvDesignSurface, componenteditors, propedits,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, Messages{$endif};
 
 const
   cJvDesignDefaultHandleWidth = 8;
