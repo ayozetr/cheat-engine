@@ -108,31 +108,53 @@ references, not aliases. Cost me three build cycles.
 
 ## Where it stopped
 
-Every unit compiles, including `cheatengine.lpr` itself. The last run got past
-the whole tree and then died inside the compiler:
+**Every unit compiles**, `cheatengine.lpr` included. The build reaches the
+linker. What is left is a linking problem, not a porting one.
+
+Two of them were just missing packages, now installed on the VM:
 
 ```
-An unhandled exception occurred at $00000000004C7C5E:
-EAccessViolation
+sudo apt-get install liblua5.3-dev libsqlite3-dev
+```
+
+The one that remains is real. `lua/lua.pas` and `lua/lauxlib.pas` declare four
+Lua 5.1 era entry points against `liblua5.3.so`:
+
+```
+lua_setfenv   luaL_openlib   luaL_findtable   luaL_prepbuffer
+```
+
+Stock Lua 5.3 does not export them. On Windows this never surfaced because
+Cheat Engine ships its own `lua53-64.dll`; here FPC's `external <soname>`
+becomes a hard undefined reference and `ld` refuses.
+
+The fix is to build the copy already in the repository —
+`Cheat Engine/lua53/lua53/src`, which has `luaL_openlib` and `luaL_findtable`
+patched back in — as `liblua5.3.so`, with `LUA_COMPAT_MODULE` defined, and put
+it where the linker looks. `lua_setfenv` is absent even there and was removed
+outright in 5.3, so it needs either a stub or the call sites conditioned out.
+Check what the Windows DLL actually exports before deciding which.
+
+### One build trap
+
+An incremental build dies with an internal compiler error:
+
+```
+An unhandled exception occurred at $00000000004C7C5E: EAccessViolation
 MainUnit.pas(4133,68) Error: (1026) Compilation raised exception internally
 ```
 
-That is `ppcx64` crashing, not the source being wrong — the same internal
-compiler error that kept appearing during the Windows work, and there the cure
-was always a clean rebuild:
+A clean build gets past the same line without complaint, so it is stale
+incremental state, not the source. When it appears, rebuild:
 
 ```
 lazbuild -B --build-mode='Linux 64-Bit' cheatengine.lpi
 ```
 
-A clean build was launched and had not finished when the session ended. Start
-there.
-
 ## What is left
 
-- Finish the clean rebuild and see whether the link succeeds. If the same ICE
-  comes back on a clean tree, it is a genuine FPC 3.2.2 bug on that line and
-  the surrounding code needs simplifying until it goes away.
+- Sort out the Lua library, above. That is the only thing between here and an
+  ELF binary.
 - `modernfonts` and `modernabout` are still Windows only (`AddFontResourceEx`,
   `ShellExecute`). They need conditioning before the redesign shows up on
   Linux. Until then the Linux build gets the stock LCL look: `betterControls`
