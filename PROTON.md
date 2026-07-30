@@ -89,13 +89,15 @@ window, menus, scan panel, the Lua engine window, CEShare setup. The language
 picker offers all twelve bundled translations, Español (España) among them, so
 the packaging is intact.
 
-**The dark theme does not survive Wine.** The window comes up in the light
-theme. The icons are there — the toolbar button and the turquoise logo render
-correctly — but not the dark palette. The likely reason is
-`ShouldAppsUseDarkMode`, the undocumented Windows 10 entry point
-`betterControls` asks for the system theme: Wine does not implement it, so the
-answer is "no" and the light path is taken. I have not confirmed that, so treat
-it as the probable cause rather than the established one.
+The dark theme took a fix to survive Wine. `betterControls` asks
+`ShouldAppsUseDarkMode` — it reads `AppsUseLightTheme` out of the registry —
+and under Wine that key does not exist, so it fell back to light and the whole
+redesign vanished. The 64-bit release mode now sets `FORCEDDARKMODE`, upstream's
+own switch for skipping that lookup, and the dark palette comes up under Wine as
+it does on Windows. Verified.
+
+A few labels sit dark-on-dark and are harder to read than they should be. The
+palette forced the background but not every foreground with it.
 
 What I did **not** test is the part that matters most: attaching to a real game
 inside its Proton prefix. There is no Steam on that VM. The steps above are the
