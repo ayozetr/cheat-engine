@@ -7,8 +7,8 @@ interface
 {$ifdef windows}
 uses
   jwawindows, windows, sysutils, classes, types, registry, multicpuexecution,
-  forms,dialogs, controls, maps, globals,
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, math, LCLIntf, lcltype{$endif};
+  forms,dialogs, controls, maps, globals
+  ;
 
 //xp sp2
 //ThreadsProcess=220

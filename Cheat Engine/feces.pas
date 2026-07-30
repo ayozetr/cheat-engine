@@ -8,8 +8,8 @@ interface
 {$ifdef windows}
 uses
   Classes, SysUtils, System.uitypes, bcrypt, DOM, xmlutils, XmlRead, XMLWrite, dialogs, windows,
-  graphics, math,
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
+  graphics, math
+  ;
 
 function canSignTables: boolean;
 procedure signTable(cheattable: TDOMElement);

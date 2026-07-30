@@ -11,7 +11,7 @@ interface
 {$ifdef windows}
 
 uses
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif} windows, LCLIntf, classes, sysutils, imagehlp, dialogs, PEInfoFunctions,CEFuncProc,
+   windows, LCLIntf, classes, sysutils, imagehlp, dialogs, PEInfoFunctions,CEFuncProc,
      NewKernelHandler, symbolhandler, dbk32functions, vmxfunctions, commonTypeDefs,
      SymbolListHandler, symbolhandlerstructs, StringHashList;
 

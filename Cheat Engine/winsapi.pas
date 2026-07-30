@@ -35,8 +35,8 @@ interface
 {$ifdef windows}
 
 uses
-  windows, Classes, SysUtils, ole2, variants, ActiveX, comobj,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  windows, Classes, SysUtils, ole2, variants, ActiveX, comobj
+  ;
 
 function speak(s: widestring; waittilldone: boolean=false): HRESULT; overload;
 function speak(s: widestring; flags: dword): HRESULT; overload;

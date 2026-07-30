@@ -7,8 +7,8 @@ interface
 {$IFDEF windows}
 //credits to http://alex.ciobanu.org/?p=215
 
-uses Forms,win32int, win32proc,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+uses Forms,win32int, win32proc
+  ;
 
 type
   TTaskBarProgressState = (tbpsNone, tbpsIndeterminate, tbpsNormal, tbpsError, tbpsPaused);

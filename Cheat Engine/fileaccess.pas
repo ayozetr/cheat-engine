@@ -6,8 +6,8 @@ interface
 
 {$IFDEF windows}
 uses
-  jwaWindows, windows,Classes, SysUtils,
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
+  jwaWindows, windows,Classes, SysUtils
+  ;
 
 procedure MakePathAccessible(path: widestring);
 {$ENDIF}

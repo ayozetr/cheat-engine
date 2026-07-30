@@ -7,8 +7,8 @@ interface
 {$ifdef windows}
 
 uses
-  windows, Classes, SysUtils,
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
+  windows, Classes, SysUtils
+  ;
 
 type
   NTSTATUS = ULONG;

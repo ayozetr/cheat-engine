@@ -14,7 +14,7 @@ interface
 {$ifdef windows}
 
 uses
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, lcltype,{$endif}
+  
   windows, Classes, SysUtils, sharedMemory, forms, graphics, cefuncproc,
   newkernelhandler, controls, Clipbrd, strutils, LuaHandler, RemoteMemoryManager,
   math, syncobjs;

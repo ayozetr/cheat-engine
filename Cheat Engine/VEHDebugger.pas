@@ -6,7 +6,7 @@ interface
 
 {$ifdef windows}
 uses
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, math, LCLIntf, lcltype,{$endif}
+  
 
   jwaNtStatus, Windows,
   Classes, SysUtils,symbolhandler, symbolhandlerstructs,

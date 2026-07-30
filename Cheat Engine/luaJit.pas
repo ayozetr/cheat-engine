@@ -33,8 +33,8 @@ interface
 
 {$IFDEF windows}
 uses
-  windows, Classes, SysUtils, lua,
-  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
+  windows, Classes, SysUtils, lua
+  ;
 
 const LUAJIT_VERSION = 'LuaJIT 2.0.0-beta5';
 const LUAJIT_VERSION_NUM = 20000; //Version 2.0.0 = 02.00.00.

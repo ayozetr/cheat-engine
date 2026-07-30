@@ -17,7 +17,7 @@ interface
 
 {$IFDEF windows}
 uses
-  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
+  
   jwawindows, windows, newkernelhandler, Classes, SysUtils, dialogs, betterControls;
 
 procedure EnableCheatEcoinSystem;
