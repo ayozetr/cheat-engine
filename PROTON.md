@@ -82,13 +82,27 @@ use under Wine.
 Match the architecture: the 64-bit executable for a 64-bit game, the 32-bit one
 for a 32-bit game. A mismatch shows the process but reads nothing sensible.
 
-## Honestly: not verified here
+## What was actually checked
 
-I have not run this build under Wine myself, so the steps above are the
-established way of doing it rather than something I watched work. The parts I
-did verify are in `LINUX-PORT.md`, and they concern the native port, not this.
-If you try it and something is off, the first two things to check are that the
-prefix really is the game's and that the architectures match.
+I ran this build under plain Wine (Wine 9, Linux Mint) and it starts: full main
+window, menus, scan panel, the Lua engine window, CEShare setup. The language
+picker offers all twelve bundled translations, Español (España) among them, so
+the packaging is intact.
+
+**The dark theme does not survive Wine.** The window comes up in the light
+theme. The icons are there — the toolbar button and the turquoise logo render
+correctly — but not the dark palette. The likely reason is
+`ShouldAppsUseDarkMode`, the undocumented Windows 10 entry point
+`betterControls` asks for the system theme: Wine does not implement it, so the
+answer is "no" and the light path is taken. I have not confirmed that, so treat
+it as the probable cause rather than the established one.
+
+What I did **not** test is the part that matters most: attaching to a real game
+inside its Proton prefix. There is no Steam on that VM. The steps above are the
+established way of doing it, and the fact that Cheat Engine itself runs cleanly
+under Wine is the precondition for them — but the last mile is unverified. If
+something is off, check first that the prefix really is the game's and that the
+architectures match.
 
 ## And the native port?
 
