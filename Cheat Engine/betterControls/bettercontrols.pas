@@ -344,6 +344,7 @@ initialization
             //GetThemeColor above answered from the system visual theme, which
             //under Wine is the light one, so the foreground has to be taken
             //from the palette instead of trusted
+            ModernMetrics.DarkMode:=true;
             ColorSet.FontColor:=ModernMetrics.Text;
             ColorSet.InactiveFontColor:=ModernMetrics.TextDisabled;
             clWindowText:=ColorSet.FontColor;

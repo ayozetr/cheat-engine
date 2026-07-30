@@ -32,6 +32,9 @@ uses
 type
   TModernUIMetrics = record
     Enabled: boolean;
+    //betterControls sets this once it knows; asking it directly would be a
+    //circular reference, since it already uses this unit
+    DarkMode: boolean;
     FontName: string;
     FontSize: integer;
     EditHeight: integer;      //edits, combos, spin edits
@@ -118,7 +121,7 @@ begin
   begin
     SwapMonoFonts(TWinControl(Sender));
     //controls created after the form was built get their turn here
-    if ModernMetrics.CustomDraw then
+    if ModernMetrics.CustomDraw and ModernMetrics.DarkMode then
       SwapTextColors(TWinControl(Sender));
     if Sender is TCustomForm then
       StyleListHeaders(TWinControl(Sender), TCustomForm(Sender).Font);
@@ -329,7 +332,9 @@ begin
 
   WalkControls(form);
 
-  if ModernMetrics.CustomDraw then
+  //lightening the captions only makes sense against a dark form; on a light
+  //one it would make them unreadable the other way round
+  if ModernMetrics.CustomDraw and ModernMetrics.DarkMode then
   begin
     form.Font.Color:=ModernMetrics.Text;
     SwapTextColors(form);
