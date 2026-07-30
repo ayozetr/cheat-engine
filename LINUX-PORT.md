@@ -1,6 +1,11 @@
 # Linux port — working notes
 
-Where the Linux build stands, and how to pick it up again.
+Where the native Linux build stands, and how to pick it up again.
+
+**Looking to actually use Cheat Engine on Linux?** Read `PROTON.md` first. For
+Windows games this port is the wrong tool: running the Windows build inside the
+game's own Wine prefix keeps the debugger and the Auto Assembler, which this
+port does not have. What follows is about the native port itself.
 
 ## The short version
 
@@ -22,12 +27,17 @@ Two things had to happen:
 
 ## The VM
 
+A Linux Mint box with Lazarus 3.0 and FPC 3.2.2. The helper scripts take it
+from the environment, so point them wherever you build:
+
 ```
-sshpass -p '***REMOVED***' ssh ayoze@BUILD_HOST      # Linux Mint, Lazarus 3.0 + FPC 3.2.2
+export CE_VM=user@host
+export CE_VM_PATH=/path/to/checkout    # holds "Cheat Engine/"
+export CE_VM_PASS=...                  # only if you are not using ssh keys
 ```
 
-Repository lives at `~/ce-port`. Note the space in `Cheat Engine`: `scp` chokes
-on it, so the helper scripts use `rsync`.
+Note the space in `Cheat Engine`: `scp` chokes on it, which is why the file
+sync goes through `rsync` and the single-file helper moves through `/tmp`.
 
 ## The loop
 

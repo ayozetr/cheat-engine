@@ -1,15 +1,29 @@
 #!/bin/bash
-# Sync the given files to the Mint VM and rebuild the Linux target.
-# Usage: build-linux.sh [file relative to "Cheat Engine/" ...]
-VM=ayoze@BUILD_HOST
-PW='***REMOVED***'
-SRC="/home/ayoze/dev/cheat-engine/Cheat Engine"
-DST='/home/ayoze/ce-port/Cheat Engine'
+# Push only the named files, then rebuild. Faster than sync-linux.sh when you
+# know exactly what you touched. Paths are relative to "Cheat Engine/".
+#
+#   ./build-linux.sh linuxmemoryapi.pas MainUnit.pas
+#
+# Same environment variables as sync-linux.sh.
+CE_VM="${CE_VM:-ayoze@BUILD_HOST}"
+CE_VM_PATH="${CE_VM_PATH:-/home/ayoze/ce-port}"
+SRC="$(cd "$(dirname "$0")" && pwd)/Cheat Engine"
+DST="$CE_VM_PATH/Cheat Engine"
+
+if [ -n "$CE_VM_PASS" ]; then
+  RUN=(sshpass -p "$CE_VM_PASS")
+else
+  RUN=()
+fi
+SSH="ssh -o StrictHostKeyChecking=no"
 
 for f in "$@"; do
+  # scp chokes on the space in "Cheat Engine", so the file lands in a temp name
+  # and gets moved into place
   base=$(basename "$f")
-  sshpass -p "$PW" scp -o StrictHostKeyChecking=no "$SRC/$f" "$VM:~/tmp/$base" >/dev/null || exit 1
-  sshpass -p "$PW" ssh -o StrictHostKeyChecking=no $VM "mv ~/tmp/$base '$DST/$f'" || exit 1
+  "${RUN[@]}" scp -o StrictHostKeyChecking=no "$SRC/$f" "$CE_VM:/tmp/$base" >/dev/null || exit 1
+  "${RUN[@]}" $SSH "$CE_VM" "mv /tmp/$base '$DST/$f'" || exit 1
 done
 
-sshpass -p "$PW" ssh -o StrictHostKeyChecking=no $VM "cd '$DST' && timeout 2400 lazbuild --build-mode='Linux 64-Bit' cheatengine.lpi 2>&1 | grep -E 'Error|Fatal' | head -70"
+"${RUN[@]}" $SSH "$CE_VM" \
+  "cd '$DST' && timeout 2400 lazbuild --build-mode='Linux 64-Bit' cheatengine.lpi 2>&1 | grep -E 'Error|Fatal' | head -70"
