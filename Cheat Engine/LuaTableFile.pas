@@ -5,7 +5,8 @@ unit LuaTableFile;
 interface
 
 uses
-  Classes, SysUtils,lua, lauxlib, lualib;
+  Classes, SysUtils,lua, lauxlib, lualib,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaTableFile;
 

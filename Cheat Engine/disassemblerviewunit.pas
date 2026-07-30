@@ -22,6 +22,7 @@ interface
 
 uses {$ifdef darwin}macport,messages,lcltype,{$endif}
      {$ifdef windows}jwawindows, windows,commctrl,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, lcltype, Messages,{$endif}
      sysutils, LCLIntf, forms, classes, controls, comctrls, stdctrls, extctrls, symbolhandler,
      cefuncproc, NewKernelHandler, graphics, disassemblerviewlinesunit, disassembler,
      math, lmessages, menus, DissectCodeThread, tcclib
@@ -144,7 +145,7 @@ type TDisassemblerview=class(TPanel)
     backlist: TStack;
     goingback: boolean;
     procedure HandleSpecialKey(key: word);
-    procedure WndProc(var msg: TMessage); override;
+    procedure WndProc(var msg: TLMessage); override;
     procedure DoEnter; override;
     procedure DoExit; override;
     procedure DoAutoSize; override;
@@ -559,7 +560,7 @@ begin
 end;
 
 
-procedure TDisassemblerview.WndProc(var msg: TMessage);
+procedure TDisassemblerview.WndProc(var msg: TLMessage);
 {$ifdef cpu64}
 type
   TWMKey2 = record

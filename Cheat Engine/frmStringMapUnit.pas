@@ -15,6 +15,7 @@ uses
   {$ifdef windows}
   windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics,
   Dialogs, math, ComCtrls, ExtCtrls, StdCtrls, maps, Menus, cefuncproc,
   MemFuncs, NewKernelHandler, AvgLvlTree, bigmemallochandler, symbolhandler,

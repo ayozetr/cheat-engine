@@ -10,10 +10,12 @@ interface
 uses
   {$ifdef darwin}
   macport,
-  {$else}
+  {$endif}
+  {$ifdef windows}
   windows,
   {$endif}
-  Classes, SysUtils, disassembler,math;
+  Classes, SysUtils, disassembler,math,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   TUserByteDisassembler=class(TDisassembler)

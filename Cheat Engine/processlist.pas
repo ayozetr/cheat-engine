@@ -5,6 +5,7 @@ unit ProcessList;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   {$ifdef windows}jwawindows, windows, {$endif}
   {$ifdef darwin}macport,{$endif}
   cefuncproc, LazUTF8, Classes, SysUtils{$ifndef JNI}, StdCtrls{$endif},

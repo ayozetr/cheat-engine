@@ -4,11 +4,16 @@ unit NewKernelHandler;
 
 interface
 
-{$ifdef darwin}
+{$if defined(darwin)}
 uses SysUtils, MacOSAll, MacOSXPosix, macport, macportdefines;
-{$else}
+{$elseif defined(windows)}
 uses jwawindows, windows,LCLIntf,sysutils, dialogs, classes, controls,
      {$ifndef STANDALONECH}dbk32functions, vmxfunctions,debug, multicpuexecution,globals,{$endif} contnrs, Clipbrd;
+{$else}
+//Linux: linuxmemoryapi stands in for the Windows API, unixporthelper for the
+//types the RTL does not carry outside Windows
+uses SysUtils, Classes, LCLIntf, dialogs, controls, contnrs, Clipbrd,
+     unixporthelper, linuxmemoryapi;
 {$endif}
 
 const dbkdll='DBK32.dll';
@@ -711,12 +716,12 @@ function loaddbvmifneeded(reason:string=''): BOOL; stdcall;
 function isRunningDBVM: boolean;
 function isDBVMCapable: boolean;
 function hasEPTSupport: boolean;
-{$ifdef windows}
 
+//plain CPUID, and the implementation below was never Windows only; the
+//declaration just happened to sit inside the guard
 function isIntel: boolean;
 function isAMD: boolean;
 
-{$endif}
 function Is64bitOS: boolean;
 function Is64BitProcess(processhandle: THandle): boolean;
 
@@ -2563,7 +2568,38 @@ initialization
   CreateRemoteThread:=@macport.CreateRemoteThread;
 
   GetRegionInfo:=@macport.GetRegionInfo;
+  {$endif}
 
+  {
+    Linux. Without this block every one of these stays nil and the first call
+    through them is an access violation before the main form is even up, which
+    is exactly what happened the first time the binary ran.
+  }
+  {$if not defined(windows) and not defined(darwin)}
+  ReadProcessMemoryActual:=@linuxmemoryapi.ReadProcessMemory;
+  WriteProcessMemoryActual:=@linuxmemoryapi.WriteProcessMemory;
+  VirtualQueryExActual:=@linuxmemoryapi.VirtualQueryEx;
+  OpenProcess:=@linuxmemoryapi.OpenProcess;
+  closeHandle:=@linuxmemoryapi.CloseHandle;
+
+  CreateToolhelp32Snapshot:=@linuxmemoryapi.CreateToolhelp32Snapshot;
+  Process32First:=@linuxmemoryapi.Process32First;
+  Process32Next:=@linuxmemoryapi.Process32Next;
+  Thread32First:=@linuxmemoryapi.Thread32First;
+  Thread32Next:=@linuxmemoryapi.Thread32Next;
+  Module32First:=@linuxmemoryapi.Module32First;
+  Module32Next:=@linuxmemoryapi.Module32Next;
+
+  //these report failure, but they have to be callable
+  VirtualProtectEx:=@linuxmemoryapi.VirtualProtectEx;
+  VirtualAllocEx:=@linuxmemoryapi.VirtualAllocEx;
+  VirtualFreeEx:=@linuxmemoryapi.VirtualFreeEx;
+  CreateRemoteThread:=@linuxmemoryapi.CreateRemoteThreadEx;
+  GetThreadContext:=@linuxmemoryapi.GetThreadContext;
+  SetThreadContext:=@linuxmemoryapi.SetThreadContext;
+  {$endif}
+
+  {$ifdef darwin}
   {$else}
 {
   OutputDebugString('TARM64CONTEXT:');

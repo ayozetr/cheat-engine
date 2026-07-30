@@ -11,6 +11,7 @@ uses
   {$ifdef windows}
   jwawindows, windows,imagehlp,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, lcltype,{$endif}
   LCLProc, LCLIntf, Messages, SysUtils, Classes, Graphics,
   Controls, Forms, Dialogs, frmMemoryAllocHandlerUnit, math, StdCtrls, Spin,
   ExtCtrls,CEFuncProc,symbolhandler,Clipbrd, Menus,plugin,CEDebugger,KernelDebugger,
@@ -927,7 +928,7 @@ end;
 function TMemoryBrowser.ReadProcessMemory(hProcess: THandle; lpBaseAddress, lpBuffer: Pointer; nSize: size_t; var lpNumberOfBytesRead: PTRUINT): BOOL;
 begin
   if fcr3=0 then
-    result:={$ifdef windows}newkernelhandler.{$endif}{$ifdef darwin}macport.{$endif}ReadProcessMemory(hProcess, lpBaseAddress, lpBuffer, nsize, lpNumberOfBytesRead)
+    result:={$ifdef windows}newkernelhandler.{$endif}{$ifdef darwin}macport.{$endif}{$if not defined(windows) and not defined(darwin)}newkernelhandler.{$endif}ReadProcessMemory(hProcess, lpBaseAddress, lpBuffer, nsize, lpNumberOfBytesRead)
   {$ifdef windows}
   else
     result:=ReadProcessMemoryCR3(fcr3,lpBaseAddress, lpBuffer, nsize, lpNumberOfBytesRead){$endif};
@@ -4998,7 +4999,8 @@ begin
           d:=peinfo_getdatabase(header, headersize);
           if d=0 then
           begin
-            {$ifndef darwin}
+            //peinfo_getSectionList lives inside PEInfoFunctions' windows guard
+            {$ifdef windows}
             sectionlist:=TStringList.Create;
             if peinfo_getSectionList(base,sectionList) then
             begin

@@ -9,6 +9,7 @@ uses
   {$ifdef windows}
   jwawindows, windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   Classes, SysUtils,cefuncproc, newkernelhandler,
   DebuggerInterface, networkInterface, networkInterfaceApi, contnrs{$ifdef darwin},macport, macportdefines{$endif};
 

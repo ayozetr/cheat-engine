@@ -9,7 +9,8 @@ The vartype stringnames are used in the cheat table so they may not be translate
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 resourcestring
   rs_vtAll='All';

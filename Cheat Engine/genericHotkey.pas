@@ -5,7 +5,8 @@ unit genericHotkey;
 interface
 
 uses
-  Classes, SysUtils, cefuncproc, commonTypeDefs, betterControls;
+  Classes, SysUtils, cefuncproc, commonTypeDefs, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type TGenericHotkey=class
   public

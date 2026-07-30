@@ -14,6 +14,7 @@ correct address if it's a pointer, etc...
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   Classes, SysUtils, controls, stdctrls, comctrls, MemoryRecordUnit, symbolhandler, cefuncproc,newkernelhandler, addresslist;
 
 resourcestring

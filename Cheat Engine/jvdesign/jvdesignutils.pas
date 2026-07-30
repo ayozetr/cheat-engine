@@ -15,6 +15,7 @@ uses
   windows,
   win32proc,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   SysUtils, LCLProc, LCLType, LResources, LCLIntf, LMessages,    Classes, Controls,
   Graphics, Forms, dialogs;
 

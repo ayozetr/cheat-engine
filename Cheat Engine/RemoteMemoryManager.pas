@@ -19,6 +19,7 @@ uses
   {$ifdef windows}
   windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   syncobjs, Classes, SysUtils, cefuncproc, newkernelhandler;
 
 type

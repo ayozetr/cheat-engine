@@ -14,6 +14,7 @@ uses
      {$ifdef windows}
      windows,
      {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
      dialogs,forms,classes,LCLIntf, LCLProc, sysutils,registry,ComCtrls, menus,
      formsettingsunit, cefuncproc,AdvancedOptionsUnit, MemoryBrowserFormUnit,
      memscan,plugin, hotkeyhandler,frmProcessWatcherUnit, NewKernelHandler,

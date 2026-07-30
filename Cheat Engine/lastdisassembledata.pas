@@ -5,7 +5,8 @@ unit LastDisassembleData;
 interface
 
 uses
-  Classes, SysUtils, commonTypeDefs;
+  Classes, SysUtils, commonTypeDefs,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   TDisAssemblerValueType=(dvtNone=0, dvtAddress=1, dvtValue=2);

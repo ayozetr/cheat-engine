@@ -12,7 +12,8 @@ uses
   {$ifdef darwin}
   macPort,
   {$endif}
-  Classes, SysUtils, registry;
+  Classes, SysUtils, registry,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   TCEReg=class
@@ -57,7 +58,16 @@ begin
     if needsforce and (force=false) then exit(false); //don't bother
 
     if reg=nil then
+    begin
+      {$if not defined(windows) and not defined(darwin)}
+      //the registry is an XML file under the config directory here, and the
+      //unit will not create that directory itself: without this every write
+      //fails with ERegistryException before the main form is even up
+      if not DirectoryExists(GetAppConfigDir(false)) then
+        ForceDirectories(GetAppConfigDir(false));
+      {$endif}
       reg:=tregistry.create;
+    end;
 
     openedregistry:=reg.OpenKey('\Software\'+strCheatEngine+'\', force);
 
@@ -132,26 +142,52 @@ function TCEReg.readInteger(registryValueName: string; def: integer=0): integer;
 begin
   result:=def;
   if getregistry(false) and (reg.ValueExists(registryValueName)) then
-    result:=reg.ReadInteger(registryValueName);
+  begin
+    try
+      result:=reg.ReadInteger(registryValueName);
+    except
+    end;
+  end;
 end;
 
 procedure TCEReg.writeInteger(registryValueName: string; value: integer);
 begin
+  //writeBool and writeStrings already swallow this; these two did not, and on
+  //Linux a failed settings write took the whole startup down with it
   if getregistry(true) then
-    reg.WriteInteger(registryValueName, value);
+  begin
+    try
+      reg.WriteInteger(registryValueName, value);
+    except
+      on e: Exception do
+        writeln(stderr, 'registry: ', registryValueName, ': ', e.Message);
+    end;
+  end;
 end;
 
 function TCEReg.readString(registryValueName: string; def: string=''): string;
 begin
   result:=def;
   if getregistry(false) and (reg.ValueExists(registryValueName)) then
-    result:=reg.ReadString(registryValueName);
+  begin
+    try
+      result:=reg.ReadString(registryValueName);
+    except
+    end;
+  end;
 end;
 
 procedure TCEReg.writeString(registryValueName: string; value: string);
 begin
   if getregistry(true) then
-    reg.WriteString(registryValueName, value);
+  begin
+    try
+      reg.WriteString(registryValueName, value);
+    except
+      on e: Exception do
+        writeln(stderr, 'registry: ', registryValueName, ': ', e.Message);
+    end;
+  end;
 end;
 
 initialization

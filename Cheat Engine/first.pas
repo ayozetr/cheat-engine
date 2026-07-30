@@ -6,7 +6,8 @@ interface
 
 {$ifdef windows}
 uses
-  betterDLLSearchPath, Classes, SysUtils;
+  betterDLLSearchPath, Classes, SysUtils,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 {$endif}
 
 implementation

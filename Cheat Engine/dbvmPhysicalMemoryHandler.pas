@@ -10,7 +10,8 @@ reads/writes to the physical memory instead
 interface
 
 {$IFDEF windows}
-uses windows, LCLIntf, vmxfunctions;
+uses windows, LCLIntf, vmxfunctions,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
 
 function ReadProcessMemoryPhys(hProcess: THandle; const lpBaseAddress: Pointer; lpBuffer: Pointer;  nSize: DWORD; var lpNumberOfBytesRead: DWORD): BOOL; stdcall;
 function WriteProcessMemoryPhys(hProcess: THandle; const lpBaseAddress: Pointer; lpBuffer: Pointer; nSize: DWORD; var lpNumberOfBytesWritten: DWORD): BOOL; stdcall;

@@ -18,6 +18,11 @@ uses windows, LCLIntf, sysutils, classes, CEFuncProc, NewKernelHandler,
   symbolhandler, math, dialogs, LazUTF8;
 {$endif}
 
+{$if not defined(windows) and not defined(darwin)}
+uses linuxmemoryapi, LCLIntf, sysutils, classes, CEFuncProc, NewKernelHandler,
+  symbolhandler, math, dialogs, LazUTF8;
+{$endif}
+
 resourcestring
   rsPSRCorruptedPointerscanFile = 'Corrupted pointerscan file';
   rsPSRInvalidPointerscanFileVersion = 'Invalid pointerscan file version';

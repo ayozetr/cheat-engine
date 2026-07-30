@@ -8,6 +8,7 @@ uses
   {$ifdef windows}
   windows, activex, comobj,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   lclintf, Classes, SysUtils,forms, controls, LMessages,
   ExtCtrls, Graphics, FileUtil, Dialogs, math;
 

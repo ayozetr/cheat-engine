@@ -5,6 +5,7 @@ unit frmPagingUnit;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   StdCtrls, ComCtrls, ExtCtrls, Menus,newkernelhandler,cefuncproc, commonTypeDefs,
   betterControls, DBK32functions;

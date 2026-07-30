@@ -5,6 +5,7 @@ unit frmStructureLinkerUnit;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   Grids, ExtCtrls, symbolhandler, StructuresFrm2, cefuncproc, newkernelhandler, betterControls;
 

@@ -9,10 +9,14 @@ interface
 
 uses
   {$ifdef windows}
-  windows, Classes, SysUtils;
+  windows, Classes, SysUtils,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
   {$endif}
   {$ifdef darwin}
   macport, Classes, SysUtils;
+  {$endif}
+  {$if not defined(windows) and not defined(darwin)}
+  linuxmemoryapi, Classes, SysUtils;
   {$endif}
 
 type

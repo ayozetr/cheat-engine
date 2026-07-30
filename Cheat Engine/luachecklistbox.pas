@@ -5,7 +5,8 @@ unit LuaCheckListBox;
 interface
 
 uses
-  Classes, SysUtils, controls, CheckLst, betterControls;
+  Classes, SysUtils, controls, CheckLst, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaCheckListbox;
 

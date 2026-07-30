@@ -5,7 +5,8 @@ unit PointerscanSettingsIPConnectionList;
 interface
 
 uses
-  Classes, SysUtils, ExtCtrls, StdCtrls, Controls;
+  Classes, SysUtils, ExtCtrls, StdCtrls, Controls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 resourcestring
   rsPSSICLAdd = 'Add';

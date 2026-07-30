@@ -8,7 +8,8 @@ interface
 
 {$ifdef windows}
 uses
-  jwawindows, windows, Classes, SysUtils, lua, luaclass, luapipe;
+  jwawindows, windows, Classes, SysUtils, lua, luaclass, luapipe,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
 
 
 procedure initializeLuaPipeServer;

@@ -5,6 +5,7 @@ unit frmcodefilterunit;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   ComCtrls, ExtCtrls, maps, Menus, syncobjs, newkernelhandler,
   ProcessHandlerUnit, CodeFilterCallOrAllDialog, PEInfoFunctions, PEInfounit,

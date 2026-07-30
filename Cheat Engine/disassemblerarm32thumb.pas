@@ -6,7 +6,8 @@ unit disassemblerArm32Thumb;
 interface
 
 uses
-  Classes, SysUtils, LastDisassembleData;
+  Classes, SysUtils, LastDisassembleData,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 
 

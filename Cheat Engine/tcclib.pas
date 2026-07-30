@@ -8,7 +8,8 @@ interface
 uses
   {$ifdef windows}windows,{$endif}
   {$ifdef darwin}macport, dl,macportdefines, {$endif}
-  Classes, SysUtils, syncobjs, maps, math, Generics.Collections;
+  Classes, SysUtils, syncobjs, maps, math, Generics.Collections,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 
 type
@@ -1250,7 +1251,25 @@ begin
   if module=0 then
     notworkingreason:=p+' could not be found';
   {$endif}
-  {$else}
+  {$endif}
+
+  {$if not defined(windows) and not defined(darwin)}
+  //no arm64 build to pick between here, and the shared object carries the
+  //usual Linux name
+  p:='libtcc.so';
+  module:=loadlibrary(p);
+
+  if module=0 then
+  begin
+    p:=ExtractFilePath(application.ExeName)+'libtcc.so';
+    module:=loadlibrary(p);
+  end;
+
+  if module=0 then
+    notworkingreason:='libtcc.so could not be loaded';
+  {$endif}
+
+  {$ifdef darwin}
   if target=aarch64 then
   begin
     p:={$ifdef standalonetest}'/Users/ericheijnen/Documents/GitHub/cheat-engine/Cheat Engine/bin/tcc/Release/'+{$endif}'libtcc_arm64.dylib';
@@ -1836,7 +1855,16 @@ begin
   {$ifdef cpu64}
   tcc64:=ttcc.create(x86_64);
   {$endif}
-{$else}
+{$endif}
+
+{$if not defined(windows) and not defined(darwin)}
+  //the _sysv variants only exist in the Windows build, where they name the
+  //cross compilers; running on Linux, plain x86_64 and i386 already are sysv
+  tcc32:=ttcc.create(i386);
+  tcc64:=ttcc.create(x86_64);
+{$endif}
+
+{$ifdef darwin}
   if MacIsArm64 then
   begin
     tcc32:=ttcc.create(aarch64);

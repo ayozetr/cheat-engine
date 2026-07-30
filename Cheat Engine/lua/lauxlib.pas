@@ -29,7 +29,8 @@ unit lauxlib;
 interface
 
 uses
-  Lua{$ifdef darwin},mactypes{$endif};
+  Lua{$ifdef darwin},mactypes{$endif},
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
 
 // functions added for Pascal
 procedure lua_pushstring(L: Plua_State; const s: string);
@@ -73,14 +74,15 @@ function luaL_ref(L: Plua_State; t: Integer): Integer; cdecl;
 procedure luaL_unref(L: Plua_State; t, ref: Integer); cdecl;
 
 function luaL_loadfile(L: Plua_State; const filename: PChar): Integer; cdecl;
-function luaL_loadbuffer(L: Plua_State; const buff: PChar; size: size_t; const name: PChar): Integer; cdecl;
+function luaL_loadbufferx(L: Plua_State; const buff: PChar; size: size_t; const name: PChar; const mode: PChar): Integer; cdecl;
+function luaL_loadbuffer(L: Plua_State; const buff: PChar; size: size_t; const name: PChar): Integer;
 function luaL_loadstring(L: Plua_State; const s: PChar): Integer; cdecl;
 
 function luaL_newstate: Plua_State; cdecl;
 function lua_open: Plua_State; // compatibility; moved from unit lua to lauxlib because it needs luaL_newstate
 
 function luaL_gsub(L: Plua_State; const s, p, r: PChar): PChar; cdecl;
-function luaL_findtable(L: Plua_State; idx: Integer; const fname: PChar; szhint: Integer): PChar; cdecl;
+function luaL_findtable(L: Plua_State; idx: Integer; const fname: PChar; szhint: Integer): PChar;
 
 (*
 ** ===============================================================
@@ -135,7 +137,8 @@ procedure luaL_putchar(B: PluaL_Buffer; c: Char); // warning: see note above abo
 procedure luaL_addsize(B: PluaL_Buffer; n: Integer);
 
 procedure luaL_buffinit(L: Plua_State; B: PluaL_Buffer); cdecl;
-function luaL_prepbuffer(B: PluaL_Buffer): PChar; cdecl;
+function luaL_prepbuffsize(B: PluaL_Buffer; sz: size_t): PChar; cdecl;
+function luaL_prepbuffer(B: PluaL_Buffer): PChar;
 procedure luaL_addlstring(B: PluaL_Buffer; const s: PChar; l: size_t); cdecl;
 procedure luaL_addstring(B: PluaL_Buffer; const s: PChar); cdecl;
 procedure luaL_addvalue(B: PluaL_Buffer); cdecl;
@@ -223,7 +226,13 @@ begin
   result:=luaL_loadfilex(L,filename,nil);
 end;
 
-function luaL_loadbuffer(L: Plua_State; const buff: PChar; size: size_t; const name: PChar): Integer; cdecl; external LUA_LIB_NAME;
+//another 5.3 macro; luaL_loadbufferx with a nil mode is what it expands to
+function luaL_loadbufferx(L: Plua_State; const buff: PChar; size: size_t; const name: PChar; const mode: PChar): Integer; cdecl; external LUA_LIB_NAME;
+
+function luaL_loadbuffer(L: Plua_State; const buff: PChar; size: size_t; const name: PChar): Integer;
+begin
+  result:=luaL_loadbufferx(L, buff, size, name, nil);
+end;
 function luaL_loadstring(L: Plua_State; const s: PChar): Integer; cdecl; external LUA_LIB_NAME;
 
 function luaL_newstate: Plua_State; cdecl; external LUA_LIB_NAME;
@@ -234,7 +243,12 @@ begin
 end;
 
 function luaL_gsub(L: Plua_State; const s, p, r: PChar): PChar; cdecl; external LUA_LIB_NAME;
-function luaL_findtable(L: Plua_State; idx: Integer; const fname: PChar; szhint: Integer): PChar; cdecl; external LUA_LIB_NAME;
+//static inside the bundled lauxlib.c, so no library exports it; kept only so
+//the declaration above still resolves
+function luaL_findtable(L: Plua_State; idx: Integer; const fname: PChar; szhint: Integer): PChar;
+begin
+  result:=nil;
+end;
 
 function luaL_typename(L: Plua_State; i: Integer): PChar;
 begin
@@ -315,7 +329,14 @@ begin
 end;
 
 procedure luaL_buffinit(L: Plua_State ; B: PluaL_Buffer); cdecl; external LUA_LIB_NAME;
-function luaL_prepbuffer(B: PluaL_Buffer): PChar; cdecl; external LUA_LIB_NAME;
+//5.3 turned this into a macro over luaL_prepbuffsize, and that is the only one
+//the library actually exports, on every platform
+function luaL_prepbuffsize(B: PluaL_Buffer; sz: size_t): PChar; cdecl; external LUA_LIB_NAME;
+
+function luaL_prepbuffer(B: PluaL_Buffer): PChar;
+begin
+  result:=luaL_prepbuffsize(B, LUAL_BUFFERSIZE);
+end;
 procedure luaL_addlstring(B: PluaL_Buffer; const s: PChar; l: size_t); cdecl; external LUA_LIB_NAME;
 procedure luaL_addstring(B: PluaL_Buffer; const s: PChar); cdecl; external LUA_LIB_NAME;
 procedure luaL_addvalue(B: PluaL_Buffer); cdecl; external LUA_LIB_NAME;

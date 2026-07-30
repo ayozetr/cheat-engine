@@ -14,6 +14,7 @@ uses
   {$ifdef windows}
   Windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   Classes, SysUtils, disassembler, symbolhandler, symbolhandlerstructs,
   processhandlerunit, NewKernelHandler, CEFuncProc;
 

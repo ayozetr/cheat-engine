@@ -16,7 +16,8 @@ uses
   {$ifdef darwin}
   macport, macpipe,
   {$endif}
-  Classes, SysUtils, LuaPipe, lua, LuaClass;
+  Classes, SysUtils, LuaPipe, lua, LuaClass,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaPipeClient;
 

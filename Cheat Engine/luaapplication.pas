@@ -8,7 +8,8 @@ This unit will be used to register TCanvas class methods to lua
 interface
 
 uses
-  Classes, SysUtils, forms, lua, lualib, lauxlib, LuaHandler, fpcanvas, LCLType, LCLIntf;
+  Classes, SysUtils, forms, lua, lualib, lauxlib, LuaHandler, fpcanvas, LCLType, LCLIntf,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 
 implementation

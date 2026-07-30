@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, ComCtrls, lua, luaclass, Controls, LuaWinControl,
-  laz.VirtualTrees, betterControls;
+  laz.VirtualTrees, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 
 procedure initializeLuaVirtualStringTree;
@@ -949,7 +950,9 @@ end;
 
 
 initialization
-   {$ifdef laztrunk}
+   //the VirtualTrees that ships with Lazarus 3 only has the Custom class; the
+   //bundled Windows copy is the older one that also exports TVirtualStringTree
+   {$if defined(laztrunk) or not (defined(windows) or defined(darwin))}
    luaclass_register(TCustomVirtualStringTree,  virtualstringtree_addMetaData);
    {$else}
    luaclass_register(TVirtualStringTree,  virtualstringtree_addMetaData);

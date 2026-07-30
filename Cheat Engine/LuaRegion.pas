@@ -5,7 +5,8 @@ unit LuaRegion;
 interface
 
 uses
-  Classes, SysUtils, Graphics,lua, lualib, lauxlib, LuaHandler, RegionEx, LCLIntf, LCLType;
+  Classes, SysUtils, Graphics,lua, lualib, lauxlib, LuaHandler, RegionEx, LCLIntf, LCLType,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaRegion;
 

@@ -24,7 +24,8 @@ E
 interface
 
 uses
-  LCLIntf, LMessages, Messages, Classes;
+  LCLIntf, LMessages, Messages, Classes,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 resourcestring
 

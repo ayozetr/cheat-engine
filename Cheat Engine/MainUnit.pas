@@ -6,8 +6,9 @@ unit MainUnit;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, lcltype, Messages,{$endif}
   {$ifdef darwin}
-  LResources, LCLIntf, LCLProc, MacOSAll,MacOSXPosix, LMessages, Classes, Forms, Controls, Messages,
+  LResources, LCLIntf, LCLProc, MacOSAll,MacOSXPosix, Classes, Forms, Controls, Messages,
   ComCtrls, stdctrls,sysutils,    graphics,menus, dialogs, extctrls, math, buttons,
   ImgList, ActnList, registry, Clipbrd, NewKernelHandler, Assemblerunit,
   symbolhandler,autoassembler, addresslist, CustomTypeHandler, MemoryRecordUnit,memscan,
@@ -46,6 +47,30 @@ uses
   DBK64SecondaryLoader, savedscanhandler, debuggertypedefinitions, networkInterface,
   FrmMemoryRecordDropdownSettingsUnit, xmlutils, zstream, zstreamext, commonTypeDefs,
   VirtualQueryExCache, LazLogger, LazUTF8, LCLVersion, fgl, betterControls;
+  {$endif}
+
+  {$if not defined(windows) and not defined(darwin)}
+  //Linux: same list minus the units that only exist on Windows
+  LCLIntf, LCLProc, SysUtils, Classes, SyncObjs, SyncObjs2, Graphics, 
+  Controls, Forms, ComCtrls, StdCtrls, Menus, Buttons, ExtCtrls, Dialogs, 
+  Clipbrd, CEDebugger, assemblerunit, hotkeyhandler, registry, Math, 
+  ImgList, NewKernelHandler, unrandomizer, symbolhandler, ActnList, 
+  LResources, hypermode, memscan, autoassembler, plugin, savefirstscan, 
+  menuitemExtra, speedhack2, foundlisthelper, disassembler, peinfounit, 
+  PEInfoFunctions, simpleaobscanner, pointervaluelist, debughelper, 
+  frmRegistersunit, ctypes, addresslist, addresslisthandlerunit, 
+  memoryrecordunit, tablist, DebuggerInterface, tableconverter, 
+  customtypehandler, lua, luahandler, lauxlib, lualib, 
+  frmSelectionlistunit, {defaulttranslator, } fileaccess, formdesignerunit, 
+  ceguicomponents, frmautoinjectunit, cesupport, trainergenerator, 
+  genericHotkey, luafile, sharedMemory, FileUtil, networkInterfaceApi, 
+  networkconfig, PNGcomn, FPimage, byteinterpreter, 
+  frmgroupscanalgoritmgeneratorunit, vartypestrings, 
+  groupscancommandparser, GraphType, IntfGraphics, RemoteMemoryManager, 
+  savedscanhandler, debuggertypedefinitions, networkInterface, 
+  FrmMemoryRecordDropdownSettingsUnit, xmlutils, zstream, zstreamext, 
+  commonTypeDefs, VirtualQueryExCache, LazLogger, LazUTF8, LCLVersion, fgl, 
+  betterControls, LMessages;
   {$endif}
 //the following are just for compatibility
 
@@ -883,11 +908,11 @@ type
 
     function CheckIfSaved: boolean;
     procedure checkpaste;
-    procedure hotkey(var Message: TMessage); {$ifdef windows}message WM_HOTKEY;{$endif}
+    procedure hotkey(var Message: TLMessage); {$ifdef windows}message WM_HOTKEY;{$endif}
 
     procedure MemScanStart(sender: TObject);
     procedure MemScanDone(sender: TObject);
-    procedure PluginSync(var m: TMessage); message wm_pluginsync;
+    procedure PluginSync(var m: TLMessage); message wm_pluginsync;
     procedure ShowError;
     procedure Edit;
     procedure paste(simplecopypaste: boolean);
@@ -2070,7 +2095,7 @@ begin
 
 end;
 
-procedure TMainForm.hotkey(var Message: TMessage);
+procedure TMainForm.hotkey(var Message: TLMessage);
 //stays because the old hotkeyhandler is still used in some places
 begin
   {$ifdef windows}
@@ -2159,7 +2184,7 @@ begin
 end;
 
 
-procedure TMainForm.PluginSync(var m: TMessage);
+procedure TMainForm.PluginSync(var m: TLMessage);
 var
   func: TPluginFunc;
   params: pointer;

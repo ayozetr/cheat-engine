@@ -5,9 +5,11 @@ unit frmstructurecompareunit;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   {$ifdef darwin}
   macport,
-  {$else}
+  {$endif}
+  {$ifdef windows}
   windows,
   {$endif}
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, ComCtrls,

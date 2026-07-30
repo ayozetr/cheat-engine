@@ -5,6 +5,7 @@ unit formProcessInfo;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   LCLIntf, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, CEFuncProc, NewKernelHandler, LResources, ExtCtrls,
   memorybrowserformunit, betterControls;

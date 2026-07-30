@@ -6,7 +6,8 @@ unit frmDriverLoadedUnit;
 interface
 
 uses
-  {$ifdef windows}windows,{$endif} LCLIntf, Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
+  {$ifdef windows}windows,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif} LCLIntf, Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
   StdCtrls, betterControls;
 
 type

@@ -17,6 +17,7 @@ uses
   {$ifdef windows}
    jwawindows, windows, WinUtils,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, lcltype,{$endif}
   zstream, LazUTF8, LCLIntf,StdCtrls,Classes,SysUtils,dialogs,{tlhelp32,}forms,messages,
 Graphics,
 ComCtrls,
@@ -809,6 +810,16 @@ begin
     end;
   end;
 end;
+
+{$if not defined(windows) and not defined(darwin)}
+//injecting a library into another process needs either LD_PRELOAD at launch
+//time or a ptrace driven stub; neither is in place, so this reports rather
+//than pretends
+Procedure InjectDll(dllname: string; functiontocall: string='');
+begin
+  raise exception.create('Injecting a library is not implemented on Linux yet');
+end;
+{$endif}
 
 {$ifdef darwin}
 Procedure InjectDll(dllname: string; functiontocall: string='');

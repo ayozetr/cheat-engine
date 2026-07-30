@@ -6,9 +6,11 @@ unit PointerscannerSettingsFrm;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   {$ifdef darwin}
   macport,
-  {$else}
+  {$endif}
+  {$ifdef windows}
   windows,
   {$endif}
   LCLIntf, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms,

@@ -7,11 +7,16 @@ unit VirtualMemory;
 interface
 
 {$ifdef darwin}
-uses macport, SysUtils,LCLIntf,NewKernelHandler,CEFuncProc,ComCtrls, symbolhandler, commonTypeDefs;
+uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif} macport, SysUtils,LCLIntf,NewKernelHandler,CEFuncProc,ComCtrls, symbolhandler, commonTypeDefs;
 {$endif}
 
 {$ifdef windows}
 uses windows, SysUtils,LCLIntf,NewKernelHandler,CEFuncProc,ComCtrls, symbolhandler, commonTypeDefs;
+{$endif}
+
+{$if not defined(windows) and not defined(darwin)}
+uses linuxmemoryapi, SysUtils,LCLIntf,NewKernelHandler,CEFuncProc,ComCtrls, symbolhandler, commonTypeDefs;
 {$endif}
 
 type TMemoryRegion2 = record

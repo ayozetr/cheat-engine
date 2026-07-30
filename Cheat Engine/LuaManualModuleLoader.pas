@@ -7,7 +7,8 @@ interface
 
 {$IFDEF windows}
 uses
-  windows, Classes, SysUtils;
+  windows, Classes, SysUtils,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
 
 procedure initializeLuaModuleLoader;
 {$ENDIF}

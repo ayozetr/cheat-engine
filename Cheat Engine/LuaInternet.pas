@@ -14,7 +14,8 @@ uses
   , fphttpclient,opensslsockets,openssl, StringHashList
 
   {$endif}
-  ;
+  ,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 {$ifndef standalone}
 procedure initializeLuaInternet;
@@ -53,7 +54,7 @@ type
 
 implementation
 
-uses {$ifdef darwin}macport, registry,{$endif}{$ifndef standalone}MainUnit2, lua, LuaClass, LuaObject, LuaHandler,{$endif} URIParser, dialogs;
+uses {$ifdef darwin}macport, registry,{$endif}{$if not defined(windows) and not defined(darwin)}registry,{$endif}{$ifndef standalone}MainUnit2, lua, LuaClass, LuaObject, LuaHandler,{$endif} URIParser, dialogs;
 
 {$ifndef windows}
 var cookies: tstringhashlist;
@@ -447,7 +448,7 @@ var
   i: integer;
   c: tstringlist;
 begin
-  macPortFixRegPath;
+  {$ifdef darwin}macPortFixRegPath;{$endif}
   r:=tregistry.Create;
   r.RootKey:=HKEY_CURRENT_USER;
   try

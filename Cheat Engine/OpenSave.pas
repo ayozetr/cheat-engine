@@ -14,6 +14,7 @@ uses
      {$ifdef windows}
      windows,
      {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
      forms, LCLIntf,registry, SysUtils,AdvancedOptionsUnit,CommentsUnit,
      CEFuncProc,classes,{formmemorymodifier,formMemoryTrainerUnit,}{$ifdef windows}shellapi,{$endif}
      {MemoryTrainerDesignUnit,}StdCtrls,{ExtraTrainerComponents,}Graphics,Controls,

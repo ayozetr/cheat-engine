@@ -5,7 +5,8 @@ unit LuaCommonDialog;
 interface
 
 uses
-  Classes, SysUtils, dialogs, lua, lauxlib, lualib;
+  Classes, SysUtils, dialogs, lua, lauxlib, lualib,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure commondialog_addMetaData(L: PLua_state; metatable: integer; userdata: integer );
 

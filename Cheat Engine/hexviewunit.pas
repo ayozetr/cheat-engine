@@ -14,6 +14,7 @@ uses
   {$ifdef windows}
   windows, commctrl,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
 {$ENDIF}
   Classes,  sysUtils, forms, controls, StdCtrls, ExtCtrls, comctrls, graphics,
   lmessages, menus,  math,

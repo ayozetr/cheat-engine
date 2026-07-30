@@ -5,7 +5,8 @@ unit LuaImage;
 interface
 
 uses
-  Classes, SysUtils, lua, lualib, lauxlib, ExtCtrls;
+  Classes, SysUtils, lua, lualib, lauxlib, ExtCtrls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaImage;
 

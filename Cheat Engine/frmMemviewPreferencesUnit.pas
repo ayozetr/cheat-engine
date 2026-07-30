@@ -13,7 +13,8 @@ uses
   {$endif}
   {$ifdef windows}
   windows, betterControls
-  {$endif};
+  {$endif}
+  {$if not defined(windows) and not defined(darwin)}math, linuxmemoryapi{$endif};
 
 type
 

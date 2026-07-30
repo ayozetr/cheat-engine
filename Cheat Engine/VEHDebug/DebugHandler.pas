@@ -5,7 +5,8 @@ unit DebugHandler;
 interface
 
 uses
-  windows, Classes, SysUtils, syncobjs, extcont;
+  windows, Classes, SysUtils, syncobjs, extcont,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, LCLIntf, lcltype{$endif};
 
 
 function Handler(ExceptionInfo: PEXCEPTION_POINTERS): LONG; stdcall;

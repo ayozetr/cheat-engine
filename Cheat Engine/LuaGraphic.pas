@@ -5,7 +5,8 @@ unit LuaGraphic;
 interface
 
 uses
-  Classes, SysUtils, Graphics,lua, lualib, lauxlib,LuaHandler;
+  Classes, SysUtils, Graphics,lua, lualib, lauxlib,LuaHandler,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaGraphic;
 procedure graphic_addMetaData(L: PLua_state; metatable: integer; userdata: integer );

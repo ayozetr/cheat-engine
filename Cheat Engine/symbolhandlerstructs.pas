@@ -5,7 +5,8 @@ unit symbolhandlerstructs;
 interface
 
 uses
-  Classes, SysUtils, cvconst, commonTypeDefs;
+  Classes, SysUtils, cvconst, commonTypeDefs,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 
 type TUDSEnum=record

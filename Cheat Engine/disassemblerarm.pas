@@ -5,7 +5,8 @@ unit DisassemblerArm;
 interface
 
 {$ifdef JNI}
-uses unixporthelper, classes, sysutils, NewKernelHandler, LastDisassembleData, DisassemblerThumb;
+uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif} unixporthelper, classes, sysutils, NewKernelHandler, LastDisassembleData, DisassemblerThumb;
 {$endif}
 
 {$ifdef windows}
@@ -16,6 +17,11 @@ uses
 
 {$ifdef darwin}
 uses  macport, classes,SysUtils, newkernelhandler, cefuncproc,LastDisassembleData, DisassemblerThumb;
+{$endif}
+
+{$if not defined(windows) and not defined(darwin) and not defined(jni)}
+uses linuxmemoryapi, Classes, SysUtils, newkernelhandler, cefuncproc,
+  LastDisassembleData, DisassemblerThumb;
 {$endif}
 
 

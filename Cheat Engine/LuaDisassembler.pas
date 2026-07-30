@@ -5,7 +5,8 @@ unit LuaDisassembler;
 interface
 
 uses
-  Classes, SysUtils, disassembler, lua, lauxlib, lualib, symbolhandler, LastDisassembleData;
+  Classes, SysUtils, disassembler, lua, lauxlib, lualib, symbolhandler, LastDisassembleData,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaDisassembler(L: PLua_state);
 

@@ -41,7 +41,8 @@ interface
 uses
   {$ifdef darwin}macport,{$endif}
   Classes, SysUtils, LResources, GetText, Controls, typinfo, FileUtil, LCLProc,
-  Translations, IniFiles, Dialogs, LazUTF8, LazFileUtils;
+  Translations, IniFiles, Dialogs, LazUTF8, LazFileUtils,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   TDefaultTranslator = class(TAbstractTranslator)

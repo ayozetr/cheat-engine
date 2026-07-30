@@ -8,6 +8,7 @@ uses
   {$ifdef windows}
   jwawindows, windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   Classes, SysUtils, networkInterface, NewKernelHandler, CEFuncProc
   {$ifdef JNI}
   ,unixporthelper, newkernelhandler;
@@ -16,6 +17,10 @@ uses
   ,mactypes, macport, macportdefines, dialogs;
   {$endif}
   {$ifdef windows}
+  ,dialogs;
+  {$endif}
+  //no branch here closed the clause, so on Linux it ran straight into the const
+  {$if not defined(windows) and not defined(darwin)}
   ,dialogs;
   {$endif}
 

@@ -8,6 +8,7 @@ unit PointerscanConnector;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   Classes, SysUtils, sockets, resolve, syncobjs, math, {$ifdef windows}winsock2,{$endif} CELazySocket,
   PointerscanNetworkCommands, NewKernelHandler{$ifdef darwin},macport{$endif};
 

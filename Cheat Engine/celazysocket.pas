@@ -8,11 +8,15 @@ Just some functions to make sockets easier
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   {$ifdef windows}
   windows, Classes, SysUtils, Sockets, winsock, ssockets, NewKernelHandler, syncobjs2;
   {$endif}
   {$ifdef darwin}
   Classes, SysUtils, Sockets, ssockets, NewKernelHandler, SyncObjs2, ctypes, baseunix, macport;
+  {$endif}
+  {$if not defined(windows) and not defined(darwin)}
+  Classes, SysUtils, Sockets, ssockets, NewKernelHandler, SyncObjs2, ctypes, baseunix;
   {$endif}
 
 type

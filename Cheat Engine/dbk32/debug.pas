@@ -6,7 +6,8 @@ interface
 
 {$ifdef windows}
 
-uses windows, sysutils, dbk32functions, classes, multicpuexecution;
+uses windows, sysutils, dbk32functions, classes, multicpuexecution,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type TDebuggerstate=packed record
   threadid: uint64;

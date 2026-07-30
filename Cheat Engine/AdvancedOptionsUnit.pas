@@ -14,12 +14,13 @@ uses
   {$ifdef windows}
   jwawindows, windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, math,{$endif}
 
   symbolhandler,symbolhandlerstructs,LCLIntf, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Buttons,CEDebugger, Menus,CEFuncProc, ExtCtrls,disassembler,
   SyncObjs,registry, ComCtrls, LResources,NewKernelHandler{$ifdef windows},win32proc{$endif},
   DPIHelper,
-  betterControls;
+  betterControls, LMessages;
 
 
 
@@ -126,7 +127,7 @@ type
     CurrentlyDraggedOverItem: TListItem;
     CurrentlyDraggedOverBefore, CurrentlyDraggedOverAfter: boolean;
 
-    procedure hotkey(var Message: TMessage); {$ifdef windows}message WM_HOTKEY;{$endif}
+    procedure hotkey(var Message: TLMessage); {$ifdef windows}message WM_HOTKEY;{$endif}
     function getCount: integer;
     function getCode(index: integer): TAdvancedOptionsCodeRecord;
     function getEntry(index: integer): TCodeListEntry;
@@ -219,7 +220,7 @@ begin
 end;
 
 
-procedure TAdvancedOptions.hotkey(var Message: TMessage);
+procedure TAdvancedOptions.hotkey(var Message: TLMessage);
 begin
   if Message.wparam=0 then  //pause
   begin

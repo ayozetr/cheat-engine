@@ -32,7 +32,8 @@ Ported to pascal by Eric Heijnen 2022
 interface
 
 uses
-  Classes, SysUtils{$ifdef darwin},ctypes, macport{$endif}{$ifdef windows}, Windows{$endif};
+  Classes, SysUtils{$ifdef darwin},ctypes, macport{$endif}{$ifdef windows}, Windows{$endif}
+  {$if not defined(windows) and not defined(darwin)},linuxmemoryapi{$endif};
 
 
   const

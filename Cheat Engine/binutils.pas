@@ -10,6 +10,7 @@ interface
 uses
   {$ifdef darwin}macport,{$endif}
   {$ifdef windows}windows, {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   newkernelhandler, forms, Classes, SysUtils, process, LastDisassembleData, strutils, maps;
 
 type

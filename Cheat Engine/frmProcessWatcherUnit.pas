@@ -5,6 +5,7 @@ unit frmProcessWatcherUnit;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   {$ifdef darwin}
   macport,
   {$endif}

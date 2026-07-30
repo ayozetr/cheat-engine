@@ -15,7 +15,9 @@ interface
 uses  sysutils, ProcessHandlerUnit;
 {$else}
 uses
-  dialogs,LCLIntf,sysutils{$ifdef windows},imagehlp{$endif}, ProcessHandlerUnit,vextypedef;
+  dialogs,LCLIntf,sysutils{$ifdef windows},imagehlp{$endif}
+  {$if not defined(windows) and not defined(darwin)}, linuxmemoryapi{$endif},
+  ProcessHandlerUnit,vextypedef;
 {$endif}
 
 const opcodecount=1917+14;  //I wish there was a easier way than to handcount

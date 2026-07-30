@@ -5,7 +5,8 @@ unit LuaMenu;
 interface
 
 uses
-  Classes, SysUtils,lua, lualib, lauxlib, LuaHandler,menus, LCLProc;
+  Classes, SysUtils,lua, lualib, lauxlib, LuaHandler,menus, LCLProc,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaMenu;
 

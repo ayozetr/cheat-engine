@@ -209,7 +209,8 @@ uses
   StringHashList,
   SynEditHighlighterFoldBase,
   LCLType,
-  Registry;
+  Registry,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   TtkTokenKind = (

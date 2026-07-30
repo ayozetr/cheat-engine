@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, lua, lualib, lauxlib, LuaHandler, ceguicomponents,
-  pluginexports, controls, ComCtrls, betterControls;
+  pluginexports, controls, ComCtrls, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaProgressBar;
 

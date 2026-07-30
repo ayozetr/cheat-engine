@@ -10,7 +10,8 @@ uses
   {$endif}
   {$ifdef windows}
   Windows,
-  {$endif}Classes, controls, comctrls, SysUtils, Buttons, Graphics, forms, StdCtrls, betterControls;
+  {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, math,{$endif}Classes, controls, comctrls, SysUtils, Buttons, Graphics, forms, StdCtrls, betterControls;
 
 procedure AdjustSpeedButtonSize(sb: TCustomSpeedButton);
 procedure AdjustToolbar(tb: TToolbar);

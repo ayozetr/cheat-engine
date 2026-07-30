@@ -13,7 +13,8 @@ don't acquire a lock themselves.
 interface
 
 uses
-  Classes, SysUtils, syncobjs;
+  Classes, SysUtils, syncobjs,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   TGuiSafeCriticalSection = class
@@ -23,8 +24,8 @@ type
     lockedthreadid: {$ifdef windows}dword{$else}TThreadID{$endif};
     lockcount: integer;
   public
-    procedure enter(maxtimeout: DWORD=INFINITE; currentThreadID: {$ifdef windows}dword=0{$else}tthreadid=nil{$endif});
-    procedure leave(currentthreadid: {$ifdef windows}dword=0{$else}TThreadID=nil{$endif});
+    procedure enter(maxtimeout: DWORD=INFINITE; currentThreadID: {$if defined(windows)}dword=0{$elseif defined(darwin)}tthreadid=nil{$else}tthreadid=0{$endif});
+    procedure leave(currentthreadid: {$if defined(windows)}dword=0{$elseif defined(darwin)}TThreadID=nil{$else}TThreadID=0{$endif});
     constructor Create;
     destructor Destroy; override;
   end;
@@ -36,10 +37,10 @@ uses SyncObjs2;
 resourcestring
   rsCriticalsectionLeaveWithoutEnter = 'Criticalsection leave without enter';
 
-procedure TGuiSafeCriticalSection.enter(maxtimeout: DWORD=INFINITE; currentThreadID: {$ifdef windows}dword=0{$else}tthreadid=nil{$endif});
+procedure TGuiSafeCriticalSection.enter(maxtimeout: DWORD=INFINITE; currentThreadID: {$if defined(windows)}dword=0{$elseif defined(darwin)}tthreadid=nil{$else}tthreadid=0{$endif});
 var deadlockprevention: integer;
 begin
-  if currentThreadID={$ifdef windows}0{$else}nil{$endif} then
+  if currentThreadID={$if defined(windows)}0{$elseif defined(darwin)}nil{$else}0{$endif} then
     currentThreadID:=GetCurrentThreadId;
 
   if haslock and (currentThreadID = lockedthreadid) then
@@ -77,9 +78,9 @@ begin
   lockcount := 1;
 end;
 
-procedure TGuiSafeCriticalSection.leave(currentthreadid: {$ifdef windows}dword=0{$else}TThreadID=nil{$endif});
+procedure TGuiSafeCriticalSection.leave(currentthreadid: {$if defined(windows)}dword=0{$elseif defined(darwin)}TThreadID=nil{$else}TThreadID=0{$endif});
 begin
-  if currentThreadID={$ifdef windows}0{$else}nil{$endif} then
+  if currentThreadID={$if defined(windows)}0{$elseif defined(darwin)}nil{$else}0{$endif} then
     currentThreadID:=GetCurrentThreadId;
 
   if haslock and (currentThreadID <> lockedthreadid) then

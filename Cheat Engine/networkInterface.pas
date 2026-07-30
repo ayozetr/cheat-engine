@@ -7,6 +7,7 @@ unit networkInterface;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   {$ifdef JNI}
   Classes, SysUtils, Sockets, resolve, ctypes,syncobjs, math, zstream,
   newkernelhandler, unixporthelper, processhandlerunit, gutil, gmap,VirtualQueryExCache;

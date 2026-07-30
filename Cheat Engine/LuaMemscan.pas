@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, lua, lualib, lauxlib, symbolhandler, LuaHandler, cefuncproc,
-  memscan, foundlisthelper, forms, commonTypeDefs;
+  memscan, foundlisthelper, forms, commonTypeDefs,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeMemscan;
 

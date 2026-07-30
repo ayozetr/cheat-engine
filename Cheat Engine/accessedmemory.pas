@@ -5,7 +5,8 @@ unit AccessedMemory;
 interface
 
 uses
-  {$ifdef windows}windows, {$endif}Classes, SysUtils, FileUtil, laz.VirtualTrees, Forms, Controls, Graphics,
+  {$ifdef windows}windows, {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}Classes, SysUtils, FileUtil, laz.VirtualTrees, Forms, Controls, Graphics,
   Dialogs, StdCtrls, ExtCtrls, Menus, ComCtrls, genericHotkey, DBK32functions,
   commonTypeDefs, newkernelhandler, betterControls,AvgLvlTree, {$ifdef laztrunk}AVL_Tree{$else}laz_avl_Tree{$endif};
 

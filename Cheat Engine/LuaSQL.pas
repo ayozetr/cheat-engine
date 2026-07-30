@@ -108,7 +108,8 @@ interface
 
 uses
   Classes, SysUtils, db, sqldb, sqlite3, sqlite3conn, odbcconn, BufDataset,
-  LuaComponent, LuaClass, luaobject, lua, lualib, lauxlib, typinfo;
+  LuaComponent, LuaClass, luaobject, lua, lualib, lauxlib, typinfo,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaSQL;
 

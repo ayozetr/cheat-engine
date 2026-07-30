@@ -7,10 +7,12 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   ExtCtrls, math, LuaCanvas, FPImage, FPCanvas, FPImgCanv, FPReadPNG, FPWritePNG
-  {$ifdef laztrunk}
+  //Lazarus 3 keeps ExtractFileNameWithoutExt here regardless of the switch
+  {$if defined(laztrunk) or not (defined(windows) or defined(darwin))}
   , LazFileUtils
   {$endif}
-  , betterControls;
+  , betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 resourcestring
   rsSSAreYouSureYouWishToThrowAwayTheseSnapshots = 'Are you sure you wish to throw away these snapshots?';

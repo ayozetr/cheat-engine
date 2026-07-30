@@ -5,7 +5,8 @@ unit LuaPen;
 interface
 
 uses
-  Classes, SysUtils, Graphics,lua, lualib, lauxlib,LuaHandler;
+  Classes, SysUtils, Graphics,lua, lualib, lauxlib,LuaHandler,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaPen;
 

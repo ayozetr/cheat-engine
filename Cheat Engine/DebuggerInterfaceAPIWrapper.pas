@@ -8,7 +8,8 @@ This unit hold the DebuggerInterface currently used, and overrides the default w
 interface
 
 uses
-  Classes, SysUtils, {$ifdef windows}windows,{$endif} debuggerinterface, newkernelhandler{$ifdef darwin}, macport, macportdefines{$endif};
+  Classes, SysUtils, {$ifdef windows}windows,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif} debuggerinterface, newkernelhandler{$ifdef darwin}, macport, macportdefines{$endif};
 
 function WaitForDebugEvent(var lpDebugEvent: TDebugEvent; dwMilliseconds: DWORD): BOOL;
 function ContinueDebugEvent(dwProcessId: DWORD; dwThreadId: DWORD; dwContinueStatus: DWORD): BOOL;

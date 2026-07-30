@@ -11,6 +11,7 @@ things up considerably
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   {$ifdef JNI}
   Classes, SysUtils, ctypes,syncobjs, newkernelhandler, unixporthelper;
   {$else}

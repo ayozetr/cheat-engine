@@ -8,7 +8,13 @@ uses
 
 
   {$endif}
+  //cthreads has to come before anything that could touch a thread, and the
+  //UseCThreads guard below never fires in this build
+  {$if not defined(windows) and not defined(darwin)}
+  cthreads,
+  {$endif}
   first,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}

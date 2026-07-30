@@ -7,7 +7,8 @@ interface
 uses
   LCLType, Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   ExtCtrls, MemoryRecordUnit, CEFuncProc, SynEdit, Menus, betterControls, addresslist,
-  synedittypes;
+  synedittypes,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 resourcestring
 rsDDDropdownOtionsFor = 'Dropdown options for ';

@@ -21,6 +21,7 @@ uses
   {$ifdef windows}
   jwawindows, windows, ShellApi,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi, lcltype, LCLIntf, LazFileUtils, Messages,{$endif}
   vmxfunctions, Classes, dialogs, SysUtils, lua, lualib,
   lauxlib, syncobjs, syncobjs2, CEFuncProc, NewKernelHandler, Graphics,
   controls, LuaCaller, forms, ExtCtrls, StdCtrls, comctrls, ceguicomponents,
@@ -684,6 +685,21 @@ begin
     result:='nil';
 end;
 
+{
+  A broken autorun script should not stop Cheat Engine from starting. On
+  Windows a modal dialog is merely annoying; here several of the shipped
+  scripts pull in libraries that only exist as Windows DLLs, so one modal box
+  per script would block startup outright. Report and carry on instead.
+}
+procedure reportAutorunError(const msg: string);
+begin
+  {$if defined(windows) or defined(darwin)}
+  showmessage(msg);
+  {$else}
+  apiTrace('autorun: '+msg);
+  {$endif}
+end;
+
 procedure LoadLuaScriptsFromPath(path: string; var mainformwasset: boolean; var addresslistwasset: boolean);
 var
   DirInfo: TSearchRec;
@@ -701,7 +717,13 @@ begin
     begin
       if ((DirInfo.Attr and FaDirectory) <> FaDirectory) then
       begin
+        {$if defined(windows)}
         i:=lua_dofile(luavm, pchar( UTF8ToWinCP(autorunpath+DirInfo.name)));
+        {$else}
+        //file names are already UTF-8 here; converting to a Windows codepage
+        //can only damage them
+        i:=lua_dofile(luavm, pchar(path+DirInfo.name));
+        {$endif}
         if i<>0 then //error
         begin
           i:=lua_gettop(luavm);
@@ -709,11 +731,11 @@ begin
           begin
             pc:=lua_tolstring(luavm, -1,nil);
             if pc<>nil then
-              showmessage(DirInfo.name+rsError2+pc)
+              reportAutorunError(DirInfo.name+rsError2+pc)
             else
-              showmessage(DirInfo.name+rsError3);
+              reportAutorunError(DirInfo.name+rsError3);
           end
-          else showmessage(DirInfo.name+rsError3);
+          else reportAutorunError(DirInfo.name+rsError3);
         end;
 
         //reset stack
@@ -818,6 +840,11 @@ begin
   end;
 
   //autorun folder
+  {$if not defined(windows) and not defined(darwin)}
+  apiTrace('autorun: noautorun='+BoolToStr(noautorun,true)+' path="'+autorunpath+
+           '" exists='+BoolToStr(DirectoryExists(autorunpath),true)+
+           ' cwd='+GetCurrentDir);
+  {$endif}
   if noautorun=false then
   begin
     loadLuaScriptsFromPath(autorunpath, mainformwasset, addresslistwasset);
@@ -17156,11 +17183,11 @@ begin
 
 
 {$ifdef cpu64}
-      s.add('package.cpath = package.cpath .. [[;'+getcedir+'clibs64'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}+']]');
-      s.add('package.cpath = package.cpath .. [[;.'+pathdelim+'clibs64'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}+']]');
+      s.add('package.cpath = package.cpath .. [[;'+getcedir+'clibs64'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}{$if not defined(windows) and not defined(darwin)}'.so'{$endif}+']]');
+      s.add('package.cpath = package.cpath .. [[;.'+pathdelim+'clibs64'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}{$if not defined(windows) and not defined(darwin)}'.so'{$endif}+']]');
 {$else}
-      s.add('package.cpath = package.cpath .. [[;'+getcedir+'clibs32'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}+']]');
-      s.add('package.cpath = package.cpath .. [[;.'+pathdelim+'clibs32'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}+']]');
+      s.add('package.cpath = package.cpath .. [[;'+getcedir+'clibs32'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}{$if not defined(windows) and not defined(darwin)}'.so'{$endif}+']]');
+      s.add('package.cpath = package.cpath .. [[;.'+pathdelim+'clibs32'+pathdelim+'?'+{$ifdef windows}'.dll'{$endif}{$ifdef darwin}'.dylib'{$endif}{$if not defined(windows) and not defined(darwin)}'.so'{$endif}+']]');
 {$endif}
       s.add('stringlist_getCount=strings_getCount');
       s.add('stringlist_getString=strings_getString');
@@ -17286,6 +17313,10 @@ begin
       autorunpath:=extractfiledir(extractfiledir(Application.ExeName))+'/Lua/Autorun/';
       {$else}
       autorunpath:=CheatEngineDir+'autorun'+pathdelim;
+      {$endif}
+
+      {$if not defined(windows) and not defined(darwin)}
+      apiTrace('InitializeLua: CheatEngineDir="'+CheatEngineDir+'" autorunpath="'+autorunpath+'"');
       {$endif}
 
 

@@ -6,7 +6,8 @@ interface
 
 uses
 
-  Classes, lua, betterControls;
+  Classes, lua, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi, Messages{$endif};
 
 procedure initializeLuaForm;
 

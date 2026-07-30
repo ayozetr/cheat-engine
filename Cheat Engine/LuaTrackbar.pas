@@ -5,7 +5,8 @@ unit LuaTrackbar;
 interface
 
 uses
-  Classes, SysUtils, controls, comctrls, lua, lualib, lauxlib, betterControls;
+  Classes, SysUtils, controls, comctrls, lua, lualib, lauxlib, betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 procedure initializeLuaTrackbar;
 

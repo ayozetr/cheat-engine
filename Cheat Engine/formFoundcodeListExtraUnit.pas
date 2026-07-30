@@ -5,9 +5,11 @@ unit formFoundcodeListExtraUnit;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   {$ifdef darwin}
   macport,
-  {$else}
+  {$endif}
+  {$ifdef windows}
   windows,
   {$endif}
   LResources, LCLIntf, Messages, SysUtils, Variants, Classes, Graphics,

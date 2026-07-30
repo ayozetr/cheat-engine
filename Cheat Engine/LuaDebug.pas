@@ -7,6 +7,7 @@ unit LuaDebug;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   Classes, SysUtils, newkernelhandler, debug, DebugHelper,
   DebuggerInterfaceAPIWrapper, lua, lualib, lauxlib, LuaHandler{$ifdef darwin},macport{$endif};
 

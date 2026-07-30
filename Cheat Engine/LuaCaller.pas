@@ -14,7 +14,8 @@ uses
   Classes, Controls, SysUtils, ceguicomponents, forms, lua, lualib, lauxlib,
   comctrls, StdCtrls, CEFuncProc, typinfo, Graphics, disassembler, LuaDisassembler,
   LastDisassembleData, Assemblerunit, commonTypeDefs, ExtCtrls, addresslist,
-  MemoryRecordUnit, math, diagramblock, laz.VirtualTrees;
+  MemoryRecordUnit, math, diagramblock, laz.VirtualTrees,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
   TLuaCaller=class

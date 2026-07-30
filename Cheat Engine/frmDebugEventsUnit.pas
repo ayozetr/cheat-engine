@@ -5,6 +5,7 @@ unit frmDebugEventsUnit;
 interface
 
 uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif}
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   StdCtrls, ExtCtrls, Menus, newkernelhandler{$ifdef darwin},macport{$endif}, betterControls;
 

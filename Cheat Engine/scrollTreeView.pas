@@ -6,7 +6,8 @@ unit scrollTreeView;
 interface
 
 uses
-  Classes, SysUtils, controls, StdCtrls, ExtCtrls, comctrls, lmessages,betterControls;
+  Classes, SysUtils, controls, StdCtrls, ExtCtrls, comctrls, lmessages,betterControls,
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi{$endif};
 
 type
 

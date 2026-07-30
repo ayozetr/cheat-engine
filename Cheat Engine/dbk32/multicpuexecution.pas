@@ -9,7 +9,8 @@ interface
 
 uses
   {$ifdef darwin}macport,{$endif}
-  {$ifdef windows}windows,{$endif}classes, sysutils;
+  {$ifdef windows}windows,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}classes, sysutils;
 
 type TCpuSpecificFunction=function(parameters: pointer): BOOL; stdcall;
 function foreachcpu(functionpointer: TCpuSpecificFunction; parameters: pointer) :boolean;

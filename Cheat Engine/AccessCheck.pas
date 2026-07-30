@@ -13,7 +13,8 @@ FileAccessTest is the main routine
 
 interface
 
-uses LCLIntf, SysUtils, classes, forms, CEFuncProc, NewKernelHandler;
+uses
+  {$if not defined(windows) and not defined(darwin) and not defined(jni)}linuxmemoryapi,{$endif} LCLIntf, SysUtils, classes, forms, CEFuncProc, NewKernelHandler;
 
 procedure FileAccessTest;
 
