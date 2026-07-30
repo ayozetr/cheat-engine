@@ -26,7 +26,7 @@ uses
   {$endif}
 
   {$ifdef windows}
-  jwaWindows, Windows, LCLIntf, LCLProc, Messages, SysUtils, Classes, SyncObjs,
+  jwaWindows, Windows, LCLIntf, LCLProc, Messages, LMessages, SysUtils, Classes, SyncObjs,
   SyncObjs2, Graphics,
   Controls, Forms, ComCtrls, StdCtrls, Menus, Buttons, shellapi,
   imagehlp, ExtCtrls, Dialogs, Clipbrd, CEDebugger, kerneldebugger, assemblerunit,
