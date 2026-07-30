@@ -49,6 +49,9 @@ begin
   begin
     darkmode:=true;
     color:=ColorSet.TextBackground;
+    //the unit header says parentfont does not work here, so the caption keeps
+    //whatever colour the .lfm gave it and stays dark on a dark button
+    font.color:=ColorSet.FontColor;
   end;
 end;
 
