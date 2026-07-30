@@ -11,6 +11,7 @@ uses
   {$ifdef windows}
   windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   LCLIntf, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls,CEFuncProc, ExtCtrls, ComCtrls, Menus, NewKernelHandler, LResources,
   disassembler, symbolhandler, byteinterpreter, CustomTypeHandler, maps, math, Clipbrd,

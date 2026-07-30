@@ -27,6 +27,7 @@ uses
      {$ifdef windows}
      windows,
      {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
      FileUtil, LCLIntf,sysutils, classes,ComCtrls,dialogs, NewKernelHandler,math,
      SyncObjs, SyncObjs2 {$ifdef windows},windows7taskbar{$endif},SaveFirstScan, savedscanhandler, autoassembler,
      symbolhandler, CEFuncProc{$ifdef windows},shellapi{$endif}, CustomTypeHandler, lua,lualib,lauxlib,

@@ -12,7 +12,8 @@ interface
 
 uses windows, LCLIntf, classes, sysutils, imagehlp, dialogs, PEInfoFunctions,CEFuncProc,
      NewKernelHandler, symbolhandler, dbk32functions, vmxfunctions, commonTypeDefs,
-     SymbolListHandler, symbolhandlerstructs, StringHashList;
+     SymbolListHandler, symbolhandlerstructs, StringHashList,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
 
 resourcestring
   rsMMLNotAValidFile = 'not a valid file';

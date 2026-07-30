@@ -11,6 +11,7 @@ uses
   {$ifdef windows}
   jwawindows, windows,imagehlp,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   LCLProc, LCLIntf, Messages, SysUtils, Classes, Graphics,
   Controls, Forms, Dialogs, frmMemoryAllocHandlerUnit, math, StdCtrls, Spin,
   ExtCtrls,CEFuncProc,symbolhandler,Clipbrd, Menus,plugin,CEDebugger,KernelDebugger,

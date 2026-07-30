@@ -7,7 +7,8 @@ unit iptlogdisplay;
 interface
 
 uses
-  {$ifdef windows}windows,{$endif} ProcessHandlerUnit, Classes, SysUtils, LResources, Forms, Controls,
+  {$ifdef windows}windows,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif} ProcessHandlerUnit, Classes, SysUtils, LResources, Forms, Controls,
   Graphics, Dialogs, StdCtrls, ComCtrls, ExtCtrls, Menus, betterControls,
   libipt, pagemap, Contnrs, syncobjs,maps;
 

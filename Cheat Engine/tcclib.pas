@@ -7,6 +7,7 @@ interface
 
 uses
   {$ifdef windows}windows,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   {$ifdef darwin}macport, dl,macportdefines, {$endif}
   Classes, SysUtils, syncobjs, maps, math, Generics.Collections;
 

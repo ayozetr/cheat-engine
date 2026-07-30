@@ -11,6 +11,7 @@ uses
   {$ifdef windows}
   windows, DBK32functions, vmxfunctions,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   LCLIntf, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, CEDebugger, debughelper, KernelDebugger, CEFuncProc,
   NewKernelHandler, symbolhandler, LResources, ExtCtrls, ComCtrls,  math,

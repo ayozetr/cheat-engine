@@ -15,6 +15,7 @@ uses
   {$ifdef windows}
   windows, comobj,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   Classes, SysUtils,lua, lualib, lauxlib, LuaHandler, syncobjs,
   SyncObjs2, NewKernelHandler;
 

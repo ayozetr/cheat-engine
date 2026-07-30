@@ -5,7 +5,8 @@ unit frmStructures2ElementInfoUnit;
 interface
 
 uses
-  {$ifdef windows}windows,{$endif}Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  {$ifdef windows}windows,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   ExtCtrls, cefuncproc, StructuresFrm2, vartypestrings, math, CustomTypeHandler, commonTypeDefs, betterControls;
 
 resourcestring

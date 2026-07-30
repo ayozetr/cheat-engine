@@ -12,6 +12,7 @@ interface
 {$ifdef windows}
 uses windows, LCLIntf, classes, sysutils, symbolhandler, math, cefuncproc,newkernelhandler, commonTypeDefs;
 {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
 
 {$ifdef darwin}
 uses macport, LCLIntf, classes, sysutils, symbolhandler, math, cefuncproc,newkernelhandler, commonTypeDefs;

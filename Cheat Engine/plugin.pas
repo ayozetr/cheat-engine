@@ -11,6 +11,7 @@ uses lclproc,
      {$ifdef windows}
      windows,
      {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
      classes, sysutils,LCLIntf,checklst,menus,dialogs,CEFuncProc,
      NewKernelHandler, graphics, syncobjs, commonTypeDefs, betterControls;
 

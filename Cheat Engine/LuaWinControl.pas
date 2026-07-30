@@ -6,6 +6,7 @@ interface
 
 uses
   {$ifdef windows}windows,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
 
   Classes, SysUtils, controls, lua, lualib, lauxlib,LuaHandler, graphics;
 

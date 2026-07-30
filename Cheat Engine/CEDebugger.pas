@@ -11,6 +11,7 @@ uses {$ifdef darwin}
      {$ifdef windows}
      windows,
      {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
      Classes,LCLIntf,sysutils,CEFuncProc,Messages,forms,SyncObjs,
      dialogs,controls,Graphics,NewKernelHandler,symbolhandler,StrUtils,
      ComCtrls ,Assemblerunit,addressparser, vmxfunctions;

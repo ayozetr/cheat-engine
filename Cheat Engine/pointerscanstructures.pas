@@ -6,7 +6,8 @@ interface
 
 uses
   {$ifdef darwin}
-  macport, Classes, SysUtils, Sockets, CELazySocket, commonTypeDefs;
+  macport, Classes, SysUtils, Sockets, CELazySocket, commonTypeDefs,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
   {$endif}
   {$ifdef windows}
   windows, Classes, SysUtils, winsock, CELazySocket, commonTypeDefs;

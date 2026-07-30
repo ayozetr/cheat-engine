@@ -17,7 +17,8 @@ uses
   {$endif}
   {$ifdef windows}
   windows,
-  {$endif}LCLIntf, sysutils, symbolhandler, CEFuncProc, NewKernelHandler, math,
+  {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}LCLIntf, sysutils, symbolhandler, CEFuncProc, NewKernelHandler, math,
   CustomTypeHandler, ProcessHandlerUnit, commonTypeDefs, LazUTF8;
 {$endif}
 

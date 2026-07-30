@@ -11,6 +11,7 @@ uses
   {$ifdef windows}
   windows, Classes, SysUtils;
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   {$ifdef darwin}
   macport, Classes, SysUtils;
   {$endif}

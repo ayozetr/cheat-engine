@@ -4,11 +4,16 @@ unit NewKernelHandler;
 
 interface
 
-{$ifdef darwin}
+{$if defined(darwin)}
 uses SysUtils, MacOSAll, MacOSXPosix, macport, macportdefines;
-{$else}
+{$elseif defined(windows)}
 uses jwawindows, windows,LCLIntf,sysutils, dialogs, classes, controls,
      {$ifndef STANDALONECH}dbk32functions, vmxfunctions,debug, multicpuexecution,globals,{$endif} contnrs, Clipbrd;
+{$else}
+//Linux: linuxmemoryapi stands in for the Windows API, unixporthelper for the
+//types the RTL does not carry outside Windows
+uses SysUtils, Classes, LCLIntf, dialogs, controls, contnrs, Clipbrd,
+     unixporthelper, linuxmemoryapi;
 {$endif}
 
 const dbkdll='DBK32.dll';

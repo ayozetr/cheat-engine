@@ -8,6 +8,7 @@ uses
   {$ifdef windows}
   jwaWindows, windows, imagehlp,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   LCLIntf, Messages, SysUtils, Variants, Classes, Graphics,
   Controls, Forms, Dialogs, StdCtrls, Menus, CEFuncProc,
   NewKernelHandler, LREsources, ComCtrls, registry, betterControls;

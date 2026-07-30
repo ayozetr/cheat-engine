@@ -7,7 +7,8 @@ interface
 {$ifdef windows}
 uses
   jwawindows, windows, Classes, SysUtils,cefuncproc, newkernelhandler,
-  DebuggerInterface,contnrs, syncobjs,maps;
+  DebuggerInterface,contnrs, syncobjs,maps,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
 
 type
   TEventType=(etCreateProcess, etCreateThread, etDestroyThread);

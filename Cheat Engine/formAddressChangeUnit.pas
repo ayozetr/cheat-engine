@@ -13,6 +13,7 @@ uses
   {$ifdef windows}
   windows, win32proc,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   LCLIntf, LResources, LMessages, Messages, SysUtils, Variants,
   Classes, Graphics, Controls, Forms, Dialogs, StdCtrls, ExtCtrls, ComCtrls,
   Buttons, Arrow, Spin, Menus, CEFuncProc, NewKernelHandler, symbolhandler,

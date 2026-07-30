@@ -12,7 +12,8 @@ interface
 
 uses
   Classes, SysUtils, DebuggerInterface, windows, cefuncproc,newkernelhandler,
-  symbolhandler, dialogs;
+  symbolhandler, dialogs,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
 
 type
   TWindowsDebuggerInterface=class(TDebuggerInterface)

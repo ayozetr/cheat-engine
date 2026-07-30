@@ -22,6 +22,7 @@ interface
 
 uses {$ifdef darwin}macport,messages,lcltype,{$endif}
      {$ifdef windows}jwawindows, windows,commctrl,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
      sysutils, LCLIntf, forms, classes, controls, comctrls, stdctrls, extctrls, symbolhandler,
      cefuncproc, NewKernelHandler, graphics, disassemblerviewlinesunit, disassembler,
      math, lmessages, menus, DissectCodeThread, tcclib

@@ -6,6 +6,7 @@ interface
 
 uses {$ifdef darwin}macport,macportdefines,{$endif}
      {$ifdef windows}jwawindows, windows,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
      ExtCtrls , comctrls, Graphics, forms, StdCtrls,sysutils,Controls,
      SyncObjs,dialogs,LCLIntf,classes,autoassembler,
      CEFuncProc,NewKernelHandler,CEDebugger,KernelDebugger, plugin, math,

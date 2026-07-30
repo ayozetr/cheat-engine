@@ -6,7 +6,8 @@ interface
 
 uses
 
-  Classes, SysUtils, {$ifdef windows}windows,{$endif} FoundCodeUnit, formchangedaddresses, frmTracerUnit,
+  Classes, SysUtils, {$ifdef windows}windows,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif} FoundCodeUnit, formchangedaddresses, frmTracerUnit,
   commonTypeDefs, debuggertypedefinitions;
 
 type

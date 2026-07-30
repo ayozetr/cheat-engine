@@ -8,10 +8,10 @@ uses
   //the POSIX branch was written for darwin, but Linux needs the same one;
   //only macport is Mac specific
   {$ifdef darwin}macport, {$endif}
-  {$ifndef windows}
-  cthreads, unix, unixtype, pthreads, baseunix,
-  {$else}
+  {$ifdef windows}
   windows,
+  {$else}
+  cthreads, unix, unixtype, pthreads, baseunix,
   {$endif}SyncObjs, classes, sysutils, LCLIntf;
 
 type TSemaphore=class

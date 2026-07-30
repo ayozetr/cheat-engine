@@ -47,7 +47,12 @@ interface
 
 {$ifdef darwin}
 uses dialogs, MacOSAll, MacOSXPosix, dynlibs, fileutil;
+{$endif}
 
+{$if not defined(windows) and not defined(darwin)}
+//the only uses clause here sat inside the darwin branch, so on Linux the unit
+//had none at all and size_t had nothing to resolve against
+uses dynlibs, fileutil, linuxmemoryapi;
 {$endif}
 
 const

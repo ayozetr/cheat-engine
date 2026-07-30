@@ -17,6 +17,7 @@ uses
   {$ifdef windows}
    jwawindows, windows, WinUtils,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   zstream, LazUTF8, LCLIntf,StdCtrls,Classes,SysUtils,dialogs,{tlhelp32,}forms,messages,
 Graphics,
 ComCtrls,

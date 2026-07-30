@@ -11,6 +11,7 @@ uses
   dom, XMLRead,XMLWrite, customtypehandler, fileutil, LCLProc, commonTypeDefs,
   pointerparser, LazUTF8, LuaClass, math, betterControls, memrecDataStructures;
 {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
 
 {$ifdef darwin}
 uses

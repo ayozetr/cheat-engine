@@ -16,6 +16,7 @@ uses
   {$ifdef windows}
   jwawindows, windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   LCLIntf, syncobjs, sysutils, Classes;
 
 function ReadProcessMemoryFile(hProcess: THandle; const lpBaseAddress: Pointer; lpBuffer: Pointer;  nSize: DWORD; var lpNumberOfBytesRead: ptruint): BOOL; stdcall;

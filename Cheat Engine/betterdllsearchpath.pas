@@ -7,7 +7,8 @@ interface
 {$ifdef windows}
 
 uses
-  windows, sysutils;
+  windows, sysutils,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
 
 const
   LOAD_LIBRARY_SEARCH_DEFAULT_DIRS=$1000;

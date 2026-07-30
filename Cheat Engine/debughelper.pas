@@ -11,6 +11,7 @@ uses
   {$ifdef windows}
   Windows,  KernelDebuggerInterface, WindowsDebugger,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   Classes, SysUtils, Controls, forms, syncobjs, guisafecriticalsection, Dialogs,
   foundcodeunit, debugeventhandler, CEFuncProc, newkernelhandler, comctrls,
   debuggertypedefinitions, formChangedAddresses, frmTracerUnit, VEHDebugger,

@@ -13,6 +13,7 @@ uses
   {$ifdef windows}
   jwawindows, win32proc,  windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, StdCtrls, ComCtrls, EditBtn, Menus, iptnative, libipt, ProcessHandlerUnit,
   DBK32functions, commonTypeDefs, MemFuncs, AvgLvlTree, Math, FileMapping,

@@ -8,6 +8,7 @@ uses
   {$ifdef windows}
   windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   Classes, SysUtils, lua, lualib, lauxlib, controls, StdCtrls, ExtCtrls, LuaWinControl, betterControls;
 
 procedure initializeLuaCombobox;

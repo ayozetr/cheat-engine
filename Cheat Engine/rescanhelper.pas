@@ -8,7 +8,8 @@ interface
 
 uses macport, LCLIntf, classes, symbolhandler, CEFuncProc,NewKernelHandler, maps,
   sysutils, syncobjs, pagemap, Sockets, (*CELazySocket, PointerscanNetworkCommands, *)
-  zstream, commonTypeDefs;
+  zstream, commonTypeDefs,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
 {$endif}
 
 {$ifdef windows}

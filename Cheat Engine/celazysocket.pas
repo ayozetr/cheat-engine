@@ -11,6 +11,7 @@ uses
   {$ifdef windows}
   windows, Classes, SysUtils, Sockets, winsock, ssockets, NewKernelHandler, syncobjs2;
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   {$ifdef darwin}
   Classes, SysUtils, Sockets, ssockets, NewKernelHandler, SyncObjs2, ctypes, baseunix, macport;
   {$endif}

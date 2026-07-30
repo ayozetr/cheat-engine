@@ -11,6 +11,7 @@ uses
   {$ifdef windows}
   windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs,
   StdCtrls, ExtCtrls, cefuncproc, commonTypeDefs, betterControls;
 

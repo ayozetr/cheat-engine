@@ -17,6 +17,7 @@ uses {$ifdef darwin}
   {$ifdef windows}
   windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   LCLIntf,classes,SysUtils;
 
 type

@@ -11,6 +11,7 @@ uses
   {$ifdef windows}
   windows, imagehlp,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   LCLIntf, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs,NewKernelHandler, CEFuncProc, ComCtrls,CEDebugger, KernelDebugger,
   Menus, LResources, debughelper, symbolhandler, betterControls;

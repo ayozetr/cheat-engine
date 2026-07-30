@@ -46,7 +46,8 @@ var
 
 implementation
 
-uses MainUnit, cheatecoins{$IFDEF windows} , windows {$ENDIF}, mainunit2;
+uses MainUnit, cheatecoins{$IFDEF windows} , windows {$ENDIF}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}, mainunit2;
 
 { TfrmMicroTransactions }
 

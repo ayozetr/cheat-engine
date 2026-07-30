@@ -32,6 +32,39 @@ uses
   Classes, SysUtils, BaseUnix, Unix;
 
 type
+  //Windows spells its 32-bit boolean BOOL, and Cheat Engine declares whole
+  //families of function types against it. Plain boolean is enough here since
+  //nothing crosses a real Windows ABI boundary on Linux.
+  BOOL = boolean;
+  ULONG_PTR = PtrUInt;
+  LONG_PTR = PtrInt;
+  LONG = longint;
+  ULONG = cardinal;
+  UINT = cardinal;
+  USHORT = word;
+  UCHAR = byte;
+  HANDLE = THandle;
+  HWND = THandle;
+  HMODULE = THandle;
+  HINST = THandle;
+  LPVOID = Pointer;
+  PVOID = Pointer;
+  LPCSTR = PAnsiChar;
+  LPSTR = PAnsiChar;
+  LPCWSTR = PWideChar;
+  LPWSTR = PWideChar;
+  PULONG = ^ULONG;
+  PUINT = ^UINT;
+  PHANDLE = ^HANDLE;
+  LARGE_INTEGER = Int64;
+  ULARGE_INTEGER = QWord;
+  PLARGE_INTEGER = ^LARGE_INTEGER;
+  SIZE_T = PtrUInt;   //Pascal is case insensitive, so this covers size_t too
+  ptrdiff_t = PtrInt;
+  WPARAM = PtrUInt;
+  LPARAM = PtrInt;
+  LRESULT = PtrInt;
+
   //same shape VirtualQueryEx fills in on Windows, since callers read these
   //fields directly
   TMemoryBasicInformation = record
@@ -41,8 +74,28 @@ type
     RegionSize: PtrUInt;
     State: DWORD;
     Protect: DWORD;
-    Type_9: DWORD;
+    _Type: DWORD;
   end;
+
+  //XMM register: 16 bytes. Windows calls it M128A and NewKernelHandler uses
+  //the name for the ARM vector registers too
+  M128A = record
+    Low: QWord;
+    High: Int64;
+  end;
+
+  //x86_64 thread context. Only the general purpose registers are filled in,
+  //which is what ptrace(PTRACE_GETREGS) gives and what the debugger reads
+  TContext = record
+    ContextFlags: DWORD;
+    Rax, Rbx, Rcx, Rdx, Rsi, Rdi, Rbp, Rsp: QWord;
+    R8, R9, R10, R11, R12, R13, R14, R15: QWord;
+    Rip: QWord;
+    EFlags: DWORD;
+    SegCs, SegDs, SegEs, SegFs, SegGs, SegSs: WORD;
+    Dr0, Dr1, Dr2, Dr3, Dr6, Dr7: QWord;
+  end;
+  PContext = ^TContext;
 
   TProcessEntry = record
     th32ProcessID: DWORD;
@@ -64,7 +117,16 @@ type
     szExePath: string;
   end;
 
+  //the names NewKernelHandler declares its function types against
+  TProcessEntry32 = TProcessEntry;
+  TThreadEntry32 = TThreadEntry;
+  TModuleEntry32 = TModuleEntry;
+  PROCESSENTRY32 = TProcessEntry;
+  THREADENTRY32 = TThreadEntry;
+  MODULEENTRY32 = TModuleEntry;
+
 const
+  MAX_PATH = 260;
   TH32CS_SNAPPROCESS = $00000002;
   TH32CS_SNAPTHREAD  = $00000004;
   TH32CS_SNAPMODULE  = $00000008;
@@ -109,6 +171,11 @@ function CloseSnapshot(hSnapshot: THandle): boolean;
 function OpenThread(dwDesiredAccess: DWORD; bInheritHandle: boolean;
   dwThreadId: DWORD): THandle;
 function TerminateProcess(hProcess: THandle; uExitCode: DWORD): boolean;
+
+//part of the windows unit on Windows; every caller expects them in scope
+procedure ZeroMemory(destination: Pointer; size: PtrUInt);
+procedure CopyMemory(destination, source: Pointer; size: PtrUInt);
+procedure MoveMemory(destination, source: Pointer; size: PtrUInt);
 
 implementation
 
@@ -252,9 +319,9 @@ begin
         lpBuffer.Protect:=ProtectFromMapsFlags(flags);
         lpBuffer.AllocationProtect:=lpBuffer.Protect;
         if Pos('p', flags)>0 then
-          lpBuffer.Type_9:=MEM_PRIVATE
+          lpBuffer._Type:=MEM_PRIVATE
         else
-          lpBuffer.Type_9:=MEM_MAPPED;
+          lpBuffer._Type:=MEM_MAPPED;
         encontrado:=true;
         break;
       end;
@@ -568,6 +635,21 @@ end;
 function TerminateProcess(hProcess: THandle; uExitCode: DWORD): boolean;
 begin
   result:=FpKill(TPid(hProcess), SIGKILL)=0;
+end;
+
+procedure ZeroMemory(destination: Pointer; size: PtrUInt);
+begin
+  FillChar(destination^, size, 0);
+end;
+
+procedure CopyMemory(destination, source: Pointer; size: PtrUInt);
+begin
+  Move(source^, destination^, size);
+end;
+
+procedure MoveMemory(destination, source: Pointer; size: PtrUInt);
+begin
+  Move(source^, destination^, size);
 end;
 
 

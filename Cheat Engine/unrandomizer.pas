@@ -8,6 +8,7 @@ interface
 
 uses {$ifdef darwin}macport,{$endif}
      {$ifdef windows}windows,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
      CEFuncProc,dialogs,classes,comctrls,LCLIntf,sysutils,formsettingsunit,
      NewKernelHandler, commonTypeDefs, MemFuncs, betterControls;
 

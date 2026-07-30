@@ -15,7 +15,8 @@ interface
 {$ifdef windows}
 
 uses
-  jwawindows, windows, Classes, SysUtils, lua, lauxlib, lualib, LuaHandler;
+  jwawindows, windows, Classes, SysUtils, lua, lauxlib, lualib, LuaHandler,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
 
 type
   TLuaServerHandler=class(TThread)

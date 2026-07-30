@@ -9,7 +9,8 @@ interface
 {$ifdef darwin}
 uses
   macport, Classes, SysUtils, syncobjs, PointerscanStructures, ProcessHandlerUnit, pointervaluelist,
-  pointeraddresslist, NewKernelHandler, zstream, zstreamext, macportdefines, SyncObjs2, math;
+  pointeraddresslist, NewKernelHandler, zstream, zstreamext, macportdefines, SyncObjs2, math,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
 {$endif}
 
 {$ifdef windows}

@@ -39,6 +39,7 @@ uses
   {$ifdef windows}
   windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   Classes, SysUtils, ExtCtrls, Controls, LMessages, Graphics, GL, glu,
   math, dialogs, GLext, betterControls;
 

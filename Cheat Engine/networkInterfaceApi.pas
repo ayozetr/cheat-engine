@@ -8,6 +8,7 @@ uses
   {$ifdef windows}
   jwawindows, windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   Classes, SysUtils, networkInterface, NewKernelHandler, CEFuncProc
   {$ifdef JNI}
   ,unixporthelper, newkernelhandler;

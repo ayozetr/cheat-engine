@@ -10,7 +10,8 @@ uses
   {$endif}
   {$ifdef windows}
   windows,
-  {$endif}LCLIntf, Messages, SysUtils, Classes, Graphics, Controls, Forms,
+  {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}LCLIntf, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, LResources, Menus, Buttons, CEFuncProc,
   commonTypeDefs, LCLType, betterControls;
 

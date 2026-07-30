@@ -11,6 +11,7 @@ uses
   {$ifdef windows}
   windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   LCLIntf,sysutils,syncobjs,Classes,disassembler, NewKernelHandler, math,
   MemoryQuery, CEFuncProc, maps, LastDisassembleData, commonTypeDefs, AvgLvlTree;
 

@@ -7,7 +7,8 @@ interface
 uses
   {$ifdef windows}
   windows, imagehlp,
-  {$endif}LCLIntf, Messages, SysUtils, Classes, Graphics, Controls, Forms,
+  {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}LCLIntf, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs,CEFuncProc,NewKernelHandler, Menus, ComCtrls,symbolhandler,disassembler,
   StdCtrls, LResources, commonTypeDefs;
 

@@ -11,6 +11,7 @@ uses
   {$ifdef windows}
   windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
 
   LCLType,LCLIntf,classes,sysutils, SyncObjs,CEFuncProc,messages,genericHotkey, math,
   commonTypeDefs;

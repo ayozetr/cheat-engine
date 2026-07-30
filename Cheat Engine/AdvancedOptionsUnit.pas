@@ -14,6 +14,7 @@ uses
   {$ifdef windows}
   jwawindows, windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
 
   symbolhandler,symbolhandlerstructs,LCLIntf, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Buttons,CEDebugger, Menus,CEFuncProc, ExtCtrls,disassembler,

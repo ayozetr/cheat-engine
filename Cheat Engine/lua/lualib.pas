@@ -27,7 +27,8 @@ unit lualib;
 interface
 
 uses
-  Lua;
+  Lua,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
 
 const
   LUA_COLIBNAME = 'coroutine';

@@ -10,7 +10,8 @@ unit contexthandler;
 interface
 
 uses
-  {$ifdef darwin}macport,{$endif}{$ifdef windows}windows, {$endif}Classes, SysUtils,StringHashList, NewKernelHandler,math;
+  {$ifdef darwin}macport,{$endif}{$ifdef windows}windows, {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}Classes, SysUtils,StringHashList, NewKernelHandler,math;
 
 type
 

@@ -17,6 +17,7 @@ uses
   {$ifdef windows}
   jwawindows, windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   Classes, SysUtils, Sockets, resolve, ctypes, networkconfig,
   cefuncproc, newkernelhandler, math, zstream, syncobjs, ProcessHandlerUnit,
   VirtualQueryExCache, gutil, gmap;

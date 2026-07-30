@@ -10,7 +10,8 @@ uses
   jwaNtStatus, Windows,
   Classes, SysUtils,symbolhandler, symbolhandlerstructs,
   VEHDebugSharedMem,cefuncproc, autoassembler,newkernelhandler,DebuggerInterface,
-  Clipbrd,maps;
+  Clipbrd,maps,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
 
 type
 

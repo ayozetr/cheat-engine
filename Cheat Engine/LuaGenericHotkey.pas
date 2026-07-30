@@ -13,6 +13,7 @@ uses
   {$ifdef windows}
   windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   Classes, SysUtils, lua, lauxlib, lualib, genericHotkey, CEFuncProc,
   math, commonTypeDefs;
 

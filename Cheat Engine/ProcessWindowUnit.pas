@@ -11,6 +11,7 @@ uses
   {$ifdef windows}
   jwawindows, windows,
   {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   LCLIntf, Messages, SysUtils, Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls, ExtCtrls, CEFuncProc,CEDebugger, ComCtrls, ImgList,
   Filehandler, Menus, LResources,{tlhelp32,}{$ifdef windows}vmxfunctions,{$endif} NewKernelHandler,

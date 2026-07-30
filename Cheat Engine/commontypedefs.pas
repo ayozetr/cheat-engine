@@ -5,7 +5,8 @@ unit commonTypeDefs;
 interface
 
 uses
-  {$ifdef windows}windows,{$endif}{$ifdef unix}unixporthelper,{$endif} Classes, SysUtils;
+  {$ifdef windows}windows,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}{$ifdef unix}unixporthelper,{$endif} Classes, SysUtils;
 
 
 //memscan

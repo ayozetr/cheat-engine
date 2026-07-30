@@ -7,6 +7,7 @@ interface
 uses
   {$ifdef darwin}macport,{$endif}
   {$ifdef windows}windows,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   LCLIntf, LCLType, Classes, SysUtils, StdCtrls, ComCtrls, Sockets, syncobjs,
   resolve, math, pointervaluelist,PointerscanWorker, PointerscanStructures,
   pointeraddresslist, PointerscanresultReader, cefuncproc, NewKernelHandler,

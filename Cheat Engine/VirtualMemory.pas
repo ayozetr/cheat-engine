@@ -7,7 +7,8 @@ unit VirtualMemory;
 interface
 
 {$ifdef darwin}
-uses macport, SysUtils,LCLIntf,NewKernelHandler,CEFuncProc,ComCtrls, symbolhandler, commonTypeDefs;
+uses macport, SysUtils,LCLIntf,NewKernelHandler,CEFuncProc,ComCtrls, symbolhandler, commonTypeDefs,
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi{$endif};
 {$endif}
 
 {$ifdef windows}

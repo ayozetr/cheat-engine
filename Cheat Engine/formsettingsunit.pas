@@ -10,7 +10,8 @@ uses
   {$endif}
   {$ifdef windows}
   windows, win32proc,
-  {$endif}LCLProc, LCLIntf, LCLType, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}LCLProc, LCLIntf, LCLType, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls,registry, Menus,ComCtrls,CEFuncProc,ExtCtrls,{tlhelp32,}CheckLst,
   Buttons, LResources, frameHotkeyConfigUnit, math,
 

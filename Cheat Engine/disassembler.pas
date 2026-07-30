@@ -16,6 +16,7 @@ uses windows, classes, imagehlp,sysutils,LCLIntf,byteinterpreter, symbolhandler,
   CEFuncProc, NewKernelHandler, ProcessHandlerUnit, LastDisassembleData, disassemblerarm,
   commonTypeDefs, maps, math,vextypedef, betterControls, syncobjs;
 {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
 
 {$ifdef darwin}
 uses LCLIntf, LCLType, macport, macportdefines, classes,sysutils,byteinterpreter, symbolhandler, symbolhandlerstructs,

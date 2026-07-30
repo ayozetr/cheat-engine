@@ -19,7 +19,8 @@ uses
   {$endif}
   {$ifdef windows}
   jwawindows, windows,
-  {$endif} Classes, SysUtils, newkernelhandler, math;
+  {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif} Classes, SysUtils, newkernelhandler, math;
   {$endif}
 
 type

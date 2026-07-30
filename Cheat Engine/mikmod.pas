@@ -15,7 +15,8 @@ uses
   {$endif}
   {$ifdef windows}
   windows,
-  {$endif}Classes, SysUtils, syncobjs;
+  {$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}Classes, SysUtils, syncobjs;
 
 
 type

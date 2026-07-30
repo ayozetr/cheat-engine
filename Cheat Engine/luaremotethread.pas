@@ -15,6 +15,7 @@ implementation
 uses
   {$ifdef darwin}macport,pthreads, macCreateRemoteThread, {$endif}
   {$ifdef windows}windows,{$endif}
+  {$if not defined(windows) and not defined(darwin)}linuxmemoryapi,{$endif}
   ProcessHandlerUnit, LuaClass, LuaObject, NewKernelHandler;
 
 type
