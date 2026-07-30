@@ -169,12 +169,63 @@ of them stayed nil and the first call through one went straight through a null
 pointer. The Linux branch now wires them to `linuxmemoryapi`. Compiling was
 never going to be enough on its own.
 
+## What has actually been verified
+
+It runs, and the memory layer works through the real UI, not just in isolation:
+
+- The main window comes up complete — menus, address list, scan panel, memory
+  scan options, the lot.
+- The process list is populated from `/proc`: **330 processes, enumerated twice
+  in a row**, with correct names (`sshd: ayoze [priv]`, `bash`, `diana`,
+  `cheatengine-x86_64`). That exercises `CreateToolhelp32Snapshot` ->
+  `Process32First`/`Next` -> `NewKernelHandler` -> the list box.
+- The Spanish translation loads: the first-run dialog offers *No / Sí*.
+
+Not yet exercised: opening a process from the UI, scanning, and editing a
+value. Driving that through xdotool turned out to be slow and fragile, and it
+is the obvious next thing to confirm.
+
+### Driving the UI headlessly
+
+The VM's own screen is usually locked, so use a virtual display. A window
+manager is required — without one, focus never settles and clicks land
+unpredictably:
+
+```
+Xvfb :77 -screen 0 1400x900x24 &
+DISPLAY=:77 openbox &
+DISPLAY=:77 ./cheatengine-x86_64 &
+DISPLAY=:77 import -window root /tmp/shot.png
+```
+
+`CE_APILOG=/path/to/log` makes `linuxmemoryapi` trace what it is asked for —
+snapshots taken, rows read, calls made. Off unless the variable is set. It
+writes straight to the file because stderr is buffered when redirected, which
+cost me a couple of confusing runs.
+
+## Known broken
+
+- **Switching tabs in the process list empties it.** The `TabHeader` change
+  handler never fires under gtk2, so `getprocesslist` is not called again and
+  the list is left cleared. The list is correct when the dialog first opens;
+  only tab switching breaks it. This is an LCL event problem, not a memory
+  layer one — the trace shows no snapshot is even requested.
+- **The autorun folder is never read.** `InitializeLuaScripts` is reached and
+  `noautorun` is false, but no `.lua` under `bin/autorun/` is opened — strace
+  shows the directory is never touched. Not chased down yet. `UTF8ToWinCP` was
+  removed from the path it passes to `lua_dofile`, since converting a UTF-8
+  filename to a Windows codepage can only damage it, but that alone did not fix
+  it.
+- Kernel thread names show up mangled (`kworker/R-rcu_gp` as `R-rcu_gp`).
+  That is `ExtractFilename` in `processlist.pas` treating the `/` as a path
+  separator. Cosmetic, and only affects processes that cannot be opened anyway.
+
 ## What is left
 
-- The `Confirmation` dialog on startup has not been looked at; the VM's screen
-  was locked and could not be driven. Worth seeing what it asks.
-- Exercise the real work: attach to a process, scan, edit. The memory layer was
-  verified against live processes on its own, but not through the UI.
+- Attach to a process, scan for a value, edit it. A tiny target is already on
+  the VM at `/tmp/diana.c` — it holds 1234567 in a global and sleeps, and
+  prints its pid and the address on startup.
+- The two broken things above: the tab handler and autorun.
 - `SuspendThread`, `GetThreadContext` and the `VirtualProtectEx` family report
   failure rather than working. They need a ptrace-stopped tracee. The debugger
   will not do anything useful until then.

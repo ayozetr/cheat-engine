@@ -713,7 +713,11 @@ type
 //process_vm_readv and process_vm_writev are not wrapped by the FPC RTL, so
 //they go through syscall directly, the same way ceserver reaches them
 //the RTL does not wrap sysconf either
-const _SC_PAGESIZE = 30;
+const
+  _SC_PAGESIZE = 30;
+  //high bit pattern no pid will ever have, so a snapshot handle and a process
+  //handle can never be mistaken for one another
+  SNAPSHOT_TAG = THandle($40000000);   //THandle is 32 bit on Unix, so the tag has to fit
 function sysconf(name: cint): clong; cdecl; external 'c' name 'sysconf';
 
 function process_vm_readv(pid: TPid; local_iov: PIOVec; liovcnt: culong;
@@ -723,6 +727,25 @@ function process_vm_writev(pid: TPid; local_iov: PIOVec; liovcnt: culong;
   remote_iov: PIOVec; riovcnt: culong; flags: culong): ssize_t; cdecl;
   external 'c' name 'process_vm_writev';
 
+
+//Set CE_APILOG=<file> to trace what this layer is asked for. Off by default,
+//and writing straight to the file because stderr is buffered when redirected.
+procedure traza(const s: string);
+var
+  f: TextFile;
+  ruta: string;
+begin
+  ruta:=GetEnvironmentVariable('CE_APILOG');
+  if ruta='' then exit;
+  AssignFile(f, ruta);
+  {$I-}
+  if FileExists(ruta) then Append(f) else Rewrite(f);
+  if IOResult<>0 then exit;
+  writeln(f, s);
+  CloseFile(f);
+  if IOResult<>0 then ;
+  {$I+}
+end;
 
 function OpenProcess(dwDesiredAccess: DWORD; bInheritHandle: boolean;
   dwProcessId: DWORD): THandle; stdcall;
@@ -743,8 +766,12 @@ end;
 
 function CloseHandle(hObject: THandle): boolean; stdcall;
 begin
-  //nothing was opened, so nothing to close
-  result:=true;
+  //a process handle is a pid and owns nothing, but Cheat Engine closes its
+  //toolhelp snapshots through here too, and those do have to be released
+  if (hObject and SNAPSHOT_TAG)=SNAPSHOT_TAG then
+    result:=CloseSnapshot(hObject)
+  else
+    result:=true;
 end;
 
 function ReadProcessMemory(hProcess: THandle; lpBaseAddress, lpBuffer: Pointer;
@@ -900,6 +927,7 @@ type
 var
   snapshots: TList = nil;
 
+
 constructor TSnapshot.Create;
 begin
   rows:=TStringList.Create;
@@ -1023,14 +1051,27 @@ begin
   end;
 
   snapshots.Add(snap);
-  result:=THandle(snapshots.Count);   //1-based so 0 stays invalid
+  //tagged so CloseHandle can tell a snapshot from a pid, and so the two can
+  //never collide
+  result:=THandle(SNAPSHOT_TAG or DWORD(snapshots.Count));
+  traza(Format('snapshot %d: flags=%x rows=%d', [result, dwFlags, snap.rows.Count]));
+end;
+
+function IndiceSnapshot(h: THandle): integer;
+begin
+  //the tag goes back out, leaving the 1-based position in the list
+  result:=integer(h and not THandle(SNAPSHOT_TAG));
 end;
 
 function DameSnapshot(h: THandle): TSnapshot;
+var
+  i: integer;
 begin
   result:=nil;
-  if (snapshots=nil) or (h=0) or (h>THandle(snapshots.Count)) then exit;
-  result:=TSnapshot(snapshots[h-1]);
+  if (snapshots=nil) or ((h and SNAPSHOT_TAG)<>SNAPSHOT_TAG) then exit;
+  i:=IndiceSnapshot(h);
+  if (i<1) or (i>snapshots.Count) then exit;
+  result:=TSnapshot(snapshots[i-1]);
 end;
 
 function CloseSnapshot(hSnapshot: THandle): boolean;
@@ -1041,7 +1082,7 @@ begin
   result:=snap<>nil;
   if result then
   begin
-    snapshots[hSnapshot-1]:=nil;   //index stays valid for the others
+    snapshots[IndiceSnapshot(hSnapshot)-1]:=nil;   //index stays valid for the others
     snap.Free;
   end;
 end;
@@ -1067,6 +1108,7 @@ function Process32First(hSnapshot: THandle; var lppe: TProcessEntry): boolean; s
 var
   snap: TSnapshot;
 begin
+  traza(Format('Process32First(%d)', [hSnapshot]));
   snap:=DameSnapshot(hSnapshot);
   if snap=nil then exit(false);
   snap.cursor:=0;

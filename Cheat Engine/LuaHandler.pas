@@ -702,7 +702,13 @@ begin
     begin
       if ((DirInfo.Attr and FaDirectory) <> FaDirectory) then
       begin
+        {$if defined(windows)}
         i:=lua_dofile(luavm, pchar( UTF8ToWinCP(autorunpath+DirInfo.name)));
+        {$else}
+        //file names are already UTF-8 here; converting to a Windows codepage
+        //can only damage them
+        i:=lua_dofile(luavm, pchar(path+DirInfo.name));
+        {$endif}
         if i<>0 then //error
         begin
           i:=lua_gettop(luavm);
