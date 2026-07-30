@@ -701,6 +701,10 @@ function GetLargePageMinimum: PtrUInt;
 //macport exports this too, and the auto assembler aligns allocations with it
 function getPageSize: PtrUInt;
 
+//Diagnostics. Writes to the file named by CE_APILOG and does nothing when that
+//is unset, so it is safe to leave calls in place.
+procedure apiTrace(const s: string);
+
 implementation
 
 type
@@ -730,7 +734,7 @@ function process_vm_writev(pid: TPid; local_iov: PIOVec; liovcnt: culong;
 
 //Set CE_APILOG=<file> to trace what this layer is asked for. Off by default,
 //and writing straight to the file because stderr is buffered when redirected.
-procedure traza(const s: string);
+procedure apiTrace(const s: string);
 var
   f: TextFile;
   ruta: string;
@@ -1054,7 +1058,7 @@ begin
   //tagged so CloseHandle can tell a snapshot from a pid, and so the two can
   //never collide
   result:=THandle(SNAPSHOT_TAG or DWORD(snapshots.Count));
-  traza(Format('snapshot %d: flags=%x rows=%d', [result, dwFlags, snap.rows.Count]));
+  apiTrace(Format('snapshot %d: flags=%x rows=%d', [result, dwFlags, snap.rows.Count]));
 end;
 
 function IndiceSnapshot(h: THandle): integer;
@@ -1108,7 +1112,7 @@ function Process32First(hSnapshot: THandle; var lppe: TProcessEntry): boolean; s
 var
   snap: TSnapshot;
 begin
-  traza(Format('Process32First(%d)', [hSnapshot]));
+  apiTrace(Format('Process32First(%d)', [hSnapshot]));
   snap:=DameSnapshot(hSnapshot);
   if snap=nil then exit(false);
   snap.cursor:=0;

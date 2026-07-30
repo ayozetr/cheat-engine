@@ -928,7 +928,7 @@ end;
 function TMemoryBrowser.ReadProcessMemory(hProcess: THandle; lpBaseAddress, lpBuffer: Pointer; nSize: size_t; var lpNumberOfBytesRead: PTRUINT): BOOL;
 begin
   if fcr3=0 then
-    result:={$ifdef windows}newkernelhandler.{$endif}{$ifdef darwin}macport.{$endif}ReadProcessMemory(hProcess, lpBaseAddress, lpBuffer, nsize, lpNumberOfBytesRead)
+    result:={$ifdef windows}newkernelhandler.{$endif}{$ifdef darwin}macport.{$endif}{$if not defined(windows) and not defined(darwin)}newkernelhandler.{$endif}ReadProcessMemory(hProcess, lpBaseAddress, lpBuffer, nsize, lpNumberOfBytesRead)
   {$ifdef windows}
   else
     result:=ReadProcessMemoryCR3(fcr3,lpBaseAddress, lpBuffer, nsize, lpNumberOfBytesRead){$endif};

@@ -171,25 +171,44 @@ never going to be enough on its own.
 
 ## What has actually been verified
 
-It runs, and the memory layer works through the real UI, not just in isolation:
+**It reads and writes another process's memory.** That is the whole point of
+the program, and it works:
+
+```
+openProcess -> true
+readInteger -> 1234567
+readBytes -> 87 D6 12 00
+writeInteger -> true
+readInteger after -> 7654321
+enumMemoryRegions -> 31
+```
+
+and the target process itself started reporting the new value, so the write
+really landed. `tools/` holds the target and the script; see `tools/README.md`.
+
+Also confirmed:
 
 - The main window comes up complete — menus, address list, scan panel, memory
-  scan options, the lot.
-- The process list is populated from `/proc`: **330 processes, enumerated twice
-  in a row**, with correct names (`sshd: ayoze [priv]`, `bash`, `diana`,
-  `cheatengine-x86_64`). That exercises `CreateToolhelp32Snapshot` ->
-  `Process32First`/`Next` -> `NewKernelHandler` -> the list box.
+  scan options.
+- The process list is populated from `/proc`: 330 processes, twice in a row,
+  with correct names. That is `CreateToolhelp32Snapshot` -> `Process32First`/
+  `Next` -> `NewKernelHandler` -> the list box.
+- `autorun` runs, so Lua scripting works.
 - The Spanish translation loads: the first-run dialog offers *No / Sí*.
 
-Not yet exercised: opening a process from the UI, scanning, and editing a
-value. Driving that through xdotool turned out to be slow and fragile, and it
-is the obvious next thing to confirm.
+### It needs root, and that is the kernel's doing
+
+Ubuntu and Mint set `kernel.yama.ptrace_scope = 1`, which limits
+`process_vm_readv` to descendants of the calling process. Run as an ordinary
+user, `openProcess` succeeds and then every read returns nil and every write
+false — which reads like a broken port but is policy. Upstream's own Linux
+build asks for root for the same reason.
 
 ### Driving the UI headlessly
 
 The VM's own screen is usually locked, so use a virtual display. A window
-manager is required — without one, focus never settles and clicks land
-unpredictably:
+manager is required — without one focus never settles and clicks land
+unpredictably, which cost me a good while:
 
 ```
 Xvfb :77 -screen 0 1400x900x24 &
@@ -198,10 +217,13 @@ DISPLAY=:77 ./cheatengine-x86_64 &
 DISPLAY=:77 import -window root /tmp/shot.png
 ```
 
-`CE_APILOG=/path/to/log` makes `linuxmemoryapi` trace what it is asked for —
-snapshots taken, rows read, calls made. Off unless the variable is set. It
-writes straight to the file because stderr is buffered when redirected, which
-cost me a couple of confusing runs.
+`CE_APILOG=<file>` makes `linuxmemoryapi` trace what it is asked for. Off
+unless set. It writes straight to the file because stderr is buffered when
+redirected, which cost me a couple of confusing runs where the log looked
+empty.
+
+For a crash, `gdb -q -batch -ex run -ex 'bt 25' ./cheatengine-x86_64` is worth
+reaching for early — it is what found the recursion described below in one go.
 
 ## Known broken
 
@@ -210,30 +232,23 @@ cost me a couple of confusing runs.
   the list is left cleared. The list is correct when the dialog first opens;
   only tab switching breaks it. This is an LCL event problem, not a memory
   layer one — the trace shows no snapshot is even requested.
-- **The autorun folder is never read.** `InitializeLuaScripts` is reached and
-  `noautorun` is false, but no `.lua` under `bin/autorun/` is opened — strace
-  shows the directory is never touched. Not chased down yet. `UTF8ToWinCP` was
-  removed from the path it passes to `lua_dofile`, since converting a UTF-8
-  filename to a Windows codepage can only damage it, but that alone did not fix
-  it.
 - Kernel thread names show up mangled (`kworker/R-rcu_gp` as `R-rcu_gp`).
   That is `ExtractFilename` in `processlist.pas` treating the `/` as a path
   separator. Cosmetic, and only affects processes that cannot be opened anyway.
 
 ## What is left
 
-- Attach to a process, scan for a value, edit it. A tiny target is already on
-  the VM at `/tmp/diana.c` — it holds 1234567 in a global and sleeps, and
-  prints its pid and the address on startup.
-- The two broken things above: the tab handler and autorun.
+- The tab handler above.
 - `SuspendThread`, `GetThreadContext` and the `VirtualProtectEx` family report
-  failure rather than working. They need a ptrace-stopped tracee. The debugger
-  will not do anything useful until then.
+  failure rather than working. They need a ptrace-stopped tracee, so the
+  debugger will not do anything useful until that is written. Scanning and
+  editing do not depend on it.
 - `modernfonts` and `modernabout` are still Windows only, so the Linux build
   gets the stock LCL look rather than the redesign.
-- `-gl` is still in the build mode for readable stack traces. Take it out for a
-  release build.
-- Then: AppImage.
+- `-gl` is still in the build mode for readable stack traces, which is why the
+  binary is 93 MB. Take it out for a release build.
+- Then: AppImage. It will need `liblinux/liblua5.3.so` bundled alongside; the
+  `$ORIGIN` rpath already points at it.
 
 ## Branch
 

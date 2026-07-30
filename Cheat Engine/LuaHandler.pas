@@ -825,6 +825,11 @@ begin
   end;
 
   //autorun folder
+  {$if not defined(windows) and not defined(darwin)}
+  apiTrace('autorun: noautorun='+BoolToStr(noautorun,true)+' path="'+autorunpath+
+           '" exists='+BoolToStr(DirectoryExists(autorunpath),true)+
+           ' cwd='+GetCurrentDir);
+  {$endif}
   if noautorun=false then
   begin
     loadLuaScriptsFromPath(autorunpath, mainformwasset, addresslistwasset);
@@ -17293,6 +17298,10 @@ begin
       autorunpath:=extractfiledir(extractfiledir(Application.ExeName))+'/Lua/Autorun/';
       {$else}
       autorunpath:=CheatEngineDir+'autorun'+pathdelim;
+      {$endif}
+
+      {$if not defined(windows) and not defined(darwin)}
+      apiTrace('InitializeLua: CheatEngineDir="'+CheatEngineDir+'" autorunpath="'+autorunpath+'"');
       {$endif}
 
 
